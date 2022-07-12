@@ -1,3 +1,12 @@
+
+/***** COLOR PALLETES 
+
+RED: rgb(122, 13, 13);
+AMARILLO : #F3FFC6
+GREY: C8BFC7;
+TOMATOE  FF6542
+
+*/
 body{
     margin: 0;
 }
@@ -6,7 +15,6 @@ body{
 header div{
     margin: 0 auto;
 }
-
 
 input[type="search"]{
     height: 30px;
@@ -36,6 +44,69 @@ i.fa-solid.fa-magnifying-glass{
     color:rgb(122, 13, 13);
 }
 
+i.fa-solid.fa-truck{
+    color: #F3FFC6;
+}
+
+/**** shippin info bar */
+
+.shipping-info{
+    height: 40px;
+    font-size: 0.775rem;
+    background-color: #5D737E;
+    color: #F3FFC6;
+}
+.in-dublin{
+    color: #e3b837;
+}
+
+/***** BURGER MENU*/
+
+.burger-menu{
+   width: 300px;
+   position:absolute;
+   top:150px;
+   background-color: hsl(0, 100%, 97%);
+}
+.burger-menu ul li{
+    height: 45px;
+    margin-top: 15px;
+    border-bottom: solid 1px rgb(122, 13, 13);
+}
+
+.burger-menu ul li A{
+   text-decoration: none;
+   color: #000000;
+   justify-content: space-around;
+}
+
+/*************** HERO SECTION **/
+.hero-wraper{
+    position: relative;
+}
+
+.hero-wraper .row div{
+    height: 375px;
+    /* width: 235px; */
+    }
+
+img{
+    width: 55%;
+}
+
+.hero-1-text{
+    position: absolute;
+    top: 270px;
+    left:280px;
+    color: #F3FFC6;
+}
+
+.hero-2-text{
+    position: absolute;
+    top: 30px;
+    right:285px;
+    color: #FF6542;
+}
 
  /******************************************************************** MOBILE SCREEN */
  @media only screen and (min-width: 320px) and (max-width: 600px) {
@@ -49,6 +120,34 @@ i.fa-solid.fa-magnifying-glass{
 .nav-item{
     margin-left: 5px;
     margin-right: 5px;
+}
+
+/*************** HERO SECTION **/
+.hero-wraper{
+    position: relative;
+}
+
+.hero-wraper .row div{
+    height: 375px;
+    /* width: 235px; */
+    }
+
+img{
+    width: 55%;
+}
+
+.hero-1-text{
+    position: absolute;
+    top: 270px;
+    left:280px;
+    color: #F3FFC6;
+}
+
+.hero-2-text{
+    position: absolute;
+    top: 30px;
+    right:285px;
+    color: #FF6542;
 }
   }
   

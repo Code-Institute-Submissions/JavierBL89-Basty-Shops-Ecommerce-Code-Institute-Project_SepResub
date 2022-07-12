@@ -14,6 +14,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!----  JQUERY CDNJS ------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
     {% endblock %}
 
     {% block extra_css%}
@@ -22,14 +26,17 @@
     {% block core_js %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
+    <!-- CDN JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
     {% endblock%}
     {% block extra_js%}
     {% endblock %}
 </head>
   <body>
-    <div class="main-wraper container-fluid">
+    <div class="main-wraper container-fluid pe-0 ps-0">
 
-          <header class="container-fluid pe-2 ps-2">
+          <header class="container-fluid pe-3 ps-3">
             <div class="row d-flex">
               <div class="col-3 col-lg-4 d-inline-flex text-md-start ps-0 ps-md-3 ps-lg-3">
                 <button class="burger" href="#"><i class="fa-solid fa-bars fa-2xl sm-fa-xl"></i></button>
@@ -39,7 +46,7 @@
                 </form>
               </div>
               <div class="col-6 col-lg-4 mt-4 mt-md-2 mt-lg-auto text-center d-sm-inline">
-                <h1 class="store-name">Basty shops</h1>
+                <h1 class="store-name fs-2">Basty shops</h1>
               </div>
               <div class="col-3 col-lg-4 d-sm-inline pe-0 pe-md-3 pe-lg-3">
                 <ul class="list-inline list-unstyled d-flex justify-content-end mt-3">
@@ -75,6 +82,30 @@
     {% block post_load_js %}
     {% endblock %}
 
+    <!----------- MODALS ------------------>
+    <div class="burger-menu d-none">
+      <div class="row">
+        <div class="col-12 text-center">
+          <ul class="list list-unstyled mb-0">
+            <li class="burger-item">
+              <a href="">SHOES</a>
+            </li>
+            <li class="burger-item">
+              <a href="">BOOTS</a>
+            </li>
+            <li class="burger-item">
+              <a href="">SNEAKERS</a>
+            </li>
+            <li class="burger-item">
+              <a href="">ABOUT</a>
+            </li>
+            <li class="burger-item">
+              <a href="">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
     
 </body>
 </html>

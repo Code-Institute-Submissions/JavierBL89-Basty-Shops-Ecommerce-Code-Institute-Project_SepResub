@@ -2,5 +2,37 @@
 {% load static %} 
 
 {% block content %}
-<h1 class=".display-4 text-success">  </h1>
+<div class="container-fluid shipping-info mt-2 ms-0 me-0">
+    <div class="row">
+        <div class="col-6 text-center mt-2">
+            <p><i class="fa-solid fa-truck fa-l"></i><strong> Free shipping</strong> with orders over 50€</p>
+        </div>
+        <div class="col-6 mt-2">
+            <p>Order before 3pm and get it by tomorrow! (<span class="in-dublin">just in Dublin</span>)</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid hero-wraper">
+    <div class="row mt-5">
+        <div class="col-6 hero-1 text-end">
+            <div class="hero-ban1 ">
+                <img src="{% static 'images/hero/4281ed2bc5ec72314ec87868900de96ebb90cdfd_cmq0567_1.webp' %}" alt="heel-sandals">
+            </div>
+            <div class="hero-1-text text-start">
+                <h2 class="mb-0">Shoes</h2>
+                <p>New collection</p>
+            </div>
+        </div>
+        <div class="col-6 hero-2 text-start">
+            <img src="{% static 'images/hero/b182e410ebd2a2e5d6861c1ecf30a53677801ee0_cmw6771_1.webp' %}" alt="heel-sandals">
+            <div class="hero-2-text text-end">
+                <p class="fs-3 mb-0"><strong>up to 60% off</strong></p>
+                <h2 class="fs-5">Boots</h2>
+            </div>
+        </div>
+        
+    </div>
+</div>
 {% endblock %}
+
+<script src="{% static 'jquery/bannerImages.js' %}" type="text/js"></script>
