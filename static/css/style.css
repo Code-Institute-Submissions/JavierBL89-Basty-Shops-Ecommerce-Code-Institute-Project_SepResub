@@ -3,18 +3,10 @@ body{
 }
 
 /****************************** HEADER */
-nav div{
+header div{
     margin: 0 auto;
-    justify-content: space-between;
 }
 
-nav ul{
-    margin-left: 60px;
-}
-.nav-item{
-    margin-left: 10px;
-    margin-right: 10px;
-}
 
 input[type="search"]{
     height: 30px;
@@ -50,7 +42,7 @@ i.fa-solid.fa-magnifying-glass{
   
 /**************** HEADER*/
 
-nav h1{
+.store-name{
     font-size: 1rem;
 }
 
