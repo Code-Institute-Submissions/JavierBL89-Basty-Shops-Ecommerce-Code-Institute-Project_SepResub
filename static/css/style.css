@@ -139,6 +139,9 @@ i.fa-solid.fa-truck{
 
 /************** NEW ARRIVALS SECTION ***/
 
+.carousel-inner{
+    height: 500px;
+}
 .product-card{
     height: 350px;
     width: 300px;
@@ -147,6 +150,8 @@ i.fa-solid.fa-truck{
     height: 300px;
     background-color: #e3b837;
 }
+
+
  /******************************************************************** MOBILE SCREEN */
  @media only screen and (min-width: 320px) and (max-width: 600px) {
   

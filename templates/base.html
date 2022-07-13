@@ -7,12 +7,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% endblock %}
+
     {% block extra_meta %}
     {% endblock %}
+
     <title>Basty Shops{% block extra_title%}{% endblock %}</title>
+
     {% block core_css %}
+    <!------- BOOTSTRAP ---->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!------- STYLESHEET CSS ---->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <!------- FONTOWSOME ---->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     {% endblock %}
 
@@ -23,8 +29,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
     <!-- CDN JQUERY-->
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>   
     {% endblock%}
+
     {% block extra_js%}
     {% endblock %}
 </head>
@@ -75,6 +82,8 @@
             {% endblock %}
     </div>
     {% block post_load_js %}
+
+    
     {% endblock %}
 
     <!----------- MODALS ------------------>
