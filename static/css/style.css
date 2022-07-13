@@ -151,6 +151,14 @@ i.fa-solid.fa-truck{
     background-color: #e3b837;
 }
 
+.carousel-indicators [data-bs-target]{
+
+ background-color: rgb(122, 13, 13);
+}
+.indicator{
+    font-size: 1.5rem;
+    color: rgb(122, 13, 13);
+}
 
  /******************************************************************** MOBILE SCREEN */
  @media only screen and (min-width: 320px) and (max-width: 600px) {
@@ -168,8 +176,43 @@ i.fa-solid.fa-truck{
 
 /*************** HERO SECTION **/
 
-  }
   
+
+  /************** NEW ARRIVALS SECTION ***/
+
+  .carousel-item{
+    width: 99%;
+  }
+.carousel-inner{
+    height: 420px;
+}
+.product-card{
+    height: 280px;
+    width: 33%;
+}
+.product-card .card-img-box{
+    height: 250px;
+    background-color: #e3b837;
+}
+
+.carousel-indicators{
+    position: absolute;
+    top:95%
+}
+.carousel-indicators [data-bs-target]{
+ background-color: rgb(122, 13, 13);
+}
+.indicator{
+    font-size: 1.5rem;
+    color: rgb(122, 13, 13);
+}
+
+.product-card p{
+    font-size: 0.8rem;
+    text-align: start;
+}
+
+ }
   /******************************************************************** TABLET SCREEN */
   @media only screen and (min-width:640px) and (max-width:950px) {
   
