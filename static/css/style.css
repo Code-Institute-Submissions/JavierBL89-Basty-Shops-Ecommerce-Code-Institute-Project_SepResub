@@ -90,12 +90,12 @@ i.fa-solid.fa-truck{
     height: 375px;
 }
 .hero-1{
-    background-image: url("media/images/4281ed2bc5ec72314ec87868900de96ebb90cdfd_cmq0567_1.jpg");
+    background-image: url("/media/images/4281ed2bc5ec72314ec87868900de96ebb90cdfd_cmq0567_1.jpg");
     background-position: center;
     background-size: cover;
 }
 .hero-2{
-    background-image: url("media/images/b182e410ebd2a2e5d6861c1ecf30a53677801ee0_cmw6771_1.jpg");
+    background-image: url("/media/images/b182e410ebd2a2e5d6861c1ecf30a53677801ee0_cmw6771_1.jpg");
     background-position: center;
     background-size: cover;
 }
@@ -173,6 +173,19 @@ i.fa-solid.fa-truck{
     background-color: rgb(163, 200, 245);
 }
 
+/************ FOOTER */
+
+.container-footer{
+    border-top: solid 1px rgb(122, 13, 13);
+
+}
+.logo-footer-box img{
+    width: 50%;
+}
+
+.footer-bg{
+    color: rgb(122, 13, 13);
+}
  /******************************************************************** MOBILE SCREEN */
  @media only screen and (min-width: 320px) and (max-width: 600px) {
   
