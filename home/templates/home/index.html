@@ -73,6 +73,7 @@
 <section id="new-arrivals">
     <div class="container-fluid new-arrivals-container my-5">
         <div class="row">
+            <h6 class="text-center text-mute mb-0">Just walked in</h6>
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active indicator " aria-current="true" aria-label="Slide 1"></button>
@@ -146,7 +147,7 @@
                 <span class="indicator" aria-hidden="true"><</span>
                 <span class="visually-hidden">Previous</span>
               </button>
-              <button class="carousel-control-next d-none d-lg-block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <button class="carousel-control-next d-none" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                 <span class="indicator" aria-hidden="true">></span>
                 <span class="visually-hidden">Next</span>
               </button>
@@ -155,6 +156,20 @@
 
     </div>
     
+</section>
+
+<section id="store-information">
+    <div class="row mb-5">
+        <div class="col-lg-4 col-sm-4">
+            <div class="shipping-info-box information-box"></div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+            <div class="returns-info-box information-box"></div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+            <div class="subscription-info-box information-box"></div>
+        </div>
+    </div>
 </section>
 {% endblock %}
 

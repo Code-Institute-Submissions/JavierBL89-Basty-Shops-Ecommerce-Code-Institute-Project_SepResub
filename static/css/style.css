@@ -141,11 +141,16 @@ i.fa-solid.fa-truck{
 
 .carousel-inner{
     height: 500px;
+    width: 100%;
+}
+.carousel-inner .carousel-item{
+    margin-top: 30px;
 }
 .product-card{
     height: 350px;
-    width: 300px;
+    width: 400px;
 }
+
 .product-card .card-img-box{
     height: 300px;
     background-color: #e3b837;
@@ -160,10 +165,81 @@ i.fa-solid.fa-truck{
     color: rgb(122, 13, 13);
 }
 
+/***** STORE INFORMATION */
+.information-box{
+    margin: 7px auto;
+    height: 250px;
+    width: 300px;
+    background-color: rgb(163, 200, 245);
+}
+
  /******************************************************************** MOBILE SCREEN */
  @media only screen and (min-width: 320px) and (max-width: 600px) {
   
 /**************** HEADER*/
+
+.store-name{
+    font-size: 1rem;
+}
+
+.nav-item{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/*************** HERO SECTION **/
+
+  
+
+ /************** NEW ARRIVALS SECTION ***/
+
+  .carousel-item{
+    width: 100%;
+  }
+.carousel-inner{
+    height: 420px;
+}
+.product-card{
+    height: 280px;
+    width: 33%;
+}
+.product-card .card-img-box{
+    height: 250px;
+    background-color: #e3b837;
+}
+
+.carousel-indicators{
+    position: absolute;
+    top:95%
+}
+.carousel-indicators [data-bs-target]{
+ background-color: rgb(122, 13, 13);
+}
+.indicator{
+    font-size: 1.5rem;
+    color: rgb(122, 13, 13);
+}
+
+.product-card p{
+    font-size: 0.8rem;
+    text-align: start;
+}
+
+/*************** INFORMATION SECTION **/
+
+
+.information-box{
+    margin: 7px auto;
+    height: 150px;
+    /* width: 180px; */
+    background-color: rgb(163, 200, 245);
+}
+
+ }
+  /******************************************************************** TABLET SCREEN */
+  @media only screen and (min-width:640px) and (max-width:950px) {
+  
+    /**************** HEADER*/
 
 .store-name{
     font-size: 1rem;
@@ -212,14 +288,29 @@ i.fa-solid.fa-truck{
     text-align: start;
 }
 
- }
-  /******************************************************************** TABLET SCREEN */
-  @media only screen and (min-width:640px) and (max-width:950px) {
-  
+/*************** INFORMATION SECTION **/
+
+#store-information .row{
+    padding-left: 3%;
+    padding-right: 3%;
+}
+.information-box{
+    margin: 7px auto;
+    height: 180px;
+    width: 180px;
+    background-color: rgb(163, 200, 245);
+}
+
   }
   
   /******************************************************************** DESKTOP SCREEN */
   @media only screen and (min-width: 1000px) {
   
 
+/*************** INFORMATION SECTION **/
+
+#store-information .row{
+    padding-left: 2%;
+    padding-right: 2%;
+}
   }
