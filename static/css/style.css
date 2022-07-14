@@ -48,7 +48,7 @@ i.fa-solid.fa-truck{
     color: #F3FFC6;
 }
 
-/**** shippin info bar */
+/*********** shippin info bar */
 
 .shipping-info{
     height: 40px;
@@ -60,7 +60,7 @@ i.fa-solid.fa-truck{
     color: #e3b837;
 }
 
-/***** BURGER MENU*/
+/*********** BURGER MENU*/
 
 .burger-menu{
    width: 300px;
@@ -115,7 +115,7 @@ i.fa-solid.fa-truck{
 } */
 
 
-/******** CATEGORIES SECTION */
+/************ CATEGORIES SECTION */
 
 .container-categories{
     margin: 0 auto;
@@ -160,6 +160,7 @@ i.fa-solid.fa-truck{
 
  background-color: rgb(122, 13, 13);
 }
+
 .indicator{
     font-size: 1.5rem;
     color: rgb(122, 13, 13);
@@ -175,10 +176,12 @@ i.fa-solid.fa-truck{
 
 /************ FOOTER */
 
-.container-footer{
-    border-top: solid 1px rgb(122, 13, 13);
+.container-footer .column{
+    padding-top: 2%;
+    margin-top: 2%;
 
 }
+
 .logo-footer-box img{
     width: 50%;
 }
@@ -248,6 +251,14 @@ i.fa-solid.fa-truck{
     background-color: rgb(163, 200, 245);
 }
 
+/************** FOOTER */
+
+.container-logo{
+    order:4
+}
+.logo-footer-box img{
+    width: 20%;
+}
  }
   /******************************************************************** TABLET SCREEN */
   @media only screen and (min-width:640px) and (max-width:950px) {
@@ -313,6 +324,18 @@ i.fa-solid.fa-truck{
     width: 180px;
     background-color: rgb(163, 200, 245);
 }
+
+.container-logo{
+    order:4
+}
+.logo-footer-box img{
+    width: 20%;
+}
+  }
+
+  .footer-bg{
+    color:white;
+    background-color: rgb(122, 13, 13);
 
   }
   
