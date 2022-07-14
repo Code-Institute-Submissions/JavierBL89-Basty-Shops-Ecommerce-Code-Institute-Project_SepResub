@@ -14,6 +14,7 @@ body{
 /****************************** HEADER */
 header div{
     margin: 0 auto;
+    height: 70px;
 }
 
 input[type="search"]{
@@ -24,6 +25,8 @@ input[type="search"]{
     border-top: none;
     border-right: none;
     border-bottom: solid 1px grey;
+    position: absolute;
+    top:60px;
 }
 
 .btn.search{

@@ -39,35 +39,65 @@
     <div class="main-wraper container-fluid pe-0 ps-0">
 
           <header class="container-fluid pe-3 ps-3">
-            <div class="row d-flex">
+            <div class="row d-flex flex-row">
               <div class="col-3 col-lg-4 d-inline-flex text-md-start ps-0 ps-md-3 ps-lg-3">
-                <button class="burger" href="#"><i class="fa-solid fa-bars fa-2xl sm-fa-xl"></i></button>
-                <form class="d-none d-lg-block d-flex" role="search">
-                  <input class="ms-3 mt-3 d-inline" type="search" placeholder="Search" aria-label="Search">
+                <button class="burger" href="#">
+                <i class="fa-solid fa-bars fa-2xl sm-fa-xl"></i>
+                </button>
+                {% include 'includes/burger_menu.html %}
+                <!--- SEARCHER FORM---->
+                <form method="GET" action="#" class="d-none d-lg-block d-flex" role="search">
+                  <input class="ms-3 mt-3 d-inline" type="text" name="q" placeholder="Search" aria-label="Search">
                   <button class="btn search mt-1" type="submit"><i class="fa-solid fa-magnifying-glass fa-l"></i></button>
                 </form>
+                <!---->
               </div>
               <div class="col-6 col-lg-4 mt-4 mt-md-2 mt-lg-auto text-center d-sm-inline">
                 <h1 class="store-name fs-2">Basty shops</h1>
               </div>
               <div class="col-3 col-lg-4 d-sm-inline pe-0 pe-md-3 pe-lg-3">
                 <ul class="list-inline list-unstyled d-flex justify-content-end mt-3">
-                  <li class="navbar-item me-lg-3 me-2 me-md-3 me-lg-3">
-                    <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-user fa-xl"></i></a>
+                  <li class="navbar-item me-lg-3 me-2 me-md-3 me-lg-3 dropdown">
+                    <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-user fa-xl"></i>
+                    </a>
+                    <div class="dropdown-menu border-0" id="dropdownMenuLink"aria-labelledby="user-options">
+                      {% if request.user.is_authenticated %}
+                          {% if request.user.is_superuser %}
+                              <a href="" class="dropdowm-item">Management</a>
+                          {% endif %}
+                          <a href="" class="dropdown-item">My Account</a>
+                          <a href="{% url 'account_logout' %}" class="dropdown-item">Log out</a>
+                      {% else %}
+                          <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                          <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                      {% endif %}   
+                    </div>
                   </li>
                   <li class="navbar-item me-2 me-md-3 me-lg-3 ">
-                    <a class="nav-link" href="#"><i class="fa-solid fa-heart fa-xl"></i></a>
+                    <a class="nav-link" href="#">
+                          <i class="fa-solid fa-heart fa-xl"></i></a>
                   </li>
                   <li class="">
-                    <a class="nav-link" href="#"  aria-current="page">
-                      <i class="fa-solid fa-bag-shopping fa-xl"></i>
+                    <a class="nav-link {% if grand_total %} text-info fw-bold {% else %} text-black {% endif %}" href="#"  aria-current="page">
+                      <div class="text-center"> 
+                        <i class="fa-solid fa-bag-shopping fa-xl"></i>
+                        <p class="my-0">
+                          {% if grand_total %}
+                            {{ grand_total|floatformat:2 }}
+                          {% else %}
+                          0.00
+                          {% endif %}
+                        </p>
+                      </div>
+                      
                     </a>
                   </li>
                 </ul>
                   
               </div>
               
-              </div>
+            </div>
         </header>
 
 
@@ -110,30 +140,6 @@
     
     {% endblock %}
 
-    <!----------- MODALS ------------------>
-    <div class="burger-menu d-none">
-      <div class="row">
-        <div class="col-12 text-center">
-          <ul class="list list-unstyled mb-0">
-            <li class="burger-item">
-              <a href="">SHOES</a>
-            </li>
-            <li class="burger-item">
-              <a href="">BOOTS</a>
-            </li>
-            <li class="burger-item">
-              <a href="">SNEAKERS</a>
-            </li>
-            <li class="burger-item">
-              <a href="">ABOUT</a>
-            </li>
-            <li class="burger-item">
-              <a href="">CONTACT</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
     
 </body>
 </html>
