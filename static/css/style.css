@@ -48,14 +48,6 @@ i.fa-solid.fa-truck{
     color: #F3FFC6;
 }
 
-/*********** shippin info bar */
-
-.shipping-info{
-    height: 40px;
-    font-size: 0.775rem;
-    background-color: #5D737E;
-    color: #F3FFC6;
-}
 .in-dublin{
     color: #e3b837;
 }
@@ -239,6 +231,20 @@ img{
     margin-right: 5px;
 }
 
+/*********** shippin info bar */
+
+.shipping-info{
+    height: 60px;
+    font-size: 0.600rem;
+    background-color: #5D737E;
+    color: #F3FFC6;
+}
+
+.shipping-info p{
+ margin: 0 auto ;
+}
+
+
 /*************** HERO SECTION **/
 .hero-wraper{
     position: relative;
@@ -350,6 +356,18 @@ img{
     margin-right: 5px;
 }
 
+/*********** shippin info bar */
+
+.shipping-info{
+    height: 60px;
+    font-size: 0.675rem;
+    background-color: #5D737E;
+    color: #F3FFC6;
+}
+.shipping-info p{
+    margin: 0 auto;
+}
+
 /*************** HERO SECTION **/
 .hero-wraper{
     position: relative;
@@ -456,6 +474,14 @@ img{
   /******************************************************************** DESKTOP SCREEN */
   @media only screen and (min-width: 1000px) {
   
+/*********** shippin info bar */
+
+.shipping-info{
+    height: 40px;
+    font-size: 0.775rem;
+    background-color: #5D737E;
+    color: #F3FFC6;
+}
 
 /*************** INFORMATION SECTION **/
 
