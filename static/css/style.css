@@ -10,11 +10,12 @@ TOMATOE  FF6542
 body{
     margin: 0;
 }
-
 /****************************** HEADER */
+
 header div{
     margin: 0 auto;
-    height: 70px;
+    height: 75px;
+    background-color: #ffffff;
 }
 
 input[type="search"]{
@@ -30,10 +31,10 @@ input[type="search"]{
 }
 
 .btn.search{
-   position:relative;
-   right:55px;
+   position:absolute;
+   left:280px;
+   bottom: 12px;
 }
-
 
 i.fa-solid.fa-magnifying-glass{
     color: #b3bcc7;
@@ -51,6 +52,11 @@ i.fa-solid.fa-truck{
     color: #F3FFC6;
 }
 
+header h1{
+margin-top: 10px;
+letter-spacing: 2px;
+color:rgb(122, 13, 13);
+}
 .in-dublin{
     color: #e3b837;
 }
@@ -62,6 +68,8 @@ i.fa-solid.fa-truck{
    position:absolute;
    top:150px;
    background-color: hsl(0, 100%, 97%);
+   z-index: 99;
+   display: none;
 }
 .burger-menu ul li{
     height: 45px;
@@ -73,6 +81,14 @@ i.fa-solid.fa-truck{
    text-decoration: none;
    color: #000000;
    justify-content: space-around;
+}
+
+.burger-hide{
+    display: none;
+}
+
+.burger-show{
+    display: block;
 }
 
 /*************** HERO SECTION **/

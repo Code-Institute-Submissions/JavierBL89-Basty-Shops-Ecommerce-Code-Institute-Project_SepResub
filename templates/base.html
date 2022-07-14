@@ -38,13 +38,13 @@
   <body>
     <div class="main-wraper container-fluid pe-0 ps-0">
 
-          <header class="container-fluid pe-3 ps-3">
+          <header class="container-fluid pe-3 ps-3 sticky-top">
             <div class="row d-flex flex-row">
               <div class="col-3 col-lg-4 d-inline-flex text-md-start ps-0 ps-md-3 ps-lg-3">
-                <button class="burger" href="#">
+                <button class="burger" id="burger" href="#">
                 <i class="fa-solid fa-bars fa-2xl sm-fa-xl"></i>
                 </button>
-                {% include 'includes/burger_menu.html %}
+                {% include 'includes/burger_menu.html' %}
                 <!--- SEARCHER FORM---->
                 <form method="GET" action="#" class="d-none d-lg-block d-flex" role="search">
                   <input class="ms-3 mt-3 d-inline" type="text" name="q" placeholder="Search" aria-label="Search">
@@ -52,7 +52,7 @@
                 </form>
                 <!---->
               </div>
-              <div class="col-6 col-lg-4 mt-4 mt-md-2 mt-lg-auto text-center d-sm-inline">
+              <div class="col-6 col-lg-4 text-center d-sm-inline">
                 <h1 class="store-name fs-2">Basty shops</h1>
               </div>
               <div class="col-3 col-lg-4 d-sm-inline pe-0 pe-md-3 pe-lg-3">
@@ -78,9 +78,9 @@
                     <a class="nav-link" href="#">
                           <i class="fa-solid fa-heart fa-xl"></i></a>
                   </li>
-                  <li class="">
+                  <li class=" text-center">
                     <a class="nav-link {% if grand_total %} text-info fw-bold {% else %} text-black {% endif %}" href="#"  aria-current="page">
-                      <div class="text-center"> 
+                      <!-- <div class="text-center">  -->
                         <i class="fa-solid fa-bag-shopping fa-xl"></i>
                         <p class="my-0">
                           {% if grand_total %}
@@ -89,7 +89,7 @@
                           0.00
                           {% endif %}
                         </p>
-                      </div>
+                      <!-- </div> -->
                       
                     </a>
                   </li>
@@ -137,7 +137,7 @@
     </section>
     {% block post_load_js %}
 
-    
+    <script src="{% static 'jquery/burgerMenu.js' %}"></script>
     {% endblock %}
 
     
