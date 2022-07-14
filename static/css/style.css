@@ -83,36 +83,72 @@ i.fa-solid.fa-truck{
 /*************** HERO SECTION **/
 .hero-wraper{
     position: relative;
+    width: 100%;
+    padding: 0;
+}
+/* 
+.container-fluid .row{
+    margin: 30px auto;
+}
+ .hero-box-1, .hero-box-2{
+    height: 700px;
 }
 
-#hero-box{
-    width:100%;
-    height: 375px;
+.hero-box-1{
+    position: relative;
+    left: 40px;
 }
-.hero-1{
+
+ .hero-img-1{
     background-image: url("/media/images/4281ed2bc5ec72314ec87868900de96ebb90cdfd_cmq0567_1.jpg");
     background-position: center;
     background-size: cover;
+    height: 99%;
+    width: 95%;
 }
-.hero-2{
-    background-image: url("/media/images/b182e410ebd2a2e5d6861c1ecf30a53677801ee0_cmw6771_1.jpg");
+.hero-img-2{
+    background-image: url("/media/images/images (3).jpg");
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
+    width: 95%;
+
+} */
+
+.hero-box-1,
+.hero-box-2{
+    height: 800px;
+text-align: center;
 }
-/* 
+
+.hero-box-1{
+position: relative;
+left:40px;
+}
+
+.hero-box-2{
+    position: relative;
+    right:40px;
+    }
+
+img{
+    width:80%;
+    height: 80%;
+}
+
 .hero-1-text{
     position: absolute;
     top: 270px;
-    left:280px;
+    left:90px;
     color: #F3FFC6;
 }
 
 .hero-2-text{
     position: absolute;
     top: 30px;
-    right:285px;
+    right:100px;
     color: #FF6542;
-} */
+}
 
 
 /************ CATEGORIES SECTION */
@@ -204,8 +240,48 @@ i.fa-solid.fa-truck{
 }
 
 /*************** HERO SECTION **/
+.hero-wraper{
+    position: relative;
+    width: 100%;
+    padding: 0;
+}
 
-  
+.hero-box-1,
+.hero-box-2{
+    height: 520px;
+    text-align: center;
+}
+
+.hero-box-1{
+position: relative;
+left:0;
+}
+
+.hero-box-2{
+    position: relative;
+    right:0;
+    margin-top: 10px;
+    }
+
+img{
+    width:90%;
+    height: 100%;
+}
+
+.hero-1-text{
+    position: absolute;
+    top: 120px;
+    left:60px;
+    color: #F3FFC6;
+}
+
+.hero-2-text{
+    position: absolute;
+    top: 30px;
+    right:70px;
+    color: #FF6542;
+}
+
 
  /************** NEW ARRIVALS SECTION ***/
 
@@ -275,8 +351,46 @@ i.fa-solid.fa-truck{
 }
 
 /*************** HERO SECTION **/
+.hero-wraper{
+    position: relative;
+    width: 100%;
+    padding: 0;
+}
 
-  
+.hero-box-1,
+.hero-box-2{
+    height: 700px;
+    text-align: center;
+}
+
+.hero-box-1{
+position: relative;
+left:0;
+}
+
+.hero-box-2{
+    position: relative;
+    right:0;
+    margin-top: 10px;
+    }
+
+img{
+    width:65%;
+    height: 100%;
+}
+
+.hero-1-text{
+    position: absolute;
+    top: 270px;
+    left:170px;
+}
+
+.hero-2-text{
+    position: absolute;
+    top: 30px;
+    right:180px;
+}
+
 
   /************** NEW ARRIVALS SECTION ***/
 
