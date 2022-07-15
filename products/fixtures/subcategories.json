@@ -1,0 +1,70 @@
+
+[{"pk": 1,
+"category": 3,
+"model": "products.subcategory",
+"fields": {
+    "name": "mid-heel",
+    "friendly_name": "Mid heel"
+    }
+},
+{"pk": 2,
+"category": 3,
+"model": "products.subcategories",
+"fields": {
+    "name": "high-heel",
+    "friendly_name": "High heel"
+    }
+},
+{"pk": 3,
+"category": 3,
+"model": "products.subcategories",
+"fields": {
+    "name": "low-heel",
+    "friendly_name": "Low heel"
+    }
+},
+
+
+{"pk": 3,
+"category": 1,
+"model": "products.subcategory",
+"fields": {
+    "name": "ankle-boots",
+    "friendly_name": "Ankel Boots"
+    }
+},
+{"pk": 4,
+"category": 1,
+"model": "products.subcategories",
+"fields": {
+    "name": "knee-boots",
+    "friendly_name": "Knee Boots"
+    }
+},
+{"pk": 5,
+"category": 1,
+"model": "products.subcategories",
+"fields": {
+    "name": "ankle-platform-boots",
+    "friendly_name": "Ankel Platform Boots"
+    }
+},
+
+
+{"pk": 6,
+"category": 2,
+"model": "products.subcategory",
+"fields": {
+    "name": "adidas",
+    "friendly_name": "Adidas"
+    }
+},
+{"pk": 7,
+"category": 2,
+"model": "products.subcategory",
+"fields": {
+    "name": "nike",
+    "friendly_name": "Nike"
+    }
+}]
+

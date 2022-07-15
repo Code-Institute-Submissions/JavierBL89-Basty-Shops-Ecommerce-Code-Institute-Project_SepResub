@@ -177,7 +177,7 @@ img{
     width: 100%;
 }
 .category-img{
-    height:inherit;
+    height:200px;
     width: 100%;
 }
 .category-title{
@@ -205,6 +205,10 @@ img{
 
 /************** NEW ARRIVALS SECTION ***/
 
+.new-arrivals-container{
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
 .carousel-inner{
     height: 500px;
     width: 100%;
@@ -243,7 +247,7 @@ img{
 /************ FOOTER */
 
 .container-footer{
-    margin-top: 8%;
+    margin-top: 5%;
 }
 .container-footer .column{
     padding-top: 2%;

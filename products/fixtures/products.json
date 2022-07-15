@@ -1,0 +1,225 @@
+
+
+[{"pk": 1,
+  "model": "products.product",
+  "fields": {
+      "sku": "pp5001340155",
+      "name": "PRESTONE Hiker Boots",
+      "description": "The Prestone boot from Dune will add edge to your footwear line-up. Resting on a comfortable low block heel and shaped with a round toe. It's fitted with a pull tab and secured with a stylish lace-up fastening.",
+      "price": 53.99,
+      "category": 1,
+      "subcategory": 3,
+      "reviews": [{
+        "comment": "",
+        "rating":  4.6
+      }],
+      "details":[
+        {
+        "Heel height": "2cm",
+        "Upper Material":	"Leather",
+        "Lining Material":	"Fabric/Leather (upper), Leather Footbed",
+        "Fastening":	"Zip",
+        "Outsole":	"Slip-Resistant Rubber",
+        "Technology":	"CushX"
+        }
+      ],
+      "sizes": [
+        {"size": 36, "stock": 2},
+        {"size": 37, "stock": 1},
+        {"size": 38, "stock": 0}
+      ],
+      "image": "PRESTONE-0092501020013509_Side.webp",
+      "images_list": [
+                {"image": "PRESTONE-0092501020013509_Side.webp", "image_url": "" },
+                {"image": "PRESTONE-0092501020013509_Diagonal.webp", "image_url": ""},
+                {"image": "PRESTONE-0092501020013509_Back.webp", "image_url": ""},
+                {"image": "PRESTONE-0092501020013509_Detail.webp", "image_url": ""}
+              ]
+      }
+},
+{"pk": 2,
+  "model": "products.product",
+  "fields": {
+      "sku": "pp5001340156",
+      "name": "PILAR Leather Ankle Boots",
+      "description": "Forget hard and heavy, these are soft and light. This ankle-boot version of our bestselling Pilar has a casual-cool 70s vibe. Sporting chunky heels, leather uppers, stitch detail and a full inside zip for easy on/off.",
+      "price": 53.99,
+      "category": 1,
+      "subcategory": 3,
+      "reviews": [{
+        "comment": "",
+        "rating":  4.6
+      }],
+      "details":[
+        {
+        "Heel mesurement": "3.5 CM",
+        "Boot Height": "3.5 CM",
+        "Upper Material":	"Leather",
+        "Lining ":	"Fabric/Leather",
+        "Fastening":	"Zip",
+        "Outsole":	"Slip-Resistant Rubber",
+        "Material": "Leather"
+        }
+      ],
+      "sizes": [
+        {"size": 36, "stock": 2},
+        {"size": 37, "stock": 1},
+        {"size": 38, "stock": 0}
+      ],
+      "image": "PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894.webp",
+      "images_list": [
+                {"image": "PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894.webp", "image_url": ""},
+                {"image": "PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894_2.webp", "image_url": "" },
+                {"image": "PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894_1.webp", "image_url": ""},
+                {"image": "PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894_3.webp", "image_url": ""}
+              ]
+      }
+},
+{"pk": 3,
+  "model": "products.product",
+  "fields": {
+      "sku": "pp5001340157",
+      "name": "CLAUDIA Suede Ankle Boots",
+      "description": "Forget hard and heavy, these are soft and light. This ankle-boot version of our bestselling Pilar has a casual 70s vibe. Sporting chunky heels, suede uppers and a full inside zip. With a full shearling lining for extra cosiness.",
+      "price": 35.99,
+      "details": [
+        {
+          "Heel height": "75.3mm",
+          "Upper Material":	"Suede",
+          "Lining Material":	"Shearling Wool",
+          "Fastening":	"Zip",
+          "Outsole":	"Slip-Resistant Rubber",
+          "Technology":	"CushX"
+        }
+      ],
+      "category": 1,
+      "subcategory": 3,
+      "reviews": [{
+        "comment": "",
+        "rating":  4.6
+      }],
+      "sizes": [
+        {"size": 36, "stock": 2},
+        {"size": 37, "stock": 1},
+        {"size": 38, "stock": 0}
+      ],
+      "image": "CLAUDIA-SUEDE-ANKLE-BOOTS-ALL-BLACK_EF4-090.webp",
+      "images_list": [
+                {"image": "CLAUDIA-SUEDE-ANKLE-BOOTS-ALL-BLACK_EF4-090.webp", "image_url":"" },
+                {"image": "CLAUDIA-SUEDE-ANKLE-BOOTS-ALL-BLACK_EF4-090_2.webp", "image_url":"" },
+                {"image": "CLAUDIA-SUEDE-ANKLE-BOOTS-ALL-BLACK_EF4-090_1.webp", "image_url": ""},
+                {"image": "CLAUDIA-SUEDE-ANKLE-BOOTS-ALL-BLACK_EF4-090_3.webp", "image_url": ""}
+              ]
+      }
+},
+
+{"pk": 4,
+  "model": "products.product",
+  "fields": {
+      "sku": "pp5001340158",
+      "name": "PILAR Suede Ankle Boots",
+      "description": "Forget hard and heavy, these are soft and light. This ankle-boot version of our bestselling Pilar has a casual 70s vibe. Sporting chunky heels, suede uppers and a full inside zip. With a full shearling lining for extra cosiness.",
+      "price": 35.99,
+      "details": [
+        {
+          "Heel mesurement": "75.3mm",
+          "Upper Material":	"Suede",
+          "Lining Material":	"Shearling Wool",
+          "Fastening":	"Zip",
+          "Outsole":	"Slip-Resistant Rubber",
+          "Technology":	"CushX"
+        }
+      ],
+      "category": 1,
+      "subcategory": 5,
+      "reviews": [{
+        "comment": "",
+        "rating":  4.6
+      }],
+      "sizes": [
+        {"size": 36, "stock": 2},
+        {"size": 37, "stock": 1},
+        {"size": 38, "stock": 0}
+      ],
+      "images": [
+                {"image": "PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894.webp", "image_url": ""},
+                {"image": "PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894_2.webp", "image_url":"" },
+                {"image": "PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894_1.webp", "image_url": ""},
+                {"image": "PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894_3.webp", "image_url": ""}
+              ]
+      }
+},
+{"pk": 5,
+  "model": "products.product",
+  "fields": {
+      "sku": "pp5001340159",
+      "name": "CLAUDIA Suede Ankle Boots",
+      "description": "Forget hard and heavy, these are soft and light. This ankle-boot version of our bestselling Pilar has a casual 70s vibe. Sporting chunky heels, suede uppers and a full inside zip. With a full shearling lining for extra cosiness.",
+      "price": 35.99,
+      "details": [
+        {
+          "Heel height": "75.3mm",
+          "Upper Material":	"Suede",
+          "Lining Material":	"Shearling Wool",
+          "Fastening":	"Zip",
+          "Outsole":	"Slip-Resistant Rubber",
+          "Technology":	"CushX"
+        }
+      ],
+      "category": 1,
+      "subcategory": 5,
+      "reviews": [{
+        "comment": "",
+        "rating":  4.6
+      }],
+      "sizes": [
+        {"size": 36, "stock": 2},
+        {"size": 37, "stock": 1},
+        {"size": 38, "stock": 0}
+      ],
+      "image": "CLAUDIA-SUEDE-ANKLE-BOOTS-ALL-BLACK_EF4-090.webp",
+      "images_list": [
+                {"image": "CLAUDIA-SUEDE-ANKLE-BOOTS-ALL-BLACK_EF4-090.webp", "image_url": ""},
+                {"image": "CLAUDIA-SUEDE-ANKLE-BOOTS-ALL-BLACK_EF4-090_2.webp", "image_url": ""},
+                {"image": "CLAUDIA-SUEDE-ANKLE-BOOTS-ALL-BLACK_EF4-090_1.webp", "image_url": ""},
+                {"image": "CLAUDIA-SUEDE-ANKLE-BOOTS-ALL-BLACK_EF4-090_3.webp", "image_url": ""}
+              ]
+      }
+},
+
+{"pk": 6,
+  "model": "products.product",
+  "fields": {
+      "sku": "pp5001340160",
+      "name": "ROSALIA Buckle Knee High Boots",
+      "description": "A classic equestrian silhouette with a buckled strap on the topline our leather knee-high boots are a timeless style that will never date. With an inside zip fastening and a stretch insert ensuring a close fit on the calf.",
+      "price": 42.99,
+      "details": [
+        {
+          "Heel Measurement": "3 CM",
+          "Sole": "Rubber",
+          "Lining": "Synthetic",
+          "Material": "Leather"
+        }
+      ],
+      "category": 1,
+      "subcategory": 5,
+      "reviews": [{
+        "comment": "",
+        "rating":  4.6
+      }],
+      "sizes": [
+        {"size": 36, "stock": 2},
+        {"size": 37, "stock": 1},
+        {"size": 38, "stock": 0}
+      ],
+      "image": "TREND-0089501020017509_Side.webp",
+      "images": [
+                {"image": "TREND-0089501020017509_Side.webp", "image_url": ""},
+                {"image": "TREND-0089501020017509_Model.webp", "image_url": ""},
+                {"image": "TREND-0089501020017509_Back.webp", "image_url": ""},
+                {"image": "TREND-0089501020017509_Detail.webp", "image_url": ""}
+              ]
+      }
+}
+]

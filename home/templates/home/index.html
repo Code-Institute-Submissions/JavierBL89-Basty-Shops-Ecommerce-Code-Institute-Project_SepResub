@@ -3,6 +3,7 @@
 
 {% block content %}
 
+<!---------------------------------- HERO SECTION ----------->
 <section id="hero">
 <div class="container-fluid  mt-2 ms-0 me-0">
     <div class="row shipping-info">
@@ -37,7 +38,7 @@
     </div>
 </div>    
 </section>
-
+<!------------------------------- CATEGORIES SECTION ----------->
 <section id="categories">
     <div class="container-fluid container-categories ps-3 pe-3 mb-5">
         <div class="row">
@@ -52,7 +53,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
                 <a href="">
                     <div class="category-box boots-box-category">
-                        <img clas="category-img" src="{% static '/media/images/images (1).jpg' %}" alt="boots-category">
+                        <img clas="category-img" src="{% static '/media/images/images_(1).jpg' %}" alt="boots-category">
                             <h3 class="boots-title category-title">BOOTS</h3>
                     </div>
                 </a>
@@ -60,7 +61,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
                 <a href="">
                     <div class="category-box sneakers-box-category">
-                        <img clas="category-img" src="{% static '/media/images/images (5).jpg' %}" alt="sneaker-category">
+                        <img clas="category-img" src="{% static '/media/images/images_(5).jpg' %}" alt="sneaker-category">
                         <h3 class="shoes-title category-title">SNEAKERS</h3>
                     </div>
                 </a>
@@ -69,10 +70,11 @@
     </div>
 </section>
 
+<!---------------------------- NEW ARRIVALS SECTION ----------->
 <section id="new-arrivals">
-    <div class="container-fluid new-arrivals-container my-5">
+    <div class="container-fluid new-arrivals-container">
         <div class="row">
-            <h6 class="text-center text-mute mb-0">Just walked in</h6>
+            <h6 class="text-center text-muted mb-0">Just walked in</h6>
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active indicator " aria-current="true" aria-label="Slide 1"></button>
@@ -154,22 +156,10 @@
         </div>
 
     </div>
-    
 </section>
-
-<section id="store-information">
-    <div class="row mb-5">
-        <div class="col-lg-4 col-sm-4">
-            <div class="shipping-info-box information-box"></div>
-        </div>
-        <div class="col-lg-4 col-sm-4">
-            <div class="returns-info-box information-box"></div>
-        </div>
-        <div class="col-lg-4 col-sm-4">
-            <div class="subscription-info-box information-box"></div>
-        </div>
-    </div>
-</section>
+<!-------------------------- INFORMATION SECTION ----------->
+{% include 'includes/info_section_home.html' %}
+<!------------>
 {% endblock %}
 
 {% block postloadjs %}
