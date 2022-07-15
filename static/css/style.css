@@ -173,16 +173,35 @@ img{
 }
 
 .category-box{
-    background-color: #a4c8f5;
     height: 300px;
+    width: 100%;
 }
-
+.category-img{
+    height:inherit;
+    width: 100%;
+}
 .category-title{
     position: relative;
     top: 240px;
     left: 10px;
     letter-spacing: 3px;
 }
+
+/* .category-img-shoes{
+    background-image: url("/media/images/fzz18201.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 90%;
+}
+.category-img-boots{
+    background-image: url("/media/images/images (1).jpg") ;
+    background-position: center;
+    background-size: cover;
+}
+.category-img-sneakers{
+    background-image: url("/media/images/images (5).jpg") cover center no-repeat;
+
+} */
 
 /************** NEW ARRIVALS SECTION ***/
 
@@ -223,10 +242,12 @@ img{
 
 /************ FOOTER */
 
+.container-footer{
+    margin-top: 8%;
+}
 .container-footer .column{
     padding-top: 2%;
-    margin-top: 2%;
-
+    border-color: rgb(122, 13, 13);
 }
 
 .logo-footer-box img{
