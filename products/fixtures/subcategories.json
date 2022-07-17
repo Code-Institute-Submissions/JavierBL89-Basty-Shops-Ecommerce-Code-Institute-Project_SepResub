@@ -9,7 +9,7 @@
 },
 {"pk": 2,
 "category": 3,
-"model": "products.subcategories",
+"model": "products.subcategory",
 "fields": {
     "name": "high-heel",
     "friendly_name": "High heel"
@@ -17,13 +17,12 @@
 },
 {"pk": 3,
 "category": 3,
-"model": "products.subcategories",
+"model": "products.subcategory",
 "fields": {
     "name": "low-heel",
     "friendly_name": "Low heel"
     }
 },
-
 
 {"pk": 3,
 "category": 1,
@@ -35,7 +34,7 @@
 },
 {"pk": 4,
 "category": 1,
-"model": "products.subcategories",
+"model": "products.subcategory",
 "fields": {
     "name": "knee-boots",
     "friendly_name": "Knee Boots"
@@ -43,13 +42,12 @@
 },
 {"pk": 5,
 "category": 1,
-"model": "products.subcategories",
+"model": "products.subcategory",
 "fields": {
     "name": "ankle-platform-boots",
     "friendly_name": "Ankel Platform Boots"
     }
 },
-
 
 {"pk": 6,
 "category": 2,
