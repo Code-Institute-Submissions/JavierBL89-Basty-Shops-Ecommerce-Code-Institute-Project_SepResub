@@ -1,8 +1,10 @@
 from django.contrib import admin
 from .models import Category, Subcategory, Product, ProductDetail, Review, Size, Image
+
 # Register your models here.
 
 
+@admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
 
     list_display = (
@@ -14,6 +16,7 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ['name']
 
 
+@admin.register(Subcategory)
 class SubcategoryAdmin(admin.ModelAdmin):
 
     list_display = (
@@ -25,6 +28,7 @@ class SubcategoryAdmin(admin.ModelAdmin):
     search_fields = ['name']
 
 
+@admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
 
     list_display = (
@@ -39,6 +43,7 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = ['name', 'sku', 'category', 'subcategory_id']
 
 
+@admin.register(ProductDetail)
 class ProductDetailsAdmin(admin.ModelAdmin):
 
     list_display = (
@@ -46,9 +51,9 @@ class ProductDetailsAdmin(admin.ModelAdmin):
     )
     list_filter = ('product_id',)
     search_fields = ['product_id']
-    
 
 
+@admin.register(Review)
 class ReviewsAdmin(admin.ModelAdmin):
 
     list_display = (
@@ -59,6 +64,7 @@ class ReviewsAdmin(admin.ModelAdmin):
     search_fields = ['product_id']
 
 
+@admin.register(Image)
 class ImagesAdmin(admin.ModelAdmin):
 
     list_display = (
@@ -68,6 +74,7 @@ class ImagesAdmin(admin.ModelAdmin):
     search_fields = ['product_id']
 
 
+@admin.register(Size)
 class SizesAdmin(admin.ModelAdmin):
 
     list_display = (
@@ -77,13 +84,4 @@ class SizesAdmin(admin.ModelAdmin):
     )
     list_filter = ('product_id', 'size')
     search_fields = ['product_id', 'size']
-
-
-admin.site.register(Category, CategoryAdmin)
-admin.site.register(Subcategory, SubcategoryAdmin)
-admin.site.register(Product, ProductAdmin)
-admin.site.register(ProductDetail, ProductDetailsAdmin)
-admin.site.register(Review, ReviewsAdmin)
-admin.site.register(Size, SizesAdmin)
-admin.site.register(Image, ImagesAdmin)
 
