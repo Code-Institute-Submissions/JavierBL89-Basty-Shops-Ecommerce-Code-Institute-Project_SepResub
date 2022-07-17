@@ -97,34 +97,6 @@ color:rgb(122, 13, 13);
     width: 100%;
     padding: 0;
 }
-/* 
-.container-fluid .row{
-    margin: 30px auto;
-}
- .hero-box-1, .hero-box-2{
-    height: 700px;
-}
-
-.hero-box-1{
-    position: relative;
-    left: 40px;
-}
-
- .hero-img-1{
-    background-image: url("/media/images/4281ed2bc5ec72314ec87868900de96ebb90cdfd_cmq0567_1.jpg");
-    background-position: center;
-    background-size: cover;
-    height: 99%;
-    width: 95%;
-}
-.hero-img-2{
-    background-image: url("/media/images/images (3).jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 95%;
-
-} */
 
 .hero-box-1,
 .hero-box-2{
@@ -161,7 +133,6 @@ img{
     color: #FF6542;
 }
 
-
 /************ CATEGORIES SECTION */
 
 .container-categories{
@@ -186,22 +157,6 @@ img{
     left: 10px;
     letter-spacing: 3px;
 }
-
-/* .category-img-shoes{
-    background-image: url("/media/images/fzz18201.jpg");
-    background-position: center;
-    background-size: cover;
-    height: 90%;
-}
-.category-img-boots{
-    background-image: url("/media/images/images (1).jpg") ;
-    background-position: center;
-    background-size: cover;
-}
-.category-img-sneakers{
-    background-image: url("/media/images/images (5).jpg") cover center no-repeat;
-
-} */
 
 /************** NEW ARRIVALS SECTION ***/
 
@@ -261,6 +216,51 @@ img{
 .footer-bg{
     color: rgb(122, 13, 13);
 }
+
+/********* PRODUCTS PAGE */
+
+.card{
+    width:100%;
+    height: 230px;
+}
+
+.card-button{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    /* background-color: rgb(122, 55, 55); */
+background-color: #5D737E;
+   color: rgb(255, 255, 255); 
+    border-color: inherit;
+}
+
+.card-button:hover{
+    background-color: rgb(122, 55, 55);
+    border-color: rgb(122, 55, 55);
+
+}
+
+.badges-container a{
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+}
+
+.badge{
+    background-color: rgb(122, 55, 55);
+    font-size: 0.600rem;
+    width: 130px;
+    letter-spacing: 2px;
+    padding: 8px;
+
+}
+.badge:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(122, 13, 13);
+    transition-duration: 0.5s;
+
+}
+
+
  /******************************************************************** MOBILE SCREEN */
  @media only screen and (min-width: 320px) and (max-width: 600px) {
   
@@ -385,6 +385,10 @@ img{
 .logo-footer-box img{
     width: 20%;
 }
+
+/******* PRODUCTS PAGE ***/
+
+
  }
   /******************************************************************** TABLET SCREEN */
   @media only screen and (min-width:640px) and (max-width:950px) {

@@ -4,7 +4,8 @@
   "model": "products.product",
   "fields": {
       "sku": "pp5001340155",
-      "name": "PRESTONE Hiker Boots",
+      "name": "PRESTONE",
+      "title": "Hiker Boots",
       "description": "The Prestone boot from Dune will add edge to your footwear line-up. Resting on a comfortable low block heel and shaped with a round toe. It's fitted with a pull tab and secured with a stylish lace-up fastening.",
       "price": 53.99,
       "category": 1,
@@ -20,7 +21,8 @@
   "model": "products.product",
   "fields": {
       "sku": "pp5001340156",
-      "name": "PILAR Leather Ankle Boots",
+      "name": "PILAR",
+      "title": "Leather Ankle Boots",
       "description": "Forget hard and heavy, these are soft and light. This ankle-boot version of our bestselling Pilar has a casual-cool 70s vibe. Sporting chunky heels, leather uppers, stitch detail and a full inside zip for easy on/off.",
       "price": 53.99,
       "category": 1,
@@ -36,7 +38,8 @@
   "model": "products.product",
   "fields": {
       "sku": "pp5001340157",
-      "name": "CLAUDIA Suede Ankle Boots",
+      "name": "CLAUDIA",
+      "title": "Suede Ankle Boots",
       "description": "Forget hard and heavy, these are soft and light. This ankle-boot version of our bestselling Pilar has a casual 70s vibe. Sporting chunky heels, suede uppers and a full inside zip. With a full shearling lining for extra cosiness.",
       "price": 35.99,
       "product_details":null,
@@ -53,7 +56,8 @@
   "model": "products.product",
   "fields": {
       "sku": "pp5001340158",
-      "name": "PILAR Suede Ankle Boots",
+      "name": "PILAR",
+      "title": "Suede Ankle Boots",
       "description": "Forget hard and heavy, these are soft and light. This ankle-boot version of our bestselling Pilar has a casual 70s vibe. Sporting chunky heels, suede uppers and a full inside zip. With a full shearling lining for extra cosiness.",
       "price": 35.99,
       "product_details": null,
@@ -69,7 +73,8 @@
   "model": "products.product",
   "fields": {
       "sku": "pp5001340159",
-      "name": "CLAUDIA Suede Ankle Boots",
+      "name": "CLAUDIA",
+      "title": "Suede Ankle Boots",
       "description": "Forget hard and heavy, these are soft and light. This ankle-boot version of our bestselling Pilar has a casual 70s vibe. Sporting chunky heels, suede uppers and a full inside zip. With a full shearling lining for extra cosiness.",
       "price": 35.99,
       "product_details":null,
@@ -86,7 +91,8 @@
   "model": "products.product",
   "fields": {
       "sku": "pp5001340160",
-      "name": "ROSALIA Buckle Knee High Boots",
+      "name": "ROSALIA",
+      "title": "Buckle Knee High Boots",
       "description": "A classic equestrian silhouette with a buckled strap on the topline our leather knee-high boots are a timeless style that will never date. With an inside zip fastening and a stretch insert ensuring a close fit on the calf.",
       "price": 42.99,
       "product_details": null,

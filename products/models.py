@@ -43,6 +43,7 @@ class Product(models.Model):
     subcategory_id = models.ForeignKey('Subcategory', null=True, blank=True, on_delete=models.SET_NULL,
                                       related_name='subcategory_id')
     name = models.CharField(max_length=254)
+    title = models.CharField(max_length=254, null=True)
     sku = models.CharField(max_length=254, null=True, blank=True)
     description = models.TextField(null=True)
     product_details = models.ForeignKey('ProductDetail', null=True, blank=True, on_delete=models.SET_NULL)
