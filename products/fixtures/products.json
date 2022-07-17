@@ -12,7 +12,7 @@
       "product_reviews": null,
       "product_details":null,
       "sizes_list": null,
-      "image_url": "PRESTONE-0092501020013509_Side.jpg",
+      "cover_image": "PRESTONE-0092501020013509_Side.jpg",
       "images_list": null
       }
 },
@@ -28,7 +28,7 @@
       "product_reviews": null,
       "product_details":null,
       "sizes_list": null,
-      "image_url": "PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894.jpg",
+      "cover_image": "PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894.jpg",
       "images_list": null
       }
 },
@@ -44,7 +44,7 @@
       "subcategory_id": 3,
       "product_reviews": null,
       "sizes_list": null,
-      "image_url": "CLAUDIA-SUEDE-ANKLE-BOOTS-ALL-BLACK_EF4-090.jpg",
+      "cover_image": "CLAUDIA-SUEDE-ANKLE-BOOTS-ALL-BLACK_EF4-090.jpg",
       "images_list": null
       }
 },
@@ -61,7 +61,7 @@
       "subcategory_id": 5,
       "product_reviews": null,
       "sizes_list": null,
-      "image_url": "PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894.jpg",
+      "cover_image": "PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894.jpg",
       "images_list": null
       }
 },
@@ -77,7 +77,7 @@
       "subcategory_id": 5,
       "product_reviews": null,
       "sizes_list": null,
-      "image_url": "CLAUDIA-SUEDE-ANKLE-BOOTS-ALL-BLACK_EF4-090.jpg",
+      "cover_image": "CLAUDIA-SUEDE-ANKLE-BOOTS-ALL-BLACK_EF4-090.jpg",
       "images_list": null
       }
 },
@@ -94,7 +94,7 @@
       "subcategory_id": 5,
       "product_reviews": null,
       "sizes_list": null,
-      "image_url": "TREND-0089501020017509_Side.jpg",
+      "cover_image": "TREND-0089501020017509_Side.jpg",
       "images_list": null
       }
 }

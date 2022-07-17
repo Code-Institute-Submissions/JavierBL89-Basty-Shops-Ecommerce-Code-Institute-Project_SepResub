@@ -84,4 +84,3 @@ class SizesAdmin(admin.ModelAdmin):
     )
     list_filter = ('product_id', 'size')
     search_fields = ['product_id', 'size']
-

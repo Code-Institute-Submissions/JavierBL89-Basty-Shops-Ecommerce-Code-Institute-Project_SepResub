@@ -49,7 +49,7 @@ class Product(models.Model):
     sizes_list = models.ForeignKey('Size', null=True, blank=True, on_delete=models.SET_NULL)
     product_reviews = models.ForeignKey('Review', null=True, blank=True, on_delete=models.SET_NULL)
     price = models.DecimalField(max_digits=7, decimal_places=2)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
+    cover_image = models.ImageField(null=True, blank=True)
     images_list = models.ForeignKey('Image', null=True, blank=True, on_delete=models.SET_NULL)
 
     def __string__(self):
