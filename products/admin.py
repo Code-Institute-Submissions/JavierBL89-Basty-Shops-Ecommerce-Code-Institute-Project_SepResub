@@ -10,6 +10,8 @@ class CategoryAdmin(admin.ModelAdmin):
         'name',
         'pk'
     )
+    list_filter = ('name', )
+    search_fields = ['name']
 
 
 class SubcategoryAdmin(admin.ModelAdmin):
@@ -19,6 +21,8 @@ class SubcategoryAdmin(admin.ModelAdmin):
         'name',
         'pk'
     )
+    list_filter = ('name',)
+    search_fields = ['name']
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -28,8 +32,11 @@ class ProductAdmin(admin.ModelAdmin):
         'name',
         'category',
         'subcategory_id',
+        'pk',
     )
     ordering = ('sku',)
+    list_filter = ('name', 'category', 'subcategory_id')
+    search_fields = ['name', 'sku', 'category', 'subcategory_id']
 
 
 class ProductDetailsAdmin(admin.ModelAdmin):
@@ -37,6 +44,9 @@ class ProductDetailsAdmin(admin.ModelAdmin):
     list_display = (
         'product_id',
     )
+    list_filter = ('product_id',)
+    search_fields = ['product_id']
+    
 
 
 class ReviewsAdmin(admin.ModelAdmin):
@@ -45,6 +55,8 @@ class ReviewsAdmin(admin.ModelAdmin):
         'product_id',
         'rating',
     )
+    list_filter = ('product_id',)
+    search_fields = ['product_id']
 
 
 class ImagesAdmin(admin.ModelAdmin):
@@ -52,6 +64,8 @@ class ImagesAdmin(admin.ModelAdmin):
     list_display = (
         'product_id',
     )
+    list_filter = ('product_id',)
+    search_fields = ['product_id']
 
 
 class SizesAdmin(admin.ModelAdmin):
@@ -61,6 +75,8 @@ class SizesAdmin(admin.ModelAdmin):
         'size',
         'stock',
     )
+    list_filter = ('product_id', 'size')
+    search_fields = ['product_id', 'size']
 
 
 admin.site.register(Category, CategoryAdmin)
