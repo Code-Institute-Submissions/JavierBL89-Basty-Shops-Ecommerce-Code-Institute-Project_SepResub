@@ -260,7 +260,40 @@ background-color: #5D737E;
 
 }
 
+.size-box{
+    border: solid 1px rgb(122, 13, 13);
+}
+/***** DELETE THI LINE  WHEN JQUERY USED*/
+.size-box:hover{
+    background-color:  rgb(122, 13, 13);
+    color: #ffffff;
+}
 
+.size-link{
+    text-decoration: none;
+    color:#000000;
+}
+
+
+.fa-regular{
+    color: rgb(122, 13, 13);
+}
+
+.add-to-bag-button-container button{
+    width: 65%;
+    background-color: rgb(122, 13, 13);
+    color: #ffffff;
+    font-size: 0.900rem;
+    font-weight: bold;
+}
+.add-to-bag-button-container button:hover{
+    width: 65%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(122, 13, 13);
+    border-color: rgb(122, 13, 13);;
+    font-size: 0.900rem;
+    font-weight: bold;
+}
  /******************************************************************** MOBILE SCREEN */
  @media only screen and (min-width: 320px) and (max-width: 600px) {
   

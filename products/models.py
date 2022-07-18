@@ -51,7 +51,7 @@ class Product(models.Model):
     product_reviews = models.ForeignKey('Review', null=True, blank=True, on_delete=models.SET_NULL)
     price = models.DecimalField(max_digits=7, decimal_places=2)
     cover_image = models.ImageField(null=True, blank=True)
-    images_list = models.ForeignKey('Image', null=True, blank=True, on_delete=models.SET_NULL)
+    images_list = models.BooleanField(default=False, null=True, blank=True)
 
     def __string__(self):
         return self.name
