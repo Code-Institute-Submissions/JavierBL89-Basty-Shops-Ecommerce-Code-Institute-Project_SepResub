@@ -14,8 +14,10 @@
             <div class="row">
                 <div class="images-list-container d-flex offset-3">
                     {% if product.images_list %}
-                    {% for image in image_list %}
-                    <div class="col-2">{{ image }}</div>
+                    {% for image in images_list %}
+                    <div class="col-2 mt-3">
+                        <img src="{{ image }}" alt="{{ product.title }}-img">
+                    </div>
                     {% endfor %}
                     {% endif %}
                 </div>
@@ -73,8 +75,45 @@
                 </div>
             </div>   
         </div>
-        {% endif %}
+        
     </div>
+    <div class="row">
+        <div class="product-info-container mt-5 px-5 d-flex">
+            <div class="col-4 text-start ms-1">
+                <div class="product-description-box px-2 py-2">
+                    <h6 class="text-start text-b fs-6">Description</h6>
+                    <p class="mt-4">{{ product.description }}</p>
+                </div>
+            </div>
+            <div class="col-4 ms-1 border-start">
+                <div class="product-details-box text-start px-2 py-2">
+                    <div class="row">
+                        <h6 class="text-bold fs-6 ms-3">Details</h6>
+                        <div class="col-6 mt-3">
+                            <ul class="list">
+                                {% for detailKey in details_key %}
+                                <li class="list"> {{ detailKey }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="col-6 mt-3">
+                            {% for detailValue in details_value %}
+                            <p class="my-0 mx-0"> {{ detailValue }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 border-start ms-1 ps-3 py-4">
+                <div class="info-box mt-4">
+                    <p class="info-text"><i class="fa-solid fa-truck"></i>  ENJOY FREE DELIVERY WITH ORDERS OVER €60</p>
+                    <p class="info-text"><i class="fa-solid fa-arrow-right-arrow-left"></i>  40 DAYS POLICY RETURNS</p>
+                    <p class="info-text"><i class="fa-solid fa-file-invoice-dollar"></i>  EASY CHECKOUT WITH DIFERENT PAYMENT OPTIONS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
 </div>
 {% endblock %}
 

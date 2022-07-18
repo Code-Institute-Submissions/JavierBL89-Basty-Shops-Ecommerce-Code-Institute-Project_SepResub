@@ -294,6 +294,13 @@ background-color: #5D737E;
     font-size: 0.900rem;
     font-weight: bold;
 }
+
+.product-details-box, .product-description-box{
+    font-size: 0.800rem;
+}
+.product-info-container .info-box .info-text{
+    font-size: 0.650rem;
+}
  /******************************************************************** MOBILE SCREEN */
  @media only screen and (min-width: 320px) and (max-width: 600px) {
   
