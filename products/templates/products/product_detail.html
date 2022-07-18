@@ -2,6 +2,56 @@
 {% load static %}
 
 {% block content %}
+<div class="product-wraper">
+    <div class="row mt-5">
+        {% if product %}
+        <div class="col-6 text-end">
+            {% if product.cover_image %}
+                <img class="" src="{{ product.cover_image }}" alt="{{ product.title }}">
+            {% else %}
+                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.title }}">
+            {% endif %}
+        </div>
+        <div class="col-6">
+            <div class="product-details-container">
+                <div class="row product-title">
+                    <h6>{{ product.title }}</h6>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-6">{{ product.name}}</div>
+                    <div class="col-6">{{ product.price }}</div>
+                </col-6>
+                <div class="row mt-3">
+                    <div class="col-12 product-badges-box d-inline-flex"></div>
+                    <p class="product-badge upper">{% if product.category %}{{ product.category.friendly_name }}/
+                    {% endif %} {% if product.subcategory_id %}{{ product.subcategory_id.friendly_name }}{% endif %}</p>                 
+                </div>
+                <div class="row">
+                    <p class="text-mute text-start mt-4">Sizes</p>
+                    <div class="col-6">
+                        <div class="sizes-container">
+                            <form class="form" action="#" method="post">
+                                {% csrf_token %}
+                                    {% if product.sizes %}
+                                    <ul class="list list-unstyled d-flex">
+                                    {% for size in size_list %}
+                                    <div class="col-3 mx-1">
+                                        <li class="size-box"><a class="size-link" href="" value="{{ size.size }}">{{ size.size }}</a></li>                                        
+                                    </div>
+                                    {% endfor %}
+
+                                    </ul>
+                                    {% endif %}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>   
+        </div>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
 
 
