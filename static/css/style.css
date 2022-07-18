@@ -205,7 +205,7 @@ img{
     margin-top: 5%;
 }
 .container-footer .column{
-    padding-top: 2%;
+    padding-top: 1%;
     border-color: rgb(122, 13, 13);
 }
 
@@ -263,7 +263,7 @@ background-color: #5D737E;
 .size-box{
     border: solid 1px rgb(122, 13, 13);
 }
-/***** DELETE THI LINE  WHEN JQUERY USED*/
+/***** DELETE THIS LINE WHEN JQUERY USED*/
 .size-box:hover{
     background-color:  rgb(122, 13, 13);
     color: #ffffff;
