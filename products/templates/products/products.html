@@ -19,27 +19,31 @@
                 <div class="row">
                     {% if products %}
                     {% for product in products %} 
-                    <div class="col-lg-4 col-md-6 col-6">
+                    <div class="col-lg-4 col-md-6 col-6 product-card-box">
                         <div class="card mb-4 border-0">
-                            {% if product.cover_image %}
-                            <a href="{% url 'product_detail' product.id %}">
-                                <img src="{{ MEDIA_URL }}{{ product.cover_image }}'" class="card-img-top img-fluid" alt="{{ product.name }}">
-                            </a>
-                            {% else %}
-                            <a href="">
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                            </a>
-                            {% endif %}
+                            <div class="card-img-container">
+                                <div class="card-img-box">
+                                {% if product.cover_image %}
+                                <a href="{% url 'product_detail' product.id %}">
+                                    <img src="{{ MEDIA_URL }}{{ product.cover_image }}" class="card-img-top img-fluid" alt="{{ product.name }}">
+                                </a>
+                                {% else %}
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                </a>
+                                {% endif %}
+                                </div>
+                            </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <h5 class="card-title">{{ product.title }}</h5>
+                                    <h5 class="card-product-title">{{ product.title }}</h5>
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
-                                        <p class="card-text">{{ product.name }}</p>
+                                        <p class="card-product-name">{{ product.name }}</p>
                                     </div>
                                     <div class="col-6 text-end">
-                                        <p class="card-text">{{ product.price }}</p>
+                                        <p class="card-product-price">{{ product.price }}€</p>
                                     </div>
                                 </div>
                                 <div class="row mt-2">
