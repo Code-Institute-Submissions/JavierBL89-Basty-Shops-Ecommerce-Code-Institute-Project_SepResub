@@ -377,6 +377,26 @@ background-color: #5D737E;
     text-align: start;
 }
 
+
+/******** SUBSCRIPTION SECTION */
+
+.subscription-container{
+    padding-top: 20px;
+    margin: 90px auto 10px;
+    height: 200px;
+    width: 450px;
+    background-color: #5D737E;
+    color: #F3FFC6;
+    border-radius: 10px;
+    letter-spacing: 1px;
+}
+
+.subscription-container button{
+    margin-top: 10px;
+    width: 70%;
+    background-color:  #FF6542;
+    color: #ffffff;
+}
  /******************************************************************** MOBILE SCREEN */
  @media only screen and (min-width: 320px) and (max-width: 600px) {
   
