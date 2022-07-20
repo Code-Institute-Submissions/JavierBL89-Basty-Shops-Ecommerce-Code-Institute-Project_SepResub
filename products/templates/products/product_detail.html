@@ -16,7 +16,7 @@
                     {% if product.images_list %}
                     {% for image in images_list %}
                     <div class="col-2 mt-3" id="product-image-list">
-                        <img class="puta" src="{{ MEDIA_URL }}{{ image }}" alt="{{ product.title }}-img">
+                        <img class="product-image" src="{{ MEDIA_URL }}{{ image }}" alt="{{ product.title }}-img">
                     </div>
                     {% endfor %}
                     {% endif %}
