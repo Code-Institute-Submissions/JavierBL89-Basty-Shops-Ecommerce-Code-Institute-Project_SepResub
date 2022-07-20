@@ -1,0 +1,268 @@
+/********* PRODUCTS PAGE */
+
+.product-card-box{
+    height: 600px;
+}
+
+.card-img-container{
+    height: 240px;
+    width:80%;
+}
+.card-img-box{
+    width:100%;
+    /* height: 500px; */
+}
+.card{
+    height: 400px;
+}
+
+.card-button{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    /* background-color: rgb(122, 55, 55); */
+background-color: #5D737E;
+   color: rgb(255, 255, 255); 
+    border-color: inherit;
+}
+
+.card-product-title, .card-product-name{
+    font-size: 0.900rem;
+}
+.card-product-name, .card-product-price{
+    font-size: 0.750rem;
+}
+
+.card-button:hover{
+    background-color: rgb(122, 55, 55);
+    border-color: rgb(122, 55, 55);
+}
+
+.badges-container a{
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+}
+
+.badge{
+    background-color: rgb(122, 55, 55);
+    font-size: 0.600rem;
+    width: 130px;
+    letter-spacing: 2px;
+    padding: 8px;
+
+}
+.badge:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(122, 13, 13);
+    transition-duration: 0.5s;
+}
+
+/************ PRODUCT DETAILS PAGE */
+.size-box{
+    border: solid 1px rgb(122, 13, 13);
+}
+
+/***** DELETE THIS LINE WHEN JQUERY USED*/
+.size-box:hover{
+    background-color:  rgb(122, 13, 13);
+    color: #ffffff;
+}
+
+.size-link{
+    text-decoration: none;
+    color:#000000;
+}
+
+.fa-regular{
+    color: rgb(122, 13, 13);
+}
+
+.images-list-container img{
+    border: solid 1px rgb(255, 255, 255);
+}
+
+.images-list-container img:hover{
+    border: solid 1px rgb(122, 13, 13);
+    transition: 0.7s ease-in-out all;
+}
+
+.add-to-bag-button-container button{
+    width: 65%;
+    background-color: rgb(122, 13, 13);
+    color: #ffffff;
+    font-size: 0.900rem;
+    font-weight: bold;
+}
+
+.add-to-bag-button-container button:hover{
+    width: 65%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(122, 13, 13);
+    border-color: rgb(122, 13, 13);;
+    font-size: 0.900rem;
+    font-weight: bold;
+}
+
+.product-details-box, .product-description-box{
+    font-size: 0.800rem;
+}
+
+.product-info-container .info-box .info-text{
+    font-size: 0.650rem;
+}
+
+
+/************** NEW ARRIVALS SECTION ***/
+
+.deals-container{
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+.deals-container .carousel-inner{
+    height: 500px;
+    width: 100vw;
+}
+.deals-container .carousel-inner, .deals-container .carousel-item{
+    margin-top: 30px;
+}
+
+.deals-container .product-card{
+    height: 350px;
+    width: 10px;
+}
+
+.deals-container .product-card .card-img-box{
+    height: 300px;
+    background-color: #e3b837;
+}
+
+.carousel-indicators [data-bs-target]{
+
+ background-color: rgb(122, 13, 13);
+}
+
+.indicator{
+    font-size: 1.5rem;
+    color: rgb(122, 13, 13);
+}
+
+/******************************************************************** MOBILE SCREEN */
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  
+    
+     /************** NEW ARRIVALS SECTION ***/
+    
+     .deals-container .carousel-item{
+        width: 100%;
+      }
+      .deals-container .carousel-inner{
+        height: 420px;
+    }
+    .deals-container .product-card{
+        height: 280px;
+        width: 33%;
+    }
+    .deals-container .product-card .card-img-box{
+        height: 250px;
+        background-color: #e3b837;
+    }
+    
+    .carousel-indicators{
+        position: absolute;
+        top:95%
+    }
+    .carousel-indicators [data-bs-target]{
+     background-color: rgb(122, 13, 13);
+    }
+    .indicator{
+        font-size: 1.5rem;
+        color: rgb(122, 13, 13);
+    }
+    
+    .deals-container .product-card p{
+        font-size: 0.8rem;
+        text-align: start;
+    }
+
+   
+     }
+
+/******************************************************************** TABLET SCREEN */
+@media only screen and (min-width:640px) and (max-width:950px) {
+  
+    /**************** HEADER*/
+
+
+  /************** NEW ARRIVALS SECTION ***/
+
+  .carousel-item{
+    width: 99%;
+  }
+.carousel-inner{
+    height: 420px;
+}
+.deals-container .product-card{
+    height: 280px;
+    width: 10%;
+}
+.product-card .card-img-box{
+    height: 250px;
+    background-color: #e3b837;
+}
+
+.carousel-indicators{
+    position: absolute;
+    top:95%
+}
+.carousel-indicators [data-bs-target]{
+ background-color: rgb(122, 13, 13);
+}
+.indicator{
+    font-size: 1.5rem;
+    color: rgb(122, 13, 13);
+}
+
+.product-card p{
+    font-size: 0.8rem;
+    text-align: start;
+}
+}
+
+@media only screen and (min-width: 1000px) {
+
+/************** NEW ARRIVALS SECTION ***/
+
+#deals .deals-container{
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.deals-container .carousel-inner{
+    height: 500px;
+    width: 100%;
+}
+
+#deals .deals-container .carousel-inner .carousel-item{
+    margin-top: 30px;
+}
+
+.deals-container .product-card{
+    height: 350px;
+    width: 200px;
+}
+
+ .card-img-box{
+    height: 300px;
+    background-color: #4e4e4e;
+}
+
+.carousel-indicators [data-bs-target]{
+
+ background-color: rgb(122, 13, 13);
+}
+
+.indicator{
+    font-size: 1.5rem;
+    color: rgb(122, 13, 13);
+}
+}
