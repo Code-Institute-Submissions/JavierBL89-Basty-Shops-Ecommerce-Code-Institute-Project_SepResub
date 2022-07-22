@@ -209,6 +209,11 @@ img{
 .container-footer{
     margin-top: 5%;
 }
+
+.container-footer .row{
+    margin: 0;
+
+}
 .container-footer .column{
     padding-top: 1%;
     border-color: rgb(122, 13, 13);
@@ -515,6 +520,17 @@ img{
 
 /************** PRODUCTS PAGE */
 
+.main-wraper{
+    margin: 0 auto;
+}
+
+.badge{
+    font-size: 0.500rem;
+    width: 80px;
+    letter-spacing: 1px;
+    padding: 6px;
+}
+
 .card-img-container{
     height: 43%;
     width:100%;
@@ -534,7 +550,7 @@ img{
     margin-top: 2%;
 }
 .card{
-    height: 300px;
+    /* height: 300px; */
     width: 100%;
     margin: 0 auto;
 }
@@ -543,6 +559,11 @@ img{
 .card-product-name,
 .card-product-price{
     font-size: 0.300rem;
+    padding: 0;
+}
+
+.column-card{
+    padding: 0;
 }
 
 .card-button{
@@ -719,10 +740,6 @@ ul .size-box{
     color: #ffffff;
 }
 
-
-.footer-bg{
-    color: rgb(122, 13, 13);
-}
  }
   /******************************************************************** TABLET SCREEN */
   @media only screen and (min-width:640px) and (max-width:950px) {
@@ -759,7 +776,7 @@ ul .size-box{
     margin-top: 2%;
 }
 .card{
-    height: 410px;
+    /* height: 410px; */
     width: 80%;
     margin: 0 auto;
 }
@@ -964,9 +981,9 @@ img{
     width:100%;
 }
 
-.card{
+/* .card{
     height: 400px;
-}
+} */
 
 .card-button{
     position: absolute;
