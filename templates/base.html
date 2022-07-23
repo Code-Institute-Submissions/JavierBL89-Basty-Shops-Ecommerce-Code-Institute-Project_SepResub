@@ -46,7 +46,7 @@
                 </button>
                 {% include 'includes/burger_menu.html' %}
                 <!--- SEARCHER FORM---->
-                <form method="GET" action="#" class="d-none d-lg-block d-flex" role="search">
+                <form method="GET" action="{% url 'products' %}" class="d-none d-lg-block d-flex" role="search">
                   <input class="ms-3 mt-3 d-inline" type="text" name="q" placeholder="Search" aria-label="Search">
                   <button class="btn search mt-1" type="submit"><i class="fa-solid fa-magnifying-glass fa-l"></i></button>
                 </form>
