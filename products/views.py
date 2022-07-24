@@ -19,7 +19,7 @@ def all_products(request):
             if not categories:
                 messages.error(request, "No category found")
                 return redirect(reverse, ('products'))
-            category = Q(name__icontains=categories)
+            category = Q(title__icontains=categories)
             products = products.filter(category)
         if 'q' in request.GET:
             query = request.GET['q']
