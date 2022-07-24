@@ -251,6 +251,21 @@ img{
     transition-duration: 0.5s;
 } 
 
+.products-sort button{
+    background-color: #ffffff;
+    border: none;
+    color: rgb(122, 13, 13);
+}
+
+.products-sort button:hover{
+    background-color: #ffffff;
+    border: none;
+}
+
+.products-sort a{
+    font-size: 00.800rem;
+}
+
 .card-button{
     position: absolute;
     bottom: 10px;
@@ -531,6 +546,10 @@ img{
     padding: 6px;
 }
 
+.products-sort button{
+    font-size: 0.600rem;
+}
+
 .card-img-container{
     height: 43%;
     width:100%;
@@ -757,6 +776,10 @@ ul .size-box{
 
 /************** PRODUCTS PAGE */
 
+.products-sort a{
+    font-size: 0.800rem;
+}
+
 .card-img-container{
     height: 60%;
     width:100%;
@@ -966,6 +989,10 @@ img{
 
     /************** PRODUCTS PAGE */
 
+.products-sort button{
+        font-size: 0.900rem;
+    }
+    
 .product-card-box{
     height: 450px;
 }
