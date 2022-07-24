@@ -45,8 +45,8 @@
                 </div>
                 <div class="row mt-sm-3 mt-md-1 mt-lg-5">
                     <div class="col-6 product-badges-box d-inline-flex">
-                        <p class="product-badge upper">{% if product.category %}{{ product.category.friendly_name }}/
-                            {% endif %} {% if product.subcategory_id %}{{ product.subcategory_id.friendly_name }}{% endif %}</p>                 
+                        <p class="product-badge upper"><a href="{% url 'products' %}">{% if product.category %}{{ product.category.friendly_name }}{% endif %}</a>/
+                            <a href="{% url 'products' %}">{% if product.subcategory_id %}{{ product.subcategory_id.friendly_name }}{% endif %}</a></p>                 
                     </div>
                     <div class="col-6">
                             <i class="fa-regular fa-heart"></i>

@@ -251,6 +251,11 @@ img{
     transition-duration: 0.5s;
 } 
 
+.product-badges-box a{
+    color: #000000;
+    text-decoration:none;
+}
+
 .products-sort button{
     background-color: #ffffff;
     border: none;
@@ -263,7 +268,7 @@ img{
 }
 
 .products-sort a{
-    font-size: 00.800rem;
+    font-size: 0.800rem;
 }
 
 .card-button{
@@ -550,6 +555,10 @@ img{
     font-size: 0.600rem;
 }
 
+.products-number{
+    font-size: 0.500rem;
+}
+
 .card-img-container{
     height: 43%;
     width:100%;
@@ -780,6 +789,10 @@ ul .size-box{
     font-size: 0.800rem;
 }
 
+.products-number{
+    font-size: 0.800rem;
+}
+
 .card-img-container{
     height: 60%;
     width:100%;
@@ -993,6 +1006,10 @@ img{
         font-size: 0.900rem;
     }
     
+.products-number{
+    font-size: 0.700rem;
+}
+
 .product-card-box{
     height: 450px;
 }
