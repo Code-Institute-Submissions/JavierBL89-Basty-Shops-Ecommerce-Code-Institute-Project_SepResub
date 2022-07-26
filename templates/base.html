@@ -79,7 +79,7 @@
                           <i class="fa-solid fa-heart fa-xl"></i></a>
                   </li>
                   <li class=" text-center">
-                    <a class="nav-link {% if grand_total %} text-info fw-bold {% else %} text-black {% endif %}" href="#"  aria-current="page">
+                    <a class="nav-link {% if grand_total %} text-info fw-bold {% else %} text-black {% endif %}" href="{% url 'view_bag' %}"  aria-current="page">
                       <!-- <div class="text-center">  -->
                         <i class="fa-solid fa-bag-shopping fa-xl"></i>
                         <p class="my-0">
@@ -90,7 +90,6 @@
                           {% endif %}
                         </p>
                       <!-- </div> -->
-                      
                     </a>
                   </li>
                 </ul>

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%  block extra_css%}
+    <link rel="stylesheet" href="{% static 'bag/css/bag.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main_wraper">
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="page-title">
+                <h1>My bag</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="products-bag-container">
+                {% if bag_items %}
+                <div class="col-2 product-img-bag"></div>
+                <div class="col-2 product-title-bag"></div>
+                <div class="col-2 product-sku-bag"></div>
+                <div class="col-2 product-quantity-bag"></div>
+                {% else %}
+                <div class="col">
+                    <h6>Your bag is empty</h6>
+                    <button class="back-to-shop" href="{% url 'products' %}">Back to shop!</button>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
