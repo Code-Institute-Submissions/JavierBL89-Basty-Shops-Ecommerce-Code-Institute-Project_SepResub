@@ -7,7 +7,7 @@
 
 {% block content %}
 <div class="main_wraper">
-    <div class="container-fluid mt-3">
+    <div class="container-fluid mt-3 offset-3">
         <div class="row">
             <div class="page-title">
                 <h1>My bag</h1>
@@ -16,10 +16,18 @@
         <div class="row">
             <div class="products-bag-container">
                 {% if bag_items %}
-                <div class="col-2 product-img-bag"></div>
-                <div class="col-2 product-title-bag"></div>
-                <div class="col-2 product-sku-bag"></div>
-                <div class="col-2 product-quantity-bag"></div>
+                <div class="col-2 product-img-bag">
+                    {{ product.cover_img }}
+                </div>
+                <div class="col-2 product-title-bag">
+                    {{ product.tittle }}
+                </div>
+                <div class="col-2 product-sku-bag">
+                    {{ product.sku }}
+                </div>
+                <div class="col-2 product-quantity-bag">
+                    {{ quantity.cover_img }}
+                </div>
                 {% else %}
                 <div class="col">
                     <h6>Your bag is empty</h6>
