@@ -1,10 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<!-- 
-{% block extra_css %}
-    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
-{% endblock %} -->
 
 {% block content %}
 <div class="product-wraper">
@@ -63,27 +59,29 @@
                                     {% for size in size_list %}
                                     {% if size.stock == 0 %}
                                     <div class="col-3 mx-1">
-                                        <li class="size-box text-center py-1"><a class="size-link text-decoration-line-through" style="pointer-events: none" href="" value="{{ size.size }}"><strong>{{ size.size }}</strong></a></li>                                        
+                                        <li class="size-box text-center py-1" style="pointer-events: none" href="" value="{{ size.size }}"><strong>{{ size.size }}</strong></li>                                        
                                     </div>
                                     {% else %}
                                     <div class="col-3 mx-1">
-                                        <li class="size-box text-center py-1"><a class="size-link" href="" name="size" value="{{ size.size }}"><strong>{{ size.size }}</strong></a></li>                                        
+                                        <li class="size-box text-center py-1" name="size" value="{{ size.size }}"><strong>{{ size.size }}</strong></li>                                        
                                     </div>
                                     {% endif %}
                                     {% endfor %}
                                     </ul>
                                     {% endif %}
-                                    <input type="hidden" name="quantity" value="1">
-                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    <input type="hidden" id="item_id" value="{{ product.pk }}">
+                                    <input type="hidden" id="quantity" value="1">
+                                    <input type="hidden" id="redirect_url" value="{{ request.path }}">
+                                    <div class="row">
+                                        <div class="add-to-bag-button-container mt-3">
+                                            <button type="submit" class="btn btn-lg">Add to bag </button>
+                                        </div>
+                                    </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="add-to-bag-button-container mt-3">
-                        <button type="submit" class="btn btn-lg">Add to bag </button>
-                    </div>
-                </div>
-                </form>
+                
                 </div>
             </div>   
         </div>
@@ -235,6 +233,7 @@
 {% block post_load_js %}
     {{ block.super }}
     <script src="{% static 'jquery/productDetailImage.js' %}"></script>
+    <script src="{% static 'jquery/product_purchase.js' %}"></script>
 {% endblock %}
 
 
