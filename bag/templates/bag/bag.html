@@ -7,34 +7,55 @@
 
 {% block content %}
 <div class="main_wraper">
-    <div class="container-fluid mt-3 offset-3">
+    <div class="container-fluid mt-3">
         <div class="row">
-            <div class="page-title">
-                <h1>My bag</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="products-bag-container">
-                {% if bag_items %}
-                <div class="col-2 product-img-bag">
-                    {{ product.cover_img }}
+            <div class="col-12">
+                <div class="page-title">
+                    <h1>My bag</h1>
                 </div>
-                <div class="col-2 product-title-bag">
-                    {{ product.tittle }}
+            </div>
+            
+        </div>
+        {% if bag_items %}
+        {{ bag_items }}
+        {{ request.session.bag }}
+        <div class="row d-flex">
+            <div class="col-3"><p class="fw-bold"></p></div>
+            <div class="col-3"><p class="fw-bold">title</p></div>
+            <div class="col-1"><p class="fw-bold">size</p></div>
+            <div class="col-2"><p class="fw-bold">sku</p></div>
+            <div class="col-1"><p class="fw-bold">Quantity</p></div>
+        </div>
+        {% for item in bag_items %}
+        <div class="col">
+            <div class="row d-flex">
+                <div class="col-3 product-img-bag">
+                    {% include 'bag/product_img.html' %}
+                </div>
+                <div class="col-3 product-title-bag">
+                    {{ item.product.title }}
+                </div>
+                <div class="col-1 product-title-bag">
+                    {{ item.size }}
                 </div>
                 <div class="col-2 product-sku-bag">
-                    {{ product.sku }}
+                    {{ item.product.sku }}
+                </div>
+                <div class="col-1 product-quantity-bag">
+                    {{ item.quantity }}
                 </div>
                 <div class="col-2 product-quantity-bag">
-                    {{ quantity.cover_img }}
+                    REMOVE
                 </div>
-                {% else %}
-                <div class="col">
-                    <h6>Your bag is empty</h6>
-                    <button class="back-to-shop" href="{% url 'products' %}">Back to shop!</button>
-                </div>
-                {% endif %}
+                {% endfor %}
             </div>
+
+        {% else %}
+        <div class="col">
+            <h6>Your bag is empty</h6>
+            <button class="back-to-shop" href="{% url 'products' %}">Back to shop!</button>
+        </div>
+        {% endif %}
         </div>
     </div>
 </div>
