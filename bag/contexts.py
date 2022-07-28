@@ -15,17 +15,16 @@ def bag_contents(request):
     for item_id, item_data in bag.items():
         product = get_object_or_404(Product, pk=item_id)
         # if item_data:
-        for size, quantity in item_data['size'].items():
-            total += quantity * product.price
-            product_count += quantity
-
-            bag_items.append({
-                'item_id': item_id,
-                'item_data': item_data,
-                'quantity': quantity,
-                'size': size,
-                'product': product
-            })
+        # for size, quantity in item_data['size'].items():
+        total += item_data * product.price
+        product_count += item_data
+        bag_items.append({
+            'item_id': item_id,
+            'item_data': item_data,
+            # 'quantity': quantity,
+            # 'size': size,
+            'product': product
+        })
 
         print(bag_items, 'Bag in proccessor')
     if total < settings.FREE_DELIVERY_THRESHOLD:
