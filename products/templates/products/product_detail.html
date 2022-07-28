@@ -71,7 +71,7 @@
                                     {% endif %}
                                     <input type="hidden" id="item_id" value="{{ product.pk }}">
                                     <input type="hidden" id="quantity" value="1">
-                                    <input type="hidden" id="redirect_url" value="{{ request.path }}">
+                                    <input type="hidden" id="redirect_url" name="redirect_url" value="{{ request.path }}">
                                     <div class="row">
                                         <div class="add-to-bag-button-container mt-3">
                                             <button type="submit" class="btn btn-lg">Add to bag </button>

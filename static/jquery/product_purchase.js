@@ -1,9 +1,11 @@
 // Handle product purchase form
 
 const form = $('#purchase-form');
-const options = $('.size-box')
-const redirect_url = $("#redirect_url")
+const options = $('.size-box');
+const redirect_url = $("#redirect_url").val();
 let item_id = $("#item_id").val();
+
+console.log(`URL: ${redirect_url}`);
 
 for (choice of options){
     // console.log(puta);
@@ -26,12 +28,11 @@ form.on('submit', function(ev){
         'size': size,
         'redirect_url': redirect_url,
     };
-    var url = `/bag/add/${item_id}`;
+    var url = `/add/${item_id}`;
 
     $.post(url, postData).done(function (){
     }).then(function(result) {
         if (result.error) {
-            console.log(url);
             console.log(error);
         }else{
             form.submit();
