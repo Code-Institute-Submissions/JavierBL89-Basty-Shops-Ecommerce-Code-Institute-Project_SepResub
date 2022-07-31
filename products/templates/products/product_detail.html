@@ -236,4 +236,9 @@
     <script src="{% static 'jquery/product_purchase.js' %}"></script>
 {% endblock %}
 
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
+{% endblock %}
+
 
