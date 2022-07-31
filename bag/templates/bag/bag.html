@@ -50,3 +50,32 @@
 </div>
 {% endblock %}
 
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    $('.btt-link').click(function(e) {
+        window.scrollTo(0,0)
+    })
+</script>
+
+<script type="text/javascript">
+    //update quanity on click
+    $('update-link').click(function(e){
+        var form = $(this).prev('.update-form');
+        form.submit();
+    });
+
+    //remove items and reload on click
+    $('.remove-item').click(function(e){
+        var csrfToken =  "{{ csrf_token}}";
+        var itemId = $(this).att('id').split('remove_')[1];
+        var size = $(this).data('size');
+        var url = '/bag/remove/${itemId}';
+        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+
+        $.post(url, data).done(function(){
+            location.reload()
+        });
+    })
+</script>
+{% endblock %}
