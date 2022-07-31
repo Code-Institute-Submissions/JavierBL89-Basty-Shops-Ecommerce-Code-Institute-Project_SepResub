@@ -1,9 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{%  block extra_css%}
-    <link rel="stylesheet" href="{% static 'bag/css/bag.css' %}">
-{% endblock %}
 
 {% block content %}
 <div class="main_wraper">
@@ -16,48 +13,37 @@
             </div>
             
         </div>
-        {% if bag_items %}
+        <!-- {% if bag_items %}
         {{ bag_items }}
-        {{ request.session.bag }}
+        {{ request.session.bag }} -->
+        <!-- {% endif %} -->
         <div class="row d-flex">
-            <div class="col-3"><p class="fw-bold"></p></div>
-            <div class="col-3"><p class="fw-bold">title</p></div>
-            <div class="col-1"><p class="fw-bold">size</p></div>
-            <div class="col-2"><p class="fw-bold">sku</p></div>
-            <div class="col-1"><p class="fw-bold">Quantity</p></div>
-        </div>
-        {% for item in bag_items %}
-        <div class="col">
-            <div class="row d-flex">
-                <div class="col-3 product-img-bag">
-                    {% include 'bag/product_img.html' %}
+            <div class="col-3 product-img-bag">
+                {% include 'bag/product_img.html' %}
+            </div>
+            <div class="col-6">
+                {% for item in bag_items %}
+                <div class="row bag-items-container d-flex">
+                    <div class="col-6 col-md-4 col-lg-4">
+                        <p>Item:</p>
+                        <p>Size:</p>
+                        <p>Product number:</p>
+                        <p>Price:</p>
+                        <p>Quantity:</p>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-4">
+                    <p>{{ item.product.title }}</p>
+                    <p>{{ item.size }}</p>
+                    <p>{{ item.product.sku }}</p>
+                    <p>{{ item.product.price }}</p>
+                    <p>{{ item.quantity }}</p>
                 </div>
-                <div class="col-3 product-title-bag">
-                    {{ item.product.title }}
                 </div>
-                <div class="col-1 product-title-bag">
-                    {{ item.size }}
-                </div>
-                <div class="col-2 product-sku-bag">
-                    {{ item.product.sku }}
-                </div>
-                <div class="col-1 product-quantity-bag">
-                    {{ item.quantity }}
-                </div>
-                <div class="col-2 product-quantity-bag">
-                    REMOVE
-                </div>
+                <hr>
                 {% endfor %}
             </div>
-
-        {% else %}
-        <div class="col">
-            <h6>Your bag is empty</h6>
-            <button class="back-to-shop" href="{% url 'products' %}">Back to shop!</button>
-        </div>
-        {% endif %}
-        </div>
-    </div>
+    <!-- </div> -->
+</div>
 </div>
 {% endblock %}
 
