@@ -22,7 +22,7 @@ def bag_contents(request):
             'item_id': item_id,
             # 'item_data': item_data,
             'quantity': quantity,
-            # 'size': size,
+            # 'item_size': size,
             'product': product
         })
 

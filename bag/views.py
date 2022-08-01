@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, HttpResponse
 from products.models import Product
 # Create your views here.
 
@@ -41,7 +41,6 @@ def adjust_bag(request, item_id):
     # if 'size' in request.POST:
     #     size = request.POST['size']
     bag = request.session.get('bad', {})
-    
     # if size:
     if quantity > 0:
         bag[item_id]['quantity'] += quantity
@@ -51,3 +50,22 @@ def adjust_bag(request, item_id):
             bag.pop(item_id)
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
+
+def remove_item(request, item_id):
+    try:
+        # size = None 
+        # if 'size' in request.POST:
+        #     size =  request.POST.get['size']
+        bag = request.session.get('bag', {})
+        # if size:
+            # del bag[item_id]['item_size']['size']
+            # if not bag[item_id]['item_size']['size']
+            #     bag.pop(item_id)
+        # else:
+        bag.pop(item_id)
+        request.session['bag'] = bag
+        print(request.session['bag'], 'bag session')
+        return HttpResponse(status=200)
+      
+    except Exception as e:
+        return HttpResponse(status=500)

@@ -69,9 +69,9 @@
     $('.remove-item').click(function(e){
         var csrfToken =  "{{ csrf_token}}";
         var itemId = $(this).att('id').split('remove_')[1];
-        var size = $(this).data('size');
+        var item_size = $(this).data('size');
         var url = '/bag/remove/${itemId}';
-        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+        var data = {'csrfmiddlewaretoken': csrfToken, 'size': item_size};
 
         $.post(url, data).done(function(){
             location.reload()
