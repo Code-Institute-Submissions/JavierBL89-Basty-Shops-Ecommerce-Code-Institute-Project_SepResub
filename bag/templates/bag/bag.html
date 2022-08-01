@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load bag_tools %}
 
 {% block content %}
 <div class="main_wraper">
@@ -44,6 +44,12 @@
                 </div>
                 <hr>
                 {% endfor %}
+                <div class="row">
+                    <div class="col-9"></div>
+                    <div class="col-3">
+                        {% include "bag/bag_total.html" %}
+                    </div>
+                </div>
             </div>
     <!-- </div> -->
 </div>
@@ -70,8 +76,8 @@
         var csrfToken =  "{{ csrf_token}}";
         var itemId = $(this).att('id').split('remove_')[1];
         var item_size = $(this).data('size');
-        var url = '/bag/remove/${itemId}';
-        var data = {'csrfmiddlewaretoken': csrfToken, 'size': item_size};
+        var url = '/bag/remove/${itemId}/';
+        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': item_size};
 
         $.post(url, data).done(function(){
             location.reload()
