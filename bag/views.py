@@ -51,6 +51,7 @@ def adjust_bag(request, item_id):
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
 
+
 def remove_item(request, item_id):
     try:
         # size = None 

@@ -17,12 +17,12 @@
         {{ bag_items }}
         {{ request.session.bag }} -->
         <!-- {% endif %} -->
+        {% for item in bag_items %}
         <div class="row d-flex">
             <div class="col-3 product-img-bag">
                 {% include 'bag/product_img.html' %}
             </div>
             <div class="col-6">
-                {% for item in bag_items %}
                 <div class="row bag-items-container d-flex">
                     <div class="col-5 col-md-4 col-lg-4">
                         <p>Item:</p>
@@ -32,15 +32,17 @@
                         <p>Quantity:</p>
                     </div>
                     <div class="col-5 col-md-4 col-lg-4">
-                    <p>{{ item.product.title }}</p>
-                    <p>{{ item.size }}</p>
-                    <p>{{ item.product.sku }}</p>
-                    <p>{{ item.product.price }}</p>
-                    <p>{{ item.quantity }}</p>
-                </div>
-                <div class="col-4">
-                    {% include 'bag/quantity_form.html' %}
-                </div>
+                        <p>{{ item.product.title }}</p>
+                        <p>{{ item.size }}</p>
+                        <p>{{ item.product.sku }}</p>
+                        <p>{{ item.product.price }}</p>
+                    </div>
+                    <div class="col-4">
+                        {% include 'bag/quantity_form.html' %}
+                    </div>
+                    <div class="col-3">
+                        <p>Total: {% include "bag/bag_total.html" %}</p>
+                    </div>
                 </div>
                 <hr>
                 {% endfor %}
