@@ -1,9 +1,6 @@
 {% load bag_tools %}
 
-<div class="row d-flex">
-    <div class="col-6">
-        <p>Subtotal:</p>
-    </div>
-    <div class="col-6">
-    </div>
-</div>
+<div class="row text-start">
+    <div class="col-6"><p class="bag-total text-sm-start">Total: </p></div>
+    <div class="col-6"><p class="bag-total text-sm-start"> {{ grand_total }}€</p></div>
+</div>    
