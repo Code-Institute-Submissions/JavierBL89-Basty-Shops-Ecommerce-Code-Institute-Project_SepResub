@@ -17,37 +17,45 @@
         {{ request.session.bag }} -->
         <!-- {% endif %} -->
         {% for item in bag_items %}
-        <div class="row d-flex w-100">
+        <div class="row d-flex">
             <div class="col-3 product-img-bag">
                 {% include 'bag/product_img.html' %}
             </div>
-            <div class="col-6">
+            <div class="col-9">
                 <div class="row bag-items-container  d-flex">
-                    <div class="col-3 col-md-4 col-lg-4">
+                    <div class="col-3 col-md-3 col-lg-3">
                         <p>Item:</p>
                         <p>Size:</p>
                         <p>Product number:</p>
                         <p>Price:</p>
                     </div>
-                    <div class="col-3 col-md-4 col-lg-4">
+                    <div class="col-3 col-md-3 col-lg-3">
                         <p>{{ item.product.title }}</p>
                         <p>{{ item.size }}</p>
                         <p>{{ item.product.sku }}</p>
                         <p>{{ item.product.price }}</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-3 col-md-3 col-lg-3">
                         {% include 'bag/quantity_form.html' %}
                     </div>
+                    <div class="col-1 col-md-1 col-lg-1 d-flex">
+                        <p class="my-0 mt-2 item-subtotal"> {{ item.product.price | calc_subtotal:item.quantity }}€</p>
+                    </div>
                 </div>
-                <hr>
             </div>
-            <div class="col-3 d-flex">
-                <p class="my-0"> ${{ item.product.price | calc_subtotal:item.quantity }}</p>
-            </div>
+            <hr>
             {% endfor %}
-
-    <!-- </div> -->
-</div>
+        </div>
+        <div class="row d-flex">
+            <div class="col-8 col-md-10 col-lg-9"></div>
+            <div class="col-3 col-md-2 col-lg-3 d-flex">
+                <div class="row text-start">
+                    <div class="col-6 "><p class="bag-total text-sm-start">Total: </p></div>
+                    <div class="col-6 "><p class="bag-total text-sm-start"> {{ grand_total }}€</p></div>
+                </div>    
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
 
