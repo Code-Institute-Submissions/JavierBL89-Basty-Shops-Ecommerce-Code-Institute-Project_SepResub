@@ -49,10 +49,7 @@
         <div class="row d-flex">
             <div class="col-8 col-md-10 col-lg-9"></div>
             <div class="col-3 col-md-2 col-lg-3 d-flex">
-                <div class="row text-start">
-                    <div class="col-6 "><p class="bag-total text-sm-start">Total: </p></div>
-                    <div class="col-6 "><p class="bag-total text-sm-start"> {{ grand_total }}€</p></div>
-                </div>    
+                {% include "bag/bag_total.html" %}
             </div>
         </div>
     </div>
@@ -68,7 +65,7 @@
 </script>
 
 <script type="text/javascript">
-    //update quanity on click
+    //update quantity on click
     $('update-link').click(function(e){
         var form = $(this).prev('.update-form');
         form.submit();
