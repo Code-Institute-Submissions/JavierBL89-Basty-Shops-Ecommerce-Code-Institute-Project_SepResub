@@ -1,8 +1,9 @@
+{% load bag_tools %}
+
 <div class="row d-flex">
     <div class="col-6">
         <p>Subtotal:</p>
     </div>
     <div class="col-6">
-        {{ item.product.price | calc_subtotal:item.quantity }}
     </div>
 </div>
