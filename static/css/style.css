@@ -295,6 +295,11 @@ img{
     color: #ffffff;
 }
 
+.selected-size{
+    background-color:  rgb(122, 13, 13);
+
+}
+
 .size-link{
     text-decoration: none;
     color:#000000;

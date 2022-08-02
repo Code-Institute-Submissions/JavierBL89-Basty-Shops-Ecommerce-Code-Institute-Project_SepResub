@@ -12,26 +12,32 @@ def add_to_bag(request, item_id):
     """ Add the quantity of the specified product to the shopping bag """
     
     product = Product.objects.get(pk=item_id)
-    print(product)
     quantity = 1
+    size = None
     redirect_url = request.POST.get('redirect_url')
+
+    if 'product_size' in request.POST:
+        size = request.POST.get['product_size']
+        print('this is the size', size)
+        
     bag = request.session.get('bag', {})
 
     print(f"bag is {bag}")
     print(item_id, 'item id')
 
-    size = request.POST.get('size')
-    print('this is the size', request.POST.get('size'), )
-
-    if item_id in list(bag.keys()):
-        bag[item_id] += quantity
-        print('Item already exists in bag')
+    if size:
+        if item_id in list(bag.keys()):
+            if size in bag[item_id]['item_size'].keys():
+                bag[item_id]['item_size'][size] += quantity
+            else:
+                bag[item_id]['item_size'][size] = quantity
+        else:
+            bag[item_id] = {'item_size': {size: quantity}}
     else:
-        bag[item_id] = quantity
-        print('Item did not exist in bag yet')
+        # send error 500 message
+        pass
 
     request.session['bag'] = bag
-    print(request.session['bag'], 'shopping bag')
     return redirect(redirect_url)
 
 

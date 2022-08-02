@@ -52,18 +52,18 @@
                         <p class="text-mute size-title text-start mt-1 mt-lg-4 mt-md-2">Sizes</p>
                     <div class="col-6">
                         <div class="sizes-container">
-                            <form class="form" action="{% url 'add_to_bag' product.pk %}" method="post">
+                            <form class="form" id="purchase-form" action="#" method="post">
                                 {% csrf_token %}
                                     {% if product.sizes %}
                                     <ul class="list list-unstyled d-flex">
                                     {% for size in size_list %}
                                     {% if size.stock == 0 %}
                                     <div class="col-3 mx-1">
-                                        <li class="size-box text-center py-1" style="pointer-events: none" href="" value="{{ size.size }}"><strong>{{ size.size }}</strong></li>                                        
+                                        <li class="size-box text-center py-1" name="product_size" style="pointer-events: none" href="" value="{{ size.size }}"><strong>{{ size.size }}</strong></li>                                        
                                     </div>
                                     {% else %}
                                     <div class="col-3 mx-1">
-                                        <li class="size-box text-center py-1" name="size" value="{{ size.size }}"><strong>{{ size.size }}</strong></li>                                        
+                                        <li class="size-box text-center py-1"  value="{{ size.size }}"><strong>{{ size.size }}</strong></li>                                        
                                     </div>
                                     {% endif %}
                                     {% endfor %}

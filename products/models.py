@@ -47,7 +47,7 @@ class Product(models.Model):
     sku = models.CharField(max_length=254, null=True, blank=True)
     description = models.TextField(null=True)
     product_details = models.ForeignKey('ProductDetail', null=True, blank=True, on_delete=models.SET_NULL)
-    sizes = models.BooleanField(blank=True)
+    sizes = models.BooleanField(default=True, blank=True,)
     product_reviews = models.ForeignKey('Review', null=True, blank=True, on_delete=models.SET_NULL)
     price = models.DecimalField(max_digits=7, decimal_places=2)
     cover_image = models.ImageField(null=True, blank=True)

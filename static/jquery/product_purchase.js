@@ -8,44 +8,33 @@ let item_id = $("#item_id").val();
 console.log(`URL: ${redirect_url}`);
 
 for (choice of options){
-    // console.log(puta);
-    size = choice.addEventListener('click', function(){
-        var sizevalue = $(this).val()
-        $(this).addClass("active")
-        size = parseInt(sizevalue)
-        console.log(size);
+    choice.addEventListener('click', function(){
+        $(this).addClass("active");
+        var sizevalue = parseInt($(this).val());
+        console.log(sizevalue);
     });
 };
 
 
-for (active of options){
-    // console.log(puta);
-    if(active.getAttribute('class') == 'active'){
-        size = this.val()
-    }
-};
-
 form.on('submit', function(ev){
     ev.preventDefault();
 
-    var size = parseInt($('active').val());
-    
+    var size = $('.active').value();
+    console.log(size)
+
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
         'csrfmiddlewaretoken': csrfToken,
         'item_id': item_id,
-        'size': size,
+        'product_size': size,
         'redirect_url': redirect_url,
     };
-    var url = `/add/${item_id}`;
-    alert(size)
+    var url = `/bag/add/${item_id}/`;
     $.post(url, postData).done(function (){
     }).then(function(result) {
         if (result.error) {
             console.log(error);
         }else{
-            console.log(size);
-
             form.submit();
         }
         })
