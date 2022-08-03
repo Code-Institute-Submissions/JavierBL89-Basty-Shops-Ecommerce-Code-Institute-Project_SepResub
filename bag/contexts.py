@@ -28,7 +28,7 @@ def bag_contents(request):
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.DELIVERY_PERCENTAGE/100)
-    
+
     grand_total = delivery + total
     context = {
         'bag_items': bag_items,

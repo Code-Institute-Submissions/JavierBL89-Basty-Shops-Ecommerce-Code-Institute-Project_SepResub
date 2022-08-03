@@ -18,7 +18,6 @@ def add_to_bag(request, item_id):
 
     if 'product_size' in request.POST:
         size = request.POST.get('product_size')
-        print('this is the size', size)
 
     bag = request.session.get('bag', {})
 
@@ -42,19 +41,23 @@ def add_to_bag(request, item_id):
 
 
 def adjust_bag(request, item_id):
+    print('puta')
     quantity = int(request.POST.get('quantity'))
-    # size = None
-    # if 'size' in request.POST:
-    #     size = request.POST['size']
-    bag = request.session.get('bad', {})
-    # if size:
-    if quantity > 0:
-        bag[item_id]['quantity'] += quantity
-    else:
-        del bag[item_id]['quantity']
-        if not bag[item_id]['quantity']:
-            bag.pop(item_id)
-    request.session['bag'] = bag
+    size = None
+    if 'product_size' in request.POST:
+        size = request.POST['product_size']
+
+    bag = request.session.get('bag', {})
+    print(bag)
+    if size:
+        if quantity > 0:
+            print(item_id)
+            bag[item_id]['item_size']['quantity'] = quantity
+        else:
+            del bag[item_id]['item_size']['quantity']
+            if not bag[item_id]['item_size']['quantity']:
+                bag.pop(item_id)
+        request.session['bag'] = bag
     return redirect(reverse('view_bag'))
 
 
