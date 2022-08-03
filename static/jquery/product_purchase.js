@@ -9,9 +9,7 @@ console.log(`URL: ${redirect_url}`);
 
 for (choice of options){
     choice.addEventListener('click', function(){
-        $(this).addClass("active");
-        var sizevalue = parseInt($(this).val());
-        console.log(sizevalue);
+        $(this).attr('id', 'active');
     });
 };
 
@@ -19,7 +17,7 @@ for (choice of options){
 form.on('submit', function(ev){
     ev.preventDefault();
 
-    var size = $('.active').value();
+    var size = parseInt($('#active').val());
     console.log(size)
 
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
@@ -35,7 +33,7 @@ form.on('submit', function(ev){
         if (result.error) {
             console.log(error);
         }else{
-            form.submit();
+            location.reload();
         }
         })
 });

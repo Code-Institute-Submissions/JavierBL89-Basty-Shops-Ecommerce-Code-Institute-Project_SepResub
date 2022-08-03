@@ -17,9 +17,9 @@ def add_to_bag(request, item_id):
     redirect_url = request.POST.get('redirect_url')
 
     if 'product_size' in request.POST:
-        size = request.POST.get['product_size']
+        size = request.POST.get('product_size')
         print('this is the size', size)
-        
+
     bag = request.session.get('bag', {})
 
     print(f"bag is {bag}")
