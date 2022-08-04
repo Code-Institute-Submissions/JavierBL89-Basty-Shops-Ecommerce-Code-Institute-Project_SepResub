@@ -7,18 +7,15 @@
     <div class="container-fluid mt-3">
         <div class="row d-flex">
             <div class="col-10">
-                <div class="page-title">
-                    <h1>My bag</h1>
+                <div id="bag-title">
+                    <h1 class="ps-4">My bag</h1>
                 </div>
             </div>
         </div>
-        <!-- {% if bag_items %}
-        {{ bag_items }}
-        {{ request.session.bag }} -->
-        <!-- {% endif %} -->
+        {% if bag_items %}
         {% for item in bag_items %}
         <div class="row d-flex">
-            <div class="col-3 product-img-bag">
+            <div class="col-3 product-img-bag-box text-center">
                 {% include 'bag/product_img.html' %}
             </div>
             <div class="col-9">
@@ -35,7 +32,7 @@
                         <p>{{ item.product.sku }}</p>
                         <p>{{ item.product.price }}</p>
                     </div>
-                    <div class="col-3 col-md-3 col-lg-3">
+                    <div class="col-3 col-md-3 col-lg-3 quantity-form-box">
                         {% include 'bag/quantity_form.html' %}
                     </div>
                     <div class="col-1 col-md-1 col-lg-1 d-flex">
@@ -43,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <hr>
+            <hr class="mt-4">
             {% endfor %}
         </div>
         <div class="row d-flex">
@@ -52,24 +49,29 @@
                 {% include "bag/bag_total.html" %}
             </div>
         </div>
+        {% else %}
+        <div class="row ">
+            <div class="col mt-5">
+                <div class="empty-bag-content">
+                    <h6 class="mb-5">Your bag is empty, pop something in!</h6>
+                    <a class=" px-3 fw-bold py-2 text-decoration-none text-black" href="{% url 'products' %}"> <<< KEEP SHOPPING</a>   
+                </div>
+                
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
-    $('.btt-link').click(function(e) {
-        window.scrollTo(0,0)
-    })
-</script>
-
-{% include 'products/includes/quantity_input_script.html' %}
+<!-- {% include 'products/includes/quantity_input_script.html' %} -->
 
 <script type="text/javascript">
     //update quantity on click
     $('.update-link').click(function(e){
-        var form = $(this).prev('#update-form');
+        var form = $(this).prev('.update-form');
         form.submit();
     });
 
@@ -87,3 +89,4 @@
     })
 </script>
 {% endblock %}
+

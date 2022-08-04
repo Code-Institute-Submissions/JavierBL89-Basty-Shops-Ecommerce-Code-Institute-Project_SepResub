@@ -788,10 +788,7 @@ ul .size-box{
     font-size: 0.750rem;
 }
 
-/* .input-group {
-    width: 70%;
 
-} */
  }
   /******************************************************************** TABLET SCREEN */
   @media only screen and (min-width:640px) and (max-width:950px) {
@@ -1088,12 +1085,23 @@ img{
 
 /********************* BAG PAGE */
 
+.empty-bag-content{
+    background-color: #C8BFC7;
+    width: 50%;
+}
+#bag-title, .empty-bag-content{
+    margin-left: 15%;
+}
 
 .product-sku-bag, .product-title-bag, .product-quantity-bag, .product-price-bag{
     font-size: 0.750rem;
 }
 
-
+.item-img-bag{
+    width: 40%;
+    height: 90%;
+    /* height: 285px; */
+}
 
 /* .total-bag-row{
     width: 100%;

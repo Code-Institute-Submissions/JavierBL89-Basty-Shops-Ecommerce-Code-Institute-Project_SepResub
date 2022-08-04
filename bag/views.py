@@ -51,13 +51,12 @@ def adjust_bag(request, item_id):
     print(bag)
     if size:
         if quantity > 0:
-            print(item_id)
             bag[item_id]['item_size']['quantity'] = quantity
         else:
             del bag[item_id]['item_size']['quantity']
             if not bag[item_id]['item_size']['quantity']:
                 bag.pop(item_id)
-        request.session['bag'] = bag
+    request.session['bag'] = bag
     return redirect(reverse('view_bag'))
 
 

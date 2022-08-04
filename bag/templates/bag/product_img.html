@@ -1,5 +1,6 @@
-{% if item.product.cover_img %}
-<img class="w-100" src="{{  MEDIA_URL }} item.product.cover_image" alt="{{ item.product.title }}">
+{% if item.product.cover_image %}
+<img class="item-img-bag" src="{{  MEDIA_URL }}{{ item.product.cover_image }}" alt="{{ item.product.title }}">
 {% else %}
-<img class="w-100" src="{{ MEDIA_URL }} noimage.png" alt="{{ item.product.name }}">
+<p>CACHONDA</p>
+<img class="item-img-bag" src="{{ MEDIA_URL }} noimage.png" alt="{{ item.product.name }}">
 {% endif %}
