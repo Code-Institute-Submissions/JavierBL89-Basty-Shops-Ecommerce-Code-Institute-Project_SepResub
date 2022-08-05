@@ -1,9 +1,9 @@
-<!-- <form class="form update-form"  method="POST" action="{% url 'adjust_bag' item.item_id %}"> -->
-    <!-- {% csrf_token %} -->
+<form class="form update-form"  method="POST" action="{% url 'adjust_bag' item.item_id %}">
+    {% csrf_token %}
     <div class="form-group">
         <div class="input-group">
             <div class="input-group-prepend">
-                <button class="decrement-qty btn btn-sm btn-black rounded-0"
+                <button class="decrement-qty update-link btn btn-sm btn-black rounded-0"
                     data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                     <span>
                         <i class="fas fa-minus"></i>
@@ -15,7 +15,7 @@
                 data-item_id="{{ item.item_id }}"
                 id="id_qty_{{ item.item_id }}">
             <div class="input-group-append">
-                <button class="increment-qty btn btn-sm btn-black rounded-0"
+                <button class="increment-qty update-link btn btn-sm btn-black rounded-0"
                     data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                     <span >
                         <i class="fas fa-plus"></i>
@@ -27,15 +27,34 @@
             {% endif %}
         </div>
     </div>
-
-<!-- </form> -->
-<a class="update-link text-info" style="cursor: pointer;"><small>Update</small></a>
+</form>
 <a class="remove-item text-danger float-right" style="cursor: pointer;" id="remove_{{ item.item_id }}"
 data-product_size="{{ item.size }}"><small>Remove</small></a>
 
 
  {% block postloadjs %}
+
 <script>
+
+    // Update item quantity
+    function updateQuantity(){
+            var form = $('.update-form');
+            form.submit();
+    };
+    
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('product_size');
+        var url = `/bag/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
 
     // Disable +/- buttons outside 1-99 range
     function handleEnableDisable(itemId) {
@@ -61,6 +80,7 @@ data-product_size="{{ item.size }}"><small>Remove</small></a>
        $(closestInput).val(currentValue + 1);
        var itemId = $(this).data('item_id');
        handleEnableDisable(itemId);
+       updateQuantity()
     });
 
     // Decrement quantity
@@ -71,6 +91,7 @@ data-product_size="{{ item.size }}"><small>Remove</small></a>
        $(closestInput).val(currentValue - 1);
        var itemId = $(this).data('item_id');
        handleEnableDisable(itemId);
+       updateQuantity()
     });
 
 </script>
