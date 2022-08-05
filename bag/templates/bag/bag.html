@@ -4,11 +4,11 @@
 
 {% block content %}
 <div class="main_wraper">
-    <div class="container-fluid mt-3">
+    <div class="container-fluid mt-4">
         <div class="row d-flex">
             <div class="col-10">
                 <div id="bag-title">
-                    <h1 class="ps-4">My bag</h1>
+                    <h1>My bag</h1>
                 </div>
             </div>
         </div>
@@ -52,9 +52,9 @@
         {% else %}
         <div class="row ">
             <div class="col mt-5">
-                <div class="empty-bag-content">
-                    <h6 class="mb-5">Your bag is empty, pop something in!</h6>
-                    <a class=" px-3 fw-bold py-2 text-decoration-none text-black" href="{% url 'products' %}"> <<< KEEP SHOPPING</a>   
+                <div class="empty-bag-content text-center">
+                    <h6 class="mb-sm-5 mb-md-4 mb-lg-5">Your bag is empty, pop something in!</h6>
+                    <a class="px-3 fw-bold py-2 text-decoration-none" style="color:#FF6542;" href="{% url 'products' %}"> <<< KEEP SHOPPING</a>   
                 </div>
                 
             </div>
@@ -66,27 +66,6 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<!-- {% include 'products/includes/quantity_input_script.html' %} -->
 
-<script type="text/javascript">
-    //update quantity on click
-    $('.update-link').click(function(e){
-        var form = $(this).prev('.update-form');
-        form.submit();
-    });
-
-    //remove items and reload on click
-    $('.remove-item').click(function(e){
-        var csrfToken =  "{{ csrf_token}}";
-        var itemId = $(this).att('id').split('remove_')[1];
-        var item_size = $(this).data('size');
-        var url = '/bag/remove/${itemId}/';
-        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': item_size};
-
-        $.post(url, data).done(function(){
-            location.reload()
-        });
-    })
-</script>
 {% endblock %}
 

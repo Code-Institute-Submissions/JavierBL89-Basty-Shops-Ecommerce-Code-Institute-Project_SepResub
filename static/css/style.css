@@ -788,6 +788,30 @@ ul .size-box{
     font-size: 0.750rem;
 }
 
+.empty-bag-content{
+    /* background-color: #C8BFC7; */
+    border: solid 1px rgb(122, 13, 13);
+    width: 70%;
+    padding: 3%;
+    font-size: 0.750rem;
+    margin: 0 auto 80px;
+}
+
+.empty-bag-content h6{
+    font-size: 0.750rem;
+    /* margin-bottom: 2%; */
+
+}
+
+#bag-title h1{
+    font-size: 1rem;
+    padding-left: 5%;
+}
+
+#bag-title, .empty-bag-content{
+    margin-left: 15%;
+}
+
 
  }
   /******************************************************************** TABLET SCREEN */
@@ -1016,6 +1040,26 @@ img{
 
   }
   
+
+/****************** BAG PAGE */
+
+.empty-bag-content{
+    /* background-color: #C8BFC7; */
+    border: solid 1px rgb(122, 13, 13);
+    width: 50%;
+    padding: 3%;
+    margin-bottom: 80px;
+}
+
+#bag-title h1{
+    font-size: 1.5rem;
+    padding-left: 5%;
+} 
+
+#bag-title, .empty-bag-content{
+    margin-left: 15%;
+}
+
 }
   /******************************************************************** DESKTOP SCREEN */
   @media only screen and (min-width: 1000px) {
@@ -1086,9 +1130,19 @@ img{
 /********************* BAG PAGE */
 
 .empty-bag-content{
-    background-color: #C8BFC7;
+    /* background-color: #C8BFC7; */
+    border: solid 1px rgb(122, 13, 13);
     width: 50%;
+    padding: 2%;
+    margin-bottom: 80px;
+
 }
+
+#bag-title h1{
+    font-size: 1.6rem;
+    padding-left: 4%;
+}
+
 #bag-title, .empty-bag-content{
     margin-left: 15%;
 }
