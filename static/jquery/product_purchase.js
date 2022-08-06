@@ -16,15 +16,21 @@ for (choice of options){
 
 form.on('submit', function(ev){
     ev.preventDefault();
-
-    var size = parseInt($('#active').val());
-    console.log(size)
+    // Get product size
+    let size = $('#active');
+    size = parseInt(size.attr('value'));
+    // Get product size id
+    let size_id = $('#active');
+    let size_id_first_number = size_id.attr('value')[3];
+    let size_id_second_number = size_id.attr('value')[4];
+    size_id = parseInt(size_id_first_number + size_id_second_number)
 
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
         'csrfmiddlewaretoken': csrfToken,
         'item_id': item_id,
         'product_size': size,
+        'size_id': size_id,
         'redirect_url': redirect_url,
     };
     var url = `/bag/add/${item_id}/`;
