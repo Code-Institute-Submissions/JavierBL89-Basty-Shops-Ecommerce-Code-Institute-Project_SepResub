@@ -79,6 +79,7 @@ class SizesAdmin(admin.ModelAdmin):
 
     list_display = (
         'product_id',
+        'id',
         'size',
         'stock',
     )

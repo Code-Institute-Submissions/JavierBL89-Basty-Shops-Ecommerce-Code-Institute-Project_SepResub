@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
 from products.models import Product, Size
-from .handle_stock import handle_stock, decrement_stock
+from .handle_stock import handle_stock, decrement_stock, increment_stock
 # Create your views here.
 
 
@@ -87,6 +87,34 @@ def increment_quantity(request, item_id):
     if size:
         if quantity > 0:
             bag[item_id]['item_size'][size] += quantity
+        else:
+            del bag[item_id]['item_size']['quantity']
+            if not bag[item_id]['item_size']['quantity']:
+                bag.pop(item_id)
+    request.session['bag'] = bag
+    return redirect(reverse('view_bag'))
+
+
+def decrement_quantity(request, item_id):
+
+    product_sizes_list = Size.objects.filter(product_id=item_id).all()
+    quantity = 1
+    size = None
+
+    if 'product_size' in request.POST:
+        size = request.POST.get('product_size')
+
+    for item_size in product_sizes_list.values():
+        if size in item_size['size']:
+            item_size_id = item_size['id']
+            print('yyyeess', item_size['id'])
+            increment_stock(item_size_id)
+
+    bag = request.session.get('bag', {})
+    print(bag)
+    if size:
+        if quantity > 0:
+            bag[item_id]['item_size'][size] -= quantity
         else:
             del bag[item_id]['item_size']['quantity']
             if not bag[item_id]['item_size']['quantity']:

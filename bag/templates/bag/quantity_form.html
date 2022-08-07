@@ -101,7 +101,16 @@ data-product_size="{{ item.size }}"><small>Remove</small></a>
        $(closestInput).val(currentValue - 1);
        var itemId = $(this).data('item_id');
        handleEnableDisable(itemId);
-       updateQuantity()
+    //    updateQuantity()
+    var csrfToken = "{{ csrf_token }}";
+        var size =  $('#product_size').val();
+        var url = `/bag/decrement/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
     });
 
 </script>
