@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
 from products.models import Product, Size
-from .handle_stock import handle_stock, decrement_stock, increment_stock
+from .handle_stock import handle_stock, decrement_stock, increment_stock, update_stock
 # Create your views here.
 
 
@@ -49,19 +49,28 @@ def add_to_bag(request, item_id):
 def remove_item(request, item_id):
 
     try:
+        product_sizes_list = Size.objects.filter(product_id=item_id).all()
         size = None
-        if 'size' in request.POST:
-            size = request.POST['size']
+
+        if 'product_size' in request.POST:
+            size = request.POST['product_size']
+
+        if 'quantity' in request.POST:
+            quantity = request.POST.get('quantity')
+            print('yyyyyyyy')
+        
+        for item_size in product_sizes_list.values():
+            if size in item_size['size']:
+                item_size_id = item_size['id']
+                print('yyyeess', item_size['id'])
+                update_stock(item_size_id, quantity)
+
         bag = request.session.get('bag', {})
-        if size:
-            del bag[item_id]['item_size']['size']
-            if not bag[item_id]['item_size']['size']:
-                bag.pop(item_id)
-        else:
-            bag.pop(item_id)
-            request.session['bag'] = bag
-            print(request.session['bag'], 'bag session')
-            return HttpResponse(status=200)
+        bag.pop(item_id)
+        
+        request.session['bag'] = bag
+        print(request.session['bag'], 'bag session')
+        return HttpResponse(status=200)
 
     except Exception as e:
         return HttpResponse(status=500)
