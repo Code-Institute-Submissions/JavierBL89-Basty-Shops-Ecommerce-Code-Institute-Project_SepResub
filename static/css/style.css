@@ -7,6 +7,16 @@ GREY: C8BFC7;
 TOMATOE  FF6542
 
 */
+
+/******** TOASTS CONTAINER */
+
+#message-container{
+    height: 50px;
+    position: fixed;
+    z-index: 9999999999;
+    background-color: #FF6542;
+    width: 100%;
+} 
 body{
     margin: 0;
 }
@@ -1157,10 +1167,5 @@ img{
     /* height: 285px; */
 }
 
-/* .total-bag-row{
-    width: 100%;
-}
-.bag-item-row{
-    width: 100%;
-} */
+
   }

@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from products.models import Product, Size
 from .handle_stock import handle_stock, decrement_stock, increment_stock, update_stock
+from django.contrib import messages
 # Create your views here.
 
 
@@ -12,7 +13,7 @@ def view_bag(request):
 def add_to_bag(request, item_id):
     """ Add the quantity of the specified product to the shopping bag """
     
-    product = Product.objects.get(pk=item_id)            
+    product = get_object_or_404(Product, pk=item_id)            
     quantity = 1
     size = None
     redirect_url = request.POST.get('redirect_url')
@@ -33,17 +34,19 @@ def add_to_bag(request, item_id):
             if size in bag[item_id]['item_size'].keys():
                 bag[item_id]['item_size'][size] += quantity
                 handle_stock(item_size_id)
-
+                # messages.success(request, f'{product.title}, size {size} was added to you shopping bag')
             else:
                 bag[item_id]['item_size'][size] = quantity
                 handle_stock(item_size_id)
+                # messages.success(request, f'{product.title}, size {size} was added to your shopping bag')
         else:
             bag[item_id] = {'item_size': {size: quantity}}
             handle_stock(item_size_id)
+            messages.success(request, f'{product.title}, size {size} was added to your shopping bag')
 
     else:
-        # send error 500 message
-        pass
+        messages.error(request, 'Error adding item')
+        return HttpResponse(status=500)
 
     request.session['bag'] = bag
     return redirect(redirect_url)
@@ -80,7 +83,7 @@ def remove_item(request, item_id):
 
 
 def increment_quantity(request, item_id):
-
+    
     product_sizes_list = Size.objects.filter(product_id=item_id).all()
     quantity = 1
     size = None
