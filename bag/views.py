@@ -33,11 +33,14 @@ def add_to_bag(request, item_id):
             if size in bag[item_id]['item_size'].keys():
                 bag[item_id]['item_size'][size] += quantity
                 handle_stock(item_size_id)
+
             else:
                 bag[item_id]['item_size'][size] = quantity
                 handle_stock(item_size_id)
         else:
             bag[item_id] = {'item_size': {size: quantity}}
+            handle_stock(item_size_id)
+
     else:
         # send error 500 message
         pass
