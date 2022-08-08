@@ -11,12 +11,13 @@ TOMATOE  FF6542
 /******** TOASTS CONTAINER */
 
 #message-container{
-    height: 50px;
     position: fixed;
+    left: 0;
+    top: 72px;
     z-index: 9999999999;
     background-color: #FF6542;
-    width: 100%;
 } 
+
 body{
     margin: 0;
 }
