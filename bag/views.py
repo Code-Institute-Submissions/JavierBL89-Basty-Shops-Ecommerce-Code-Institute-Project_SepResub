@@ -12,7 +12,7 @@ def view_bag(request):
 
 def add_to_bag(request, item_id):
     """ Add the quantity of the specified product to the shopping bag """
-    
+
     product = get_object_or_404(Product, pk=item_id)            
     quantity = 1
     size = None
@@ -42,7 +42,7 @@ def add_to_bag(request, item_id):
         else:
             bag[item_id] = {'item_size': {size: quantity}}
             handle_stock(item_size_id)
-            messages.info(request, f'{product.title}, size {size} was added to your shopping bag')
+            (request, f'{product.title}, size {size} was added to your shopping bag')
 
     else:
         messages.error(request, 'Error adding item')
@@ -57,7 +57,6 @@ def remove_item(request, item_id):
     try:
         product_sizes_list = Size.objects.filter(product_id=item_id).all()
         product = get_object_or_404(Product, pk=item_id)            
-
         size = None
 
         if 'product_size' in request.POST:
@@ -66,7 +65,7 @@ def remove_item(request, item_id):
         if 'quantity' in request.POST:
             quantity = request.POST.get('quantity')
             print('yyyyyyyy')
-        
+
         bag = request.session.get('bag', {})
 
         if size:
@@ -77,10 +76,10 @@ def remove_item(request, item_id):
                     item_size_id = item_size['id']
                     print('yyyeess', item_size['id'])
                     update_stock(item_size_id, quantity)
-            messages.success(request, f'Your product {product.name} was removed')
+            messages.info(request, f'Your product {product.title} was removed from your bag')
         else:
             bag.pop(item_id)
-            messages.success(request, f'Your product {product.name} was removed')
+            messages.info(request, f'Your product {product.title} was removed')
 
         request.session['bag'] = bag
         print(request.session['bag'], 'bag session')

@@ -10,13 +10,20 @@ TOMATOE  FF6542
 
 /******** TOASTS CONTAINER */
 
+
 #message-container{
     position: fixed;
-    left: 0;
+    right: 30px;
     top: 72px;
     z-index: 9999999999;
-    background-color: #FF6542;
+    background-color: rgb(220, 220, 220);
 } 
+
+.toast{
+    border-color: darkred;
+    color: #616161;
+
+}
 
 body{
     margin: 0;

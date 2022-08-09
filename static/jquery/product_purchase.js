@@ -22,6 +22,7 @@ form.on('submit', function(ev){
     // Get product size id
     let size_id = $('#active');
     let size_id_first_number = size_id.attr('value')[3];
+    console.log(size_id_first_number, 'this is the value');
     let size_id_second_number = size_id.attr('value')[4];
     size_id = parseInt(size_id_first_number + size_id_second_number)
 
