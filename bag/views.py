@@ -56,6 +56,8 @@ def remove_item(request, item_id):
 
     try:
         product_sizes_list = Size.objects.filter(product_id=item_id).all()
+        product = get_object_or_404(Product, pk=item_id)            
+
         size = None
 
         if 'product_size' in request.POST:
@@ -65,15 +67,21 @@ def remove_item(request, item_id):
             quantity = request.POST.get('quantity')
             print('yyyyyyyy')
         
-        for item_size in product_sizes_list.values():
-            if size in item_size['size']:
-                item_size_id = item_size['id']
-                print('yyyeess', item_size['id'])
-                update_stock(item_size_id, quantity)
-
         bag = request.session.get('bag', {})
-        bag.pop(item_id)
-        
+
+        if size:
+            del bag[item_id]['item_size'][size]
+            print('puta')
+            for item_size in product_sizes_list.values():
+                if size in item_size['size']:
+                    item_size_id = item_size['id']
+                    print('yyyeess', item_size['id'])
+                    update_stock(item_size_id, quantity)
+            messages.success(request, f'Your product {product.name} was removed')
+        else:
+            bag.pop(item_id)
+            messages.success(request, f'Your product {product.name} was removed')
+
         request.session['bag'] = bag
         print(request.session['bag'], 'bag session')
         return HttpResponse(status=200)
