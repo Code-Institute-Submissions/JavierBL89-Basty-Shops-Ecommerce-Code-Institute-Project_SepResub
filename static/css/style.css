@@ -830,6 +830,11 @@ ul .size-box{
     margin-left: 15%;
 }
 
+#checkout-button{ 
+    font-size: 0.800rem;
+    color: #FF6542;
+    width: 25%;
+}
 
  }
   /******************************************************************** TABLET SCREEN */
@@ -1078,6 +1083,12 @@ img{
     margin-left: 15%;
 }
 
+#checkout-button{ 
+    font-size: 1rem;
+    color: #FF6542;
+    width: 25%;
+}
+
 }
   /******************************************************************** DESKTOP SCREEN */
   @media only screen and (min-width: 1000px) {
@@ -1175,5 +1186,14 @@ img{
     /* height: 285px; */
 }
 
+#checkout-button{ 
+    font-size: 1.1rem;
+    color: #FF6542;
+    width: 25%;
+}
+
+#checkout-button:hover{ 
+    border: none;
+}
 
   }
