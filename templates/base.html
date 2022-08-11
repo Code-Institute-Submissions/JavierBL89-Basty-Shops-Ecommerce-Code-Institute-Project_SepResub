@@ -32,9 +32,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
-   {% endblock%}
+   <!-- Stripe -->
+   <script src="https://js.stripe.com/v3/"></script>
+    {% endblock%}
 
-    {% block extra_js%}
+    {% block extra_js %}
     {% endblock %}
 </head>
   <body>
@@ -138,12 +140,12 @@
       </div>
     </section>
 
-    {% block post_load_js %}
+    {% block postloadjs %}
     <script type="text/javascript">
       $('.toast').toast('show');
   </script>
 
-    <script src="{% static 'jquery/burgerMenu.js' %}"></script>
+  <script src="{% static 'jquery/burgerMenu.js' %}"></script>
   
 
     {% endblock %}
