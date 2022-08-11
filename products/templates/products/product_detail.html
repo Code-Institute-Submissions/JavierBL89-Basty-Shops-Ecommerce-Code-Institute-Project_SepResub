@@ -231,15 +231,11 @@
 </section>
 {% endblock %}
 
-{% block post_load_js %}
+{% block postloadjs %}
     {{ block.super }}
     <script src="{% static 'jquery/productDetailImage.js' %}"></script>
     <script src="{% static 'jquery/product_purchase.js' %}"></script>
 {% endblock %}
 
-{% block postloadjs %}
-{{ block.super }}
-{% include 'products/includes/quantity_input_script.html' %}
-{% endblock %}
 
 

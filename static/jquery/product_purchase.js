@@ -4,7 +4,6 @@ const form = $('#purchase-form');
 const options = $('.size-box');
 const redirect_url = $("#redirect_url").val();
 let item_id = $("#item_id").val();
-
 console.log(`URL: ${redirect_url}`);
 
 for (choice of options){
