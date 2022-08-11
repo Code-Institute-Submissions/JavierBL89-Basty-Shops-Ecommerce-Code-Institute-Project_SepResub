@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bag_tools %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+{% block content %}
+<div class="main_wraper">
+    <div class="container-fluid mt-6 mb-5 checkout-container" id="checkout-container">
+        <div class="row d-flex">
+            <div class="col-12">
+                <h6 class="mt-4 mb-4 " style="color: green;">Thanks very much for completing your order!. </h6>
+                <p>A confirmation email will be sent to <strong>{{ order.email }}</strong></p>
+                <p>See your order information:</p>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-6">
+
+            </div>
+            <p>See more</p>
+            <div class="col-6">
+                <button type="button" href="">Boots</button>
+                <button type="button" href="">Shoes</button>
+                <button type="button" href="">Sneakers</button>
+            </div>
+        </div>
+        
+    </div>
+</div>
+{% endblock %}
+
+

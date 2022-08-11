@@ -46,9 +46,10 @@
                         {{ order_form.country | as_crispy_field }}
                         {{ order_form.post_code | as_crispy_field }}
                         {{ order_form.town_or_city | as_crispy_field }}
-                        {% endif %}
                     </fieldset>
                 </div>
+                {% endif %}
+
                 <div class="col-11 col-md-4 col-lg-4 ms-sm-0 ms-md-5">
                     <h6 class="text-info mb-3">Order sumary</h6>
                     <div class="row">
@@ -113,10 +114,6 @@
                         </p>
                         <button type="submit" id="submit-button" class="btn btn-sm cnt-checkout mt-4 fw-bold">Complete order!</button>
                     </div>
-                    <!-- <div class="col-6">
-                        <div type="submit" class="btn btn-sm cnt-checkout mt-4 fw-bold">Complete order!</div>
-                    </div> -->
-
                 </div>
             </form>
 

@@ -48,8 +48,6 @@ form.addEventListener('submit', function(ev) {
     // Desable card element and submit button to prevent multiple submissions
     card.update({'disable': true});
     $('#submit-button').attr('disabled', true)
-    console.log('putaaaaa');
-
     stripe.confirmCardPayment(clientSecret, {
     payment_method: {
     card: card,
@@ -68,7 +66,6 @@ form.addEventListener('submit', function(ev) {
              $('#submit-button').attr('disabled', false)
          } else {
              if (result.paymentIntent.status === 'succeeded') {
-              console.log('putaa');
                  form.submit();
           }
         }

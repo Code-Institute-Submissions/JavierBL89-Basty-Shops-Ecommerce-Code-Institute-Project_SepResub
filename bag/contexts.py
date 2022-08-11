@@ -28,7 +28,7 @@ def bag_contents(request):
     print(bag_items, 'Bag in proccessor')
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
-        delivery = total * Decimal(settings.DELIVERY_PERCENTAGE/100)
+        delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE/100)
 
     grand_total = delivery + total
     context = {
