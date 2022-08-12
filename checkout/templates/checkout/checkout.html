@@ -5,6 +5,7 @@
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
+
 {% block content %}
 <div class="main_wraper">
     <div class="container-fluid mt-6 mb-5 checkout-container" id="checkout-container">
@@ -37,6 +38,7 @@
                                     <a href="{% url 'account_login' %}">Login</a>
                                     to save this information
                                 </label>
+                                {% endif %}
                         </fieldset>
                 </div>
                 <div class="col-11 col-md-4 col-lg-3 ms-sm-0 ms-md-4">
@@ -48,7 +50,6 @@
                         {{ order_form.town_or_city | as_crispy_field }}
                     </fieldset>
                 </div>
-                {% endif %}
 
                 <div class="col-11 col-md-4 col-lg-4 ms-sm-0 ms-md-5">
                     <h6 class="text-info mb-3">Order sumary</h6>

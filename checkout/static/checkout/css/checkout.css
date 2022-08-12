@@ -95,6 +95,13 @@ select option[value=""] {
    .checkout-container h1{
       font-size: 1.2rem;
    }
+
+   #order-confirmation-container .row p{
+      font-size: 0.650rem;
+ }
+ #order-confirmation-container .row small{
+   font-size: 0.800rem;
+}
 }
  /******************************************************************** TABLET SCREEN */
  @media only screen and (min-width:640px) and (max-width:950px) {
@@ -107,7 +114,9 @@ select option[value=""] {
       font-size: 1.4rem;
    }
 
-
+   #order-confirmation-container .row p{
+      font-size: 0.700rem;
+ }
    
 }
  /******************************************************************** DESKTOP SCREEN */
@@ -122,4 +131,7 @@ select option[value=""] {
    font-size: 1.6rem;
 }
 
+#order-confirmation-container .row p{
+     font-size: 0.700rem;
+}
  }
