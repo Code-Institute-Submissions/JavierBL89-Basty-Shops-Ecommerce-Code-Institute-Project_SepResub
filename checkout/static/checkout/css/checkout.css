@@ -47,7 +47,22 @@ select option[value=""] {
     color: #aab7c4 !important;
 }
 
+#loading-overlay{
+   display: none;
+   position: fixed;
+   top: 80px;
+   width: 90%;
+   height: 100%;
+   background-color: rgb(234, 181, 181);
+   z-index: 2;
+}
 
+.loading-spinner{
+   justify-content: center;
+   align-items: center;
+  display: flex;
+   height: 100%;
+}
 
 .main-wraper .checkout-container{
    background-color: rgb(235, 227, 233);
