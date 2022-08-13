@@ -54,13 +54,13 @@ form.addEventListener('submit', function(ev) {
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
-      'csrfmiddlewaretoken': csrfToken,
-      'client_secret': clientSecret,
-      'save_info': saveInfo,
-    }
-
+        'csrfmiddlewaretoken': csrfToken,
+        'client_secret': clientSecret,
+        'save_info': saveInfo,
+    };
+    
     var url = '/checkout/cache_checkout_data/';
-
+    
     $.post(url, postData).done(function(){
       stripe.confirmCardPayment(clientSecret, {
         payment_method: {
@@ -92,6 +92,9 @@ form.addEventListener('submit', function(ev) {
         }
         }).then(function(result) {
              if (result.error) {
+              // HERE CONSOLE LOG STRIPE RESULT ERROR OBJECT
+              console.log(result.error);
+
                  var errorDiv = document.getElementById('card-errors');
                  var html = `
                     <span class="icon" role="alert">
@@ -107,7 +110,7 @@ form.addEventListener('submit', function(ev) {
              } else {
                  if (result.paymentIntent.status === 'succeeded') {
                      form.submit();
-              }
+                  }
             }
          });
 

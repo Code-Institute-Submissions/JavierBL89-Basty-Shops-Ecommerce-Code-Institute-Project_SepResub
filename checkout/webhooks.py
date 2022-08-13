@@ -17,7 +17,9 @@ def webhook(request):
     event = None
     payload = request.body
     # Get the webhook data and verify its signature
-    sig_header = request.headers['STRIPE_SIGNATURE']
+    # sig_header = request.META.get('HTTP_STRIPE_SIGNATURE')
+    sig_header = request.META['HTTP_STRIPE_SIGNATURE']
+    # sig_header = request.headers.get('Stripe-Signature', None)
 
     try:
         event = stripe.Webhook.construct_event(
@@ -27,6 +29,7 @@ def webhook(request):
         # Invalid payload
         return HttpResponse(status=400)
     except stripe.error.SignatureVerificationError as e:
+        print(e)
         # Invalid signature
         return HttpResponse(status=400)
     except Exception as e:
