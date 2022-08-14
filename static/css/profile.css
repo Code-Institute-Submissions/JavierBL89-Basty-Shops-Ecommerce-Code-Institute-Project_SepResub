@@ -1,25 +1,161 @@
 
-
-.main_wraper .profile-container{
-    margin-left: 15%;
+.profile-details-content,
+.access-profile-content,
+.delivery-info-content,
+.order-history-content{
+    display: none;
 }
 
+.main_wraper .profile-container{
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: rgb(235, 227, 233);
+}
+
+form .form-control{
+    margin-bottom: 5px;
+    height: 40px;
+    font-size: 0.700rem;
+}
+
+ form .form-control:focus{
+    border-color:  rgb(122, 13, 13);
+    box-shadow: 0 0 3px rgb(122, 13, 13) !important;
+    font-size: 0.700rem;
+ }
+
+ #id_default_country,
+ #id_default_country option:not(:first-child){
+   color: rgb(111, 111, 111);
+ }
+
+ #id_default_country option:first-child{
+   color: rgb(111, 111, 111);
+ }
+
+ #id_default_country::placeholder{
+    color: rgb(111, 111, 111);
+
+ }
+
+ .profile-container div small{
+    margin-bottom: 10px;
+ }
 
 /******************************************************************** MOBILE SCREEN */
 @media only screen and (min-width: 320px) and (max-width: 600px) {
   
-
+    .main_wraper .profile-container{
+        padding: 9% 1% 1% 10%;
+        width: 90%;
+    }
+    
+     .main_wraper h1{
+        padding-left: 10%;
+        font-size: 1.2rem;
+    }
+    
+    .profile-container{
+        /* height: 800px; */
+    }
+    
+    .profile-container a{
+        text-decoration: none;
+        color: #000000;
+        font-size: 0.800rem;
+    }
+    
+    .profile-container i{
+    color: #FF6542;
+    }
+    
+    hr{
+    width: 80%;
+    }
     }
 
 /******************************************************************** TABLET SCREEN */
 @media only screen and (min-width:640px) and (max-width:950px) {
  
+    .main_wraper .profile-container{
+        padding: 7% 0 1% 7%;
+        width: 80%;
+    }
+    
+     .main_wraper h1{
+        padding-left: 16%;
+        font-size: 1.4rem;
+    }
+    
+    .profile-container{
+        height: 700px;
+    }
+    
+    .profile-container a{
+        text-decoration: none;
+        color: #000000;
+        font-size: 0.900rem;
+    }
+    
+    .profile-container i{
+    color: #FF6542;
+    }
+    
+    hr{
+    width: 80%;
+    }
+    
+
 }
 
 @media only screen and (min-width: 1000px) {
 
-.profile-container h1{
+
+.main_wraper .profile-container{
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 7% 5% 7% 7%;
+    background-color: rgb(235, 227, 233);
+    width: 80%;
+}
+
+ .main_wraper h1{
+    padding-left: 17%;
     font-size: 1.6rem;
 }
 
+.profile-container{
+    /* height: 500px; */
+    
+}
+
+.profile-container a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 0.900rem;
+}
+
+.profile-container i{
+color: #FF6542;
+}
+
+hr{
+width: 80%;
+}
+
+form .form-control{
+    margin-bottom: 5px;
+    height: 40px;
+    font-size: 0.700rem;
+}
+
+ form .form-control:focus{
+    border-color:  rgb(122, 13, 13);
+    box-shadow: 0 0 3px rgb(122, 13, 13) !important;
+    font-size: 0.700rem;
+ }
+
+ table th{
+    font-size: 0.850rem;
+ }
 }

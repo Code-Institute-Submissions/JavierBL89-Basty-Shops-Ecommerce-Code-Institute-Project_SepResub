@@ -7,18 +7,120 @@
 
 {% block content %}
 <div class="main_wraper">
-    <div class="container-fluid profile-container mt-4" id="profile-container">
+    <div class="container-fluid mt-4">
         <div class="row d-flex">
             <div class="col-12">
                 <h1>My profile</h1>
-            </div>
+            </div> 
         </div>
-        <div class="profile-box">
-            <div class="row">
-               {{ profile }}
+        <div class="profile-container mb-5">
+            <div class="row ">
+                <div class="row">
+                    <div class="col-11 col-md-6 col-lg-5 d-flex flex-column">
+                        <a type="button" class="profile-info" id="personal-details"><i class="fa-solid fa-user pe-2"></i> Personal Details </a>
+                        <hr>
+                        <a type="button" class="profile-info" id="access"><i class="fa-solid fa-key pe-2"></i> Access</a>
+                        <hr>
+                        <a type="button" class="profile-info" id="order-history"><i class="fa-solid fa-folder pe-2"></i> Order History </a>
+                        <hr>
+                        <a type="button" class="profile-info" id="delivery-info"><i class="fa-solid fa-truck pe-2" style="color: #FF6542;"></i> Delivery Information </a>
+                        <hr>
+                    </div>
+                    <div class="col-11 col-md-6 col-lg-6 mt-4 mt-md-0 mb-3" >
+                        <div class="profile-details-content">
+                            <small class="text-muted">Personal details</small>
+                            <div class="pesonal-details mt-4">
+                                <div class="row">
+                                    <div class="col-5 d-flex flex-column">
+                                            <small>Name:</small>
+                                            <small>Surname:</small>
+                                            <small>User name:</small>
+                                            <small>Email:</small>
+                                            <small>Phone:</small>
+                                    </div>
+                                    <div class="col-7 d-flex flex-column">
+                                        <small>{{ user.first_name }}</small>
+                                        <small>{{ user.last_name }}</small>
+                                        <small>{{ user }}</small>
+                                        <small>{{ user.email }}</small>
+                                        <small>{{ user.phone_number }}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="access-profile-content">
+                            <small class="text-muted">Access details</small>
+                            <div class="access-details mt-4">
+                                <div class="row">
+                                    <div class="col-6 d-flex flex-column">
+                                        <small>User name or email:</small>
+                                        <small>Password:</small>
+                                    </div>
+                                    <div class="col-6 d-flex flex-column">
+                                        <small>{{ user }}</small>
+                                        <a href="{% url 'account_change_password' %}"><small>Change password</small></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="delivery-info-content">
+                            <p class="text-muted">Delivery Information</p>
+                            <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                                {% csrf_token %}
+                                {{ form|crispy }}
+                                <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
+                            </form>
+                        </div>
+                        <div class="order-history-content">
+                            <small class="text-muted ps-1">Order History</small>
+                            <div class="order-history mt-3 table-responsive">
+                            <table class="table table-sm table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th>Order Number</th>
+                                        <th>Date</th>
+                                        <th>Items</th>
+                                        <th>Order Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for order in orders %}
+                                        <tr>
+                                            <td>
+                                                <a href="{% url 'order_history' order.order_number %}"
+                                                title="{{ order.order_number }}">
+                                                    {{ order.order_number|truncatechars:6 }}
+                                                </a>
+                                            </td>
+                                            <td>{{ order }}</td>
+                                            <!-- <td>{{ order.date }}</td> -->
+                                            <td>
+                                                <ul class="list-unstyled">
+                                                    {% for item in order.lineitems.all %}
+                                                        <li class="small">
+                                                            {% if item.product.has_sizes %}
+                                                                Size {{ item.product.size|upper }}
+                                                            {% endif %}{{ item.product.name }} x{{ item.quantity }}
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </td>
+                                            <td>${{ order.grand_total }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
     </div>
 </div>
 {% endblock %}
 
-
+{% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'js/displayInfo.js' %}"></script>
+    <script src="{% static 'js/countryField.js' %}"></script>
+{% endblock %}

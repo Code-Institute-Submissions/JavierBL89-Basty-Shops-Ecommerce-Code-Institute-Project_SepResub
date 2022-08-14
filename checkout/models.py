@@ -14,9 +14,9 @@ from products.models import Product
 
 class Order(models.Model):
     
-    user_profile = models.ForeignKey(UserProfile, 
+    user_profile = models.ForeignKey(UserProfile,
                                      on_delete=models.SET_NULL,
-                                     blank=True, null=True, related_name='Orders')
+                                     blank=True, null=True, related_name='orders')
     order_number = models.CharField(max_length=32, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=250, null=False, blank=False)
@@ -24,8 +24,8 @@ class Order(models.Model):
     country = CountryField(blank_label='Country *', max_length=40, null=False, blank=False)
     post_code = models.CharField(max_length=20, null=True, blank=False)
     town_or_city = models.CharField(max_length=40, null=False, blank=False)
-    street_address_1 = models.CharField(max_length=80, null=True, blank=False)
-    street_address_2 = models.CharField(max_length=80, null=False, blank=True)
+    street_address_1 = models.CharField(max_length=80, null=False, blank=False)
+    street_address_2 = models.CharField(max_length=80, null=True, blank=True)
     county = models.CharField(max_length=80, null=True, blank=True)
     date = models.DateField(auto_now_add=True)
     delivery_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)

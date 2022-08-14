@@ -68,6 +68,7 @@ select option[value=""] {
    background-color: rgb(235, 227, 233);
    padding: 3%;
    width: 95%;
+   border-radius: 10px;
 }
    .main-wraper .checkout-container .form-control{
       margin-bottom: 5px;
