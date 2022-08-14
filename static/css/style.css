@@ -8,8 +8,8 @@ TOMATOE  FF6542
 
 */
 
-/******** TOASTS CONTAINER */
 
+/******** TOASTS CONTAINER */
 
 #message-container{
     position: fixed;
@@ -444,6 +444,15 @@ img{
     font-size: 0.800rem;
 }
 
+
+/************ ALL-AUTH-PAGES */
+.allauth-form-inner-content .form-control{
+    margin: 0 auto 5px;
+ }
+
+.allauth-form-inner-content .form-group label{
+    display: none;
+     }
  /******************************************************************** MOBILE SCREEN */
  @media only screen and (min-width: 320px) and (max-width: 600px) {
   
@@ -836,6 +845,42 @@ ul .size-box{
     width: 25%;
 }
 
+/******* ALL-AUTH-FORMS */
+.header-container .allauth-form-inner-content{
+    /* padding-left: 25%; */
+    padding: 5%;
+    margin: 0 auto;
+    background-color: rgb(235, 227, 233);
+    border-radius: 10px;
+    width: 90%;
+    text-align: center;
+}
+
+.allauth-form-inner-content h1{
+    font-size: 1.1rem;
+    margin-bottom: 4%;
+}
+
+.allauth-form-inner-content p{
+    font-size: 0.750rem;
+}
+
+.allauth-form-inner-content a{
+   text-decoration: none;
+    font-size: 0.700rem;
+}
+
+.allauth-form-inner-content button{
+    border: none;
+    background: none;
+    color: #FF6542;
+    font-size: 0.950rem;
+}
+
+.allauth-form-inner-content .form-control{
+   width: 70%;
+}
+
  }
   /******************************************************************** TABLET SCREEN */
   @media only screen and (min-width:640px) and (max-width:950px) {
@@ -1089,11 +1134,44 @@ img{
     width: 25%;
 }
 
+/******* ALL-AUTH-FORMS */
+.header-container .allauth-form-inner-content{
+    /* padding-left: 25%; */
+    padding: 4%;
+    margin: 0 auto;
+    background-color: rgb(235, 227, 233);
+    border-radius: 10px;
+    width: 70%;
+    text-align: center;
+}
+
+.allauth-form-inner-content h1{
+    font-size: 1.4rem;
+    margin-bottom: 2%;
+}
+
+.allauth-form-inner-content p{
+    font-size: 0.850rem;
+}
+
+.allauth-form-inner-content a{
+   text-decoration: none;
+    font-size: 0.750rem;
+}
+
+.allauth-form-inner-content button{
+    border: none;
+    background: none;
+    color: #FF6542;
+    font-size: 1.1rem;
+}
+
+
 }
   /******************************************************************** DESKTOP SCREEN */
   @media only screen and (min-width: 1000px) {
   
-/*********** shippin info bar */
+/************** shippin info bar */
 
 .shipping-info{
     height: 40px;
@@ -1120,13 +1198,11 @@ img{
     height: 240px;
     width:80%;
     margin: 0 auto;
-
 }
 
 .card-img-box{
     width:100%;
 }
-
 
 .card-button{
     position: absolute;
@@ -1144,7 +1220,7 @@ img{
 }
 
 
-/************* PRODUCT DETAILS PAGE*/
+/***************** PRODUCT DETAILS PAGE*/
     .product-details-box, .product-description-box{
         border-left: solid 1px #e5e5e5;
     }
@@ -1196,4 +1272,49 @@ img{
     border: none;
 }
 
+/************************* ALL-AUTH-FORMS **/
+
+.header-container .allauth-form-inner-content{
+    /* padding-left: 25%; */
+    padding: 2%;
+    margin: 0 auto;
+    background-color: rgb(235, 227, 233);
+    border-radius: 10px;
+    width: 70%;
+    text-align: center;
+}
+
+.allauth-form-inner-content h1{
+    font-size: 1.6rem;
+    margin-bottom: 2%;
+}
+
+.allauth-form-inner-content p{
+    font-size: 0.9rem;
+}
+
+.allauth-form-inner-content a{
+   text-decoration: none;
+    font-size: 0.800rem;
+}
+
+.allauth-form-inner-content button{
+    border: none;
+    background: none;
+    color: #FF6542;
+    font-size: 1.2rem;
+}
+
+
+.allauth-form-inner-content .form-control{
+    width: 40%;
+    height: 40px;
+    font-size: 0.700rem;
+ }
+
+ .allauth-form-inner-content .form-control:focus{
+    border-color:  rgb(122, 13, 13);
+    box-shadow: 0 0 3px rgb(122, 13, 13) !important;
+    font-size: 0.700rem;
+ }
   }
