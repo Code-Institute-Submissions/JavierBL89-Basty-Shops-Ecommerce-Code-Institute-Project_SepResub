@@ -42,15 +42,14 @@ form .form-control{
 
  #id_default_country::placeholder{
     color: rgb(111, 111, 111);
-
  }
 
+ /**************** PROFILE PAGE*/
  .profile-container div small{
     margin-bottom: 10px;
  }
 
- /********** update details page */
-
+ /*************** UPDATE DETAILS PAGE */
  .update-details-container button{
     border: none;
     background: none;
@@ -60,9 +59,11 @@ form .form-control{
  .profile-container .personal-details a{
    color: rgb(13, 110, 253);
  }
+
 /******************************************************************** MOBILE SCREEN */
 @media only screen and (min-width: 320px) and (max-width: 600px) {
   
+/***************** PROFILE PAGE */
     .main_wraper .profile-container{
         padding: 9% 1% 1% 10%;
         width: 90%;
@@ -87,7 +88,7 @@ form .form-control{
     width: 80%;
     }
 
-    /****************** UPDATE DETAILS PAGE */
+/****************** UPDATE DETAILS PAGE */
  .update-details-container{
     margin: 0 auto;
     padding: 2%;
@@ -127,7 +128,8 @@ form .form-control{
 
 /******************************************************************** TABLET SCREEN */
 @media only screen and (min-width:640px) and (max-width:950px) {
- 
+
+/**************** PROFILE PAGE*/
     .main_wraper .profile-container{
         padding: 7% 0 1% 7%;
         width: 80%;
@@ -173,7 +175,6 @@ form .form-control{
  .update-details-container .form-group{
   text-align: left;
   padding-left: 15%;
-
  }
 
  .update-details-container .form-control{
@@ -186,14 +187,11 @@ form .form-control{
     font-size: 0.600rem;
     padding-left: 5px;
  }
-
-
 }
 
 @media only screen and (min-width: 1000px) {
 
- /************** PROFILE PAGE */
-
+ /******************* PROFILE PAGE */
 .main_wraper .profile-container{
     margin: 0 auto;
     border-radius: 10px;
@@ -236,6 +234,7 @@ form .form-control{
  table tr th{
     font-size: 0.650rem;
  }
+
  table tr td, table tr a{
     font-size: 0.700rem;
  }
@@ -257,7 +256,6 @@ form .form-control{
  .update-details-container .form-group{
   text-align: left;
   padding-left: 15%;
-
  }
 
  .update-details-container .form-control{
@@ -270,7 +268,4 @@ form .form-control{
     font-size: 0.600rem;
     padding-left: 5px;
  }
-
-
-
 }

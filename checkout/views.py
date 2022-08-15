@@ -162,8 +162,8 @@ def checkout_success(request, order_number):
             'default_country': order.country,
             'default_post_code': order.post_code,
             'default_town_or_city': order.town_or_city,
-            'default_street_address1': order.street_address_1,
-            'default_street_address2': order.street_address_2,
+            'default_street_address_1': order.street_address_1,
+            'default_street_address_2': order.street_address_2,
             'default_county': order.county,
         }
     
