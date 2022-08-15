@@ -10,14 +10,21 @@
 <div class="main_wraper">
     <div class="container-fluid mt-5 mb-5 checkout-container" id="checkout-container">
         <div class="row d-flex">
+            {% if from_profile %}
+            <div class="col-12">
+                <h6 class="mt-4 mb-4 ">Order review</h6>
+            </div>
+            {% else %}
             <div class="col-12">
                 <h6 class="mt-4 mb-4 " style="color: green;">Thanks very much for completing your order!. </h6>
                 <p>A confirmation email will be sent to <strong>{{ order.email }}</strong></p>
             </div>
+            {% endif %}
         </div>
         <div class="order-confirmation-container mt-3" id="order-confirmation-container">
+            {% if not from_profile %}
             <p>See your order information:</p>
-
+            {% endif %}
             <div class="row mt-4">
                 <div class="col">
                     <small class="text-muted fw-bold">Order Info:</small>
@@ -169,16 +176,24 @@
         <div class="back-to-shop-container mt-4">
             <div class="row">
                 <div class="col">
-                    <div class="row">
-                        <p>See more</p>
-                    </div>
-                    <div class="row d-flex">
-                        <div class="col-4">
-                            <button type="button" href="">Boots</button>
-                            <button type="button" href="">Shoes</button>
-                            <button type="button" href="">Sneakers</button>
+                    {% if from_profile %}
+                        <div class="row d-">
+                            <div class="col-4">
+                                <button type="button" href="{% url 'profile' %}">Back to profile</button>
+                            </div>
                         </div>
-                    </div>
+                    {% else %}
+                        <div class="row">
+                            <p>See more</p>
+                        </div>
+                        <div class="row d-flex">
+                            <div class="col-4">
+                                <button type="button" href="">Boots</button>
+                                <button type="button" href="">Shoes</button>
+                                <button type="button" href="">Sneakers</button>
+                            </div>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

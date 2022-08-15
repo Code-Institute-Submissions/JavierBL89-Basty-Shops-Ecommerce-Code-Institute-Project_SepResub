@@ -8,7 +8,8 @@ from bag.contexts import bag_contents
 from django.conf import settings
 
 from .forms import OrderForm
-
+from profiles.forms import UserProfileForm
+from profiles.models import UserProfile
 from .models import Order, OrderLineItem
 from products.models import Product
 
@@ -43,7 +44,6 @@ def checkout(request):
 
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-
     if request.method == 'POST':
         bag = request.session.get('bag', {})
 
@@ -110,6 +110,25 @@ def checkout(request):
 
     order_form = OrderForm()
 
+    if request.user.is_authenticated:
+        try:
+            profile = UserProfile.objects.get(user=request.user)
+            order_form = OrderForm(initial={
+                    'full_name': profile.user.get_full_name(),
+                    'email': profile.user.email,
+                    'phone_number': profile.default_phone_number,
+                    'country': profile.default_country,
+                    'post_code': profile.default_post_code,
+                    'town_or_city': profile.default_town_or_city,
+                    'street_address_1': profile.default_street_address_1,
+                    'street_address_2': profile.default_street_address_2,
+                    'county': profile.default_county,
+                })
+        except UserProfile.DoesNotExist:
+            order_form = OrderForm()
+    else:
+        order_form = OrderForm()
+
     if not stripe_public_key:
         messages.warning(request, 'Stripe public ley is missing. \
             Did you forget to set it in your enviroment?')
@@ -130,6 +149,27 @@ def checkout_success(request, order_number):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+
+    profile = UserProfile.objects.get(user=request.user)
+    # Attach the user's prodile to the order
+    order.user_profile = profile
+    order.save()
+
+    # Save the user's info
+    if save_info:
+        profile_data = {
+            'default_phone_number': order.phone_number,
+            'default_country': order.country,
+            'default_post_code': order.post_code,
+            'default_town_or_city': order.town_or_city,
+            'default_street_address1': order.street_address_1,
+            'default_street_address2': order.street_address_2,
+            'default_county': order.county,
+        }
+    
+    user_profile_form = UserProfileForm(profile_data, instance=profile)
+    if user_profile_form.is_valid:
+        user_profile_form.save()
 
     if 'bag' in request.session:
         del request.session['bag']
