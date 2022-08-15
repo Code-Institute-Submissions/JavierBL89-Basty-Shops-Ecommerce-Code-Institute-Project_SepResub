@@ -57,6 +57,9 @@ form .form-control{
     color: #FF6542;
  }
 
+ .profile-container .personal-details a{
+   color: rgb(13, 110, 253);
+ }
 /******************************************************************** MOBILE SCREEN */
 @media only screen and (min-width: 320px) and (max-width: 600px) {
   

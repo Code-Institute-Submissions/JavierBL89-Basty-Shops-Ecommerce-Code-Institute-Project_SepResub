@@ -37,6 +37,7 @@
                                             <small>User name:</small>
                                             <small>Email:</small>
                                             <small>Phone:</small>
+                                            <a class="mt-3" href="{% url 'update_details' %}">Update details</a>
                                     </div>
                                     <div class="col-7 d-flex flex-column">
                                         <small>{{ user.first_name }}</small>
@@ -44,7 +45,6 @@
                                         <small>{{ user }}</small>
                                         <small>{{ user.email }}</small>
                                         <small>{{ user.phone_number }}</small>
-                                        <a href="{% url 'update_details' %}">Update details</a>
                                     </div>
                                 </div>
                             </div>

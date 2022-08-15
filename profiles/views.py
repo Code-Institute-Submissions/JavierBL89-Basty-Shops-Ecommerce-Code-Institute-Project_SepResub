@@ -55,19 +55,16 @@ def update_details(request):
 
     if request.method == 'POST':
         update_form = UpdateUserForm(request.POST, instance=request.user)
-        
         user = get_object_or_404(User, pk=request.user.id)
-
-        user.first_name = update_form.name.value
-        user.last_name = update_form.surname.value
-        user.username = update_form.username.value
-        user.email = update_form.email.value
-        print(user)
-        print(user.first_name)
-        user.save()
         
         if update_form.is_valid():
             update_form.save()
+            # update user object details
+            user.first_name = request.POST['name']
+            user.last_name = request.POST['surname']
+            user.username = request.POST['username']
+            user.email = request.POST['email']
+            user.save()
             messages.info(request, 'Profile details successfully updated')
             return redirect(reverse('profile'))
 
