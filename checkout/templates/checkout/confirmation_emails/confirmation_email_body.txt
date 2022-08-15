@@ -1,0 +1,33 @@
+Hi {{ order.full_name }}!
+
+This is a confirmation of your order:
+
+Order number: {{ order.order_number }}
+Date:         {{ order.date }}
+
+Order total:   {{ order.order_total }}€
+Delivery cost: {{ order.delivery_cost }}€
+Total:         {{ order.grand_total }}€
+
+
+Your order will be shipped to:
+
+Street:     {{ order.street_address_1 }}
+{% if order.street_address_2 %}
+            {{ order.street_address_2}}
+{% endif %}
+Town/City:  {{ order.town_or_city }}
+Country:    {{ order.country }}
+
+{% for item in original_bag %}
+ item
+ {% endfor %}
+
+For any questions about your order, feel free to contact us at {{ contact_email }}.
+
+Thanks for your order!
+
+Basty Shops.
+
+
+

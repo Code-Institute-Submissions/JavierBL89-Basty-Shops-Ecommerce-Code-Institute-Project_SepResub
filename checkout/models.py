@@ -13,7 +13,7 @@ from products.models import Product
 
 
 class Order(models.Model):
-    
+
     user_profile = models.ForeignKey(UserProfile,
                                      on_delete=models.SET_NULL,
                                      blank=True, null=True, related_name='orders')
