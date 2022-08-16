@@ -86,7 +86,8 @@ def product_detail(request, product_id):
 
 
 def add_product(request):
-
+    
+    # product_detail_form = None
     if request.method == 'POST':
         product_form = ProductForm(request.POST, request.FILES)
         product_detail_form = ProductDetailForm(request.POST)
@@ -112,16 +113,19 @@ def add_product(request):
                         product_images.update(product_id=product)
                         messages.info(request, 'Product successfuly added!')
                         return redirect((reverse('add_product')))
+        else:
+            messages.error(request, 'Could not add product. Please check the form is valid.')
+
     else:
         # this empty forms won't wipe out the form errors
-        form = ProductForm()
+        product_form = ProductForm()
         size_form = SizeForm()
         image_form = ImageForm()
         product_detail_form = ProductDetailForm()
 
     template = 'products/add_product.html'
     context = {
-        'form': form,
+        'product_form': product_form,
         'size_form': size_form,
         'image_form': image_form,
         'product_detail_form': product_detail_form

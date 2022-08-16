@@ -14,17 +14,17 @@
                 <h6 class="text-muted">Add a product</h6>
             </div>
             <div class="col-6">
-                <form class="form" action="{% url 'add_product' %}" method="POST" id="product-form" enctype="multiport/form-data">
+                <form class="form" action="{% url 'add_product' %}" method="POST" id="product-form" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{ form.category | as_crispy_field }}
-                    {{ form.subcategory_id | as_crispy_field }}
-                    {{ form.name | as_crispy_field }}
-                    {{ form.title | as_crispy_field }}
+                    {{ product_form.category | as_crispy_field }}
+                    {{ product_form.subcategory_id | as_crispy_field }}
+                    {{ product_form.name | as_crispy_field }}
+                    {{ product_form.title | as_crispy_field }}
             </div>
             <div class="col-6">
-                    {{ form.price | as_crispy_field }}
-                    {{ form.cover_image | as_crispy_field }}
-                    {{ form.description | as_crispy_field }}
+                    {{ product_form.price | as_crispy_field }}
+                    {{ product_form.cover_image | as_crispy_field }}
+                    {{ product_form.description | as_crispy_field }}
             </div>
         </div>
         <div class="row d-flex mt-5">
@@ -88,6 +88,8 @@
 {% block postloadjs %}
  {{ block.super }}
  <script type="text/javascript">
+
+    const add_size = $('#add_size');
 
     let html = `<div class="size-stock-box d-flex">
                     <div class="col-6">

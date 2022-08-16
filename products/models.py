@@ -47,10 +47,10 @@ class Product(models.Model):
     sku = models.CharField(max_length=254, null=True, blank=True)
     description = models.TextField(null=True)
     product_details = models.ForeignKey('ProductDetail', null=True, blank=True, on_delete=models.SET_NULL)
-    sizes = models.BooleanField(default=True, blank=True,)
+    sizes = models.BooleanField(default=True, blank=True)
     product_reviews = models.ForeignKey('Review', null=True, blank=True, on_delete=models.SET_NULL)
     price = models.DecimalField(max_digits=7, decimal_places=2)
-    cover_image = models.ImageField(null=True)
+    cover_image = models.ImageField(null=True, blank=True)
     images_list = models.BooleanField(default=False, null=True, blank=True)
 
     def __string__(self):
@@ -101,10 +101,10 @@ class Review(models.Model):
 class Image(models.Model):
 
     product_id = models.ForeignKey('Product', null=True, blank=True, on_delete=models.SET_NULL)
-    image1 = models.ImageField(null=True)
-    image2 = models.ImageField(null=True)
-    image3 = models.ImageField(null=True)
-    image4 = models.ImageField(null=True)
+    image1 = models.ImageField(null=True, blank=True)
+    image2 = models.ImageField(null=True, blank=True)
+    image3 = models.ImageField(null=True, blank=True)
+    image4 = models.ImageField(null=True, blank=True)
 
     def __string__(self):
         return f'{self.product_id} {self.image1} {self.image2} {self.image3} {self.image4}'
