@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/products.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main_wraper">
+    <div class="container-fluid mt-5 mb-5 product-mngt-container" id="product-mngt-container">
+        <div class="row">
+            <div class="div">
+                <h1>Management</h1>
+                <h6 class="text-muted">Edit product</h6>
+            </div>
+            <div class="col-12 col-md-6">
+                <form class="form" action="#" method="POST" id="edit-product-form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ product_form.category | as_crispy_field }}
+                    {{ product_form.subcategory_id | as_crispy_field }}
+                    {{ product_form.name | as_crispy_field }}
+                    {{ product_form.title | as_crispy_field }}
+            </div>
+            <div class="col-12 col-md-6">
+                    {{ product_form.price | as_crispy_field }}
+                    {{ product_form.cover_image | as_crispy_field }}
+                    {{ product_form.description | as_crispy_field }}
+            </div>
+        </div>
+        <div class="row d-flex mt-5">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="product-detail-container">
+                    <div class="row">
+                        <h6>Product Details</h6>
+                            <div class="col-6">
+                                {{ product_detail_form.heels_mesurement | as_crispy_field }}
+                                {{ product_detail_form.upper_material | as_crispy_field }}
+                                {{ product_detail_form.sole | as_crispy_field }}
+                            </div>
+                            <div class="col-6">
+                                {{ product_detail_form.technology | as_crispy_field }}
+                                {{ product_detail_form.lining_material | as_crispy_field }}
+                                {{ product_detail_form.fastening | as_crispy_field }}
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>         
+   
+        <div class="row d-flex mt-5">
+            <div class="col-12 col-md-6">
+                <div class="product-size-container">
+                    <div class="row stock-container">
+                        <h6>Product Sizes</h6>
+                        <div class="size-stock-box ">
+                            <div class="col-8 d-flex">
+                                {{ size_form.size | as_crispy_field }}
+                                {{ size_form.stock | as_crispy_field }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="mt-4" type="button" id="add_size">add size</button>
+            </div>
+            <div class="col-12 col-md-6 mt-4 mt-md-0">
+                <div class="product-image-container ">
+                    <h6>Product images</h6>
+                    <div class="row">
+                        <div class="col-12">
+                            {{ image_form | crispy }}
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons-container d-flex mt-5">
+                    <a type="submit" class="me-3">Cancel</a>
+                    <button href="{% url 'add_product' %}" type="submit" class="" id="submit-form">Add product</button>
+                </div>
+            </form>
+            </div>
+        </div>         
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+ {{ block.super }}
+ <script type="text/javascript">
+
+    let html = `<div class="size-stock-box">
+                    <div class="col-8 d-flex">
+                        {{ size_form.size | as_crispy_field }}
+                        {{ size_form.stock | as_crispy_field }}
+                    </div>
+                </div>`;
+    // append size/stock form fields
+    $('#add_size').on('click', function(){
+        $('.stock-container').append(html);
+    });
+
+ </script>
+{% endblock %}
+

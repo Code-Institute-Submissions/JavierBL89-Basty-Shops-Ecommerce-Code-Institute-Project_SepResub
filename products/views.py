@@ -131,3 +131,17 @@ def add_product(request):
         'product_detail_form': product_detail_form
     }
     return render(request, template, context)
+
+
+def edit_product(request, product_id):
+    
+    product = get_object_or_404(Product, pk=product_id)
+    product_form = ProductForm(instance=product)
+    template = 'products/edit_product.html'
+    messages.info(request, f'You are about to edit {product.title}')
+
+    context = {
+        'product_form': product_form,
+        'product': product,
+    }
+    return render(request, template, context)
