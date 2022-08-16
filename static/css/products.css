@@ -265,4 +265,34 @@ background-color: #5D737E;
     font-size: 1.5rem;
     color: rgb(122, 13, 13);
 }
+
+/*********** ADD PRODUCT PAGE */
+#product-mngt-container{
+    padding: 4% 0 4% 10%;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: rgb(235, 227, 233);
+}
+
+#product-mngt-container .form-control{
+    width: 75%;
+    height: 40px;
+    font-size: 0.800rem;
+}
+
+#product-mngt-container .form-control:focus{
+    border-color:  rgb(122, 13, 13);
+    box-shadow: 0 0 3px rgb(122, 13, 13) !important;
+    font-size: 0.800rem;
+}
+#product-mngt-container .form-control::placeholder{
+
+    font-size: 0.800rem;
+}
+
+#product-mngt-container label{
+   font-size: 0.800rem;
+color: #828181;
+}
 }

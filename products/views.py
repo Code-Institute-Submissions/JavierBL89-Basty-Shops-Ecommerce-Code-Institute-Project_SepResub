@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Product, Size, Image, ProductDetail, Category
+from .forms import ProductForm, SizeForm, ImageForm
 from django.contrib import messages
 from django.db.models import Q
 # Create your views here.
@@ -82,3 +83,17 @@ def product_detail(request, product_id):
         'details_value': details_value
     }
     return render(request, 'products/product_detail.html', context)
+
+
+def add_product(request):
+
+    form = ProductForm()
+    size_form = SizeForm()
+    image_form = ImageForm()
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+        'size_form': size_form,
+        'image_form': image_form,
+    }
+    return render(request, template, context)
