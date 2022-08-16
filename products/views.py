@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Product, Size, Image, ProductDetail, Category
-from .forms import ProductForm, SizeForm, ImageForm
+from .forms import ProductForm, SizeForm, ImageForm, ProductDetailForm
 from django.contrib import messages
 from django.db.models import Q
 # Create your views here.
@@ -87,13 +87,43 @@ def product_detail(request, product_id):
 
 def add_product(request):
 
-    form = ProductForm()
-    size_form = SizeForm()
-    image_form = ImageForm()
+    if request.method == 'POST':
+        product_form = ProductForm(request.POST, request.FILES)
+        product_detail_form = ProductDetailForm(request.POST)
+        size_form = SizeForm(request.POST)
+        image_form = ImageForm(request.POST, request.FILES)
+        if product_form.is_valid():
+            if product_detail_form.is_valid():
+                if size_form.is_valid():
+                    if image_form.is_valid():
+                        product_form.save()
+                        product_detail_form.save()
+                        size_form.save()
+                        image_form.save()
+
+                        product = Product.objects.all().last()
+                        product_details = ProductDetail.objects.filter(product_id=None).all()
+                        product_sizes = Size.objects.filter(product_id=None).all()
+                        product_images = Image.objects.filter(product_id=None).all()
+
+                        # Attach the product id to all the product colections sizes
+                        product_sizes.update(product_id=product)
+                        product_details.update(product_id=product)
+                        product_images.update(product_id=product)
+                        messages.info(request, 'Product successfuly added!')
+                        return redirect((reverse('add_product')))
+    else:
+        # this empty forms won't wipe out the form errors
+        form = ProductForm()
+        size_form = SizeForm()
+        image_form = ImageForm()
+        product_detail_form = ProductDetailForm()
+
     template = 'products/add_product.html'
     context = {
         'form': form,
         'size_form': size_form,
         'image_form': image_form,
+        'product_detail_form': product_detail_form
     }
     return render(request, template, context)

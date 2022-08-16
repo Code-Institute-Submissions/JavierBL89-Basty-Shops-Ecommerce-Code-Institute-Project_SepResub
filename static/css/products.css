@@ -279,6 +279,7 @@ background-color: #5D737E;
     width: 75%;
     height: 40px;
     font-size: 0.800rem;
+    border-radius: 15px;
 }
 
 #product-mngt-container .form-control:focus{
@@ -286,8 +287,8 @@ background-color: #5D737E;
     box-shadow: 0 0 3px rgb(122, 13, 13) !important;
     font-size: 0.800rem;
 }
-#product-mngt-container .form-control::placeholder{
 
+#product-mngt-container .form-control::placeholder{
     font-size: 0.800rem;
 }
 
@@ -295,4 +296,5 @@ background-color: #5D737E;
    font-size: 0.800rem;
 color: #828181;
 }
+
 }

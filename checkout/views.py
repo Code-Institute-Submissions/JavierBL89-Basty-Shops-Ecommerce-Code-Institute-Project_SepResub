@@ -151,7 +151,7 @@ def checkout_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
     profile = UserProfile.objects.get(user=request.user)
-    # Attach the user's prodile to the order
+    # Attach the user's profile to the order
     order.user_profile = profile
     order.save()
 

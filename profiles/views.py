@@ -17,12 +17,16 @@ def profile(request):
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=user_profile)
-    
+
         if form.is_valid():
             form.save()
             messages.info(request, 'Profile info successfully updated')
+        else:
+            messages.info(request, 'Could not update profile. Please check the form is valid')
+    else:
+        # this empty from won't wipe out the form errors
+        form = UserProfileForm(instance=user_profile)
 
-    form = UserProfileForm(instance=user_profile)
     orders = user_profile.orders.all()
 
     template = 'profiles/profile.html'

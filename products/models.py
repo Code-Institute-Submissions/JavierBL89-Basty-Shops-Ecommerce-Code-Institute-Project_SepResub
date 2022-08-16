@@ -21,7 +21,7 @@ class Category(models.Model):
 class Subcategory(models.Model):
     """ Class for subcategories """
     class Meta:
-        verbose_name_plural = 'subcategories'
+        verbose_name_plural = 'Subcategories'
 
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
@@ -50,7 +50,7 @@ class Product(models.Model):
     sizes = models.BooleanField(default=True, blank=True,)
     product_reviews = models.ForeignKey('Review', null=True, blank=True, on_delete=models.SET_NULL)
     price = models.DecimalField(max_digits=7, decimal_places=2)
-    cover_image = models.ImageField(null=True, blank=True)
+    cover_image = models.ImageField(null=True)
     images_list = models.BooleanField(default=False, null=True, blank=True)
 
     def __string__(self):
@@ -78,8 +78,8 @@ class Size(models.Model):
     Class for product sizes
     """
     product_id = models.ForeignKey('Product', null=True, blank=True, on_delete=models.SET_NULL)
-    size = models.CharField(max_length=2, null=True, blank=True)
-    stock = models.PositiveSmallIntegerField(null=True, blank=True)
+    size = models.CharField(max_length=2, null=True)
+    stock = models.PositiveSmallIntegerField(null=True)
 
     def __string__(self):
         return f'{self.size}  {self.stock}'
@@ -101,10 +101,10 @@ class Review(models.Model):
 class Image(models.Model):
 
     product_id = models.ForeignKey('Product', null=True, blank=True, on_delete=models.SET_NULL)
-    image1 = models.ImageField(null=True, blank=True)
-    image2 = models.ImageField(null=True, blank=True)
-    image3 = models.ImageField(null=True, blank=True)
-    image4 = models.ImageField(null=True, blank=True)
+    image1 = models.ImageField(null=True)
+    image2 = models.ImageField(null=True)
+    image3 = models.ImageField(null=True)
+    image4 = models.ImageField(null=True)
 
     def __string__(self):
         return f'{self.product_id} {self.image1} {self.image2} {self.image3} {self.image4}'

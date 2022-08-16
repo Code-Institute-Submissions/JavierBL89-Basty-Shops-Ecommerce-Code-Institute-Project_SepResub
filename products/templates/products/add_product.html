@@ -10,28 +10,43 @@
     <div class="container-fluid mt-5 mb-5 product-mngt-container" id="product-mngt-container">
         <div class="row">
             <div class="div">
-                <h1>Manadgement</h1>
+                <h1>Management</h1>
                 <h6 class="text-muted">Add a product</h6>
             </div>
             <div class="col-6">
                 <form class="form" action="{% url 'add_product' %}" method="POST" id="product-form" enctype="multiport/form-data">
                     {% csrf_token %}
                     {{ form.category | as_crispy_field }}
+                    {{ form.subcategory_id | as_crispy_field }}
                     {{ form.name | as_crispy_field }}
                     {{ form.title | as_crispy_field }}
-                    {{ form.sku | as_crispy_field }}
-                    {{ form.description | as_crispy_field }}
             </div>
             <div class="col-6">
-                    {{ form.product_details | as_crispy_field }}
-                    {{ form.sizes | as_crispy_field }}
-                    {{ form.product_reviews | as_crispy_field }}
                     {{ form.price | as_crispy_field }}
                     {{ form.cover_image | as_crispy_field }}
-                    {{ form.images_list | as_crispy_field }}
-                </form>
+                    {{ form.description | as_crispy_field }}
             </div>
         </div>
+        <div class="row d-flex mt-5">
+            <div class="col-6">
+                <div class="product-detail-container">
+                    <div class="row">
+                        <h6>Product Details</h6>
+                            <div class="col-6">
+                                {{ product_detail_form.heels_mesurement | as_crispy_field }}
+                                {{ product_detail_form.upper_material | as_crispy_field }}
+                                {{ product_detail_form.sole | as_crispy_field }}
+                            </div>
+                            <div class="col-6">
+                                {{ product_detail_form.technology | as_crispy_field }}
+                                {{ product_detail_form.lining_material | as_crispy_field }}
+                                {{ product_detail_form.fastening | as_crispy_field }}
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>         
+   
         <div class="row d-flex mt-5">
             <div class="col-6">
                 <div class="product-size-container">
@@ -55,16 +70,15 @@
                     <h6>Product images</h6>
                     <div class="row">
                         <div class="col-12">
-                            <div class="product-images-xontainer">
-                                {{ image_form | crispy }}
-                            </div>
+                            {{ image_form | crispy }}
                         </div>
                     </div>
                 </div>
                 <div class="buttons-container d-flex mt-5">
                     <a type="submit" class="me-3">Cancel</a>
-                    <button type="button" class="mx-3">Add product</button>
+                    <button href="{% url 'add_product' %}" type="submit" class="mt-4" id="submit-form">Add product</button>
                 </div>
+            </form>
             </div>
         </div>         
     </div>
@@ -75,8 +89,6 @@
  {{ block.super }}
  <script type="text/javascript">
 
-    const button = $('#add-size');
-    
     let html = `<div class="size-stock-box d-flex">
                     <div class="col-6">
                      {{ size_form.product_id | as_crispy_field }}
@@ -87,9 +99,10 @@
                     </div>
                 </div>`;
 
-    button.on('click', function(){
+    add_size.on('click', function(){
         $('.stock-container').append(html)
     })
+
  </script>
 {% endblock %}
 
