@@ -146,6 +146,18 @@ background-color: #5D737E;
     color: rgb(122, 13, 13);
 }
 
+.buttons-container button[type="submit"]{
+    background: none;
+    border: none;
+    color: #0d6efd;
+ }
+
+ #product-mngt-container a{
+    color: #e3b837;
+    text-decoration: none;
+ }
+ 
+
 /******************************************************************** MOBILE SCREEN */
 @media only screen and (min-width: 320px) and (max-width: 600px) {
   
@@ -184,7 +196,58 @@ background-color: #5D737E;
         text-align: start;
     }
 
-   
+   /*********** ADD PRODUCT PAGE */
+#product-mngt-container{
+    padding: 4% 0 4% 10%;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: rgb(235, 227, 233);
+}
+
+#product-mngt-container h1{
+ font-size:1rem;
+}
+
+#product-mngt-container h6{
+    font-size: 0.800rem;
+   }
+
+#product-mngt-container .form-control{
+    width: 75%;
+    height: 30px;
+    font-size: 0.650rem;
+    border-radius: 15px;
+    padding: 5px 5px;
+}
+
+#product-mngt-container .form-control:focus{
+    border-color:  rgb(122, 13, 13);
+    box-shadow: 0 0 3px rgb(122, 13, 13) !important;
+    font-size: 0.650rem;
+}
+
+#product-mngt-container .form-control::placeholder{
+    font-size: 0.650rem;
+}
+
+#product-mngt-container label{
+   font-size: 0.600rem;
+   color: #828181;
+}
+
+
+#product-mngt-container input[name="image1"],
+input[name="image2"],
+input[name="image3"],
+input[name="image4"],
+input[name="cover_image"],
+#add_size{
+    font-size: 0.650rem;
+    height: 25px;
+    margin: 2px auto 5px;
+ }
+
      }
 
 /******************************************************************** TABLET SCREEN */
@@ -226,6 +289,54 @@ background-color: #5D737E;
     font-size: 0.8rem;
     text-align: start;
 }
+
+/*********** ADD PRODUCT PAGE */
+#product-mngt-container{
+    padding: 4% 0 4% 10%;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: rgb(235, 227, 233);
+}
+
+#product-mngt-container .form-control{
+    width: 75%;
+    height: 35px;
+    font-size: 0.800rem;
+    border-radius: 15px;
+    padding: 5px 5px;
+}
+
+#product-mngt-container .form-control:focus{
+    border-color:  rgb(122, 13, 13);
+    box-shadow: 0 0 3px rgb(122, 13, 13) !important;
+    font-size: 0.800rem;
+}
+
+#product-mngt-container .form-control::placeholder{
+    font-size: 0.800rem;
+}
+
+#product-mngt-container label{
+   font-size: 0.700rem;
+color: #828181;
+}
+
+#product-mngt-container input[name="cover_image"]{
+    font-size: 0.800rem;
+    height: 30px;
+    margin: 2px auto 5px;
+ }
+#product-mngt-container input[name="image1"],
+input[name="image2"],
+input[name="image3"],
+input[name="image4"],
+#add_size{
+    font-size: 0.800rem;
+    height: 30px;
+    margin: 2px auto 5px;
+ }
+
 }
 
 @media only screen and (min-width: 1000px) {

@@ -13,7 +13,7 @@
                 <h1>Management</h1>
                 <h6 class="text-muted">Add a product</h6>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <form class="form" action="{% url 'add_product' %}" method="POST" id="product-form" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ product_form.category | as_crispy_field }}
@@ -21,14 +21,14 @@
                     {{ product_form.name | as_crispy_field }}
                     {{ product_form.title | as_crispy_field }}
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                     {{ product_form.price | as_crispy_field }}
                     {{ product_form.cover_image | as_crispy_field }}
                     {{ product_form.description | as_crispy_field }}
             </div>
         </div>
         <div class="row d-flex mt-5">
-            <div class="col-6">
+            <div class="col-12 col-md-8 col-lg-6">
                 <div class="product-detail-container">
                     <div class="row">
                         <h6>Product Details</h6>
@@ -48,25 +48,22 @@
         </div>         
    
         <div class="row d-flex mt-5">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <div class="product-size-container">
                     <div class="row stock-container">
                         <h6>Product Sizes</h6>
-                        <div class="size-stock-box d-flex">
-                            <div class="col-6">
-                             {{ size_form.product_id | as_crispy_field }}
-                            </div>
-                            <div class="col-6">
+                        <div class="size-stock-box ">
+                            <div class="col-8 d-flex">
                                 {{ size_form.size | as_crispy_field }}
                                 {{ size_form.stock | as_crispy_field }}
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="button" id="add-size">add size</button>
+                <button class="mt-4" type="button" id="add_size">add size</button>
             </div>
-            <div class="col-6">
-                <div class="product-image-container">
+            <div class="col-12 col-md-6 mt-4 mt-md-0">
+                <div class="product-image-container ">
                     <h6>Product images</h6>
                     <div class="row">
                         <div class="col-12">
@@ -76,7 +73,7 @@
                 </div>
                 <div class="buttons-container d-flex mt-5">
                     <a type="submit" class="me-3">Cancel</a>
-                    <button href="{% url 'add_product' %}" type="submit" class="mt-4" id="submit-form">Add product</button>
+                    <button href="{% url 'add_product' %}" type="submit" class="" id="submit-form">Add product</button>
                 </div>
             </form>
             </div>
@@ -89,21 +86,16 @@
  {{ block.super }}
  <script type="text/javascript">
 
-    const add_size = $('#add_size');
-
-    let html = `<div class="size-stock-box d-flex">
-                    <div class="col-6">
-                     {{ size_form.product_id | as_crispy_field }}
-                    </div>
-                    <div class="col-6">
+    let html = `<div class="size-stock-box">
+                    <div class="col-8 d-flex">
                         {{ size_form.size | as_crispy_field }}
                         {{ size_form.stock | as_crispy_field }}
                     </div>
                 </div>`;
-
-    add_size.on('click', function(){
-        $('.stock-container').append(html)
-    })
+    // append size/stock form fields
+    $('#add_size').on('click', function(){
+        $('.stock-container').append(html);
+    });
 
  </script>
 {% endblock %}
