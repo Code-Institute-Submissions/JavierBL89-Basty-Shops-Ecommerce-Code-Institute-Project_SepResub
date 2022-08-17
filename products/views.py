@@ -87,8 +87,8 @@ def product_detail(request, product_id):
 
 
 def add_product(request):
-    
-    # product_detail_form = None
+    """ Add products to store """
+
     if request.method == 'POST':
         product_form = ProductForm(request.POST, request.FILES)
         product_detail_form = ProductDetailForm(request.POST)
@@ -113,7 +113,7 @@ def add_product(request):
                         product_details.update(product_id=product)
                         product_images.update(product_id=product)
                         messages.info(request, 'Product successfuly added!')
-                        return redirect((reverse('add_product')))
+                        return redirect((reverse('product_detail', args=[product.id])))
         else:
             messages.error(request, 'Could not add product. Please check the form is valid.')
 
@@ -135,6 +135,7 @@ def add_product(request):
 
 
 def edit_product(request, product_id):
+    """ Edit a product from store """
 
     product = get_object_or_404(Product, pk=product_id)
     product_sizes = Size.objects.filter(product_id=product).all()
@@ -151,36 +152,11 @@ def edit_product(request, product_id):
                     product_details_form.save()
                     image_form.save()
                     handle_stock_admin(request, product_id, product_sizes)
-                    
                     messages.info(request, 'Product successfuly edited!')
                     return redirect((reverse('product_detail', args=[product.id])))
         else:
-            messages.error(request, 'Could not add product. Please check the form is valid.')
-        # if 'image1' in request.POST == True:
-        #     image1 = request.POST['image1']
+            messages.info(request, 'Could not add product. Please check the form is valid.')
 
-        # if 'image2' in request.POST == True:
-        #     image2 = request.POST['image2']
-
-        # if 'image3' in request.POST == True:
-        #     image3 = request.POST['image3']
-
-        # if 'image4' in request.POST == True:
-        #     image4 = request.POST['image4']
-
-        # images_form_data = {
-        #     'image1': imgage1,
-        #     'image2': imgage2,
-        #     'image3': imgage3,
-        #     'image4': imgage4,
-        # }
-        # image_form = ImageForm(images_form_data, request.FILES)
-
-        # image1 = reques.POST['image1']
-        # image2 = reques.POST['image2']
-        # image3 = reques.POST['image3']
-        # image4 = reques.POST['image4']
-        
     sizes = Size.objects.filter(product_id=product_id).all()
     product_details = ProductDetail.objects.filter(product_id=product_id)
     product_images = get_object_or_404(Image, product_id=product)
@@ -209,3 +185,12 @@ def edit_product(request, product_id):
         'product': product,
     }
     return render(request, template, context)
+
+
+def delete_product(request, product_id):
+    """ Delete product fro store """
+
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.info(request, f'Product {product.title}, was deleted')
+    return redirect(reverse('products'))

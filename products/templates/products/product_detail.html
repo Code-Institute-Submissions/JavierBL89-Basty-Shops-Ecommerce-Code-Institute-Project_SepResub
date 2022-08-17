@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{%  block extra_css %}
+    <link rel="stylesheet" src="{% static 'css/products.css' %}">
+{% endblock %}
 
 {% block content %}
 <div class="product-wraper">
@@ -74,9 +77,23 @@
                                     <input type="hidden" id="quantity" value="1">
                                     <input type="hidden" id="redirect_url" name="redirect_url" value="{{ request.path }}">
                                     <div class="row">
-                                        <div class="add-to-bag-button-container mt-3">
-                                            <button type="submit" class="btn btn-lg">Add to bag </button>
-                                        </div>
+                                            <div class="add-to-bag-button-container mt-3">
+                                                <button type="submit" class="btn btn-lg">Add to bag </button>
+                                            </div>                                        
+                                    </div>
+                                    <div class="row">
+                                        {% if user.is_authenticated %}
+                                            {% if user.is_superuser %}
+                                                <div class="row mt-4 text-start" id="admin-container">
+                                                    <div class="col-12 col-md-6">
+                                                        <a href="{% url 'edit_product' product.id %}" class="fw-bold">Edit</a>
+                                                    </div>
+                                                    <div class="col-12 col-md-6">
+                                                        <a href="{% url 'delete_product' product.id %}" class="fw-bold text-danger">Delete</a>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endif%}
                                     </div>
                             </form>
                         </div>

@@ -696,9 +696,7 @@ img{
 }
 
 
-
 /*********** PRODUCT DETAILS PAGE ************/
-
 .images-list-container{
     justify-content: center;
     margin-right: 15%;
@@ -771,6 +769,10 @@ ul .size-box{
     font-size: 0.700rem;
 }
 
+
+#admin-container{
+    font-size: 0.600rem;
+}
 /**************** DEALS CAROUSEL SECTION */
 
 .deals-container{
@@ -1216,7 +1218,6 @@ img{
     color: #FF6542;
     font-size: 1.1rem;
 }
-
 
 }
   /******************************************************************** DESKTOP SCREEN */

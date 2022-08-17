@@ -48,7 +48,7 @@
                     {% if products %}
                     {% for product in products %} 
                     <div class="col-lg-4 col-md-6 col-6 product-card-box">
-                        <div class="card mb-3 border-0">
+                        <div class="card mb-3 border">
                             <div class="card-img-container">
                                 <div class="card-img-box">
                                 {% if product.cover_image %}
@@ -62,7 +62,7 @@
                                 {% endif %}
                                 </div>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body" style="background-color: rgb(255, 247, 247);">
                                 <div class="row">
                                     <h5 class="card-product-title">{{ product.title }}</h5>
                                 </div>
@@ -74,9 +74,18 @@
                                         <p class="card-product-price">{{ product.price }}€</p>
                                     </div>
                                 </div>
-                                <div class="row mt-4">
-                                    <a href="#" class="btn btn-primary btn-sm card-button">Add to bag</a>
-                                </div>
+                                {% if user.is_authenticated %}
+                                    {% if user.is_superuser %}
+                                        <div class="row mt-2 d-flex text-center">
+                                            <div class="col-6">
+                                                <a href="{% url 'edit_product' product.id %}" class="text-decoration-none ">Edit</a>
+                                            </div>
+                                            <div class="col-6">
+                                                <a href="{% url 'delete_product' product.id %}" class="text-decoration-none text-danger">Delete</a>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endif%}
                             </div>
                           </div>
                     </div>
