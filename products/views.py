@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from .models import Product, Size, Image, ProductDetail, Category
+from .models import Product, Size, Image, ProductDetail
 from .forms import ProductForm, SizeForm, ImageForm, ProductDetailForm
+from bag.handle_stock import handle_stock_admin
 from django.contrib import messages
 from django.db.models import Q
 # Create your views here.
@@ -136,6 +137,50 @@ def add_product(request):
 def edit_product(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
+    product_sizes = Size.objects.filter(product_id=product).all()
+    if request.method == 'POST':
+        form = ProductForm(request.POST)
+        image_form = ImageForm(request.POST, request.FILES)
+        size_form = SizeForm(request.POST)
+        product_details_form = ProductDetailForm(request.POST)
+
+        if form.is_valid():
+            if product_details_form.is_valid():
+                if product_details_form.is_valid():
+                    form.save()
+                    product_details_form.save()
+                    image_form.save()
+                    handle_stock_admin(request, product_id, product_sizes)
+                    
+                    messages.info(request, 'Product successfuly edited!')
+                    return redirect((reverse('product_detail', args=[product.id])))
+        else:
+            messages.error(request, 'Could not add product. Please check the form is valid.')
+        # if 'image1' in request.POST == True:
+        #     image1 = request.POST['image1']
+
+        # if 'image2' in request.POST == True:
+        #     image2 = request.POST['image2']
+
+        # if 'image3' in request.POST == True:
+        #     image3 = request.POST['image3']
+
+        # if 'image4' in request.POST == True:
+        #     image4 = request.POST['image4']
+
+        # images_form_data = {
+        #     'image1': imgage1,
+        #     'image2': imgage2,
+        #     'image3': imgage3,
+        #     'image4': imgage4,
+        # }
+        # image_form = ImageForm(images_form_data, request.FILES)
+
+        # image1 = reques.POST['image1']
+        # image2 = reques.POST['image2']
+        # image3 = reques.POST['image3']
+        # image4 = reques.POST['image4']
+        
     sizes = Size.objects.filter(product_id=product_id).all()
     product_details = ProductDetail.objects.filter(product_id=product_id)
     product_images = get_object_or_404(Image, product_id=product)
@@ -151,21 +196,11 @@ def edit_product(request, product_id):
             'fastening': detail['fastening'],
         }
 
-    # for images in list(product_images.values()):
-    #     print(images)
-    #     product_images_data = {
-    #         'image.image1': images['image1'],
-    #         'image.image2': images['image1'],
-    #         'image.image3': images['image3'],
-    #         'image.image4': images['image4'],
-    #     }
-
     product_detail_form = ProductDetailForm(product_detail_data)
     image_form = ImageForm(instance=product_images)
-   
+
     template = 'products/edit_product.html'
     messages.info(request, f'You are about to edit {product.title}')
-
     context = {
         'product_form': form,
         'product_sizes': sizes,

@@ -57,9 +57,9 @@
                         <h6>Product Sizes</h6>
                         {% for size in product_sizes %}
                         <div class="size-stock-box mb-2">
-                            <div class="col-8 d-flex">
-                                <input type="text" name="technology" value="{{ size.size }}" maxlength="254" class="textinput textInput form-control" id="id_technology">
-                                <input type="number" name="technology" value="{{ size.stock }}" maxlength="254" class="textinput textInput form-control ms-2" id="id_technology">
+                            <div class="col-8 d-flex" name="size_stock">
+                                <p class="mt-1" name="" value="{{ size.size }}" id="id_technology">{{ size.size }}: </p>
+                                <input type="number" name="stock_size_{{ size.size }}" value="{{ size.stock }}" maxlength="254" class="textinput textInput form-control ms-3 w-50" id="id_technology">
                             </div>
                         </div>
                         {% endfor %}
@@ -76,22 +76,9 @@
                             {{ image_form.image3 | as_crispy_field }}
                             {{ image_form.image4 | as_crispy_field }}
                         </div>
-                        <!-- <div class="col_12">
-                            {% for image in product.images %}
-                            <div id="div_id_cover_image" class="form-group">
-                                   <div>
-                                   Currently: <a href="/media/PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894.jpg">PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894.jpg</a>
-                                   <input type="checkbox" name="cover_image-clear" id="cover_image-clear_id">
-                                   <label for="cover_image-clear_id">Clear</label><br>
-                                   Change:
-                                   <input type="file" name="cover_image" accept="image/*" class="border-black rounded-0 clearablefileinput form-control-file" id="id_cover_image">
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div> -->
                     </div>
                 </div>
-                <div class="buttons-container d-flex mt-5">
+                <div class="buttons-container d-flex mt-3 mt-md-5 mb-2">
                     <a type="submit" class="me-3 fw-bold">Cancel</a>
                     <button type="submit" class="fw-bold" id="submit-form">Edit product</button>
                 </div>
