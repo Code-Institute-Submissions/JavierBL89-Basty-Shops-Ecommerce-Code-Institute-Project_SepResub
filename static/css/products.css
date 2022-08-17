@@ -113,7 +113,6 @@ background-color: #5D737E;
 
 
 /************** NEW ARRIVALS SECTION ***/
-
 .deals-container{
     margin-top: 150px;
     margin-bottom: 150px;
@@ -146,22 +145,35 @@ background-color: #5D737E;
     color: rgb(122, 13, 13);
 }
 
+/*************** ADD PRODUCT PAGE */
+.size-stock-box .form-control{
+    text-align: center;
+}
+
 .buttons-container button[type="submit"]{
     background: none;
     border: none;
     color: #0d6efd;
  }
 
+ #product-mngt-container a[type="submit"]{
+    color: rgb(255, 101, 66);
+    text-decoration: none;
+ }
+ 
  #product-mngt-container a{
     color: #e3b837;
     text-decoration: none;
  }
  
+ /*************** EDIT PRODUCT PAGE */
+.product-detail-container div, .images-col div{
+    margin-bottom: 10px;
+}
 
 /******************************************************************** MOBILE SCREEN */
 @media only screen and (min-width: 320px) and (max-width: 600px) {
   
-    
      /************** NEW ARRIVALS SECTION ***/
     
      .deals-container .carousel-item{
@@ -214,10 +226,10 @@ background-color: #5D737E;
    }
 
 #product-mngt-container .form-control{
-    width: 75%;
+    text-align: center;
+    width: 80%;
     height: 30px;
     font-size: 0.650rem;
-    border-radius: 15px;
     padding: 5px 5px;
 }
 
@@ -248,7 +260,30 @@ input[name="cover_image"],
     margin: 2px auto 5px;
  }
 
-     }
+ /*************** EDIT PRODUCT PAGE */
+.images-col div a, .images-col label{
+    font-size: 0.650rem;
+}
+
+.images-col div a{
+    font-size: 0.650rem;
+}
+
+#product-mngt-container .form-control{
+    font-size: 0.650rem;
+}
+
+.images-col, .product-detail-container{
+    font-size: 0.650rem;
+}
+
+.buttons-container button[type="submit"],
+#product-mngt-container a[type="submit"]{
+   font-size: 0.800rem;
+ }
+
+
+}
 
 /******************************************************************** TABLET SCREEN */
 @media only screen and (min-width:640px) and (max-width:950px) {
@@ -302,8 +337,7 @@ input[name="cover_image"],
 #product-mngt-container .form-control{
     width: 75%;
     height: 35px;
-    font-size: 0.800rem;
-    border-radius: 15px;
+    font-size: 0.650rem;
     padding: 5px 5px;
 }
 
@@ -336,6 +370,19 @@ input[name="image4"],
     height: 30px;
     margin: 2px auto 5px;
  }
+
+ /*************** EDIT PRODUCT PAGE */
+.images-col div a, .images-col label{
+    font-size: 0.800rem;
+}
+
+.images-col div a{
+    font-size: 0.750rem;
+}
+
+.images-col, .product-detail-container{
+    font-size: 0.800rem;
+}
 
 }
 
@@ -407,5 +454,16 @@ input[name="image4"],
    font-size: 0.800rem;
 color: #828181;
 }
+
+/*************** EDIT PRODUCT PAGE */
+
+.images-col div a, .images-col label{
+    font-size: 0.800rem;
+}
+
+.images-col, .product-detail-container{
+    font-size: 0.800rem;
+}
+
 
 }

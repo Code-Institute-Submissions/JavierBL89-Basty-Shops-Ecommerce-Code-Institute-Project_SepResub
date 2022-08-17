@@ -128,20 +128,49 @@ def add_product(request):
         'product_form': product_form,
         'size_form': size_form,
         'image_form': image_form,
-        'product_detail_form': product_detail_form
+        'product_detail_form': product_detail_form,
     }
     return render(request, template, context)
 
 
 def edit_product(request, product_id):
-    
+
     product = get_object_or_404(Product, pk=product_id)
-    product_form = ProductForm(instance=product)
+    sizes = Size.objects.filter(product_id=product_id).all()
+    product_details = ProductDetail.objects.filter(product_id=product_id)
+    product_images = get_object_or_404(Image, product_id=product)
+    form = ProductForm(instance=product)
+
+    for detail in list(product_details.values()):
+        product_detail_data = {
+            'heels_mesurement': detail['heels_mesurement'],
+            'upper_material': detail['upper_material'],
+            'sole': detail['sole'],
+            'technology': detail['technology'],
+            'lining_material': detail['lining_material'],
+            'fastening': detail['fastening'],
+        }
+
+    # for images in list(product_images.values()):
+    #     print(images)
+    #     product_images_data = {
+    #         'image.image1': images['image1'],
+    #         'image.image2': images['image1'],
+    #         'image.image3': images['image3'],
+    #         'image.image4': images['image4'],
+    #     }
+
+    product_detail_form = ProductDetailForm(product_detail_data)
+    image_form = ImageForm(instance=product_images)
+   
     template = 'products/edit_product.html'
     messages.info(request, f'You are about to edit {product.title}')
 
     context = {
-        'product_form': product_form,
+        'product_form': form,
+        'product_sizes': sizes,
+        'product_detail_form': product_detail_form,
+        'image_form': image_form,
         'product': product,
     }
     return render(request, template, context)
