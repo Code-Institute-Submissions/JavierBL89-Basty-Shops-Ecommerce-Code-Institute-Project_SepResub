@@ -1,1 +1,1 @@
-web: gunicorn basty_shops.wsgi_application
+web: gunicorn basty_shops.wsgi:application
