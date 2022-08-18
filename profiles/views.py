@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.models import User
-
+from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm, UpdateUserForm
 
@@ -10,6 +10,7 @@ from checkout.models import Order
 # Create your views here.
 
 
+@login_required
 def profile(request):
     """Display the user's profile. """
 
@@ -38,7 +39,7 @@ def profile(request):
 
     return render(request, template, context)
 
-
+@login_required
 def order_history(request, order_number):
 
     order = get_object_or_404(Order, order_number=order_number)
@@ -54,7 +55,7 @@ def order_history(request, order_number):
     }
     return render(request, template, context)
 
-
+@login_required
 def update_details(request):
 
     if request.method == 'POST':

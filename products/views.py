@@ -3,6 +3,7 @@ from .models import Product, Size, Image, ProductDetail
 from .forms import ProductForm, SizeForm, ImageForm, ProductDetailForm
 from bag.handle_stock import handle_stock_admin
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 # Create your views here.
 
@@ -16,7 +17,7 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
-    
+
     if request.GET:
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
@@ -46,7 +47,7 @@ def all_products(request):
                 return redirect(reverse, ('products'))
             queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(title__icontains=query)
             products = products.filter(queries)
-           
+
     current_sorting = f'{sort}_{direction}'
 
     context = {
@@ -86,8 +87,13 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
+@login_required
 def add_product(request):
     """ Add products to store """
+
+    if not request.user.is_autthenticated:
+        messages.info(request, 'Request not allowed, only stpore admin.')
+        return redirect(reverse('home'))
 
     if request.method == 'POST':
         product_form = ProductForm(request.POST, request.FILES)
@@ -134,8 +140,13 @@ def add_product(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_product(request, product_id):
     """ Edit a product from store """
+
+    if not request.user.is_autthenticated:
+        messages.info(request, 'Request not allowed, only stpore admin.')
+        return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
     product_sizes = Size.objects.filter(product_id=product).all()
@@ -187,8 +198,13 @@ def edit_product(request, product_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_product(request, product_id):
     """ Delete product fro store """
+
+    if not request.user.is_autthenticated:
+        messages.info(request, 'Request not allowed, only stpore admin.')
+        return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
