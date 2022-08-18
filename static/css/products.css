@@ -1,5 +1,11 @@
-/********* PRODUCTS PAGE */
+/*** override input autofill background_color */
+input:-webkit-autofill, input:-webkit-autofill, input:-webkit-autofill:focus {
+    -webkit-background-color: rgb(56, 56, 56);
+    -webkit-text-fill-color: rgb(56, 56, 56);
+    transition: background-color 5000s ease-in-out 0s;
+  }
 
+/********* PRODUCTS PAGE */
 .product-card-box{
     height: 600px;
 }

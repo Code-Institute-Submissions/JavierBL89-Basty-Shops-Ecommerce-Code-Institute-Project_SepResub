@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
     'django_countries',
     'home',
     'products',
@@ -50,7 +52,7 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
 
-    #others
+    # others
     'crispy_forms',
 ]
 
@@ -65,6 +67,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.sites.middleware.CurrentSiteMiddleware',
+
 ]
 
 ROOT_URLCONF = 'basty_shops.urls'
@@ -106,8 +110,46 @@ AUTHENTICATION_BACKENDS = [
 
 ]
 
-SITE_ID = 1
+SITE_ID = 3
+# google
+# 678859215277-opfmca1vlfrue7hr1n3sjoqqkdaeghq1.apps.googleusercontent.com
+# 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
 
+# facebook
+# 1015200112475864
+# 9c98256c74f4ba756573cf933d0b3132
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    },
+    'facebook': {
+        'METHOD': 'oauth2',
+        'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
+        'SCOPE': ['email', 'public_profile'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'INIT_PARAMS': {'cookie': True},
+        'FIELDS': [
+            'id',
+            'first_name',
+            'last_name',
+            'middle_name',
+            'name',
+            'name_format',
+            'picture',
+            'short_name'
+        ],
+        'EXCHANGE_TOKEN': True,
+        # 'LOCALE_FUNC': 'path.to.callable',
+        'VERIFIED_EMAIL': False,
+        'VERSION': 'v13.0',
+    }
+}
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
@@ -116,7 +158,7 @@ ACCOUNT_SINGUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGHT = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
-
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'https://8000-javierbl89-bastyshopsec-a9ck2k6m4mw.ws-eu62.gitpod.io/proccess/fbresponse.aspx'
 WSGI_APPLICATION = 'basty_shops.wsgi.application'
 
 

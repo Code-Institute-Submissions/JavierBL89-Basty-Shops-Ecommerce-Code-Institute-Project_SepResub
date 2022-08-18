@@ -1,6 +1,5 @@
 
 /***** COLOR PALLETES 
-
 RED: rgb(122, 13, 13);
 AMARILLO : #F3FFC6
 GREY: C8BFC7;
@@ -8,9 +7,14 @@ TOMATOE  FF6542
 
 */
 
+/*** override input autofill background_color */
+input:-webkit-autofill, input:-webkit-autofill, input:-webkit-autofill:focus {
+    -webkit-background-color: rgb(56, 56, 56);
+    -webkit-text-fill-color: rgb(56, 56, 56);
+    transition: background-color 5000s ease-in-out 0s;
+  }
 
 /******** TOASTS CONTAINER */
-
 #message-container{
     position: fixed;
     right: 30px;
@@ -22,7 +26,6 @@ TOMATOE  FF6542
 .toast{
     border-color: darkred;
     color: #616161;
-
 }
 
 body{
@@ -386,7 +389,6 @@ img{
 }
 
 /***************** DEALS CAROUSEL SECTION */
-
 .deals-container{
     margin-top: 9%;
 }
@@ -439,7 +441,6 @@ img{
 
 
 /************** SUBSCRIPTION SECTION */
-
 .subscription-container{
     padding-top: 20px;
     margin: 90px auto 10px;
@@ -469,6 +470,7 @@ img{
 
 
 /************ ALL-AUTH-PAGES */
+
 .allauth-form-inner-content .form-control{
     margin: 0 auto 5px;
  }
@@ -931,6 +933,23 @@ ul .size-box{
     font-size: 0.700rem;
  }
 
+ .socialaccount_providers li{
+    margin-top: 5px;
+ }
+
+ .socialaccount_providers li .fb{
+    color: #ffffff;
+    padding: 2% 14.5%;
+    background-color:rgb(59, 89, 152);
+    color: #ffffff;
+    border-radius: 10px;
+ }
+
+ .socialaccount_providers li .google{
+    padding: 2% 16.5%;
+ }
+
+
  /******** Product Form */
 .btn-file {
     position: relative;
@@ -958,6 +977,44 @@ ul .size-box{
     border-radius: 0;
 }
 
+.allauth-form-inner-content .form-control{
+    width: 72.5%;
+    height: 30px;
+    font-size: 0.700rem;
+ }
+
+ .allauth-form-inner-content .form-control:focus{
+    border-color:  rgb(122, 13, 13);
+    box-shadow: 0 0 3px rgb(122, 13, 13) !important;
+    font-size: 0.700rem;
+ }
+
+/******* login social buttons */
+.socialaccount_providers{
+    list-style: none;
+    margin-top: 30px;
+    padding-left: 0;
+ }
+ 
+ .socialaccount_providers li{
+    margin-top: 5px;
+ }
+ 
+ .socialaccount_providers li .fb{
+    color: #ffffff;
+    padding: 2% 9.5%;
+    background-color:rgb(59, 89, 152);
+    color: #ffffff;
+    border-radius: 10px;
+ }
+
+ .socialaccount_providers li .google{
+    color: #ffffff;
+    padding: 2% 11.5%;
+    background-color: rgb(221, 75, 57);
+    color: #ffffff;
+    border-radius: 10px;
+ }
 }
   /******************************************************************** TABLET SCREEN */
   @media only screen and (min-width:640px) and (max-width:950px) {
@@ -1243,6 +1300,45 @@ img{
     font-size: 1.1rem;
 }
 
+.allauth-form-inner-content .form-control{
+    width: 54%;
+    height: 30px;
+    font-size: 0.700rem;
+ }
+
+ .allauth-form-inner-content .form-control:focus{
+    border-color:  rgb(122, 13, 13);
+    box-shadow: 0 0 3px rgb(122, 13, 13) !important;
+    font-size: 0.700rem;
+ }
+
+/******* login social buttons */
+.socialaccount_providers{
+    list-style: none;
+    margin-top: 30px;
+    padding-left: 0;
+ }
+ 
+ .socialaccount_providers li{
+    margin-top: 8px;
+ }
+ 
+ .socialaccount_providers li .fb{
+    color: #ffffff;
+    padding: 1% 9.5%;
+    background-color:rgb(59, 89, 152);
+    color: #ffffff;
+    border-radius: 10px;
+ }
+
+ .socialaccount_providers li .google{
+    color: #ffffff;
+    padding: 1% 10.5%;
+    background-color: rgb(221, 75, 57);
+    color: #ffffff;
+    border-radius: 10px;
+ }
+ 
 }
   /******************************************************************** DESKTOP SCREEN */
   @media only screen and (min-width: 1000px) {
@@ -1349,10 +1445,8 @@ img{
 }
 
 /************************* ALL-AUTH-FORMS **/
-
 .header-container .allauth-form-inner-content{
-    /* padding-left: 25%; */
-    padding: 2%;
+    padding: 2% 10%;
     margin: 0 auto;
     background-color: rgb(235, 227, 233);
     border-radius: 10px;
@@ -1361,12 +1455,12 @@ img{
 }
 
 .allauth-form-inner-content h1{
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin-bottom: 2%;
 }
 
 .allauth-form-inner-content p{
-    font-size: 0.9rem;
+    font-size: 0.900rem;
 }
 
 .allauth-form-inner-content a{
@@ -1383,8 +1477,8 @@ img{
 
 
 .allauth-form-inner-content .form-control{
-    width: 40%;
-    height: 40px;
+    width: 47%;
+    height: 35px;
     font-size: 0.700rem;
  }
 
@@ -1392,5 +1486,32 @@ img{
     border-color:  rgb(122, 13, 13);
     box-shadow: 0 0 3px rgb(122, 13, 13) !important;
     font-size: 0.700rem;
+ }
+
+ /******* login social buttons */
+ .socialaccount_providers{
+    list-style: none;
+    margin-top: 30px;
+    padding-left: 0;
+ }
+ 
+ .socialaccount_providers li{
+    margin-top: 15px;
+ }
+ 
+ .socialaccount_providers li .fb{
+    color: #ffffff;
+    padding: 1% 9.5%;
+    background-color:rgb(59, 89, 152);
+    color: #ffffff;
+    border-radius: 10px;
+ }
+
+ .socialaccount_providers li .google{
+    color: #ffffff;
+    padding: 1% 10.5%;
+    background-color: rgb(221, 75, 57);
+    color: #ffffff;
+    border-radius: 10px;
  }
   }
