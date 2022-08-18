@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='product',
             name='images_list',
-            field=models.BooleanField(blank=True, default=False, null=True),
+            field=models.IntegerField(blank=True, default=False, null=True),
         ),
         migrations.AlterField(
             model_name='product',

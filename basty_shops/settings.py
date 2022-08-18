@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 if os.path.isfile('env.py'):
     import env
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -111,13 +112,7 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 3
-# google
-# 678859215277-opfmca1vlfrue7hr1n3sjoqqkdaeghq1.apps.googleusercontent.com
-# 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
 
-# facebook
-# 1015200112475864
-# 9c98256c74f4ba756573cf933d0b3132
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': [
@@ -165,14 +160,16 @@ WSGI_APPLICATION = 'basty_shops.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse('postgres://twrjgnswsidvio:4209e9d3f8c2f58e60956a025551bfcd76ca9606194e3bc02fa64e32bb13d5e8@ec2-54-155-110-181.eu-west-1.compute.amazonaws.com:5432/d6c18pjlc9ug6v')
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
