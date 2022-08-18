@@ -91,7 +91,7 @@ def product_detail(request, product_id):
 def add_product(request):
     """ Add products to store """
 
-    if not request.user.is_autthenticated:
+    if not request.user.is_authenticated:
         messages.info(request, 'Request not allowed, only stpore admin.')
         return redirect(reverse('home'))
 
@@ -144,7 +144,7 @@ def add_product(request):
 def edit_product(request, product_id):
     """ Edit a product from store """
 
-    if not request.user.is_autthenticated:
+    if not request.user.is_authenticated:
         messages.info(request, 'Request not allowed, only stpore admin.')
         return redirect(reverse('home'))
 
@@ -202,7 +202,7 @@ def edit_product(request, product_id):
 def delete_product(request, product_id):
     """ Delete product fro store """
 
-    if not request.user.is_autthenticated:
+    if not request.user.is_authenticated:
         messages.info(request, 'Request not allowed, only stpore admin.')
         return redirect(reverse('home'))
 
