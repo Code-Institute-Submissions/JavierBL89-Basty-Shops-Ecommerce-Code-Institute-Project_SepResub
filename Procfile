@@ -1,0 +1,1 @@
+web: gunicorn basty_shops.wsgi_application
