@@ -11,3 +11,6 @@ import os
 os.environ['SECRET_KEY'] = 'cachundalamadre'
 os.environ['STRIPE_PUBLIC_KEY'] = 'pk_test_51LBOvCLzFhEXkarg7N0Q42yNteeE2b883G6fG7P5sJpRWPztcqxrogMts2NEZnQCPqCSG39dhvvF8LVQ5rbRS1x900jV78wniI'
 os.environ['STRIPE_WH_SECRET'] = 'whsec_Slar4w390ORhevGo85palJE4T8WO0xtP'
+os.environ['AWS_ACCESS_KEY_ID'] = 'AKIAWQIOZWCVUZ5EE34F'
+os.environ['AWS_SECRET_ACCESS_KEY'] = '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'
+os.environ['USE_AWS'] = '1'
