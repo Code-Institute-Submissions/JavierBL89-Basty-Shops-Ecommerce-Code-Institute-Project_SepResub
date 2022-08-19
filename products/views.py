@@ -65,7 +65,8 @@ def product_detail(request, product_id):
     size_list = Size.objects.filter(product_id=product_id).all()
     images_list = Image.objects.filter(product_id=product_id).all()
     product_details = ProductDetail.objects.filter(product_id=product_id).all()
-
+    details_key = None
+    details_value = None
     # loop through images_list dict object
     for image in images_list.values():
         images_list = list(image.values())
