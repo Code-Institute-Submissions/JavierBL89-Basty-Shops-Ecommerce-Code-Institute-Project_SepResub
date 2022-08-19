@@ -141,7 +141,6 @@ SOCIALACCOUNT_PROVIDERS = {
             'short_name'
         ],
         'EXCHANGE_TOKEN': True,
-        # 'LOCALE_FUNC': 'path.to.callable',
         'VERIFIED_EMAIL': False,
         'VERSION': 'v13.0',
     }
@@ -154,7 +153,6 @@ ACCOUNT_SINGUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGHT = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'https://8000-javierbl89-bastyshopsec-a9ck2k6m4mw.ws-eu62.gitpod.io/proccess/fbresponse.aspx'
 WSGI_APPLICATION = 'basty_shops.wsgi.application'
 
 
