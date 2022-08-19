@@ -8,9 +8,13 @@ python manage.py loaddata sizes.json
 
 import os
 
-os.environ['SECRET_KEY'] = 'cachundalamadre'
+os.environ['SECRET_KEY'] = '9ybew)snfgk*c*l+2td=d%l(+r^dyzg5#!lyh33ad8!*wf6h=u'
 os.environ['STRIPE_PUBLIC_KEY'] = 'pk_test_51LBOvCLzFhEXkarg7N0Q42yNteeE2b883G6fG7P5sJpRWPztcqxrogMts2NEZnQCPqCSG39dhvvF8LVQ5rbRS1x900jV78wniI'
 os.environ['STRIPE_WH_SECRET'] = 'whsec_Slar4w390ORhevGo85palJE4T8WO0xtP'
-os.environ['AWS_ACCESS_KEY_ID'] = 'AKIAWQIOZWCVUZ5EE34F'
-os.environ['AWS_SECRET_ACCESS_KEY'] = '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'
+os.environ['STRIPE_SECRET_KEY'] = 'sk_test_51LBOvCLzFhEXkarg80jikjQ3uryFFlbktfSEto94YhA73h0aXscs0mgx5GJiI3A2CLl5B1hDjtK3FDa9h9icx2sS00TkhiDtFk'
+os.environ['AWS_ACCESS_KEY_ID'] = 'AKIAWQIOZWCVUXKPSK76'
+os.environ['AWS_SECRET_ACCESS_KEY'] = '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'
 os.environ['USE_AWS'] = '1'
+os.environ['EMAIL_HOST_USER'] = 'jjbastyshops@gmail.com'
+os.environ['EMAIL_HOST_PASS'] = 'bsbnuaogcqwobqlm'
+os.environ['DEVELOPMENT'] = '1'
