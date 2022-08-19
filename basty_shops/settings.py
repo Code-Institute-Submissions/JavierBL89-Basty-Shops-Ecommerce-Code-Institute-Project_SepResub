@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['bastyshops.herokuapp.com', 'localhost', ]
+ALLOWED_HOSTS = ['bastyshops.herokuapp.com', 'localhost' ]
 
 # needed to be able to login(new in django 4)
 CSRF_TRUSTED_ORIGINS = ['https://8000-javierbl89-bastyshopsec-asz14480jyv.ws-eu62.gitpod.io', 'https://bastyshops.herokuapp.com/']
