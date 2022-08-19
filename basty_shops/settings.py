@@ -70,7 +70,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.sites.middleware.CurrentSiteMiddleware',
-
 ]
 
 ROOT_URLCONF = 'basty_shops.urls'
@@ -208,9 +207,9 @@ if 'USE_AWS' in os.environ:
     # bucket config
     AWS_STORAGE_BUCKET_NAME = 'bastyshops'
     AWS_S3_REGION_NAME = 'us-east-1'
-    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-    
+
     # static adn media files
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
     STATICFILES_LOCATION = 'static'
