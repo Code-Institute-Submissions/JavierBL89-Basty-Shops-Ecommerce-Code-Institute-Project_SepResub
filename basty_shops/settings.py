@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', '')
 # DEBUG = 'DEVELOPMENT' in os.environ
 DEBUG = False
 
-ALLOWED_HOSTS = ['bastyshops.herokuapp.com/', 'localhost']
+ALLOWED_HOSTS = ['bastyshops.herokuapp.com', 'localhost', ]
 
 
 # Application definition
