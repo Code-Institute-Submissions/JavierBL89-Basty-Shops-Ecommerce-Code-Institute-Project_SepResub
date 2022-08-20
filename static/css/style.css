@@ -33,31 +33,33 @@ body{
 }
 
 /****************************** HEADER */
-
 header div{
     margin: 0 auto;
     height: 75px;
     background-color: #ffffff;
+    justify-content: space-between;
 }
 
-input[type="search"]{
-    height: 30px;
-    margin-right: 30px;
-    font-size: 16px;
-    border-left: none;
-    border-top: none;
-    border-right: none;
-    border-bottom: solid 1px grey;
-    position: absolute;
-    top:60px;
+.search-container{
+    height: 45px;
+}
+input[name="q"]{
+ margin-top: 0;
+ margin-left: 25px;
+ width: 25%;
 }
 
 .btn.search{
-   position:absolute;
-   left:280px;
-   bottom: 12px;
+   position:relative;
+   right:60px;
+   bottom: 6px;
+   border: none;
 }
 
+.btn.search:hover{
+    border: none;
+    
+ }
 i.fa-solid.fa-magnifying-glass{
     color: #b3bcc7;
 }
@@ -65,6 +67,7 @@ i.fa-solid.fa-magnifying-glass{
 .burger{
     background-color: #ffffff;
     border: none;
+    margin-bottom: 5px;
 }
 
 .burger, i.fa-solid{
@@ -76,9 +79,15 @@ i.fa-solid.fa-truck{
 }
 
 header h1{
+font-size: 2rem;
 margin-top: 10px;
 letter-spacing: 2px;
 color:rgb(122, 13, 13);
+text-transform: uppercase;
+}
+
+.store-name-link{
+    text-decoration: none;
 }
 
 .in-dublin{
@@ -89,7 +98,7 @@ color:rgb(122, 13, 13);
 .burger-menu{
    width: 300px;
    position:absolute;
-   top: 80px;
+   top: 76px;
    left: 0;
    background-color: rgb(255, 255, 255);
    border-top: solid 1px rgb(122, 13, 13);
@@ -138,7 +147,6 @@ color:rgb(122, 13, 13);
 
 /******************* HERO SECTION **/
 .hero-wraper{
-    position: relative;
     width: 100%;
     padding: 0;
 }
@@ -179,7 +187,6 @@ img{
 }
 
 /**************** CATEGORIES SECTION */
-
 .container-categories{
     margin: 0 auto;
 }
@@ -228,7 +235,7 @@ text-align: center;
     background-color: #e3b837;
 }
 
-.carousel-indicators [data-bs-target]{
+.carousel-indicators[data-bs-target]{
 
  background-color: rgb(122, 13, 13);
 }
@@ -247,15 +254,10 @@ text-align: center;
 }
 
 /****************** FOOTER */
-
-.container-footer{
-    margin-top: 5%;
-}
-
 .container-footer .row{
     margin: 0;
-
 }
+
 .container-footer .column{
     padding-top: 1%;
     border-color: rgb(122, 13, 13);
@@ -272,8 +274,6 @@ text-align: center;
 
 
 /****************** PRODUCTS PAGE */
-
-
 .badges-container a{
     text-decoration: none;
     color:rgb(255, 255, 255);
@@ -467,14 +467,39 @@ text-align: center;
 
 
 /************ ALL-AUTH-PAGES */
-
 .allauth-form-inner-content .form-control{
     margin: 0 auto 5px;
  }
 
-.allauth-form-inner-content .form-group label{
+.allauth-form-inner-content 
+.form-group label[for="id_login"],
+.allauth-form-inner-content 
+.form-group label[for="id_password1"],
+.allauth-form-inner-content 
+.form-group label[for="id_password2"],
+.allauth-form-inner-content 
+.form-group label[for="id_email"],
+.allauth-form-inner-content 
+.form-group label[for="id_username"]{
     display: none;
-     }
+    }
+
+.allauth-form-inner-content .form-group label[for="id_remember"]{
+   font-size: 0.700rem;
+   padding-right: 20px;
+}
+
+.form-check .form-check-input {
+    float: none;
+    margin-top: 10px;
+    margin-left: -1.5em;
+    width: 0.800em;
+    height: 0.800em;
+}
+
+.form-check .form-check-input {
+   box-shadow: none;
+}
 
 /****** change password page*/
 .allauth-form-inner-content .password_change .form-control:focus{
@@ -491,7 +516,7 @@ text-align: center;
  @media only screen and (min-width: 320px) and (max-width: 600px) {
   
 /**************** HEADER*/
-.store-name{
+header h1{
     font-size: 1rem;
 }
 
@@ -500,19 +525,44 @@ text-align: center;
     margin-right: 5px;
 }
 
+.search-container{
+    text-align: center;
+    margin-right: 5px;
+}
+
+input[name="q"]{
+    height: 30px;
+    width: 80%;
+    padding-bottom: 5px;
+    padding-left: 3px;
+   }
+
+   input[name="q"]::placeholder{
+font-size: 0.800rem;   
+}
+   
+   .btn.search{
+      position:absolute;
+      right:42px;
+      top: 5px;
+      border: none;
+   }
+
 /*********** shippin info bar */
 
-.shipping-info{
-    height: 60px;
-    font-size: 0.600rem;
+#shipping-info{
+   
+}
+
+#shipping-info .col{
+    height: 30px;
+    font-size: 0.650rem;
     background-color: #5D737E;
     color: #F3FFC6;
 }
-
 .shipping-info p{
- margin: 0 auto ;
+ margin: 10px auto ;
 }
-
 
 /* .burger-menu .row .col{
     min-height: 500px;
@@ -561,7 +611,6 @@ img{
 }
 
  /************** NEW ARRIVALS SECTION ***/
-
   .carousel-item{
     width: 100%;
   }
@@ -595,8 +644,6 @@ img{
 }
 
 /*************** INFORMATION SECTION **/
-
-
 .information-box{
     margin: 7px auto;
     height: 150px;
@@ -886,7 +933,7 @@ ul .size-box{
 /******* ALL-AUTH-FORMS */
 .header-container .allauth-form-inner-content{
     /* padding-left: 25%; */
-    padding: 5%;
+    padding: 5% 12%;
     margin: 0 auto;
     background-color: rgb(235, 227, 233);
     border-radius: 10px;
@@ -895,8 +942,8 @@ ul .size-box{
 }
 
 .allauth-form-inner-content h1{
-    font-size: 1.1rem;
-    margin-bottom: 4%;
+    font-size: 0.900rem;
+    margin-bottom: 8%;
 }
 
 .allauth-form-inner-content p{
@@ -1021,8 +1068,20 @@ ul .size-box{
   
     /**************** HEADER*/
 
-.store-name{
-    font-size: 1rem;
+    header h1{
+        font-size: 1.7rem;
+        margin-top: 15px;
+}
+
+input[name="q"]{
+    margin-top: 5px;
+    margin-left: 10px;
+    width: 30%;
+   }
+        
+.store-name-link {
+    text-decoration: none;
+    font-size: 1.6rem;
 }
 
 .nav-item{
@@ -1123,12 +1182,14 @@ ul .size-box{
 
 /*********** shippin info bar */
 
-.shipping-info{
-    height: 60px;
+header .shipping-info{
+    width: 100%;
+    height: 30px;
     font-size: 0.675rem;
     background-color: #5D737E;
     color: #F3FFC6;
 }
+
 .shipping-info p{
     margin: 0 auto;
 }
@@ -1254,7 +1315,7 @@ img{
 }
 
 #bag-title h1{
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding-left: 5%;
 } 
 
@@ -1271,7 +1332,7 @@ img{
 /******* ALL-AUTH-FORMS */
 .header-container .allauth-form-inner-content{
     /* padding-left: 25%; */
-    padding: 4%;
+    padding: 4% 7%;
     margin: 0 auto;
     background-color: rgb(235, 227, 233);
     border-radius: 10px;
@@ -1280,12 +1341,12 @@ img{
 }
 
 .allauth-form-inner-content h1{
-    font-size: 1.4rem;
-    margin-bottom: 2%;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
 }
 
 .allauth-form-inner-content p{
-    font-size: 0.850rem;
+    font-size: 0.800rem;
 }
 
 .allauth-form-inner-content a{
@@ -1343,9 +1404,9 @@ img{
   /******************************************************************** DESKTOP SCREEN */
   @media only screen and (min-width: 1000px) {
   
-/************** shippin info bar */
 
-.shipping-info{
+/************** shippin info bar */
+ .shipping-info{
     height: 40px;
     font-size: 0.775rem;
     background-color: #5D737E;
@@ -1455,8 +1516,8 @@ img{
 }
 
 .allauth-form-inner-content h1{
-    font-size: 1.5rem;
-    margin-bottom: 2%;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
 }
 
 .allauth-form-inner-content p{

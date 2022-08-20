@@ -44,25 +44,19 @@
 </head>
   <body>
     <div class="main-wraper container-fluid pe-0 ps-0">
-
-          <header class="container-fluid pe-3 ps-3 sticky-top">
+        <header>
+          <div class="container-fluid pe-3 ps-3 sticky-top">
             <div class="row d-flex flex-row">
-              <div class="col-3 col-lg-4 d-inline-flex text-md-start ps-0 ps-md-3 ps-lg-3">
+              <div class="col-2 col-md-3 d-inline-flex text-md-start ps-0 ps-md-3 ps-lg-3">
                 <button class="burger" id="burger" href="#">
-                <i class="fa-solid fa-bars fa-2xl sm-fa-xl"></i>
+                    <i class="fa-solid fa-bars fa-2xl sm-fa-xl"></i>
                 </button>
                 {% include 'includes/burger_menu.html' %}
-                <!--- SEARCHER FORM---->
-                <form method="GET" action="{% url 'products' %}" class="d-none d-lg-block d-flex" role="search">
-                  <input class="ms-3 mt-3 d-inline" type="text" name="q" placeholder="Search" aria-label="Search">
-                  <button class="btn search mt-1" type="submit"><i class="fa-solid fa-magnifying-glass fa-l"></i></button>
-                </form>
-                <!---->
               </div>
-              <div class="col-6 col-lg-4 text-center d-sm-inline">
-                <a href="{% url 'home' %} "><h1 class="store-name fs-2">Basty shops</h1></a>
+              <div class="col-6 col-md-5 text-start text-md-center d-sm-inline">
+                <a href="{% url 'home' %}" class="store-name-link"><h1>Basty shops</h1></a>
               </div>
-              <div class="col-3 col-lg-4 d-sm-inline pe-0 pe-md-3 pe-lg-3">
+              <div class="col-4 col-md-3 d-sm-inline pe-0 pe-md-3 pe-lg-3">
                 <ul class="list-inline list-unstyled d-flex justify-content-end mt-3">
                   <li class="navbar-item me-lg-3 me-2 me-md-3 me-lg-3 dropdown">
                     <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="dropdown" aria-expanded="false">
@@ -83,11 +77,10 @@
                   </li>
                   <li class="navbar-item me-2 me-md-3 me-lg-3 ">
                     <a class="nav-link" href="#">
-                          <i class="fa-solid fa-heart fa-xl"></i></a>
+                        <i class="fa-solid fa-heart fa-xl"></i></a>
                   </li>
                   <li class=" text-center">
                     <a class="nav-link {% if grand_total %} text-info fw-bold {% else %} text-black {% endif %}" href="{% url 'view_bag' %}"  aria-current="page">
-                      <!-- <div class="text-center">  -->
                         <i class="fa-solid fa-bag-shopping fa-xl"></i>
                         <p class="my-0">
                           {% if grand_total %}
@@ -96,12 +89,30 @@
                           0.00
                           {% endif %}
                         </p>
-                      <!-- </div> -->
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
+            <div class="row search-container">
+              <div class="col-12">
+                  <!--- SEARCHER FORM---->
+                  <form method="GET" action="{% url 'products' %}" role="search">
+                    <input class="d-inline" type="text" name="q" placeholder="Search" aria-label="Search">
+                    <button class="btn search mt-1" type="submit"><i class="fa-solid fa-magnifying-glass fa-l"></i></button>
+                  </form>
+                  <!---->
+              </div>
+            </div>
+            <div class="row shipping-info" id="shipping-info">
+              <div class="col-12 col-md-6 text-center mt-2">
+                  <p><i class="fa-solid fa-truckfa-l"></i><strong> Free shipping</strong> with orders over 50€</p>
+              </div>
+              <div class="col-12 col-md-6 mt-0 text-center text-lg-start mt-lg-2">
+                  <p>Order before 3pm and get it by tomorrow! (<span class="in-dublin">just in Dublin</span>)</p>
+              </div>
+          </div>
+          </div>
         </header>
         {% if messages %}
         <div class="message-container" id="message-container">
@@ -150,64 +161,7 @@
   <script src="{% static 'jquery/burgerMenu.js' %}"></script>
     {% endblock %}
 
-    
-    <script>
 
-      function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
-        console.log('statusChangeCallback');
-        console.log(response);                   // The current login status of the person.
-        if (response.status === 'connected') {   // Logged into your webpage and Facebook.
-          testAPI();  
-        } else {                                 // Not logged into your webpage or we are unable to tell.
-          document.getElementById('status').innerHTML = 'Please log ' +
-            'into this webpage.';
-        }
-      }
-    
-    
-      function checkLoginState() {               // Called when a person is finished with the Login Button.
-        FB.getLoginStatus(function(response) {   // See the onlogin handler
-          statusChangeCallback(response);
-        });
-      }
-    
-    
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '{app-id}',
-          cookie     : true,                     // Enable cookies to allow the server to access the session.
-          xfbml      : true,                     // Parse social plugins on this webpage.
-          version    : '{api-version}'           // Use this Graph API version for this call.
-        });
-    
-    
-        FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
-          statusChangeCallback(response);        // Returns the login status.
-        });
-      };
-     
-      function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
-        console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function(response) {
-          console.log('Successful login for: ' + response.name);
-          document.getElementById('status').innerHTML =
-            'Thanks for logging in, ' + response.name + '!';
-        });
-      }
-    
-    </script>
-    
-    
-    <!-- The JS SDK Login Button -->
-    
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-    </fb:login-button>
-    
-    <div id="status">
-    </div>
-    
-    <!-- Load the JS SDK asynchronously -->
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
     
 </body>
 </html>
