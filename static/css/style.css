@@ -395,10 +395,11 @@ font-size: 0.800rem;
 }
 
 .add-to-bag-button-container button{
-    width: 65%;
+    width: 170%;
     background-color: rgb(122, 13, 13);
     color: #ffffff;
-    font-size: 0.900rem;
+    height: 40px;
+    font-size: 0.700rem;
     font-weight: bold;
 }
 
@@ -419,13 +420,17 @@ font-size: 0.800rem;
     font-size: 0.650rem;
 }
 
+.info-box-parent{
+    width: 100%;
+}
+
 /***************** DEALS CAROUSEL SECTION */
 .deals-container{
     margin-top: 9%;
 }
 
 .deals-container h6{
-    margin-left: 110px;
+    margin-top: 70px;
     margin-bottom: 40px;
 }
 
@@ -435,20 +440,22 @@ font-size: 0.800rem;
 
 .deals-container .carousel-inner{
     height: 420px;
+    padding-left: 1%;
+
 }
 
 .deals-container .product-card{
     height: 280px;
-    width: 20%;
+    width: 28%;
 }
 
 .deals-container .product-card .card-img-box{
-    height: 270px;
+    height: 250px;
     background-color: #b6b6b6;
 }
 
 .deals-container .card-img-box img{
-    height: 100%;
+    height: 110%;
 }
 
 .deals-container .carousel-indicators{
@@ -474,8 +481,8 @@ font-size: 0.800rem;
 /************** SUBSCRIPTION SECTION */
 .subscription-container{
     padding-top: 20px;
-    margin: 90px auto 10px;
-    height: 200px;
+    margin: 100px auto 10px;
+    height: 270px;
     width: 450px;
     background-color: #5D737E;
     color: #F3FFC6;
@@ -897,13 +904,15 @@ ul .size-box{
     height: 70%;
 }
 
-.product-description-box p{
-    font-size: 0.800rem;
+.product-description-box p,
+.product-details-box li,
+.product-details-box p{
+    font-size: 0.695rem;
 }
 
 .product-details-container{
+    margin: 0 auto;
     width: 70%;
-    margin-left: 25%;
 }
 
 .product-details-box ul{
@@ -912,9 +921,6 @@ ul .size-box{
 
 .product-details-box .puta{
     padding-left: 20px;
-}
-.product-details-box p{
-    font-size: 0.700rem;
 }
 
 
@@ -937,14 +943,14 @@ ul .size-box{
   }
 
 .deals-container .carousel-inner{
-    height: 320px;
+    height: 280px;
 }
 .deals-container .product-card{
     height: 280px;
     width: 40%;
 }
 .deals-container .product-card .card-img-box{
-    height: 130px;
+    height: 120px;
     background-color: #b6b6b6;
 }
 
@@ -953,7 +959,7 @@ ul .size-box{
 }
 .deals-container .carousel-indicators{
     position: absolute;
-    top:95%
+    top:100%
 }
 
 .deals-container .carousel-indicators [data-bs-target]{
@@ -974,7 +980,7 @@ ul .size-box{
 .subscription-container{
     padding-top: 20px;
     margin: 90px auto 10px;
-    height: 160px;
+    height: 250px;
     width: 95%;
     background-color: #5D737E;
     color: #F3FFC6;
@@ -991,10 +997,12 @@ ul .size-box{
 }
 
 .subscription-container button{
-    margin-top: 0;
+    margin-top: 20px;
     width: 80%;
     background-color:  #FF6542;
     color: #ffffff;
+    font-size: 0.850rem;
+    letter-spacing: 1px;
 }
 
 /******************* BAG PAGE **/
@@ -1377,6 +1385,9 @@ ul .size-box{
     height: 70%;
 }
 
+#product-info-container{
+    padding: auto 25%;
+}
 /*********** shippin info bar */
 header .shipping-info{
     width: 100%;
@@ -1638,6 +1649,8 @@ img{
     .product-details-box, .product-description-box{
         border-left: solid 1px #e5e5e5;
     }
+
+
 
 /*************** INFORMATION SECTION **/
 #store-information .row{
