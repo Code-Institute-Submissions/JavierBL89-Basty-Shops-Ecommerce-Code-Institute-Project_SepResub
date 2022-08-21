@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import handler404_view, handler500_view, handler403_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,3 +28,8 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+handler403_view = 'basty_shops.views.handler403_view'
+handler404_view = 'basty_shops.views.handler404_view'
+handler500_view = 'basty_shops.views.handler500_view'

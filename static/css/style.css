@@ -6,7 +6,6 @@ GREY: C8BFC7;
 TOMATOE  FF6542
 
 */
-
 /*** override input autofill background_color */
 input:-webkit-autofill, input:-webkit-autofill, input:-webkit-autofill:focus {
     -webkit-background-color: rgb(56, 56, 56);
