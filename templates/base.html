@@ -45,18 +45,18 @@
   <body>
     <div class="main-wraper container-fluid pe-0 ps-0">
         <header>
-          <div class="container-fluid pe-3 ps-3 sticky-top">
-            <div class="row d-flex flex-row">
-              <div class="col-2 col-md-3 d-inline-flex text-md-start ps-0 ps-md-3 ps-lg-3">
+          <div class="container-fluid sticky-top">
+            <div class="row navbar d-flex flex-row ps-3 pe-3 navbar">
+              <div class="col-2 col-md-3 d-inline-flex text-md-start mb-4 ps-0 ps-md-3 ps-lg-3">
                 <button class="burger" id="burger" href="#">
                     <i class="fa-solid fa-bars fa-2xl sm-fa-xl"></i>
                 </button>
                 {% include 'includes/burger_menu.html' %}
               </div>
-              <div class="col-6 col-md-5 text-start text-md-center d-sm-inline">
+              <div class="col-6 col-md-5 text-start text-md-center d-sm-inline mb-4 store-name-column">
                 <a href="{% url 'home' %}" class="store-name-link"><h1>Basty shops</h1></a>
               </div>
-              <div class="col-4 col-md-3 d-sm-inline pe-0 pe-md-3 pe-lg-3">
+              <div class="col-4 col-md-3 d-sm-inline pe-0 pe-md-3 pe-lg-3 ">
                 <ul class="list-inline list-unstyled d-flex justify-content-end mt-3">
                   <li class="navbar-item me-lg-3 me-2 me-md-3 me-lg-3 dropdown">
                     <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="dropdown" aria-expanded="false">
@@ -104,11 +104,11 @@
                   <!---->
               </div>
             </div>
-            <div class="row shipping-info" id="shipping-info">
+            <div class="row shipping-info mt-2" id="shipping-info">
               <div class="col-12 col-md-6 text-center mt-2">
-                  <p><i class="fa-solid fa-truckfa-l"></i><strong> Free shipping</strong> with orders over 50€</p>
+                  <p><i class="fa-solid fa-truck fa-l"></i><strong> Free shipping</strong> with orders over 50€</p>
               </div>
-              <div class="col-12 col-md-6 mt-0 text-center text-lg-start mt-lg-2">
+              <div class="col-12 col-md-6 text-center text-lg-start mt-0 mt-md-2 pb-2 pb-md-0 pe-5 pe-md-0 ps-5 ps-md-0 wonky">
                   <p>Order before 3pm and get it by tomorrow! (<span class="in-dublin">just in Dublin</span>)</p>
               </div>
           </div>

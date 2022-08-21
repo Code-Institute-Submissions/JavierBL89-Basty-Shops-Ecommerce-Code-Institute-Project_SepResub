@@ -8,53 +8,49 @@
 <div class="container-fluid hero-wraper">
     <div class="row d-flex mt-5 mb-5">
         <div class="col-lg-6 col-md-12 hero-box-1">
-            <!-- <div class="hero-img-1"> -->
                 <img src="{{ MEDIA_URL }}4281ed2bc5ec72314ec87868900de96ebb90cdfd_cmq0567_1.jpg" alt="">
                 <div class="hero-1-text text-start">
                     <h2 class="mb-0 fs-2">Shoes</h2>
                     <p class="fs-4">New collection</p>
                 </div>
-            <!-- </div> -->
         </div>
         <div class="col-lg-6 col-md-12 hero-box-2 text-center">
-            <!-- <div class="hero-img-2"> -->
                 <img src="{{ MEDIA_URL }}b182e410ebd2a2e5d6861c1ecf30a53677801ee0_cmw6771_1.jpg" alt="">
                 <div class="hero-2-text text-end ">
                     <p class="fs-2 mb-0"><strong>up to 60% off</strong></p>
                     <h2 class="fs-4">Boots</h2>
                 </div>
-            <!-- </div> -->
         </div>
     </div>
 </div>    
 </section>
 <!------------------------------- CATEGORIES SECTION ----------->
 <section id="categories">
-    <div class="container-fluid container-categories ps-3 pe-3 mb-5">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
-                <a href="">
-                    <div class="category-box shoes-box-category">
-                        <img clas="category-img" src="{{ MEDIA_URL }}fzz18201.jpg" alt="shoes-category">
-                        <h3 class="shoes-title category-title">SHOES</h3>
+    <div class="container-fluid container-categories text-center mb-5">
+        <div class="row mt-2">
+            <div class="col-12 col-md-12 col-lg-4">
+                    <div class="category-box  shoes-box-category">
+                        <a href="{% url 'products' %}?category=shoes">
+                            <img clas="category-img" src="{{ MEDIA_URL }}fzz18201.jpg" alt="shoes-category">
+                        </a>
+                        <h3 class="shoes-title category-title mt-2">SHOES</h3>
                     </div>
-                </a>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
-                <a href="">
+            <div class="col-12 col-md-12 col-lg-4">
                     <div class="category-box boots-box-category">
-                        <img clas="category-img" src="{{ MEDIA_URL }}images_(1).jpg" alt="boots-category">
-                            <h3 class="boots-title category-title">BOOTS</h3>
+                        <a href="{% url 'products' %}?category=boots">
+                            <img clas="category-img" src="{{ MEDIA_URL }}images_(1).jpg" alt="boots-category">
+                        </a>
+                        <h3 class="boots-title category-title mt-2">BOOTS</h3>
                     </div>
-                </a>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
-                <a href="">
+            <div class="col-12 col-md-12 col-lg-4">
                     <div class="category-box sneakers-box-category">
-                        <img clas="category-img" src="{{ MEDIA_URL }}images_(5).jpg" alt="sneaker-category">
-                        <h3 class="shoes-title category-title">SNEAKERS</h3>
+                        <a href="{% url 'products' %}?category=sneakers">
+                            <img clas="category-img" src="{{ MEDIA_URL }}images_(5).jpg" alt="sneaker-category">
+                        </a>
+                        <h3 class="shoes-title category-title mt-2">SNEAKERS</h3>
                     </div>
-                </a>
             </div>
         </div>
     </div>
@@ -63,97 +59,19 @@
 <!---------------------------- NEW ARRIVALS SECTION ----------->
 <section id="new-arrivals">
     <div class="container-fluid new-arrivals-container">
-        <div class="row">
-            <h6 class="text-center text-muted mb-0">Just walked in</h6>
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active indicator " aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="indicator" aria-label="Slide 2"></button>
-                  </div>
-              <div class="carousel-inner ">
-                    <div class="carousel-item active mt-5">
-                        <div class="cards-wraper d-flex justify-content-center">
-                            <div class="product-card mx-1">
-                                <div class="card-img-box">
-                                    <!-- <img src="..." class="card-img-top" alt="..."> -->
-                                </div>
-                                <div class="product_card-body mt-2 mx-1 text-start">
-                                  <p class="product-card-description  mb-0 pt-0"><strong>Low heel shoes</strong></p>
-                                  <p class="product-card-price mt-0">30'90</p>
-                                </div>
-                            </div>
-                            <div class="product-card mx-1">
-                                    <div class="card-img-box">
-                                        <!-- <img src="..." class="card-img-top" alt="..."> -->
-                                    </div>
-                                    <div class="product_card-body mt-2 mx-1 text-start">
-                                        <p class="product-card-description mb-0 pt-0"><strong>Low heel shoes</strong></p>
-                                        <p class="product-card-price mt-0">30'90</p>
-                                      </div>
-                            </div>
-                            <div class="product-card mx-1">
-                                    <div class="card-img-box">
-                                        <!-- <img src="..." class="card-img-top" alt="..."> -->
-                                    </div>
-                                    <div class="product_card-body mt-2 mx-1 text-start">
-                                        <p class="product-card-description mb-0 pt-0"><strong>Low heel shoes</strong></p>
-                                        <p class="product-card-price mt-0 ">30'90</p>
-                                      </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item mt-5">
-                        <div class="cards-wraper d-flex justify-content-center">
-                            <div class="product-card mx-1">
-                          <div class="card-img-box">
-                              <!-- <img src="..." class="card-img-top" alt="..."> -->
-                          </div>
-                          <div class="product_card-body mt-2 mx-1 text-start">
-                            <p class="product-card-description mb-0 pt-0"><strong>Low heel shoes</strong></p>
-                            <p class="product-card-price mt-0">30'90</p>
-                          </div>
-                            </div> 
-                            <div class="product-card mx-1">
-                              <div class="card-img-box">
-                                  <!-- <img src="..." class="card-img-top" alt="..."> -->
-                              </div>
-                              <div class="product_card-body mt-2 mx-1 text-start">
-                                <p class="product-card-description mb-0 pt-0"><strong>Low heel shoes</strong></p>
-                                <p class="product-card-price mt-0">30'90</p>
-                              </div>
-                            </div>
-                            <div class="product-card mx-1">
-                            <div class="card-img-box">
-                                <!-- <img src="..." class="card-img-top" alt="..."> -->
-                            </div>
-                            <div class="product_card-body mt-2 mx-1 text-start">
-                                <p class="product-card-description mb-0 pt-0"><strong>Low heel shoes</strong></p>
-                                <p class="product-card-price mt-0">30'90</p>
-                              </div>
-                            </div>
-                        </div>
-                    </div>                         
-              </div>
-              <button class="carousel-control-prev d-none d-lg-block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="indicator" aria-hidden="true"><</span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next d-none" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="indicator" aria-hidden="true">></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-        </div>
+
+        {% include 'includes/walk_in_carousel.html' %}
 
     </div>
 </section>
+
 <!-------------------------- INFORMATION SECTION ----------->
 {% include 'includes/info_section_home.html' %}
 <!------------>
+
 {% endblock %}
 
 {% block postloadjs %}
   {{ block.super }}
-   <script src="{% static 'jquery/bannerImages.js' %}" type="text/js"></script>
-   <!-- <script src="{% static 'jquery/carousel.js' %}" type="text/js"></script> -->
+   <script src="{% static 'js/bannerImages.js' %}" type="text/js"></script>
 {% endblock%}

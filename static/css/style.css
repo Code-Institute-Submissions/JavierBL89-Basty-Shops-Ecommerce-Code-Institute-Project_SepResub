@@ -32,16 +32,21 @@ body{
 }
 
 /****************************** HEADER */
-header div{
+header .container-fluid{
+    padding: 0;
+}
+header .navbar{
+    height: 90px;
+}
+header .row{
     margin: 0 auto;
-    height: 75px;
-    background-color: #ffffff;
     justify-content: space-between;
 }
 
 .search-container{
     height: 45px;
 }
+
 input[name="q"]{
  margin-top: 0;
  margin-left: 25px;
@@ -69,12 +74,12 @@ i.fa-solid.fa-magnifying-glass{
     margin-bottom: 5px;
 }
 
-.burger, i.fa-solid{
+.burger, .fa-solid{
     color:rgb(122, 13, 13);
 }
 
-i.fa-solid.fa-truck{
-    color: #F3FFC6;
+#shipping-info .fa-truck{
+color:  #F3FFC6;
 }
 
 header h1{
@@ -85,6 +90,9 @@ color:rgb(122, 13, 13);
 text-transform: uppercase;
 }
 
+.store-name-column{
+    padding-left: 0;
+}
 .store-name-link{
     text-decoration: none;
 }
@@ -188,17 +196,23 @@ img{
 /**************** CATEGORIES SECTION */
 .container-categories{
     margin: 0 auto;
+    padding: 0 5%;
 }
 
 .container-categories a{
     text-decoration: none;
-    color: black;
 }
 
 .category-box{
     height: 300px;
     width: 100%;
+
 }
+
+.category-box h3{
+    color: hsl(308, 4%, 56%);
+}
+
 
 .category-img{
     height:200px;
@@ -211,7 +225,6 @@ text-align: center;
 }
 
 /***************** NEW ARRIVALS SECTION ***/
-
 .new-arrivals-container{
     margin-top: 150px;
     margin-bottom: 150px;
@@ -225,16 +238,19 @@ text-align: center;
 }
 
 .product-card{
-    height: 350px;
-    width: 400px;
-}
+    width: 300px;
 
+}
 .product-card .card-img-box{
-    height: 300px;
-    background-color: #e3b837;
+    height: 305px;
+    background-color: rgb(122, 13, 13);
 }
 
-.carousel-indicators[data-bs-target]{
+.product-card .card-img-box img{
+    height: 300px;
+}
+
+.carousel-indicators button[data-bs-target]{
 
  background-color: rgb(122, 13, 13);
 }
@@ -246,10 +262,29 @@ text-align: center;
 
 /*************** STORE INFORMATION */
 .information-box{
+    text-align: center;
     margin: 7px auto;
-    height: 250px;
-    width: 300px;
-    background-color: rgb(163, 200, 245);
+    height: 90%;
+    width: 90%;
+    background-color: rgb(233, 229, 232);
+    padding: 50px 20px;
+}
+
+.information-box .store-info-text{
+    text-align: left;
+padding-left: 15%;
+padding-right: 12%;
+}
+
+.information-box h6{
+font-size: 0.800rem;
+}
+.information-box p{
+    font-size: 0.850rem;
+    }
+
+.information-box .truck{
+    color: rgb(122, 13, 13);
 }
 
 /****************** FOOTER */
@@ -519,6 +554,18 @@ header h1{
     font-size: 1rem;
 }
 
+header .row {
+    margin: auto -10px;
+}
+
+header h1 {
+    font-size: 1rem;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    color: rgb(122, 13, 13);
+    text-transform: uppercase;
+}
+
 .nav-item{
     margin-left: 5px;
     margin-right: 5px;
@@ -542,32 +589,32 @@ font-size: 0.800rem;
    
    .btn.search{
       position:absolute;
-      right:42px;
-      top: 5px;
+      right:50px;
+      top: 38px;
       border: none;
    }
 
 /*********** shippin info bar */
-
-#shipping-info{
-   
-}
-
-#shipping-info .col{
+header #shipping-info{
+    width: 100%;
     height: 30px;
-    font-size: 0.650rem;
+    font-size: 0.675rem;
     background-color: #5D737E;
     color: #F3FFC6;
 }
+
 .shipping-info p{
- margin: 10px auto ;
+    margin: 0 auto;
 }
 
-/* .burger-menu .row .col{
-    min-height: 500px;
-} */
+.wonky{
+    background-color: #5D737E;
+
+}
+
 /*************** HERO SECTION **/
 .hero-wraper{
+    margin-top: 20px;
     position: relative;
     width: 100%;
     padding: 0;
@@ -609,61 +656,118 @@ img{
     color: #FF6542;
 }
 
- /************** NEW ARRIVALS SECTION ***/
-  .carousel-item{
-    width: 100%;
-  }
-.carousel-inner{
-    height: 420px;
-}
-.product-card{
-    height: 280px;
-    width: 33%;
-}
-.product-card .card-img-box{
-    height: 250px;
-    background-color: #e3b837;
+ /**************** CATEGORIES SECTION */
+.container-categories{
+    margin: 0 auto;
+    padding: 0;
 }
 
-.carousel-indicators{
-    position: absolute;
-    top:95%
+.category-box{
+    height: 250px;
+    width: 100%;
+    margin-top: 150px;
 }
-.carousel-indicators [data-bs-target]{
+
+
+.category-box img{
+    height:90%;
+    width: 70%;
+}
+
+/***************** NEW ARRIVALS SECTION ***/
+.new-arrivals-container{
+    margin-top: 250px;
+    margin-bottom: 150px;
+}
+
+.carousel-inner{
+    height: 400px;
+    width: 100%;
+    padding-left: 1%;
+}
+
+.carousel-inner .carousel-item{
+    margin-top: 30px;
+}
+
+.product-card .card-img-box{
+    height: 150px;
+    background-color: rgb(122, 13, 13);
+}
+
+.product-card .card-img-box img{
+    height: 80%;
+}
+
+.product-card-body p{
+    font-size: 0.700rem;
+}
+
+.carousel-indicators button[data-bs-target]{
+
  background-color: rgb(122, 13, 13);
 }
+
 .indicator{
     font-size: 1.5rem;
     color: rgb(122, 13, 13);
 }
 
-.product-card p{
-    font-size: 0.8rem;
-    text-align: start;
+/*************** STORE INFORMATION */
+.information-box{
+    text-align: center;
+    height: 90%;
+    width: 90%;
+    padding: 50px 20px;
 }
 
-/*************** INFORMATION SECTION **/
-.information-box{
-    margin: 7px auto;
-    height: 150px;
-    /* width: 180px; */
-    background-color: rgb(163, 200, 245);
+.information-box .store-info-text{
+    text-align: center;
+
+}
+
+.information-box h6{
+font-size: 0.800rem;
+}
+
+.information-box p{
+    font-size: 0.850rem;
+    }
+
+.information-box i{
+    font-size: 2rem;
+}
+.information-box .truck{
+    color: rgb(122, 13, 13);
+}
+
+.subscribe{
+font-size: 1rem;}
+
+.information-box button{
+    letter-spacing: 1px;
+    font-size: 0.650rem;
+    height: 35px;
+    width: 95%;
+    background-color: #FF6542;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 /************** FOOTER */
-
 .footer-bg{
     color: #ffffff;
 }
+
 .container-logo{
     order:4
 }
+
 .logo-footer-box img{
     width: 20%;
 }
 
 /************** PRODUCTS PAGE */
-
 .main-wraper{
     margin: 0 auto;
 }
@@ -745,7 +849,6 @@ img{
 .images-list-container{
     justify-content: center;
     margin-right: 15%;
-    
 }
 
 .dot{
@@ -818,8 +921,8 @@ ul .size-box{
 #admin-container{
     font-size: 0.600rem;
 }
-/**************** DEALS CAROUSEL SECTION */
 
+/**************** DEALS CAROUSEL SECTION */
 .deals-container{
     margin-top: 8%;
 }
@@ -852,6 +955,7 @@ ul .size-box{
     position: absolute;
     top:95%
 }
+
 .deals-container .carousel-indicators [data-bs-target]{
  background-color: rgb(122, 13, 13);
 }
@@ -867,7 +971,6 @@ ul .size-box{
 }
 
 /******** SUBSCRIPTION SECTION */
-
 .subscription-container{
     padding-top: 20px;
     margin: 90px auto 10px;
@@ -911,7 +1014,6 @@ ul .size-box{
 .empty-bag-content h6{
     font-size: 0.750rem;
     /* margin-bottom: 2%; */
-
 }
 
 #bag-title h1{
@@ -929,7 +1031,7 @@ ul .size-box{
     width: 25%;
 }
 
-/******* ALL-AUTH-FORMS */
+/*********** ALL-AUTH-FORMS */
 .header-container .allauth-form-inner-content{
     /* padding-left: 25%; */
     padding: 5% 12%;
@@ -1066,7 +1168,6 @@ ul .size-box{
   @media only screen and (min-width:640px) and (max-width:950px) {
   
     /**************** HEADER*/
-
     header h1{
         font-size: 1.7rem;
         margin-top: 15px;
@@ -1088,8 +1189,107 @@ input[name="q"]{
     margin-right: 5px;
 }
 
-/************** PRODUCTS PAGE */
+/**************** CATEGORIES SECTION */
+.container-categories{
+    margin: 0 auto;
+    padding: 0;
+}
 
+.category-box{
+    height: 350px;
+    width: 100%;
+    margin-top: 150px;
+}
+
+
+.category-box img{
+    height:100%;
+    width: 50%;
+}
+
+.category-title{
+text-align: center;   
+    letter-spacing: 3px;
+}
+
+/***************** NEW ARRIVALS SECTION ***/
+.new-arrivals-container{
+    margin-top: 250px;
+    margin-bottom: 150px;
+}
+
+.carousel-inner{
+    height: 500px;
+    width: 100%;
+    padding-left: 10%;
+}
+
+.carousel-inner .carousel-item{
+    margin-top: 30px;
+}
+
+.product-card{
+    width: 200px;
+
+}
+.product-card .card-img-box{
+    height: 305px;
+    background-color: rgb(122, 13, 13);
+}
+
+.product-card .card-img-box img{
+    height: 250px;
+}
+
+.carousel-indicators button[data-bs-target]{
+
+ background-color: rgb(122, 13, 13);
+}
+
+.indicator{
+    font-size: 1.5rem;
+    color: rgb(122, 13, 13);
+}
+
+/*************** STORE INFORMATION */
+.information-box{
+    text-align: center;
+    height: 95%;
+    width: 70%;
+    padding: 50px 20px;
+}
+
+.information-box .store-info-text{
+    text-align: center;
+
+}
+
+.information-box h6{
+font-size: 0.800rem;
+}
+
+.information-box p{
+    font-size: 0.850rem;
+    }
+
+.information-box .truck{
+    color: rgb(122, 13, 13);
+}
+
+.subscribe{
+font-size: 1rem;}
+
+.information-box button{
+    letter-spacing: 1px;
+    font-size: 0.650rem;
+    height: 35px;
+    width: 57%;
+    background-color: #FF6542;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/************** PRODUCTS PAGE */
 .products-sort a{
     font-size: 0.800rem;
 }
@@ -1142,9 +1342,7 @@ input[name="q"]{
     border-color: rgb(122, 55, 55);
 }
 
-
 /*********** PRODUCT DETAILS PAGE ************/
-
 .product-title{
     font-size: 0.900rem;
 }
@@ -1180,10 +1378,9 @@ ul .size-box{
 }
 
 /*********** shippin info bar */
-
 header .shipping-info{
     width: 100%;
-    height: 30px;
+    height: 40px;
     font-size: 0.675rem;
     background-color: #5D737E;
     color: #F3FFC6;
@@ -1235,8 +1432,7 @@ img{
 }
 
 
-  /************** NEW ARRIVALS SECTION ***/
-
+  /************** DEALS SECTION ***/
   .carousel-item{
     width: 99%;
   }
@@ -1274,20 +1470,8 @@ img{
     text-align: start;
 }
 
-/*************** INFORMATION SECTION **/
 
-#store-information .row{
-    padding-left: 3%;
-    padding-right: 3%;
-}
-
-.information-box{
-    margin: 7px auto;
-    height: 180px;
-    width: 180px;
-    background-color: rgb(163, 200, 245);
-}
-
+/********** FOOTER */
 .container-logo{
     order:4
 }
@@ -1304,7 +1488,6 @@ img{
   
 
 /****************** BAG PAGE */
-
 .empty-bag-content{
     /* background-color: #C8BFC7; */
     border: solid 1px rgb(122, 13, 13);
@@ -1413,7 +1596,6 @@ img{
 }
 
 /************** PRODUCTS PAGE */
-
 .products-sort button{
         font-size: 0.900rem;
     }
@@ -1451,21 +1633,18 @@ img{
     font-size: 0.750rem;
 }
 
-
 /***************** PRODUCT DETAILS PAGE*/
     .product-details-box, .product-description-box{
         border-left: solid 1px #e5e5e5;
     }
 
 /*************** INFORMATION SECTION **/
-
 #store-information .row{
     padding-left: 2%;
     padding-right: 2%;
 }
 
 /********************* BAG PAGE */
-
 .empty-bag-content{
     /* background-color: #C8BFC7; */
     border: solid 1px rgb(122, 13, 13);

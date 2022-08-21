@@ -33,7 +33,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['bastyshops.herokuapp.com', 'localhost']
 
 # needed to be able to login(new in django 4)
-CSRF_TRUSTED_ORIGINS = ['https://8000-javierbl89-bastyshopsec-asz14480jyv.ws-eu62.gitpod.io', 'https://bastyshops.herokuapp.com/']
+CSRF_TRUSTED_ORIGINS = ['https://8000-javierbl89-bastyshopsec-iu0gqlacgao.ws-eu62.gitpod.io', 'https://bastyshops.herokuapp.com/']
 
 # Application definition
 
