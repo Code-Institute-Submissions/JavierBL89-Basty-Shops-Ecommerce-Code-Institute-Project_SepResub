@@ -1609,7 +1609,8 @@ img{
 }
 
 .card-img-container{
-    height: 240px;
+    min-height: 250px;
+    /* height: 270px; */
     width:80%;
     margin: 0 auto;
 }
