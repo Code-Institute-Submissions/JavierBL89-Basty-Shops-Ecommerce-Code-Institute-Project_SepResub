@@ -1286,6 +1286,57 @@ border-bottom: solid 1px rgb(122, 13, 13);
  #refounds-returns-container li{
     font-size: 0.700rem;
  }
+
+  /*************** CONTACT PAGE */
+#contact-container{
+    padding: 8% 5%;
+    margin: 100px auto;
+    background-color: rgb(235, 227, 233);
+    border-radius: 10px;
+    width: 90%;
+    text-align: center;
+}
+
+#contact-container h4{
+    letter-spacing: 2px;
+    color: rgb(122, 13, 13);
+    font-size: 0.900rem;
+}
+
+#contact-container p{
+    letter-spacing: 1px;
+    font-size: 0.700rem;
+}
+
+#contact-container a{
+   text-decoration: none;
+    font-size: 0.700rem;
+}
+
+#contact-container button{
+    letter-spacing: 1px;
+    border: none;
+    background: none;
+    color: #FF6542;
+    font-size: 0.900rem;
+}
+
+#contact-container .form-control{
+   margin: 5px auto;
+   width: 100%;
+   font-size: 0.700rem;
+}
+
+
+#contact-container .form-control:focus{
+    font-size: 0.700rem;
+ }
+
+ #contact-container .form-control::placeholder{
+    letter-spacing: 1px;
+    font-size: 0.700rem;
+ }
+
 }
 
   /******************************************************************** TABLET SCREEN */
@@ -1786,6 +1837,57 @@ border-bottom: solid 1px rgb(122, 13, 13);
  #refounds-returns-container li{
     font-size: 0.900rem;
  }
+
+  /*************** CONTACT PAGE */
+#contact-container{
+    padding: 5% 12%;
+    margin: 50px auto;
+    background-color: rgb(235, 227, 233);
+    border-radius: 10px;
+    width: 70%;
+    text-align: center;
+}
+
+#contact-container h4{
+    letter-spacing: 2px;
+    color: rgb(122, 13, 13);
+    font-size: 1.1rem;
+}
+
+#contact-container p{
+    letter-spacing: 1px;
+    font-size: 0.750rem;
+}
+
+#contact-container a{
+   text-decoration: none;
+    font-size: 0.700rem;
+}
+
+#contact-container button{
+    letter-spacing: 1px;
+    border: none;
+    background: none;
+    color: #FF6542;
+    font-size: 1rem;
+}
+
+#contact-container .form-control{
+    margin: 5px auto;
+   width: 90%;
+   font-size: 0.700rem;
+}
+
+
+#contact-container .form-control:focus{
+    font-size: 0.700rem;
+ }
+
+ #contact-container .form-control::placeholder{
+    letter-spacing: 1px;
+    font-size: 0.700rem;
+ }
+
 }
   /******************************************************************** DESKTOP SCREEN */
   @media only screen and (min-width: 1000px) {
@@ -2022,7 +2124,7 @@ border-bottom: solid 1px rgb(122, 13, 13);
     padding: 10% 20%;
  }
 
- #refounds-returns-container h6, h5{
+ #refounds-returns-container h6,  #refounds-returns-container h5{
     margin-top: 50px;
     margin-bottom: 30px;
     color: rgb(122, 13, 13);
@@ -2042,4 +2144,55 @@ border-bottom: solid 1px rgb(122, 13, 13);
  #refounds-returns-container li{
     font-size: 0.900rem;
  }
+
+ /*************** CONTACT PAGE */
+#contact-container{
+    padding: 5% 12%;
+    margin: 50px auto;
+    background-color: rgb(235, 227, 233);
+    border-radius: 10px;
+    width: 70%;
+    text-align: center;
+}
+
+#contact-container h4{
+    letter-spacing: 2px;
+    color: rgb(122, 13, 13);
+    font-size: 1.2rem;
+}
+
+#contact-container p{
+    letter-spacing: 1px;
+    font-size: 0.750rem;
+}
+
+#contact-container a{
+   text-decoration: none;
+    font-size: 0.700rem;
+}
+
+#contact-container button{
+    letter-spacing: 1px;
+    border: none;
+    background: none;
+    color: #FF6542;
+    font-size: 1rem;
+}
+
+#contact-container .form-control{
+    margin: 5px auto;
+   width: 90%;
+   font-size: 0.700rem;
+}
+
+
+#contact-container .form-control:focus{
+    font-size: 0.700rem;
+ }
+
+ #contact-container .form-control::placeholder{
+    letter-spacing: 1px;
+    font-size: 0.700rem;
+ }
+
 }

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid" >
+    <div class="row" id="contact-container">
+        <div class="col">
+            <h4 class="mb-3" >WE ARE HERE FOR YOU!</h4>
+            <p>We'll get back to you within 24h</p>
+            <form class="form" onsubmit="return sendMail(this);" id="contact-form">
+                <input type="text" name="name" class="form-control" placeholder="Your name">
+                <input type="email" name="emailaddress" class="form-control" placeholder="Your email address">
+                <textarea rows="4" cols="50" name="comment" class="form-control" placeholder="How can we help you ?"></textarea>
+            <button class="mt-4" type="submit">Submit comment</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super}}
+
+{% endblock %}

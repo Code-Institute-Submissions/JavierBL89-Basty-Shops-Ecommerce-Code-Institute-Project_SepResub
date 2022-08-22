@@ -1260,6 +1260,32 @@ border-bottom: solid 1px rgb(122, 13, 13);
     
      }
 
+     /************************** REFOUNDS&RETURNS PAGE */
+ #refounds-returns-container{
+    padding: 18% 10%;
+ }
+
+ #refounds-returns-container h6, h5{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 0.900rem;
+    color: rgb(122, 13, 13);
+    border-bottom: solid 1px rgb(122, 13, 13);
+  }
+  #refounds-returns-container p{
+    font-size: 0.700rem;
+    padding-right: 5%;
+    padding-left: 1%;
+  }
+  
+  #refounds-returns-container a{
+    color: #FF6542;
+    font-size: 0.700rem;
+ }
+
+ #refounds-returns-container li{
+    font-size: 0.700rem;
+ }
 }
 
   /******************************************************************** TABLET SCREEN */
@@ -1733,7 +1759,32 @@ border-bottom: solid 1px rgb(122, 13, 13);
  }
  #terms-conditions-container li{
     font-size: 0.850rem;
+ }
 
+ /************************** REFOUNDS&RETURNS PAGE */
+ #refounds-returns-container{
+    padding: 10% 20%;
+ }
+
+ #refounds-returns-container h6, h5{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: rgb(122, 13, 13);
+    border-bottom: solid 1px rgb(122, 13, 13);
+  }
+  #refounds-returns-container p{
+    font-size: 0.900rem;
+    padding-right: 5%;
+    padding-left: 1%;
+  }
+  
+  #refounds-returns-container a{
+    color: #FF6542;
+    font-size: 0.900rem;
+ }
+
+ #refounds-returns-container li{
+    font-size: 0.900rem;
  }
 }
   /******************************************************************** DESKTOP SCREEN */
@@ -1964,6 +2015,81 @@ border-bottom: solid 1px rgb(122, 13, 13);
   
   #terms-conditions-container a{
     color: #FF6542;
+ }
+
+ /************************** REFOUNDS&RETURNS PAGE */
+ #refounds-returns-container{
+    padding: 10% 20%;
+ }
+
+ #refounds-returns-container h6,  #refounds-returns-container h5{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: rgb(122, 13, 13);
+    border-bottom: solid 1px rgb(122, 13, 13);
+  }
+  #refounds-returns-container p{
+    font-size: 0.900rem;
+    padding-right: 5%;
+    padding-left: 1%;
+  }
+  
+  #refounds-returns-container a{
+    color: #FF6542;
+    font-size: 0.900rem;
+ }
+
+ #refounds-returns-container li{
+    font-size: 0.900rem;
+ }
+
+
+ /*************** CONTACT PAGE */
+#contact-container{
+    /* padding-left: 25%; */
+    padding: 5% 12%;
+    margin: 50px auto;
+    background-color: rgb(235, 227, 233);
+    border-radius: 10px;
+    width: 90%;
+    text-align: center;
+}
+
+#contact-containner  h4{
+    letter-spacing: 2px;
+    color: rgb(122, 13, 13);
+    font-size: 0.750rem;
+}
+
+#contact-containner p{
+    font-size: 0.750rem;
+}
+
+#contact-container a{
+   text-decoration: none;
+    font-size: 0.700rem;
+}
+
+#contact-conatiner button{
+    border: none;
+    background: none;
+    color: #FF6542;
+    font-size: 0.950rem;
+}
+
+#contact-conatiner .form-control{
+   width: 70%;
+   font-size: 0.700rem;
+   height: 40px;
+}
+
+
+#contact-conatiner .form-control:focus{
+    font-size: 0.700rem;
+ }
+
+ #contact-conatiner .form-control::placeholder{
+    font-size: 0.700rem;
  }
 
 }
