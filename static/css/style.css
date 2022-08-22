@@ -288,22 +288,18 @@ font-size: 0.800rem;
 }
 
 
-.subscription-info-section .form-control{
+.form-control{
 margin-top: 5px;
 }
 
-.subscription-info-section .form-control:focus{
+.form-control:focus{
     border-color: #858585;
     box-shadow: 0 0 3px #858585 !important;   
      margin-top: 5px;
     }
-
-     .main-wraper .checkout-container .form-control::placeholder{
+    .form-control::placeholder{
         font-size: 0.850rem;
      }
-.subscription-info-section label{
-display: none;
-}
 
 /****************** FOOTER */
 .container-footer .row{
@@ -383,6 +379,7 @@ display: none;
 .size-box{
     border: solid 1px rgb(122, 13, 13);
 }
+
 /***** DELETE THIS LINE WHEN JQUERY USED*/
 .size-box:hover{
     background-color:  rgb(122, 13, 13);
@@ -506,6 +503,11 @@ display: none;
     color: #F3FFC6;
     border-radius: 10px;
     letter-spacing: 1px;
+}
+
+#subscription-products-page .form-control{
+    margin: 5px auto;
+    width: 70%;
 }
 
 .subscription-container button{
@@ -1021,13 +1023,23 @@ ul .size-box{
     font-size: 0.900rem;
 }
 
+#subscription-products-page .form-control{
+    height: 35px;
+    margin: 5px auto;
+    width: 80%;
+}
+
+#subscription-products-page .form-control::placeholder{
+    font-size: 0.700rem;
+}
 .subscription-container button{
-    margin-top: 20px;
+    margin-top: 10px;
     width: 80%;
     background-color:  #FF6542;
     color: #ffffff;
     font-size: 0.850rem;
     letter-spacing: 1px;
+    height: 35px;
 }
 
 /******************* BAG PAGE **/

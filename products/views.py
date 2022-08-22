@@ -1,6 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Product, Size, Image, ProductDetail
 from .forms import ProductForm, SizeForm, ImageForm, ProductDetailForm
+from django.views.decorators.http import require_POST
+
+from newsletter.forms import SubscriptionForm
+from newsletter.models import Subscription
+
 from bag.handle_stock import handle_stock_admin
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -78,13 +83,16 @@ def product_detail(request, product_id):
         details_key = list(detail)[2:]
         details_value = list(detail.values())[2:]
         # print(product_details)
+
+    subscription_form = SubscriptionForm()
     context = {
         'product': product,
         'size_list': size_list,
         'images_list': images_list,
         'details_key': details_key,
-        'details_value': details_value
-    }
+        'details_value': details_value,
+        'subscription_form': subscription_form
+    }    
     return render(request, 'products/product_detail.html', context)
 
 
@@ -211,3 +219,70 @@ def delete_product(request, product_id):
     product.delete()
     messages.info(request, f'Product {product.title}, was deleted')
     return redirect(reverse('products'))
+
+
+@require_POST
+def subscribe(request, product_id):
+    """
+    Create a new member to newsletter from 
+    prodeuct detail page if not exists
+    and redirect user to teh same prouctt page
+    """
+    product = get_object_or_404(Product, pk=product_id)
+    size_list = Size.objects.filter(product_id=product_id).all()
+    images_list = Image.objects.filter(product_id=product_id).all()
+    product_details = ProductDetail.objects.filter(product_id=product_id).all()
+    details_key = None
+    details_value = None
+    # loop through images_list dict object
+    for image in images_list.values():
+        images_list = list(image.values())
+        images_list = images_list[2:]
+
+    # loop through product details dict object
+    for detail in product_details.values():
+        # product_details = list(detail)
+        details_key = list(detail)[2:]
+        details_value = list(detail.values())[2:]
+        # print(product_details)
+
+    subscription_form = SubscriptionForm()
+    context = {
+        'product': product,
+        'size_list': size_list,
+        'images_list': images_list,
+        'details_key': details_key,
+        'details_value': details_value,
+        'subscription_form': subscription_form
+    }
+
+    if 'fname' in request.POST:
+        fname = request.POST['fname']
+    if 'email' in request.POST:
+        email = request.POST['email']
+    check = Subscription.objects.filter(fname=fname,
+                                        email=email).all()
+    new_member = SubscriptionForm(request.POST)
+
+    if check:
+        messages.info(request, 'Member with same data was \
+                            found in our newsletter')
+        context = {
+            'subscription_form': new_member,
+            'product': product,
+            'size_list': size_list,
+            'images_list': images_list,
+            'details_key': details_key,
+            'details_value': details_value,
+        }
+        return render(request, 'products/product_detail.html', context)
+    else:
+        if new_member.is_valid():
+            new_member.save()
+            messages.info(request, 'Subscription complete, check your \
+                                inbox and enjoy the 10% off')
+            return render(request, 'products/product_detail.html', context)
+        else:
+            messages.info(request, 'Something went wrong, \
+                                try again later')
+            return render(request, 'products/product_detail.html', context)

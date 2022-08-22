@@ -232,17 +232,21 @@
 </section>
 
 <!---------------------------- SUBSCRIPTION SECTION ----------->
-<section id="subscription">
+<section id="subscription-products-page">
     <div class="container mt-5 mb-5">
         <div class="row">
             <div class="subscription-container text-center">
                 <h5 class=" fw-bold">Sign Up to our newsletter!</h5>
                 <p class="fw-bold">Get unresistable deals</p>
-                <form action="" method="POST" id="subscribe-form">
-                    <input type="text" name="subs-name" id="subs-name" placeholder="Firts name">
-                    <input type="email" name="subs-email" id="subs-email" placeholder="Email address">
+                {% if product %}
+                <form action="{% url 'subscribe' product.pk %}" method="POST" id="subscribe-form">
+                    {% csrf_token %} 
+                    {{ subscription_form.fname | as_crispy_field }}
+                    {{ subscription_form.email | as_crispy_field }}
+                    <button type="submit" class="btn btn-small fw-bold">Subscribe!</button>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </form>
-                <button class="btn btn-small fw-bold">Subscribe!</button>
+                {% endif %}
             </div>
             
         </div>
