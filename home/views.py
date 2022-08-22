@@ -33,6 +33,10 @@ def terms_conditions(request):
 
     return render(request, 'home/terms.html')
 
+def refounds_returns(request):
+    """ View to render Tersm and conditions page"""
+
+    return render(request, 'home/refounds&returns.html')
 
 
 
