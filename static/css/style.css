@@ -1231,6 +1231,35 @@ border-bottom: solid 1px rgb(122, 13, 13);
     font-size: 0.700rem;
 
  }
+
+    /************************** TERMS&CONDITIONS PAGE */
+    #terms-conditions-container{
+        padding: 18% 10%;
+    }
+    
+     #terms-conditions-container h3{
+        margin-top: 50px;
+        margin-bottom: 30px;
+        font-size: 0.750rem;
+        color: rgb(122, 13, 13);
+        border-bottom: solid 1px rgb(122, 13, 13);
+      }
+      #terms-conditions-container p{
+        font-size: 0.700rem;
+        padding-right: 5%;
+        padding-left: 1%;
+      }
+      
+      #terms-conditions-container a{
+        font-size: 0.700rem;
+    
+        color: #FF6542;
+     }
+     #terms-conditions-container li{
+        font-size: 0.700rem;
+    
+     }
+
 }
 
   /******************************************************************** TABLET SCREEN */
@@ -1678,6 +1707,34 @@ border-bottom: solid 1px rgb(122, 13, 13);
     color: #FF6542;
  }
  
+   /************************** TERMS&CONDITIONS PAGE */
+   #terms-conditions-container{
+    padding: 10% 20%;
+ }
+
+ #terms-conditions-container h3{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: rgb(122, 13, 13);
+    border-bottom: solid 1px rgb(122, 13, 13);
+
+
+  }
+  #terms-conditions-container p{
+    font-size: 0.850rem;
+    padding-right: 5%;
+    padding-left: 1%;
+  }
+  
+  #terms-conditions-container a{
+    font-size: 0.850rem;
+
+    color: #FF6542;
+ }
+ #terms-conditions-container li{
+    font-size: 0.850rem;
+
+ }
 }
   /******************************************************************** DESKTOP SCREEN */
   @media only screen and (min-width: 1000px) {
@@ -1886,4 +1943,27 @@ border-bottom: solid 1px rgb(122, 13, 13);
     color: #FF6542;
  }
 
+  /************************** TERMS&CONDITIONS PAGE */
+  #terms-conditions-container{
+    padding: 10% 20%;
+ }
+
+ #terms-conditions-container h3{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: rgb(122, 13, 13);
+    border-bottom: solid 1px rgb(122, 13, 13);
+
+
   }
+  #terms-conditions-container p{
+    font-size: 0.900rem;
+    padding-right: 5%;
+    padding-left: 1%;
+  }
+  
+  #terms-conditions-container a{
+    color: #FF6542;
+ }
+
+}

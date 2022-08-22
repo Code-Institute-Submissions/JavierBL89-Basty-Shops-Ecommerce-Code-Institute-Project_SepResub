@@ -28,6 +28,14 @@ def faqs(request):
     return render(request, 'home/faqs.html')
 
 
+def terms_conditions(request):
+    """ View to render Tersm and conditions page"""
+
+    return render(request, 'home/terms.html')
+
+
+
+
 @require_POST
 def subscribe(request):
 
