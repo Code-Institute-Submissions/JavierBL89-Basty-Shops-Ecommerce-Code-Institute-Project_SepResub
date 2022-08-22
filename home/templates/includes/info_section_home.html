@@ -21,15 +21,17 @@
             </div>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-4">
-            <div class="subscription-info-box information-box rounded-1">
+            <div class="subscription-info-section information-box rounded-1">
                 <i class="fa-solid fa-envelope-open fa-3x"></i>
                 <div class="store-info-text mt-5">
                     <h6 class="text-center pe-1 subscribe">SUBSCRIBE</h6>
                     <p>Enjoy only members deals and get a 10% off boucher</p>
-                    <form action="" method="POST" id="subscribe-form">
-                        <input type="text" name="subs-name" id="subs-name" placeholder="First name">
-                        <input type="email" name="subs-email" id="subs-email" placeholder="Email address">
-                        <button type="submit" class="btn mt-2">Subscribe now!</button>
+                    <form action="{% url 'subscribe' %}" method="POST" id="subscribe-form">
+                        {% csrf_token %}
+                        {{ subscription_form.fname | as_crispy_field }}
+                        {{ subscription_form.email | as_crispy_field }}
+                        <button type="submit" class="btn mt-3">Subscribe now!</button>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </form>
                 </div>
             </div>

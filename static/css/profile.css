@@ -33,8 +33,8 @@ form .form-control{
 }
 
  form .form-control:focus{
-    border-color:  rgb(122, 13, 13);
-    box-shadow: 0 0 3px rgb(122, 13, 13) !important;
+   border-color: #858585;
+   box-shadow: 0 0 3px #858585 !important;
     font-size: 0.700rem;
  }
 

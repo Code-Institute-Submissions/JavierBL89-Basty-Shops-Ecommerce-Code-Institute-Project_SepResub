@@ -287,6 +287,24 @@ font-size: 0.800rem;
     color: rgb(122, 13, 13);
 }
 
+
+.subscription-info-section .form-control{
+margin-top: 5px;
+}
+
+.subscription-info-section .form-control:focus{
+    border-color: #858585;
+    box-shadow: 0 0 3px #858585 !important;   
+     margin-top: 5px;
+    }
+
+     .main-wraper .checkout-container .form-control::placeholder{
+        font-size: 0.850rem;
+     }
+.subscription-info-section label{
+display: none;
+}
+
 /****************** FOOTER */
 .container-footer .row{
     margin: 0;
@@ -544,8 +562,8 @@ font-size: 0.800rem;
 
 /****** change password page*/
 .allauth-form-inner-content .password_change .form-control:focus{
-   border-color:  rgb(122, 13, 13);
-   box-shadow: 0 0 3px rgb(122, 13, 13) !important;
+    border-color: #858585;
+    box-shadow: 0 0 3px #858585 !important;
    font-size: 0.700rem;
 }
 
@@ -749,13 +767,20 @@ font-size: 0.800rem;
 }
 
 .subscribe{
-font-size: 1rem;}
+font-size: 1rem;
+}
+
+
+.information-box .form-control{
+    height: 35px;
+
+}
 
 .information-box button{
     letter-spacing: 1px;
     font-size: 0.650rem;
     height: 35px;
-    width: 95%;
+    width: 99.5%;
     background-color: #FF6542;
     color: #ffffff;
     font-weight: bold;
@@ -914,7 +939,7 @@ ul .size-box{
     margin: 0 auto;
     width: 70%;
 }
-
+ 
 .product-details-box ul{
     padding-left: 20px;
 }
@@ -1140,8 +1165,8 @@ ul .size-box{
  }
 
  .allauth-form-inner-content .form-control:focus{
-    border-color:  rgb(122, 13, 13);
-    box-shadow: 0 0 3px rgb(122, 13, 13) !important;
+    border-color: #858585;
+    box-shadow: 0 0 3px #858585 !important;
     font-size: 0.700rem;
  }
 
@@ -1172,6 +1197,7 @@ ul .size-box{
     border-radius: 10px;
  }
 }
+
   /******************************************************************** TABLET SCREEN */
   @media only screen and (min-width:640px) and (max-width:950px) {
   
@@ -1285,13 +1311,14 @@ font-size: 0.800rem;
 }
 
 .subscribe{
-font-size: 1rem;}
+font-size: 1rem;
+}
 
 .information-box button{
     letter-spacing: 1px;
-    font-size: 0.650rem;
-    height: 35px;
-    width: 57%;
+    font-size: 0.850rem;
+    height: 45px;
+    width: 99.5%;
     background-color: #FF6542;
     color: #ffffff;
     font-weight: bold;
@@ -1561,8 +1588,8 @@ img{
  }
 
  .allauth-form-inner-content .form-control:focus{
-    border-color:  rgb(122, 13, 13);
-    box-shadow: 0 0 3px rgb(122, 13, 13) !important;
+    border-color: #858585;
+    box-shadow: 0 0 3px #858585 !important;
     font-size: 0.700rem;
  }
 
@@ -1658,6 +1685,15 @@ img{
     padding-right: 2%;
 }
 
+.information-box button{
+    letter-spacing: 1px;
+    font-size: 0.900rem;
+    height: 45px;
+    width: 99.5%;
+    background-color: #FF6542;
+    color: #ffffff;
+    font-weight: bold;
+}
 /********************* BAG PAGE */
 .empty-bag-content{
     /* background-color: #C8BFC7; */
@@ -1736,8 +1772,8 @@ img{
  }
 
  .allauth-form-inner-content .form-control:focus{
-    border-color:  rgb(122, 13, 13);
-    box-shadow: 0 0 3px rgb(122, 13, 13) !important;
+    border-color: #858585;
+    box-shadow: 0 0 3px #858585 !important;
     font-size: 0.700rem;
  }
 
