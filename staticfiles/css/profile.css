@@ -1,0 +1,278 @@
+/*** override input autofill background_color */
+input:-webkit-autofill, input:-webkit-autofill, input:-webkit-autofill:focus {
+   -webkit-background-color: rgb(56, 56, 56);
+   -webkit-text-fill-color: rgb(56, 56, 56);
+   transition: background-color 5000s ease-in-out 0s;
+ }
+ 
+.order-history{
+    max-height: 420px;  /* height of the column storing order history content*/
+    overflow: auto;
+}
+
+.profile-container .order-history a{
+    color: rgb(37, 177, 177);
+}
+.profile-details-content,
+.access-profile-content,
+.delivery-info-content,
+.order-history-content{
+    display: none;
+}
+
+.main_wraper .profile-container{
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: rgb(235, 227, 233);
+}
+
+form .form-control{
+    margin-bottom: 5px;
+    height: 40px;
+    font-size: 0.700rem;
+}
+
+ form .form-control:focus{
+   border-color: #858585;
+   box-shadow: 0 0 3px #858585 !important;
+    font-size: 0.700rem;
+ }
+
+ #id_default_country,
+ #id_default_country option:not(:first-child){
+   color: rgb(111, 111, 111);
+ }
+
+ #id_default_country option:first-child{
+   color: rgb(111, 111, 111);
+ }
+
+ #id_default_country::placeholder{
+    color: rgb(111, 111, 111);
+ }
+
+ /**************** PROFILE PAGE*/
+ .profile-container div small{
+    margin-bottom: 10px;
+ }
+
+ /*************** UPDATE DETAILS PAGE */
+ .update-details-container button{
+    border: none;
+    background: none;
+    color: #FF6542;
+ }
+
+ .profile-container .personal-details a{
+   color: rgb(13, 110, 253);
+ }
+
+/******************************************************************** MOBILE SCREEN */
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  
+/***************** PROFILE PAGE */
+    .main_wraper .profile-container{
+        padding: 9% 1% 1% 10%;
+        width: 90%;
+    }
+    
+     .main_wraper h1{
+        padding-left: 10%;
+        font-size: 1.2rem;
+    }
+    
+    .profile-container a{
+        text-decoration: none;
+        color: #000000;
+        font-size: 0.800rem;
+    }
+    
+    .profile-container i{
+    color: #FF6542;
+    }
+    
+    hr{
+    width: 80%;
+    }
+
+/****************** UPDATE DETAILS PAGE */
+ .update-details-container{
+    margin: 0 auto;
+    padding: 2%;
+    background-color: rgb(235, 227, 233);
+    border-radius: 10px;
+    width: 80%;
+    text-align: center;
+ }
+
+ .update-details-container h1{
+   font-size: 0.900rem;
+ }
+
+ .update-details-container .form-group{
+  text-align: left;
+ padding-left: 15%;
+ }
+
+ .update-details-container .form-control{
+    width: 85%;
+    height: 35px;
+    font-size: 0.550rem;
+ }
+ 
+ .update-details-container .form-control:focus{
+    font-size: 0.550rem;
+ }
+
+ .update-details-container label{
+    font-size: 0.600rem;
+    padding-left: 5px;
+ }
+ .update-details-container button{
+   font-size: 0.900rem;
+ }
+    }
+
+/******************************************************************** TABLET SCREEN */
+@media only screen and (min-width:640px) and (max-width:950px) {
+
+/**************** PROFILE PAGE*/
+    .main_wraper .profile-container{
+        padding: 7% 0 1% 7%;
+        width: 80%;
+    }
+    
+     .main_wraper h1{
+        padding-left: 16%;
+        font-size: 1.4rem;
+    }
+    
+    .profile-container{
+        height: 700px;
+    }
+    
+    .profile-container a{
+        text-decoration: none;
+        color: #000000;
+        font-size: 0.900rem;
+    }
+    
+    .profile-container i{
+    color: #FF6542;
+    }
+    
+    hr{
+    width: 80%;
+    }
+    
+/****************** UPDATE DETAILS PAGE */
+.update-details-container{
+    margin: 0 auto;
+    padding: 2%;
+    background-color: rgb(235, 227, 233);
+    border-radius: 10px;
+    width: 70%;
+    text-align: center;
+ }
+
+ .update-details-container h1{
+   font-size: 1.1rem;
+ }
+
+ .update-details-container .form-group{
+  text-align: left;
+  padding-left: 15%;
+ }
+
+ .update-details-container .form-control{
+    width: 85%;
+    height: 40px;
+    font-size: 0.700rem;
+ }
+ 
+ .update-details-container label{
+    font-size: 0.600rem;
+    padding-left: 5px;
+ }
+}
+
+@media only screen and (min-width: 1000px) {
+
+ /******************* PROFILE PAGE */
+.main_wraper .profile-container{
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 7% 5% 7% 7%;
+    background-color: rgb(235, 227, 233);
+    width: 80%;
+}
+
+ .main_wraper h1{
+    padding-left: 17%;
+    font-size: 1.6rem;
+}
+
+.profile-container a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 0.900rem;
+}
+
+.profile-container i{
+color: #FF6542;
+}
+
+hr{
+width: 80%;
+}
+
+form .form-control{
+    margin-bottom: 5px;
+    height: 40px;
+    font-size: 0.700rem;
+}
+
+ form .form-control:focus{
+    border-color:  rgb(122, 13, 13);
+    box-shadow: 0 0 3px rgb(122, 13, 13) !important;
+    font-size: 0.700rem;
+ }
+
+ table tr th{
+    font-size: 0.650rem;
+ }
+
+ table tr td, table tr a{
+    font-size: 0.700rem;
+ }
+
+ /****************** UPDATE DETAILS PAGE */
+ .update-details-container{
+    margin: 0 auto;
+    padding: 2%;
+    background-color: rgb(235, 227, 233);
+    border-radius: 10px;
+    width: 70%;
+    text-align: center;
+ }
+
+ .update-details-container h1{
+   font-size: 1.1rem;
+ }
+
+ .update-details-container .form-group{
+  text-align: left;
+  padding-left: 15%;
+ }
+
+ .update-details-container .form-control{
+    width: 80%;
+    height: 40px;
+    font-size: 0.700rem;
+ }
+ 
+ .update-details-container label{
+    font-size: 0.600rem;
+    padding-left: 5px;
+ }
+}

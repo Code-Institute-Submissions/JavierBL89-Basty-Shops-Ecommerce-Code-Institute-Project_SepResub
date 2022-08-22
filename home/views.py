@@ -22,6 +22,12 @@ def index(request):
     return render(request, 'home/index.html', context)
 
 
+def faqs(request):
+    """ View to render FAQs page"""
+
+    return render(request, 'home/faqs.html')
+
+
 @require_POST
 def subscribe(request):
 

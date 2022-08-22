@@ -33,7 +33,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['bastyshops.herokuapp.com', 'localhost']
 
 # needed to be able to login(new in django 4)
-CSRF_TRUSTED_ORIGINS = ['https://8000-javierbl89-bastyshopsec-la72wl3ymuc.ws-eu62.gitpod.io', 'https://bastyshops.herokuapp.com/']
+CSRF_TRUSTED_ORIGINS = ['https://8000-javierbl89-bastyshopsec-la72wl3ymuc.ws-eu62.gitpod.io/', 'https://bastyshops.herokuapp.com/']
 
 # Application definition
 
@@ -203,6 +203,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/footer_pages.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid" id="faqs-container">
+    <div class="row">
+        <div class="col">
+            <h6 class="mt-4 mb-3">* Where is my order?
+            </h6>
+            <p>After making an order at BASTY SHOPS online store, you’ll receive confirmation email. Once the package has arrived at the sorting facility in your country, you’re able to track your order purchased at BASTY SHOPS. You will receive a tracking number in your email.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h6 class="mt-4 mb-3">* How do I return the items bought at BASTY SHOPS online store?
+            </h6>
+            <p>There are multiple options of returning the item. Find out more details <a>here</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h6 class="mt-4 mb-3">* How do I get a refund?
+            </h6>
+            <p>You will receive the refund by way of the original purchase method. Typically, it takes up to 2 weeks (excluding weekends and bank holidays). Due to COVID-19, it can take a few days more for your package to be delivered and processed.
+                Find out more details <a>here</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h6 class="mt-4 mb-3">* Can I collaborate with you? Or Can I be an ambassador/influencer for you?
+            </h6>
+            <p>We are a brotherhood, and we always look for new and exciting ways to collaborate. Learn more about our latest venture BASTY SHOPS Casting, and become our model. No matter your fashion preferences, we want you to join our new universe. If you're crazy about denim, punk rock, or formal look – we are all part of the same honest world, dedicated and dictated by men like you. You can also join our affiliate program <a>here</a>.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h6 class="mt-4 mb-3 border border-0">If we couldn’t answer your questions an <a>email</a> to customer support</h6>
+            <p></p>
+        </div>
+        <div class="row text-center mt-3">
+            <a href="{% url 'home' %}"> BACK HOME</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
