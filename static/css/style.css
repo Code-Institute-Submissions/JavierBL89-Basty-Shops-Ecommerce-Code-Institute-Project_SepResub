@@ -6,6 +6,12 @@ GREY: C8BFC7;
 TOMATOE  FF6542
 
 */
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+
 /*** override input autofill background_color */
 input:-webkit-autofill, input:-webkit-autofill, input:-webkit-autofill:focus {
     -webkit-background-color: rgb(56, 56, 56);
@@ -51,12 +57,18 @@ input[name="q"]{
  margin-top: 0;
  margin-left: 25px;
  width: 25%;
+ height: 40px;
+ font-size: 0.900rem;
 }
+
+input[name="q"]:focus{
+  box-shadow: none;
+   }
 
 .btn.search{
    position:relative;
    right:60px;
-   bottom: 6px;
+   bottom: 3px;
    border: none;
 }
 
@@ -621,7 +633,7 @@ font-size: 0.800rem;
    
    .btn.search{
       position:absolute;
-      right:50px;
+      right:25px;
       top: 38px;
       border: none;
    }

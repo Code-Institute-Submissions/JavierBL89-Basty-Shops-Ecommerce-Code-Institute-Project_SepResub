@@ -6,6 +6,12 @@ GREY: C8BFC7;
 TOMATOE  FF6542
 
 */
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+
 /*** override input autofill background_color */
 input:-webkit-autofill, input:-webkit-autofill, input:-webkit-autofill:focus {
     -webkit-background-color: rgb(56, 56, 56);
@@ -621,7 +627,7 @@ font-size: 0.800rem;
    
    .btn.search{
       position:absolute;
-      right:50px;
+      right:25px;
       top: 38px;
       border: none;
    }

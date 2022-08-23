@@ -20,6 +20,14 @@ input:-webkit-autofill, input:-webkit-autofill, input:-webkit-autofill:focus {
     display: none;
 }
 
+.delivery-info-content button{
+   border: none;
+}
+
+.delivery-info-content button:hover{
+border: none;
+}
+
 .main_wraper .profile-container{
     margin: 0 auto;
     border-radius: 10px;

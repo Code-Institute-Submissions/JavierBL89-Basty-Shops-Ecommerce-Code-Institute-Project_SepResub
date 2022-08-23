@@ -32,7 +32,7 @@ class StripeWH_Handler:
             subject,
             body,
             settings.DEFAULT_FROM_EMAIL,
-            [cust_email],
+            [cust_email]
         )
 
     def handle_event(self, event):
@@ -71,8 +71,8 @@ class StripeWH_Handler:
                 profile.default_country = shipping_details.address.country,
                 profile.default_post_code = shipping_details.address.postal_code,
                 profile.default_town_or_city = shipping_details.address.city,
-                profile.default_street_address_1 = shipping_details.address.line_1,
-                profile.default_street_address_2 = shipping_details.address.line_2,
+                profile.default_street_address_1 = shipping_details.address.line1,
+                profile.default_street_address_2 = shipping_details.address.line2,
                 profile.default_count = shipping_details.address.state,
                 profile.save()
 
