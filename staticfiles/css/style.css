@@ -306,6 +306,11 @@ margin-top: 5px;
     margin: 0;
 }
 
+.container-footer a{
+text-decoration: none;
+color: #ffffff;
+}
+
 .container-footer .column{
     padding-top: 1%;
     border-color: rgb(122, 13, 13);
@@ -1286,6 +1291,74 @@ border-bottom: solid 1px rgb(122, 13, 13);
  #refounds-returns-container li{
     font-size: 0.700rem;
  }
+
+  /*************** CONTACT PAGE */
+#contact-container{
+    padding: 8% 5%;
+    margin: 100px auto;
+    background-color: rgb(235, 227, 233);
+    border-radius: 10px;
+    width: 90%;
+    text-align: center;
+}
+
+#contact-container h4{
+    letter-spacing: 2px;
+    color: rgb(122, 13, 13);
+    font-size: 0.900rem;
+}
+
+#contact-container p{
+    letter-spacing: 1px;
+    font-size: 0.700rem;
+}
+
+#contact-container a{
+   text-decoration: none;
+    font-size: 0.700rem;
+}
+
+#contact-container button{
+    letter-spacing: 1px;
+    border: none;
+    background: none;
+    color: #FF6542;
+    font-size: 0.900rem;
+}
+
+#contact-container .form-control{
+   margin: 5px auto;
+   width: 100%;
+   font-size: 0.700rem;
+}
+
+
+#contact-container .form-control:focus{
+    font-size: 0.700rem;
+ }
+
+ #contact-container .form-control::placeholder{
+    letter-spacing: 1px;
+    font-size: 0.700rem;
+ }
+
+ /********** contact confirmation container */
+ #message-box{
+    padding: 15% 7%;
+ }
+
+.message{
+    font-size: 0.700rem;
+    line-height: 25px;
+    color: rgb(122, 13, 13);
+}
+
+#contact-container .back-home{
+    letter-spacing: 1px;
+    color: #FF6542;
+    font-size: 0.800rem;
+}
+
 }
 
   /******************************************************************** TABLET SCREEN */
@@ -1786,6 +1859,74 @@ border-bottom: solid 1px rgb(122, 13, 13);
  #refounds-returns-container li{
     font-size: 0.900rem;
  }
+
+  /*************** CONTACT PAGE */
+#contact-container{
+    padding: 5% 12%;
+    margin: 50px auto;
+    background-color: rgb(235, 227, 233);
+    border-radius: 10px;
+    width: 70%;
+    text-align: center;
+}
+
+#contact-container h4{
+    letter-spacing: 2px;
+    color: rgb(122, 13, 13);
+    font-size: 1.1rem;
+}
+
+#contact-container p{
+    letter-spacing: 1px;
+    font-size: 0.750rem;
+}
+
+#contact-container a{
+   text-decoration: none;
+    font-size: 0.700rem;
+}
+
+#contact-container button{
+    letter-spacing: 1px;
+    border: none;
+    background: none;
+    color: #FF6542;
+    font-size: 1rem;
+}
+
+#contact-container .form-control{
+    margin: 5px auto;
+   width: 90%;
+   font-size: 0.700rem;
+}
+
+
+#contact-container .form-control:focus{
+    font-size: 0.700rem;
+ }
+
+ #contact-container .form-control::placeholder{
+    letter-spacing: 1px;
+    font-size: 0.700rem;
+ }
+
+ /********** contact confirmation container */
+ #message-box{
+    padding: 19% 10%;
+ }
+
+.message{
+    font-size: 0.900rem;
+    line-height: 30px;
+    color: rgb(122, 13, 13);
+}
+
+#contact-container .back-home{
+    letter-spacing: 1px;
+    color: #FF6542;
+    font-size: 1rem;
+}
+
 }
   /******************************************************************** DESKTOP SCREEN */
   @media only screen and (min-width: 1000px) {
@@ -2043,25 +2184,24 @@ border-bottom: solid 1px rgb(122, 13, 13);
     font-size: 0.900rem;
  }
 
-
  /*************** CONTACT PAGE */
 #contact-container{
-    /* padding-left: 25%; */
     padding: 5% 12%;
     margin: 50px auto;
     background-color: rgb(235, 227, 233);
     border-radius: 10px;
-    width: 90%;
+    width: 70%;
     text-align: center;
 }
 
-#contact-containner  h4{
+#contact-container h4{
     letter-spacing: 2px;
     color: rgb(122, 13, 13);
-    font-size: 0.750rem;
+    font-size: 1.2rem;
 }
 
-#contact-containner p{
+#contact-container p{
+    letter-spacing: 1px;
     font-size: 0.750rem;
 }
 
@@ -2070,26 +2210,45 @@ border-bottom: solid 1px rgb(122, 13, 13);
     font-size: 0.700rem;
 }
 
-#contact-conatiner button{
+#contact-container button{
+    letter-spacing: 1px;
     border: none;
     background: none;
     color: #FF6542;
-    font-size: 0.950rem;
+    font-size: 1rem;
 }
 
-#contact-conatiner .form-control{
-   width: 70%;
+#contact-container .form-control{
+    margin: 5px auto;
+   width: 90%;
    font-size: 0.700rem;
-   height: 40px;
 }
 
 
-#contact-conatiner .form-control:focus{
+#contact-container .form-control:focus{
     font-size: 0.700rem;
  }
 
- #contact-conatiner .form-control::placeholder{
+ #contact-container .form-control::placeholder{
+    letter-spacing: 1px;
     font-size: 0.700rem;
  }
+
+/********** contact confirmation container */
+ #message-box{
+    padding: 19% 15%;
+    line-height: 30px;
+ }
+
+.message{
+    font-size: 0.900rem;
+    line-height: 20px;
+    color: rgb(122, 13, 13);
+}
+#contact-container .back-home{
+    letter-spacing: 1px;
+    color: #FF6542;
+    font-size: 1rem;
+}
 
 }
