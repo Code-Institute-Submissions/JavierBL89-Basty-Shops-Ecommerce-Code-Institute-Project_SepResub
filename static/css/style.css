@@ -534,16 +534,6 @@ color: #ffffff;
     color: #ffffff;
 }
 
-/******************* BAG PAGE **/
-.bag-items-container p{
-    margin: 3px auto;
-}
-
-.item-subtotal, .bag-total{
-    font-size: 0.800rem;
-}
-
-
 /************ ALL-AUTH-PAGES */
 .allauth-form-inner-content .form-control{
     margin: 0 auto 5px;
@@ -1057,40 +1047,6 @@ ul .size-box{
     font-size: 0.850rem;
     letter-spacing: 1px;
     height: 35px;
-}
-
-/******************* BAG PAGE **/
-.bag-items-container p{
-    font-size: 0.750rem;
-}
-
-.empty-bag-content{
-    /* background-color: #C8BFC7; */
-    border: solid 1px rgb(122, 13, 13);
-    width: 70%;
-    padding: 3%;
-    font-size: 0.750rem;
-    margin: 0 auto 80px;
-}
-
-.empty-bag-content h6{
-    font-size: 0.750rem;
-    /* margin-bottom: 2%; */
-}
-
-#bag-title h1{
-    font-size: 1rem;
-    padding-left: 5%;
-}
-
-#bag-title, .empty-bag-content{
-    margin-left: 15%;
-}
-
-#checkout-button{ 
-    font-size: 0.800rem;
-    color: #FF6542;
-    width: 25%;
 }
 
 /*********** ALL-AUTH-FORMS */
@@ -1698,31 +1654,6 @@ img{
     background-color: rgb(122, 13, 13);
 
   }
-  
-
-/****************** BAG PAGE */
-.empty-bag-content{
-    /* background-color: #C8BFC7; */
-    border: solid 1px rgb(122, 13, 13);
-    width: 50%;
-    padding: 3%;
-    margin-bottom: 80px;
-}
-
-#bag-title h1{
-    font-size: 1rem;
-    padding-left: 5%;
-} 
-
-#bag-title, .empty-bag-content{
-    margin-left: 15%;
-}
-
-#checkout-button{ 
-    font-size: 1rem;
-    color: #FF6542;
-    width: 25%;
-}
 
 /******* ALL-AUTH-FORMS */
 .header-container .allauth-form-inner-content{
