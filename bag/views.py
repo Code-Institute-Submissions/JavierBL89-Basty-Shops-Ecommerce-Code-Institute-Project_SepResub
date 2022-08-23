@@ -30,16 +30,19 @@ def add_to_bag(request, item_id):
         if item_id in list(bag.keys()):
             if size in bag[item_id]['item_size'].keys():
                 bag[item_id]['item_size'][size] += quantity
-                handle_stock(item_size_id)
+                print("hi")
                 messages.info(request, f'{product.title}, size {size} was added to you shopping bag')
+                handle_stock(item_size_id)
             else:
                 bag[item_id]['item_size'][size] = quantity
-                handle_stock(item_size_id)
+                print('by')
                 messages.info(request, f'{product.title}, size {size} was added to your shopping bag')
+                handle_stock(item_size_id)
         else:
+            print('oooo')
             bag[item_id] = {'item_size': {size: quantity}}
+            messages.info(request, f'{product.title}, size {size} was added to your shopping bag')
             handle_stock(item_size_id)
-            (request, f'{product.title}, size {size} was added to your shopping bag')
 
     else:
         messages.error(request, 'Error adding item')
@@ -67,11 +70,9 @@ def remove_item(request, item_id):
 
         if size:
             del bag[item_id]['item_size'][size]
-            print('puta')
             for item_size in product_sizes_list.values():
                 if size in item_size['size']:
                     item_size_id = item_size['id']
-                    print('yyyeess', item_size['id'])
                     update_stock(item_size_id, quantity)
             messages.info(request, f'Your product {product.title} was removed from your bag')
         else:
@@ -87,7 +88,7 @@ def remove_item(request, item_id):
 
 
 def increment_quantity(request, item_id):
-    
+
     product_sizes_list = Size.objects.filter(product_id=item_id).all()
     quantity = 1
     size = None
@@ -98,7 +99,6 @@ def increment_quantity(request, item_id):
     for item_size in product_sizes_list.values():
         if size in item_size['size']:
             item_size_id = item_size['id']
-            print('yyyeess', item_size['id'])
             decrement_stock(item_size_id)
 
     bag = request.session.get('bag', {})
@@ -126,7 +126,6 @@ def decrement_quantity(request, item_id):
     for item_size in product_sizes_list.values():
         if size in item_size['size']:
             item_size_id = item_size['id']
-            print('yyyeess', item_size['id'])
             increment_stock(item_size_id)
 
     bag = request.session.get('bag', {})

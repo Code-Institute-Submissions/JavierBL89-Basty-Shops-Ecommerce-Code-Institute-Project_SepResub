@@ -333,7 +333,7 @@ The site offers a wide range of different type of shoes in order to widen potent
 
  * ### Languages
   
-    - Languages used according to [Github](https://github.com/)reports.
+    - Languages used according to [Github](https://github.com/) reports.
 
   ![Languages used](<media/Captura de pantalla (420).png>)
 
@@ -349,5 +349,117 @@ The site offers a wide range of different type of shoes in order to widen potent
     - [Django](https://www.djangoproject.com/)
     - All packages installed can be found in [requirements.txt](https://github.com/JavierBL89/Basty-Shops-Ecommerce-Code-Institute-Project/blob/main/requirements.txt)
 
+## Bugs
+
+  * Unfixed bug
+    
+      - On the bag page, for every item added the layout changes by adding rows in a scalate way
+      Every new row to be pushed to the left.
+
+      ![Items bag page](<media/Captura de pantalla (422).png>)
+
+  * Unfixed bug
+    
+      - On the bag page, after adding the first item into the shopping bag, the following items seem to not have the disabel buttons functionality applied. This issue must be related the previous one 
+      
+      ![Products quantity input](<media/Captura de pantalla (424).png>)
+
+   <!-- * Unfixed bug
+    
+      - Adding a block extra_css tag to every page for the differents apps in order to link them to their own css folder in the app seems to not work for me. After adding this tag and link them to their css file, the styling kept being applied from the stylesheet link added into the base template -->
+
+ * Unfixed bug
+    
+      - When adding products into shopping bag, the toast showing a success message does not show, however it does when removin items from the shopping bag.
+      The code to me looks fine, it prints the print statements i set, also i do not get any error and the the code when running goes through the next function and everything works fine...
+
+      ![Code snippet](<media/Captura de pantalla (426).png>)
+
+ ### Fixed bugs
+
+  * Fixed bug
+    
+      - Error "TypeError:'dic_values' object is not supscritable
+      This occurs when trying to access dic_values object at a specific index(slicing)
+      
+      I go this error when trying to acces to images list of every product
+      
+      * Fix: Convert the dict into a list  `list(my_dict.values())[2:]`
+
+  * Fixed bug:
+
+      - The increment and decrement buttons on the bag page gave me a really hard time.
+      The buttons would never triggered the js code. I used as in the walk through project the file
+      'quantity_form_scripts.html' placed into 'products/includes' folder.
+
+      * Fix: I fix this by getting rid of the above file and placeing the js script in the 'quantity_form.html' file down the file inside the postblockjs tag, then then buttons worked!!
+
+  * Fixed bug:
+
+      - When deploying into heroku could not build a wheel for backports.zoneinfo
+      It seems that Heroku by default uses Python vrsion 3.10.x and backports.zoneinfo no works properly with that version of Python 
+
+      * Fix: Create a runtime.txt in the root directory and write your Python version,
+       in my case python-3.8.11. Commit and push changes.
+
+
+## Deployment
+
+The project was deployed to Heroku using the below procedure:-
+
+- Log in to Heroku or create an account if required.
+- Click the button labeled New from the dashboard in the top right corner, just below the header.
+- From the drop-down menu select "Create new app".
+- Enter a unique app name.
+- Once the web portal shows the green tick to confirm the name is original select the relevant region. In my case, I chose Europe as I am in Ireland.
+
+- When happy with your choice of name and that the correct region is selected, click on the "Create app" button.
+- Go to tap "Resources" and add a new add-on "Heroku Postgres"
+- Copy the database url.
+- This will bring you to the project "Deploy" tab. From here, navigate to the settings tab and scroll down to the "Config Vars" section.
+- And paste it in value field of "Reveal Config Vars"
+- Click the button labelled "Reveal Config Vars" and enter the "keys" and  "values"you need, and click the "add" button.
+- Scroll down to the buildpacks section of the settings page and click the button labeled " add buildpack," select "Python," and click "Save Changes".
+- Scroll back to the top of the settings page, and navigate to the "Deploy" tab.
+- From the deploy tab select Github as the deployment method.
+- Confirm you want to connect to GitHub.
+- Search for the repository name and click the connect button next to the intended repository.
+- From the bottom of the deploy page select your preferred deployment type by follow one of the below steps:
+- Clicking either "Enable Automatic Deploys" for automatic deployment when you push updates to Github.
+- Select the correct branch for deployment from the drop-down menu and click the "Deploy Branch" button for manual deployment.
+
+
+<!-- * If using [AWS](https://s3.console.aws.amazon.com) services to store static and media files -->
+
+## Credits
+
+ ### Code
+
+ For the porpouse of developing this proyect i had to look into some youtube tutorials and web sites.
+
+  * #### Databases relationships
+   
+  -[Entity Database Relationships](<https://www.youtube.com/watch?v=QpdhBUYk7Kk&list=PLHtuMzYFHMqz4h2gnFL44VZRt0s0HGxN4&index=1>)
+  
+
+  * #### Social Authentication
+
+  -[Social Authentication](<https://www.youtube.com/watch?v=-TUEM2NCuVE&list=PLHtuMzYFHMqwVa6AglqPNMShrkySsfPTY&index=7&t=308s>)
+
+  * #### Stripe
+
+  - All the code to implement **Stripe** is taken from the walk through Boutiue Ado with [Code Institute](https://codeinstitute.net/ie/), i never copied and paste away, i wrote everyting by following my notes or the video lessons when needed.
+
+  ### Media
+
+  - Products pictures were taken from different stores, which is why they are differrent sizes and changes the layout in certain card products.
+
+  - Home page images were taken from [Google images](<https://images.google.com/>)
+
+# Aknowlegments
+
+I want to thank the [Code Institute](https://codeinstitute.net/ie/) tutor assistance team, which helped me out with some of the day to day code issues. I could have never complete this project without them!
+
+I did not make use of my mentor assistance this time round. 
 
 
