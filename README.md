@@ -24,7 +24,7 @@ Users can easily contact customer support.
 - Color squeme
 - Wireframes
 - Flow chart
-- Web Marketing
+- Web Strategy
 
 ### [Features](#features)
 
@@ -154,8 +154,68 @@ The site offers a wide range of different type of shoes in order to widen potent
 
 ![Basty Shops Db structure](<media/db-structure.png>)
 
+### Marketing Stragtegy
 
-### Features
+* Potential customers
+
+  - Women from 16 to 40 years old
+
+* Potential platforms:
+
+  - Instagram
+  - Facebook
+  - Youtube
+
+* Potential customers might need:
+
+  - Boots
+  - Sneakers
+  - Shoes
+  - Free shipping
+  - Easy exchange
+  - customer support
+  - Live support
+  - Reviews
+  - Images
+  - Deals
+  - Discounts
+
+* Web Marketing will run sales, and offer deals and discounts and will use images and keywords to make an emotial response in order to potential customers to click and visit the store
+
+* Potential customers might want to hear about this offers through SMM (Social Media Marketing)
+
+* The company will have a 3000€ budget for SMM during the very first year
+
+* Marketing will be focused on SMM, both organic and Paid along with Email Marketing
+
+  - Google adds will be disscused late in year
+
+* SEO:
+
+  - Keaywords research will help to build a valuable content for Google ranking, and to draw attention to potential customers.
+
+  - Keywords research stats at the time:
+
+| Keyword | V | Comp |
+| ----------- | ----------- | ----------- |
+| boots | 480 | 60,77 | 
+| heels | 264 | 47,21 |
+| sneakers | 563,33 | 48,66 |
+| heeled boots | 41,775 | 15,06 |
+| platform boots | 141,500 | 15,08 |
+| sandals for women | 205,375 | 15,95 |
+| sneakers for women | 149,042 | 14,35 |
+| women's shoes | 489,500 | 23,8 |
+| women's boots | 407,125 | 14,96 |
+| wedding shoes low heel | 13,708 | 6,81 |
+| chunky boots | 117,25 | 19 |
+| boots for women | 407,125 | 21,59 |
+
+* [Facebook Store page](https://www.facebook.com/Basty-Shops-102175379293385)
+
+![Facebook store image](<media/Captura de pantalla (418).png>)
+
+## Features
 
 - SingUp
 
@@ -245,8 +305,49 @@ The site offers a wide range of different type of shoes in order to widen potent
 
     ![Activity messages](<media/Captura de pantalla (405).png>)
 
+## Future features
+
+ - Add products to wish list
+ - Add reviews and rating to products if needed
+ - Add customers testimonials
+ - Paypal payments
+ - Google payments
+ 
+ Note: Reviews is alredy added into database structure. Wish list is not, however it is implemented in html files with not functionality(due to lack of time).
+
+ ## Testing
+
+ ### Manual Testing
 
 
+ ### Automated testing
+
+
+ ### Light house
+
+
+ ### Validators
+
+
+ ## Technology Used
+
+ * ### Languages
+  
+    - Languages used according to [Github](https://github.com/)reports.
+
+  ![Languages used](<media/Captura de pantalla (420).png>)
+
+ * ### Libraries
+    
+    - [Boostrap](https://getbootstrap.com/)
+    - [JQuery](https://jquery.com/)
+    - [Fontawsome](https://fontawesome.com/)
+    - [Google fonts](https://fonts.google.com/)
+
+* ### Frameworks
+
+    - [Django](https://www.djangoproject.com/)
+    - All packages installed can be found in [requirements.txt](https://github.com/JavierBL89/Basty-Shops-Ecommerce-Code-Institute-Project/blob/main/requirements.txt)
 
 
 

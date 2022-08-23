@@ -57,12 +57,18 @@ input[name="q"]{
  margin-top: 0;
  margin-left: 25px;
  width: 25%;
+ height: 40px;
+ font-size: 0.900rem;
 }
+
+input[name="q"]:focus{
+  box-shadow: none;
+   }
 
 .btn.search{
    position:relative;
    right:60px;
-   bottom: 6px;
+   bottom: 3px;
    border: none;
 }
 
