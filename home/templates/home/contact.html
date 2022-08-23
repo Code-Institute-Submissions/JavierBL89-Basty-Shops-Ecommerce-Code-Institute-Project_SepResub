@@ -1,4 +1,19 @@
 {% extends 'base.html' %}
+{% load static %}
+
+
+{% block extra_js %}
+
+<script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+emailjs.init("OZrs4ez3UyYpOI5wC");
+})();
+</script>
+
+{% endblock %}
 
 {% block content %}
 
@@ -7,10 +22,11 @@
         <div class="col">
             <h4 class="mb-3" >WE ARE HERE FOR YOU!</h4>
             <p>We'll get back to you within 24h</p>
-            <form class="form" onsubmit="return sendMail(this);" id="contact-form">
-                <input type="text" name="name" class="form-control" placeholder="Your name">
-                <input type="email" name="emailaddress" class="form-control" placeholder="Your email address">
-                <textarea rows="4" cols="50" name="comment" class="form-control" placeholder="How can we help you ?"></textarea>
+            <form class="form" id="contact-form">
+                {% csrf_token %}
+                <input type="text" name="name" id="name" class="form-control" placeholder="Your name" required>
+                <input type="email" name="email" id="email"class="form-control" placeholder="Your email address" required>
+                <textarea rows="4" cols="50" name="message" id="message" class="form-control" placeholder="How can we help you ?" required></textarea>
             <button class="mt-4" type="submit">Submit comment</button>
             </form>
         </div>
@@ -20,5 +36,5 @@
 
 {% block postloadjs %}
 {{ block.super}}
-
+    <script src="{% static 'js/sendEmail.js' %}"></script>
 {% endblock %}
