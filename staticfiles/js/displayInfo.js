@@ -1,7 +1,9 @@
+//jshint esversion:6
+
 
 const profileInfo = $('.profile-info');
 
-for(row of profileInfo){
+for(let row of profileInfo){
 
     row.addEventListener('click', function(){
 

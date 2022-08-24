@@ -1,21 +1,900 @@
 
-    
-body{
-    background-color: black;
+    /****************** PRODUCT DETAILS PAGE */
+.size-box{
+    border: solid 1px rgb(122, 13, 13);
 }
+
+/***** DELETE THIS LINE WHEN JQUERY USED*/
+.size-box:hover{
+    background-color:  rgb(122, 13, 13);
+    color: #ffffff;
+}
+
+.selected-size{
+    background-color:  rgb(122, 13, 13);
+
+}
+
+.size-link{
+    text-decoration: none;
+    color:#000000;
+}
+
+.fa-regular{
+    color: rgb(122, 13, 13);
+}
+
+.images-list-container img{
+    border: solid 1px rgb(255, 255, 255);
+}
+
+.images-list-container img:hover{
+    border: solid 1px rgb(122, 13, 13);
+    transition: 0.7s ease-in-out all;
+}
+
+.add-to-bag-button-container button{
+    width: 170%;
+    background-color: rgb(122, 13, 13);
+    color: #ffffff;
+    height: 40px;
+    font-size: 0.700rem;
+    font-weight: bold;
+}
+
+.add-to-bag-button-container button:hover{
+    width: 65%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(122, 13, 13);
+    border-color: rgb(122, 13, 13);;
+    font-size: 0.900rem;
+    font-weight: bold;
+}
+
+.product-details-box, .product-description-box{
+    font-size: 0.800rem;
+}
+
+.product-info-container .delivery-info-box .info-text{
+    font-size: 0.650rem;
+}
+
+.info-box-parent{
+    width: 100%;
+}
+
+/***************** DEALS CAROUSEL SECTION */
+.deals-container{
+    margin-top: 9%;
+}
+
+.deals-container h6{
+    margin-top: 70px;
+    margin-bottom: 40px;
+}
+
+.deals-contianer .carousel-item{
+    width: 100%;
+  }
+
+.deals-container .carousel-inner{
+    height: 420px;
+    padding-left: 1%;
+
+}
+
+.deals-container .product-card .card-img-box{
+    height: 250px;
+    background-color: #b6b6b6;
+}
+
+.deals-container .card-img-box img{
+    height: 110%;
+}
+
+.deals-container .carousel-indicators{
+    position: absolute;
+    top:95%
+}
+
+.deals-container .carousel-indicators [data-bs-target]{
+ background-color: rgb(122, 13, 13);
+}
+
+.deals-container .indicator{
+    font-size: 1.5rem;
+    color: rgb(122, 13, 13);
+}
+
    /******************************************************************** MOBILE SCREEN */
    @media only screen and (min-width: 320px) and (max-width: 600px) {
     
- 
+    /************** PRODUCTS PAGE */
+   .main-wraper{
+       margin: 0 auto;
    }
-  
-    /******************************************************************** TABLET SCREEN */
-    @media only screen and (min-width:640px) and (max-width:950px) {
-  
+   
+   .badge{
+       font-size: 0.500rem;
+       width: 80px;
+       letter-spacing: 1px;
+       padding: 6px;
+   }
+   
+   .products-sort button{
+       font-size: 0.600rem;
+   }
+   
+   .products-number{
+       font-size: 0.500rem;
+   }
+   
+   .card-img-container{
+       height: 43%;
+       width:100%;
+       margin:0 auto;
+   }
+   
+   .card-img-top{
+       width: 100%;
+   }
+   .card-img-box{
+       width:100%;
+       height: 20%; 
+   }
+   
+   .card-body{
+       margin-top: 2%;
+   }
+   
+   .card{
+       width: 100%;
+       margin: 0 auto;
+   }
+   
+   .card-product-title,
+   .card-product-name,
+   .card-product-price{
+       font-size: 0.300rem;
+       padding: 0;
+   }
+   
+   .column-card{
+       padding: 0;
+   }
+   
+   .card-button{
+       position: absolute;
+       bottom: 10px;
+       left: 5%;
+       width: 90%;
+       font-size: 0.800rem;
+   }
+   
+   .card-product-title, .card-product-name{
+       font-size: 0.900rem;
+   }
+   
+   .card-product-name, .card-product-price{
+       font-size: 0.750rem;
+   }
+   
+   .card-button:hover{
+       background-color: rgb(122, 55, 55);
+       border-color: rgb(122, 55, 55);
+   }
+   
+   
+   /*********** PRODUCT DETAILS PAGE ************/
+   .images-list-container{
+       justify-content: center;
+       margin-right: 15%;
+   }
+   
+   .dot{
+       margin: auto 5px;
+       height: 5px;
+       width: 5px;
+       border-radius: 50%;
+       background-color: rgb(122, 13, 13);
+   
+   }
+   .product-title{
+       font-size: 0.900rem;
+   }
+   
+   .product-price{
+       font-size: 0.800rem;
+   }
+   
+   .product-name{
+       font-size: 0.900rem;
+   }
+   
+   .product-badge-box{
+       margin-top: 40px;
+   }
+   
+   .product-badge{
+       font-size: 0.800rem;
+   }
+   
+   .fa-heart{
+       font-size: 1.5rem;
+   }
+   
+   .size-title{
+       font-size: 0.900rem;
+   }
+   
+   .size-box{
+       height: 40px;
+       width: 40px;
+       font-size: 0.900rem;
+   }
 
-  }
-  
-    /******************************************************************** DESKTOP SCREEN */
-    @media only screen and (min-width: 1000px) {
+   .size-box span{
+    font-size: 0.750rem;
 
-    }
+   }
+   .product-detail-img-box{
+    margin: 0 auto;
+    /* margin-left: 38%; */
+    width: 250px;
+    height: 250px;
+   }
+   
+   .product-detail-img-box img{
+    width: 100%;
+    height: 100%;
+   }
+
+   .images-list-container{
+    margin-bottom: 40px;
+   }
+   #product-image-list img{
+    width: 80%;
+    height: 95%;
+}
+   
+   .product-description-box p,
+   .product-details-box li,
+   .product-details-box p{
+       font-size: 0.695rem;
+   }
+   
+   .product-details-container{
+       margin: 0 auto;
+       width: 70%;
+   }
+    
+   .product-details-box ul{
+       padding-left: 20px;
+   }
+   
+   #admin-container{
+       font-size: 0.600rem;
+   }
+   
+   /**************** DEALS CAROUSEL SECTION */
+   .deals-container{
+       margin-top: 8%;
+   }
+   
+   .deals-container h6{
+       margin-left: 0;
+       margin-bottom: 20px;
+   }
+   
+   .deals-container .carousel-item{
+       width: 100%;
+     }
+   
+   .deals-container .carousel-inner{
+       height: 280px;
+   }
+   
+   .deals-container .product-card-carousel{
+    height: 380px;
+    width: 25%;
+}
+
+.product-card{
+ height: 250px;
+ width: 300px;
+}
+
+.card-img-box-carousel{
+    width: 90px;
+ height: 100px;
+}
+
+.card-img-carousel{
+width: 100%;
+height: 100%;
+}
+
+   .deals-container .carousel-indicators{
+       position: absolute;
+       top:100%
+   }
+   
+   .deals-container .carousel-indicators [data-bs-target]{
+    background-color: rgb(122, 13, 13);
+   }
+   
+   .deals-container .indicator{
+       font-size: 1.5rem;
+       color: rgb(122, 13, 13);
+   }
+   
+   .deals-container .product-card p{
+    font-size: 0.6rem;
+    text-align: start;
+}
+   /******** SUBSCRIPTION SECTION */
+   .subscription-container{
+       padding-top: 20px;
+       margin: 90px auto 10px;
+       height: 250px;
+       width: 95%;
+       background-color: #5D737E;
+       color: #F3FFC6;
+       border-radius: 10px;
+       letter-spacing: 1px;
+   }
+   
+   .subscription-product-page-container p {
+       font-size: 0.800rem;
+   }
+   
+   .subscription-product-page-container h5 {
+       font-size: 0.900rem;
+   }
+   
+   #subscription-products-page .form-control{
+       height: 35px;
+       margin: 5px auto;
+       width: 80%;
+   }
+   
+   #subscription-products-page .form-control::placeholder{
+       font-size: 0.700rem;
+   }
+   
+   .subscription-product-page-container {
+    padding-top: 20px;
+    margin: 100px auto 10px;
+    height: 280px;
+    width: 450px;
+    background-color: #5D737E;
+    color: #F3FFC6;
+    border-radius: 10px;
+    letter-spacing: 1px;
+}
+
+.subscription-product-page-container button{
+    margin-top: 10px;
+    padding-top: 3px;
+    width: 80%;
+    background-color:  #FF6542;
+    color: #ffffff;
+    font-size: 0.750rem;
+    letter-spacing: 1px;
+    height: 35px;
+}
+
+   
+      }
+     
+       /******************************************************************** TABLET SCREEN */
+       @media only screen and (min-width:640px) and (max-width:950px) {
+     
+   /************** PRODUCTS PAGE */
+   .main-wraper{
+       margin: 0 auto;
+   }
+   
+   .badge{
+       font-size: 0.500rem;
+       width: 80px;
+       letter-spacing: 1px;
+       padding: 6px;
+   }
+   
+   .products-sort button{
+       font-size: 0.600rem;
+   }
+   
+   .products-number{
+       font-size: 0.500rem;
+   }
+   
+   .card-img-container{
+       height: 43%;
+       width:100%;
+       margin:0 auto;
+   }
+   
+   .card-img-top{
+       width: 100%;
+   }
+   
+   .card-img-box{
+       width:100%;
+       height: 20%; 
+   }
+   
+   .card-body{
+       margin-top: 2%;
+   }
+   .card{
+       width: 100%;
+       margin: 0 auto;
+   }
+   
+   .card-product-title,
+   .card-product-name,
+   .card-product-price{
+       font-size: 0.300rem;
+       padding: 0;
+   }
+   
+   .column-card{
+       padding: 0;
+   }
+   
+   .card-button{
+       position: absolute;
+       bottom: 10px;
+       left: 5%;
+       width: 90%;
+       font-size: 0.800rem;
+   
+   }
+   
+   .card-product-title, .card-product-name{
+       font-size: 0.900rem;
+   }
+   
+   .card-product-name, .card-product-price{
+       font-size: 0.750rem;
+   }
+   
+   .card-button:hover{
+       background-color: rgb(122, 55, 55);
+       border-color: rgb(122, 55, 55);
+   }
+   
+   
+   /*********** PRODUCT DETAILS PAGE ************/
+   .images-list-container{
+       justify-content: center;
+       margin-right: 15%;
+   }
+   
+   .dot{
+       margin: auto 5px;
+       height: 5px;
+       width: 5px;
+       border-radius: 50%;
+       background-color: rgb(122, 13, 13);
+   
+   }
+   .product-title{
+       font-size: 0.900rem;
+   }
+   
+   .product-price{
+       font-size: 0.800rem;
+   }
+   
+   .product-name{
+       font-size: 0.900rem;
+   }
+   
+   .product-badge-box{
+       margin-top: 40px;
+   }
+   
+   .product-badge{
+       font-size: 0.800rem;
+   }
+   
+   .fa-heart{
+       font-size: 1.5rem;
+   }
+   
+   .size-title{
+       font-size: 0.900rem;
+   }
+   
+   .col .size-box{
+    height: 40px;
+    width: 40px;
+    font-size: 0.900rem;
+}
+
+   .product-detail-img-box{
+    margin-left: 38%;
+    width: 300px;
+    height: 300px;
+   }
+   
+   .product-detail-img-box img{
+    width: 100%;
+    height: 100%;
+   }
+
+   #product-image-list img{
+    width: 80%;
+    height: 95%;
+}
+   #product-info-container{
+       padding: 0 25%;
+   }
+
+   .product-description-box p,
+   .product-details-box li,
+   .product-details-box p{
+       font-size: 0.695rem;
+   }
+   
+   .product-details-container{
+       margin: 0 auto;
+       width: 70%;
+   }
+    
+   .product-details-box ul{
+       padding-left: 20px;
+   }
+   
+   .product-details-box .puta{
+       padding-left: 20px;
+   }
+   
+   
+   #admin-container{
+       font-size: 0.600rem;
+   }
+   
+   /**************** DEALS CAROUSEL SECTION */
+   .deals-container{
+       margin-top: 8%;
+   }
+   
+   .deals-container h6{
+       margin-left: 0;
+       margin-bottom: 20px;
+   }
+   
+   .deals-container .carousel-item{
+       width: 90%;
+     }
+   
+   .deals-container .carousel-inner{
+    margin: 0 auto;
+       height: 320px;
+       padding-left: 7%;
+
+   }
+   
+   .deals-container .product-card-carousel{
+       height: 380px;
+       width: 25%;
+   }
+   
+   .deals-container .product-card-carousel p{
+       margin-left: 17px;
+       
+   }
+ 
+   .product-card{
+    height: 250px;
+    width: 250px;
+}
+
+.card-img-box-carousel{
+    height: 220px;
+    width: 200px;
+}
+
+.card-img-carousel{
+ width: 100%;
+ height: 100%;
+}
+
+   .deals-container .carousel-indicators{
+       position: absolute;
+       top:100%
+   }
+   
+   .deals-container .carousel-indicators [data-bs-target]{
+    background-color: rgb(122, 13, 13);
+   }
+   
+   .deals-container .indicator{
+       font-size: 1.5rem;
+       color: rgb(122, 13, 13);
+   }
+   
+   .deals-container .product-card p{
+       font-size: 0.750rem;
+       text-align: start;
+   }
+   
+   /*********** SUBSCRIPTION SECTION */
+   .subscription-container{
+       padding-top: 20px;
+       margin: 90px auto 10px;
+       height: 250px;
+       width: 75%;
+       background-color: #5D737E;
+       color: #F3FFC6;
+       border-radius: 10px;
+       letter-spacing: 1px;
+   }
+   
+   .subscription-container p {
+       font-size: 0.800rem;
+   }
+   
+   .subscription-products-page h5 {
+       font-size: 0.900rem;
+   }
+   
+   #subscription-products-page .form-control{
+       height: 35px;
+       margin: 5px auto;
+       width: 60%;
+   }
+   
+   #subscription-products-page .form-control::placeholder{
+       font-size: 0.700rem;
+   }
+   
+   .subscription-product-page-container {
+    padding-top: 20px;
+    margin: 100px auto 10px;
+    height: 280px;
+    width: 450px;
+    background-color: #5D737E;
+    color: #F3FFC6;
+    border-radius: 10px;
+    letter-spacing: 1px;
+}
+
+.subscription-product-page-container button{
+    margin-top: 10px;
+    padding-top: 3px;
+    width: 60%;
+    background-color:  #FF6542;
+    color: #ffffff;
+    font-size: 0.850rem;
+    letter-spacing: 1px;
+    height: 35px;
+}
+
+     }
+     
+       /******************************************************************** DESKTOP SCREEN */
+       @media only screen and (min-width: 1000px) {
+   
+   /************** PRODUCTS PAGE */
+   .products-sort button{
+       font-size: 0.900rem;
+   }
+   
+   .products-number{
+   font-size: 0.700rem;
+   }
+   
+   .product-card-box{
+   height: 450px;
+   }
+   
+   .card-img-container{
+   min-height: 250px;
+   width:80%;
+   margin: 0 auto;
+   }
+   
+   .card-img-box{
+   width:100%;
+   }
+   
+   .card-button{
+   position: absolute;
+   bottom: 10px;
+   left: 7%;
+   width: 86%
+   }
+   
+   .card-product-title, .card-product-name{
+   font-size: 0.900rem;
+   }
+   
+   .card-product-name, .card-product-price{
+   font-size: 0.750rem;
+   }
+   
+   .products-sort a{
+       font-size: 0.800rem;
+   }
+   
+   .products-number{
+       font-size: 0.800rem;
+   }
+   
+   .card-img-container{
+       height: 60%;
+       width:100%;
+       margin:0 auto;
+   }
+   
+   .card-img-top{
+       width: 100%;
+   }
+   
+   .card-img-box{
+       width:90%;
+   }
+   
+   .card-body{
+       margin-top: 2%;
+   }
+   .card{
+       width: 80%;
+       margin: 0 auto;
+   }
+   
+   .card-button{
+       position: absolute;
+       bottom: 10px;
+       left: 5%;
+       width: 90%;
+   }
+   
+   .card-product-title, .card-product-name{
+       font-size: 0.900rem;
+   }
+   
+   .card-product-name, .card-product-price{
+       font-size: 0.750rem;
+   }
+   
+   .card-button:hover{
+       background-color: rgb(122, 55, 55);
+       border-color: rgb(122, 55, 55);
+   }
+   
+   /*********** PRODUCT DETAILS PAGE ************/
+   .product-details-box,
+   .product-description-box,
+   .delivery-info-box{
+       border-left: solid 1px #e5e5e5;
+   }
+   
+   .product-title{
+       font-size: 0.900rem;
+   }
+   
+   .product-price{
+       font-size: 0.800rem;
+   }
+   
+   .product-name{
+       font-size: 0.900rem;
+   }
+   
+   .product-badge{
+       font-size: 0.800rem;
+   }
+   
+   .fa-heart{
+       font-size: 1.5rem;
+   }
+   
+   .size-title{
+       font-size: 0.900rem;
+   }
+   
+   .col .size-box{
+       height: 40px;
+       width: 40px;
+       font-size: 0.900rem;
+   }
+
+   .product-detail-img-box{
+    margin-left: 35%;
+    width: 300px;
+    height: 300px;
+   }
+   
+   .product-detail-img-box img{
+    width: 100%;
+    height: 100%;
+   }
+
+   #product-image-list img{
+    width: 80%;
+    height: 95%;
+}
+   #product-info-container{
+       padding: 0 25%;
+   }
+   
+     /************** DEALS SECTION ***/
+     .carousel-item{
+       width: 99%;
+     }
+   
+   .carousel-inner{
+       height: 420px;
+   }
+   
+   .product-card{
+       height: 280px;
+       width: 250px;
+   }
+   
+   .card-img-box-carousel{
+       height: 280px;
+   }
+   
+   .card-img-carousel{
+    width: 100%;
+    height: 100%;
+   }
+
+   .carousel-indicators{
+       position: absolute;
+       top:95%
+   }
+   
+   .carousel-indicators [data-bs-target]{
+    background-color: rgb(122, 13, 13);
+   }
+   
+   .indicator{
+       font-size: 1.5rem;
+       color: rgb(122, 13, 13);
+   }
+   
+   .product-card p{
+       font-size: 0.8rem;
+       text-align: start;
+   }
+   
+   .product-detail-img-box{
+    margin-left: 32%;
+    width: 350px;
+    height: 350px;
+   }
+
+   .deals-container .product-card p{
+    font-size: 0.8rem;
+    text-align: start;
+}
+
+   /*********** SUBSCRIPTION SECTION*/
+.subscription-product-page-container {
+    padding-top: 20px;
+    margin: 100px auto 10px;
+    height: 300px;
+    width: 450px;
+    background-color: #5D737E;
+    color: #F3FFC6;
+    border-radius: 10px;
+    letter-spacing: 1px;
+}
+
+.subscription-product-page-container button{
+    background-color: #FF6542;
+    color: #ffffff;
+    width: 70%;
+    margin-top: 10px;
+    font-size: 0.900rem;
+}
+
+}

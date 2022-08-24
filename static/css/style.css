@@ -393,60 +393,6 @@ color: #ffffff;
 }
 
 
-/***************** DEALS CAROUSEL SECTION */
-.deals-container{
-    margin-top: 9%;
-}
-
-.deals-container h6{
-    margin-top: 70px;
-    margin-bottom: 40px;
-}
-
-.deals-contianer .carousel-item{
-    width: 100%;
-  }
-
-.deals-container .carousel-inner{
-    height: 420px;
-    padding-left: 1%;
-
-}
-
-.deals-container .product-card{
-    height: 280px;
-    width: 28%;
-}
-
-.deals-container .product-card .card-img-box{
-    height: 250px;
-    background-color: #b6b6b6;
-}
-
-.deals-container .card-img-box img{
-    height: 110%;
-}
-
-.deals-container .carousel-indicators{
-    position: absolute;
-    top:95%
-}
-
-.deals-container .carousel-indicators [data-bs-target]{
- background-color: rgb(122, 13, 13);
-}
-
-.deals-container .indicator{
-    font-size: 1.5rem;
-    color: rgb(122, 13, 13);
-}
-
-.deals-container .product-card p{
-    font-size: 0.8rem;
-    text-align: start;
-}
-
-
 /************** SUBSCRIPTION SECTION */
 .subscription-container{
     padding-top: 20px;
@@ -567,7 +513,6 @@ font-size: 0.800rem;
 
 /*********** shippin info bar */
 header #shipping-info{
-    width: 100%;
     height: 30px;
     font-size: 0.675rem;
     background-color: #5D737E;
@@ -1050,7 +995,7 @@ input[name="q"]{
 
 /*********** shippin info bar */
 header .shipping-info{
-    width: 100%;
+    width: 101.1%;
     height: 40px;
     font-size: 0.675rem;
     background-color: #5D737E;
@@ -1442,6 +1387,7 @@ border-bottom: solid 1px rgb(122, 13, 13);
 
 /************** shippin info bar */
  .shipping-info{
+    width: 100vw;
     height: 40px;
     font-size: 0.775rem;
     background-color: #5D737E;

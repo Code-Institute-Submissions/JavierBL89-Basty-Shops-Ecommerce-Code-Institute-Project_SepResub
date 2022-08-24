@@ -392,123 +392,6 @@ color: #ffffff;
     border-color: #5D737E;
 }
 
-/****************** PRODUCT DETAILS PAGE */
-.size-box{
-    border: solid 1px rgb(122, 13, 13);
-}
-
-/***** DELETE THIS LINE WHEN JQUERY USED*/
-.size-box:hover{
-    background-color:  rgb(122, 13, 13);
-    color: #ffffff;
-}
-
-.selected-size{
-    background-color:  rgb(122, 13, 13);
-
-}
-
-.size-link{
-    text-decoration: none;
-    color:#000000;
-}
-
-.fa-regular{
-    color: rgb(122, 13, 13);
-}
-
-.images-list-container img{
-    border: solid 1px rgb(255, 255, 255);
-}
-
-.images-list-container img:hover{
-    border: solid 1px rgb(122, 13, 13);
-    transition: 0.7s ease-in-out all;
-}
-
-.add-to-bag-button-container button{
-    width: 170%;
-    background-color: rgb(122, 13, 13);
-    color: #ffffff;
-    height: 40px;
-    font-size: 0.700rem;
-    font-weight: bold;
-}
-
-.add-to-bag-button-container button:hover{
-    width: 65%;
-    background-color: rgb(255, 255, 255);
-    color: rgb(122, 13, 13);
-    border-color: rgb(122, 13, 13);;
-    font-size: 0.900rem;
-    font-weight: bold;
-}
-
-.product-details-box, .product-description-box{
-    font-size: 0.800rem;
-}
-
-.product-info-container .info-box .info-text{
-    font-size: 0.650rem;
-}
-
-.info-box-parent{
-    width: 100%;
-}
-
-/***************** DEALS CAROUSEL SECTION */
-.deals-container{
-    margin-top: 9%;
-}
-
-.deals-container h6{
-    margin-top: 70px;
-    margin-bottom: 40px;
-}
-
-.deals-contianer .carousel-item{
-    width: 100%;
-  }
-
-.deals-container .carousel-inner{
-    height: 420px;
-    padding-left: 1%;
-
-}
-
-.deals-container .product-card{
-    height: 280px;
-    width: 28%;
-}
-
-.deals-container .product-card .card-img-box{
-    height: 250px;
-    background-color: #b6b6b6;
-}
-
-.deals-container .card-img-box img{
-    height: 110%;
-}
-
-.deals-container .carousel-indicators{
-    position: absolute;
-    top:95%
-}
-
-.deals-container .carousel-indicators [data-bs-target]{
- background-color: rgb(122, 13, 13);
-}
-
-.deals-container .indicator{
-    font-size: 1.5rem;
-    color: rgb(122, 13, 13);
-}
-
-.deals-container .product-card p{
-    font-size: 0.8rem;
-    text-align: start;
-}
-
 
 /************** SUBSCRIPTION SECTION */
 .subscription-container{
@@ -533,16 +416,6 @@ color: #ffffff;
     background-color:  #FF6542;
     color: #ffffff;
 }
-
-/******************* BAG PAGE **/
-.bag-items-container p{
-    margin: 3px auto;
-}
-
-.item-subtotal, .bag-total{
-    font-size: 0.800rem;
-}
-
 
 /************ ALL-AUTH-PAGES */
 .allauth-form-inner-content .form-control{
@@ -640,7 +513,6 @@ font-size: 0.800rem;
 
 /*********** shippin info bar */
 header #shipping-info{
-    width: 100%;
     height: 30px;
     font-size: 0.675rem;
     background-color: #5D737E;
@@ -711,7 +583,6 @@ img{
     width: 100%;
     margin-top: 150px;
 }
-
 
 .category-box img{
     height:90%;
@@ -792,7 +663,6 @@ font-size: 1rem;
 
 .information-box .form-control{
     height: 35px;
-
 }
 
 .information-box button{
@@ -805,7 +675,7 @@ font-size: 1rem;
     font-weight: bold;
 }
 
-/************** FOOTER */
+/******************* FOOTER */
 .footer-bg{
     color: #ffffff;
 }
@@ -816,281 +686,6 @@ font-size: 1rem;
 
 .logo-footer-box img{
     width: 20%;
-}
-
-/************** PRODUCTS PAGE */
-.main-wraper{
-    margin: 0 auto;
-}
-
-.badge{
-    font-size: 0.500rem;
-    width: 80px;
-    letter-spacing: 1px;
-    padding: 6px;
-}
-
-.products-sort button{
-    font-size: 0.600rem;
-}
-
-.products-number{
-    font-size: 0.500rem;
-}
-
-.card-img-container{
-    height: 43%;
-    width:100%;
-    margin:0 auto;
-}
-
-.card-img-top{
-    width: 100%;
-    /* height: 285px; */
-}
-.card-img-box{
-    width:100%;
-    height: 20%; 
-}
-
-.card-body{
-    margin-top: 2%;
-}
-.card{
-    /* height: 300px; */
-    width: 100%;
-    margin: 0 auto;
-}
-
-.card-product-title,
-.card-product-name,
-.card-product-price{
-    font-size: 0.300rem;
-    padding: 0;
-}
-
-.column-card{
-    padding: 0;
-}
-
-.card-button{
-    position: absolute;
-    bottom: 10px;
-    left: 5%;
-    width: 90%;
-    font-size: 0.800rem;
-
-}
-
-.card-product-title, .card-product-name{
-    font-size: 0.900rem;
-}
-
-.card-product-name, .card-product-price{
-    font-size: 0.750rem;
-}
-
-.card-button:hover{
-    background-color: rgb(122, 55, 55);
-    border-color: rgb(122, 55, 55);
-}
-
-
-/*********** PRODUCT DETAILS PAGE ************/
-.images-list-container{
-    justify-content: center;
-    margin-right: 15%;
-}
-
-.dot{
-    margin: auto 5px;
-    height: 5px;
-    width: 5px;
-    border-radius: 50%;
-    background-color: rgb(122, 13, 13);
-
-}
-.product-title{
-    font-size: 0.900rem;
-}
-
-.product-price{
-    font-size: 0.800rem;
-}
-
-.product-name{
-    font-size: 0.900rem;
-}
-
-.product-badge-box{
-    margin-top: 40px;
-}
-
-.product-badge{
-    font-size: 0.800rem;
-}
-
-.fa-heart{
-    font-size: 1.5rem;
-}
-
-.size-title{
-    font-size: 0.900rem;
-}
-
-ul .size-box{
-    height: 40px;
-    width: 40px;
-    font-size: 0.900rem;
-}
-.product-detail-main-img img{
-    width: 80%;
-    height: 70%;
-}
-
-.product-description-box p,
-.product-details-box li,
-.product-details-box p{
-    font-size: 0.695rem;
-}
-
-.product-details-container{
-    margin: 0 auto;
-    width: 70%;
-}
- 
-.product-details-box ul{
-    padding-left: 20px;
-}
-
-.product-details-box .puta{
-    padding-left: 20px;
-}
-
-
-#admin-container{
-    font-size: 0.600rem;
-}
-
-/**************** DEALS CAROUSEL SECTION */
-.deals-container{
-    margin-top: 8%;
-}
-
-.deals-container h6{
-    margin-left: 0;
-    margin-bottom: 20px;
-}
-
-.deals-container .carousel-item{
-    width: 100%;
-  }
-
-.deals-container .carousel-inner{
-    height: 280px;
-}
-.deals-container .product-card{
-    height: 280px;
-    width: 40%;
-}
-.deals-container .product-card .card-img-box{
-    height: 120px;
-    background-color: #b6b6b6;
-}
-
-.deals-container .card-img-box img{
-    height: 100%;
-}
-.deals-container .carousel-indicators{
-    position: absolute;
-    top:100%
-}
-
-.deals-container .carousel-indicators [data-bs-target]{
- background-color: rgb(122, 13, 13);
-}
-
-.deals-container .indicator{
-    font-size: 1.5rem;
-    color: rgb(122, 13, 13);
-}
-
-.deals-container .product-card p{
-    font-size: 0.8rem;
-    text-align: start;
-}
-
-/******** SUBSCRIPTION SECTION */
-.subscription-container{
-    padding-top: 20px;
-    margin: 90px auto 10px;
-    height: 250px;
-    width: 95%;
-    background-color: #5D737E;
-    color: #F3FFC6;
-    border-radius: 10px;
-    letter-spacing: 1px;
-}
-
-.subscription-container p {
-    font-size: 0.800rem;
-}
-
-.subscription-container h5 {
-    font-size: 0.900rem;
-}
-
-#subscription-products-page .form-control{
-    height: 35px;
-    margin: 5px auto;
-    width: 80%;
-}
-
-#subscription-products-page .form-control::placeholder{
-    font-size: 0.700rem;
-}
-.subscription-container button{
-    margin-top: 10px;
-    width: 80%;
-    background-color:  #FF6542;
-    color: #ffffff;
-    font-size: 0.850rem;
-    letter-spacing: 1px;
-    height: 35px;
-}
-
-/******************* BAG PAGE **/
-.bag-items-container p{
-    font-size: 0.750rem;
-}
-
-.empty-bag-content{
-    /* background-color: #C8BFC7; */
-    border: solid 1px rgb(122, 13, 13);
-    width: 70%;
-    padding: 3%;
-    font-size: 0.750rem;
-    margin: 0 auto 80px;
-}
-
-.empty-bag-content h6{
-    font-size: 0.750rem;
-    /* margin-bottom: 2%; */
-}
-
-#bag-title h1{
-    font-size: 1rem;
-    padding-left: 5%;
-}
-
-#bag-title, .empty-bag-content{
-    margin-left: 15%;
-}
-
-#checkout-button{ 
-    font-size: 0.800rem;
-    color: #FF6542;
-    width: 25%;
 }
 
 /*********** ALL-AUTH-FORMS */
@@ -1261,6 +856,7 @@ border-bottom: solid 1px rgb(122, 13, 13);
         color: rgb(122, 13, 13);
         border-bottom: solid 1px rgb(122, 13, 13);
       }
+
       #terms-conditions-container p{
         font-size: 0.700rem;
         padding-right: 5%;
@@ -1269,20 +865,19 @@ border-bottom: solid 1px rgb(122, 13, 13);
       
       #terms-conditions-container a{
         font-size: 0.700rem;
-    
         color: #FF6542;
      }
+
      #terms-conditions-container li{
         font-size: 0.700rem;
-    
      }
 
-     /************************** REFOUNDS&RETURNS PAGE */
+/************************** REFOUNDS&RETURNS PAGE */
  #refounds-returns-container{
     padding: 18% 10%;
  }
 
- #refounds-returns-container h6, h5{
+ #refounds-returns-container h6, #refounds-returns-container h5{
     margin-top: 50px;
     margin-bottom: 30px;
     font-size: 0.900rem;
@@ -1398,6 +993,61 @@ input[name="q"]{
     margin-right: 5px;
 }
 
+/*********** shippin info bar */
+header .shipping-info{
+    width: 101.1%;
+    height: 40px;
+    font-size: 0.675rem;
+    background-color: #5D737E;
+    color: #F3FFC6;
+}
+
+.shipping-info p{
+    margin: 0 auto;
+}
+
+/*************** HERO SECTION **/
+.hero-wraper{
+    position: relative;
+    width: 100%;
+    padding: 0;
+}
+
+.hero-box-1,
+.hero-box-2{
+    height: 700px;
+    text-align: center;
+}
+
+.hero-box-1{
+position: relative;
+left:0;
+}
+
+.hero-box-2{
+    position: relative;
+    right:0;
+    margin-top: 10px;
+    }
+
+img{
+    width:65%;
+    height: 100%;
+}
+
+.hero-1-text{
+    position: absolute;
+    top: 270px;
+    left:170px;
+}
+
+.hero-2-text{
+    position: absolute;
+    top: 30px;
+    right:180px;
+}
+
+
 /**************** CATEGORIES SECTION */
 .container-categories{
     margin: 0 auto;
@@ -1460,6 +1110,7 @@ text-align: center;
     color: rgb(122, 13, 13);
 }
 
+
 /*************** STORE INFORMATION */
 .information-box{
     text-align: center;
@@ -1499,191 +1150,6 @@ font-size: 1rem;
     font-weight: bold;
 }
 
-/************** PRODUCTS PAGE */
-.products-sort a{
-    font-size: 0.800rem;
-}
-
-.products-number{
-    font-size: 0.800rem;
-}
-
-.card-img-container{
-    height: 60%;
-    width:100%;
-    margin:0 auto;
-}
-
-.card-img-top{
-    width: 100%;
-    /* height: 285px; */
-}
-.card-img-box{
-    width:90%;
-    /* height: 245%;  */
-}
-
-.card-body{
-    margin-top: 2%;
-}
-.card{
-    /* height: 410px; */
-    width: 80%;
-    margin: 0 auto;
-}
-
-.card-button{
-    position: absolute;
-    bottom: 10px;
-    left: 5%;
-    width: 90%;
-}
-
-.card-product-title, .card-product-name{
-    font-size: 0.900rem;
-}
-
-.card-product-name, .card-product-price{
-    font-size: 0.750rem;
-}
-
-.card-button:hover{
-    background-color: rgb(122, 55, 55);
-    border-color: rgb(122, 55, 55);
-}
-
-/*********** PRODUCT DETAILS PAGE ************/
-.product-title{
-    font-size: 0.900rem;
-}
-
-.product-price{
-    font-size: 0.800rem;
-}
-
-.product-name{
-    font-size: 0.900rem;
-}
-
-.product-badge{
-    font-size: 0.800rem;
-}
-
-.fa-heart{
-    font-size: 1.5rem;
-}
-
-.size-title{
-    font-size: 0.900rem;
-}
-
-ul .size-box{
-    height: 40px;
-    width: 40px;
-    font-size: 0.900rem;
-}
-.product-detail-main-img img{
-    width: 80%;
-    height: 70%;
-}
-
-#product-info-container{
-    padding: auto 25%;
-}
-/*********** shippin info bar */
-header .shipping-info{
-    width: 100%;
-    height: 40px;
-    font-size: 0.675rem;
-    background-color: #5D737E;
-    color: #F3FFC6;
-}
-
-.shipping-info p{
-    margin: 0 auto;
-}
-
-/*************** HERO SECTION **/
-.hero-wraper{
-    position: relative;
-    width: 100%;
-    padding: 0;
-}
-
-.hero-box-1,
-.hero-box-2{
-    height: 700px;
-    text-align: center;
-}
-
-.hero-box-1{
-position: relative;
-left:0;
-}
-
-.hero-box-2{
-    position: relative;
-    right:0;
-    margin-top: 10px;
-    }
-
-img{
-    width:65%;
-    height: 100%;
-}
-
-.hero-1-text{
-    position: absolute;
-    top: 270px;
-    left:170px;
-}
-
-.hero-2-text{
-    position: absolute;
-    top: 30px;
-    right:180px;
-}
-
-
-  /************** DEALS SECTION ***/
-  .carousel-item{
-    width: 99%;
-  }
-
-.carousel-inner{
-    height: 420px;
-}
-
-.product-card{
-    height: 280px;
-    width: 33%;
-}
-
-.product-card .card-img-box{
-    height: 250px;
-    background-color: #e3b837;
-}
-
-.carousel-indicators{
-    position: absolute;
-    top:95%
-}
-
-.carousel-indicators [data-bs-target]{
- background-color: rgb(122, 13, 13);
-}
-
-.indicator{
-    font-size: 1.5rem;
-    color: rgb(122, 13, 13);
-}
-
-.product-card p{
-    font-size: 0.8rem;
-    text-align: start;
-}
-
-
 /********** FOOTER */
 .container-logo{
     order:4
@@ -1698,31 +1164,6 @@ img{
     background-color: rgb(122, 13, 13);
 
   }
-  
-
-/****************** BAG PAGE */
-.empty-bag-content{
-    /* background-color: #C8BFC7; */
-    border: solid 1px rgb(122, 13, 13);
-    width: 50%;
-    padding: 3%;
-    margin-bottom: 80px;
-}
-
-#bag-title h1{
-    font-size: 1rem;
-    padding-left: 5%;
-} 
-
-#bag-title, .empty-bag-content{
-    margin-left: 15%;
-}
-
-#checkout-button{ 
-    font-size: 1rem;
-    color: #FF6542;
-    width: 25%;
-}
 
 /******* ALL-AUTH-FORMS */
 .header-container .allauth-form-inner-content{
@@ -1851,7 +1292,7 @@ border-bottom: solid 1px rgb(122, 13, 13);
     padding: 10% 20%;
  }
 
- #refounds-returns-container h6, h5{
+ #refounds-returns-container h6, #refounds-returns-container h5{
     margin-top: 50px;
     margin-bottom: 30px;
     color: rgb(122, 13, 13);
@@ -1946,55 +1387,12 @@ border-bottom: solid 1px rgb(122, 13, 13);
 
 /************** shippin info bar */
  .shipping-info{
+    width: 100vw;
     height: 40px;
     font-size: 0.775rem;
     background-color: #5D737E;
     color: #F3FFC6;
 }
-
-/************** PRODUCTS PAGE */
-.products-sort button{
-        font-size: 0.900rem;
-    }
-    
-.products-number{
-    font-size: 0.700rem;
-}
-
-.product-card-box{
-    height: 450px;
-}
-
-.card-img-container{
-    min-height: 250px;
-    /* height: 270px; */
-    width:80%;
-    margin: 0 auto;
-}
-
-.card-img-box{
-    width:100%;
-}
-
-.card-button{
-    position: absolute;
-    bottom: 10px;
-    left: 7%;
-    width: 86%
-}
-
-.card-product-title, .card-product-name{
-    font-size: 0.900rem;
-}
-
-.card-product-name, .card-product-price{
-    font-size: 0.750rem;
-}
-
-/***************** PRODUCT DETAILS PAGE*/
-    .product-details-box, .product-description-box{
-        border-left: solid 1px #e5e5e5;
-    }
 
 
 
@@ -2013,9 +1411,9 @@ border-bottom: solid 1px rgb(122, 13, 13);
     color: #ffffff;
     font-weight: bold;
 }
+
 /********************* BAG PAGE */
 .empty-bag-content{
-    /* background-color: #C8BFC7; */
     border: solid 1px rgb(122, 13, 13);
     width: 50%;
     padding: 2%;
@@ -2039,7 +1437,6 @@ border-bottom: solid 1px rgb(122, 13, 13);
 .item-img-bag{
     width: 40%;
     height: 90%;
-    /* height: 285px; */
 }
 
 #checkout-button{ 
@@ -2096,7 +1493,8 @@ border-bottom: solid 1px rgb(122, 13, 13);
     font-size: 0.700rem;
  }
 
- /******* login social buttons */
+
+ /************ login social buttons */
  .socialaccount_providers{
     list-style: none;
     margin-top: 30px;

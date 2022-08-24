@@ -55,12 +55,55 @@
     font-size: 0.800rem;
 }
 
-.product-info-container .info-box .info-text{
+.product-info-container .delivery-info-box .info-text{
     font-size: 0.650rem;
 }
 
 .info-box-parent{
     width: 100%;
+}
+
+/***************** DEALS CAROUSEL SECTION */
+.deals-container{
+    margin-top: 9%;
+}
+
+.deals-container h6{
+    margin-top: 70px;
+    margin-bottom: 40px;
+}
+
+.deals-contianer .carousel-item{
+    width: 100%;
+  }
+
+.deals-container .carousel-inner{
+    height: 420px;
+    padding-left: 1%;
+
+}
+
+.deals-container .product-card .card-img-box{
+    height: 250px;
+    background-color: #b6b6b6;
+}
+
+.deals-container .card-img-box img{
+    height: 110%;
+}
+
+.deals-container .carousel-indicators{
+    position: absolute;
+    top:95%
+}
+
+.deals-container .carousel-indicators [data-bs-target]{
+ background-color: rgb(122, 13, 13);
+}
+
+.deals-container .indicator{
+    font-size: 1.5rem;
+    color: rgb(122, 13, 13);
 }
 
    /******************************************************************** MOBILE SCREEN */
@@ -194,10 +237,25 @@
     font-size: 0.750rem;
 
    }
-   .product-detail-main-img img{
-       width: 80%;
-       height: 70%;
+   .product-detail-img-box{
+    margin: 0 auto;
+    /* margin-left: 38%; */
+    width: 250px;
+    height: 250px;
    }
+   
+   .product-detail-img-box img{
+    width: 100%;
+    height: 100%;
+   }
+
+   .images-list-container{
+    margin-bottom: 40px;
+   }
+   #product-image-list img{
+    width: 80%;
+    height: 95%;
+}
    
    .product-description-box p,
    .product-details-box li,
@@ -211,10 +269,6 @@
    }
     
    .product-details-box ul{
-       padding-left: 20px;
-   }
-   
-   .product-details-box .puta{
        padding-left: 20px;
    }
    
@@ -240,20 +294,26 @@
        height: 280px;
    }
    
-   .deals-container .product-card{
-       height: 280px;
-       width: 40%;
-   }
-   
-   .deals-container .product-card .card-img-box{
-       height: 120px;
-       background-color: #b6b6b6;
-   }
-   
-   .deals-container .card-img-box img{
-       height: 100%;
-   }
-   
+   .deals-container .product-card-carousel{
+    height: 380px;
+    width: 25%;
+}
+
+.product-card{
+ height: 250px;
+ width: 300px;
+}
+
+.card-img-box-carousel{
+    width: 90px;
+ height: 100px;
+}
+
+.card-img-carousel{
+width: 100%;
+height: 100%;
+}
+
    .deals-container .carousel-indicators{
        position: absolute;
        top:100%
@@ -269,10 +329,9 @@
    }
    
    .deals-container .product-card p{
-       font-size: 0.8rem;
-       text-align: start;
-   }
-   
+    font-size: 0.6rem;
+    text-align: start;
+}
    /******** SUBSCRIPTION SECTION */
    .subscription-container{
        padding-top: 20px;
@@ -285,11 +344,11 @@
        letter-spacing: 1px;
    }
    
-   .subscription-container p {
+   .subscription-product-page-container p {
        font-size: 0.800rem;
    }
    
-   #subscription-products-page .subscription-container h5 {
+   .subscription-product-page-container h5 {
        font-size: 0.900rem;
    }
    
@@ -303,15 +362,28 @@
        font-size: 0.700rem;
    }
    
-   .subscription-container button{
-       margin-top: 10px;
-       width: 80%;
-       background-color:  #FF6542;
-       color: #ffffff;
-       font-size: 0.850rem;
-       letter-spacing: 1px;
-       height: 35px;
-   }
+   .subscription-product-page-container {
+    padding-top: 20px;
+    margin: 100px auto 10px;
+    height: 280px;
+    width: 450px;
+    background-color: #5D737E;
+    color: #F3FFC6;
+    border-radius: 10px;
+    letter-spacing: 1px;
+}
+
+.subscription-product-page-container button{
+    margin-top: 10px;
+    padding-top: 3px;
+    width: 80%;
+    background-color:  #FF6542;
+    color: #ffffff;
+    font-size: 0.750rem;
+    letter-spacing: 1px;
+    height: 35px;
+}
+
    
       }
      
@@ -438,15 +510,30 @@
    }
    
    .col .size-box{
-       height: 40px;
-       width: 40px;
-       font-size: 0.900rem;
-   }
-   .product-detail-main-img img{
-       width: 80%;
-       height: 70%;
+    height: 40px;
+    width: 40px;
+    font-size: 0.900rem;
+}
+
+   .product-detail-img-box{
+    margin-left: 38%;
+    width: 300px;
+    height: 300px;
    }
    
+   .product-detail-img-box img{
+    width: 100%;
+    height: 100%;
+   }
+
+   #product-image-list img{
+    width: 80%;
+    height: 95%;
+}
+   #product-info-container{
+       padding: 0 25%;
+   }
+
    .product-description-box p,
    .product-details-box li,
    .product-details-box p{
@@ -486,31 +573,37 @@
      }
    
    .deals-container .carousel-inner{
+    margin: 0 auto;
        height: 320px;
+       padding-left: 7%;
+
    }
    
-   .deals-container .product-card{
-       text-align: end;
+   .deals-container .product-card-carousel{
        height: 380px;
        width: 25%;
    }
    
-   .deals-container .product-card p{
+   .deals-container .product-card-carousel p{
        margin-left: 17px;
        
    }
-   .deals-container .product-card .card-img-box{
-       width: 100%;
-       height: 180px;
-       background-color: #ffffff;
-   }
-   
-   .deals-container .card-img-box img{
-       text-align: end;
-       height: 100%;
-       width: 90%;
-   }
-   
+ 
+   .product-card{
+    height: 250px;
+    width: 250px;
+}
+
+.card-img-box-carousel{
+    height: 220px;
+    width: 200px;
+}
+
+.card-img-carousel{
+ width: 100%;
+ height: 100%;
+}
+
    .deals-container .carousel-indicators{
        position: absolute;
        top:100%
@@ -526,7 +619,7 @@
    }
    
    .deals-container .product-card p{
-       font-size: 0.8rem;
+       font-size: 0.750rem;
        text-align: start;
    }
    
@@ -560,15 +653,28 @@
        font-size: 0.700rem;
    }
    
-   .subscription-container button{
-       margin-top: 10px;
-       width: 60%;
-       background-color:  #FF6542;
-       color: #ffffff;
-       font-size: 0.850rem;
-       letter-spacing: 1px;
-       height: 35px;
-   }
+   .subscription-product-page-container {
+    padding-top: 20px;
+    margin: 100px auto 10px;
+    height: 280px;
+    width: 450px;
+    background-color: #5D737E;
+    color: #F3FFC6;
+    border-radius: 10px;
+    letter-spacing: 1px;
+}
+
+.subscription-product-page-container button{
+    margin-top: 10px;
+    padding-top: 3px;
+    width: 60%;
+    background-color:  #FF6542;
+    color: #ffffff;
+    font-size: 0.850rem;
+    letter-spacing: 1px;
+    height: 35px;
+}
+
      }
      
        /******************************************************************** DESKTOP SCREEN */
@@ -663,7 +769,9 @@
    }
    
    /*********** PRODUCT DETAILS PAGE ************/
-   .product-details-box, .product-description-box{
+   .product-details-box,
+   .product-description-box,
+   .delivery-info-box{
        border-left: solid 1px #e5e5e5;
    }
    
@@ -693,14 +801,25 @@
    
    .col .size-box{
        height: 40px;
-       width: 30px;
+       width: 40px;
        font-size: 0.900rem;
    }
-   .product-detail-main-img img{
-       width: 80%;
-       height: 70%;
+
+   .product-detail-img-box{
+    margin-left: 35%;
+    width: 300px;
+    height: 300px;
    }
    
+   .product-detail-img-box img{
+    width: 100%;
+    height: 100%;
+   }
+
+   #product-image-list img{
+    width: 80%;
+    height: 95%;
+}
    #product-info-container{
        padding: 0 25%;
    }
@@ -716,14 +835,18 @@
    
    .product-card{
        height: 280px;
-       width: 33%;
+       width: 250px;
    }
    
-   .product-card .card-img-box{
-       height: 250px;
-       background-color: #e3b837;
+   .card-img-box-carousel{
+       height: 280px;
    }
    
+   .card-img-carousel{
+    width: 100%;
+    height: 100%;
+   }
+
    .carousel-indicators{
        position: absolute;
        top:95%
@@ -743,5 +866,35 @@
        text-align: start;
    }
    
-   
-       }
+   .product-detail-img-box{
+    margin-left: 32%;
+    width: 350px;
+    height: 350px;
+   }
+
+   .deals-container .product-card p{
+    font-size: 0.8rem;
+    text-align: start;
+}
+
+   /*********** SUBSCRIPTION SECTION*/
+.subscription-product-page-container {
+    padding-top: 20px;
+    margin: 100px auto 10px;
+    height: 300px;
+    width: 450px;
+    background-color: #5D737E;
+    color: #F3FFC6;
+    border-radius: 10px;
+    letter-spacing: 1px;
+}
+
+.subscription-product-page-container button{
+    background-color: #FF6542;
+    color: #ffffff;
+    width: 70%;
+    margin-top: 10px;
+    font-size: 0.900rem;
+}
+
+}

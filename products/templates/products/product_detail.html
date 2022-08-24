@@ -6,15 +6,17 @@
 {% endblock %}
 
 {% block content %}
-<div class="product-wraper">
+<div class="product-wraper mt-2">
   <div class="row mt-5">
     {% if product %}
     <div class="col-12 col-md-6 col-lg-6 text-center text-md-end text-lg-end product-detail-main-img">
       {% if product.cover_image %}
-      <img class="" src="{{ MEDIA_URL }}{{ product.cover_image }}" alt="{{ product.title }}">
-      {% else %}
-      <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.title }}">
-      {% endif %}
+      <div class="product-detail-img-box">
+        <img class="" src="{{ MEDIA_URL }}{{ product.cover_image }}" alt="{{ product.title }}">
+        {% else %}
+        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.title }}">
+        {% endif %}
+      </div>
       <div class="row">
         <div class="images-list-container d-flex offset-sm-0 offset-md-3 offset-lg-3">
           {% if product.images_list %}
@@ -121,15 +123,15 @@
       <div class="col-12 col-md-12 col-lg-4 ms-1">
         <div class="product-details-box text-start px-2 py-2">
           <div class="row">
-            <h6 class="text-bold fs-6 ms-0 ms-md-3 ms-md-3">Details</h6>
-            <div class="col-6 mt-3">
-              <ul class="list">
+            <h6 class="text-bold fs-6 ms-0">Details</h6>
+            <div class="col-6 mt-3 ms-0">
+              <ul class="list ps-2">
                 {% for detailKey in details_key %}
                 <li class="list"> {{ detailKey }}</li>
                 {% endfor %}
               </ul>
             </div>
-            <div class="col-6 mt-3 puta">
+            <div class="col-6 mt-3 text-end text-md-start puta">
               {% for detailValue in details_value %}
               <p class="my-0 mx-0"> {{ detailValue }}</p>
               {% endfor %}
@@ -137,8 +139,8 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-4 col-lg-4 ms-1 ps-0 ps-md-2 py-4 info-box-parent">
-        <div class="info-box mt-4">
+      <div class="col-12 col-md-4 col-lg-4 ms-1 ps-0 ps-md-2 py-4 delivery-info-box info-box-parent">
+        <div class="mt-4">
           <p class="info-text"><i class="fa-solid fa-truck"></i> ENJOY FREE DELIVERY WITH ORDERS OVER €60</p>
           <p class="info-text"><i class="fa-solid fa-arrow-right-arrow-left"></i> 40 DAYS POLICY RETURNS</p>
           <p class="info-text"><i class="fa-solid fa-file-invoice-dollar"></i> EASY CHECKOUT WITH DIFERENT PAYMENT OPTIONS</p>
@@ -163,8 +165,8 @@
           <div class="carousel-item active mt-5">
             <div class="cards-wraper d-flex justify-content-center">
               <div class="product-card mx-1">
-                <div class="card-img-box">
-                  <a href="https://bastyshops.herokuapp.com/products/3"><img src="{{ MEDIA_URL }}CLAUDIA-SUEDE-ANKLE-BOOTS-ALL-BLACK_EF4-090_1_ijmyf8k.jpg" class="card-img-top" alt="SUEDE-ANKLE-BOOTS"></a>
+                <div class="card-img-box-carousel">
+                  <a href="https://bastyshops.herokuapp.com/products/3"><img src="{{ MEDIA_URL }}CLAUDIA-SUEDE-ANKLE-BOOTS-ALL-BLACK_EF4-090_1_ijmyf8k.jpg" class="card-img-carousel" alt="SUEDE-ANKLE-BOOTS"></a>
                 </div>
                 <div class="product_card-body mt-2 mx-1 text-start">
                   <p class="product-card-description  mb-0 pt-0"><strong>Suede Ankle Boots</strong></p>
@@ -172,8 +174,8 @@
                 </div>
               </div>
               <div class="product-card mx-1">
-                <div class="card-img-box">
-                  <a href="https://bastyshops.herokuapp.com/products/2"><img src="{{ MEDIA_URL }}PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894_1.jpg" class="card-img-top" alt="LEATHER-ANKLE-BOOTS"></a>
+                <div class="card-img-box-carousel">
+                  <a href="https://bastyshops.herokuapp.com/products/2"><img src="{{ MEDIA_URL }}PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894_1.jpg" class="card-img-carousel" alt="LEATHER-ANKLE-BOOTS"></a>
                 </div>
                 <div class="product_card-body mt-2 mx-1 text-start">
                   <p class="product-card-description mb-0 pt-0"><strong>Leather Ankle Boots</strong></p>
@@ -181,8 +183,8 @@
                 </div>
               </div>
               <div class="product-card mx-1">
-                <div class="card-img-box">
-                  <a href="https://bastyshops.herokuapp.com/products/6"><img src="{{ MEDIA_URL }}TREND-0089501020017509_Model.jpg" class="card-img-top" alt="Knee High Boots"></a>
+                <div class="card-img-box-carousel">
+                  <a href="https://bastyshops.herokuapp.com/products/6"><img src="{{ MEDIA_URL }}TREND-0089501020017509_Model.jpg" class="card-img-carousel" alt="Knee High Boots"></a>
                 </div>
                 <div class="product_card-body mt-2 mx-1 text-start">
                   <p class="product-card-description mb-0 pt-0"><strong>Knee High Boots</strong></p>
@@ -195,8 +197,8 @@
           <div class="carousel-item mt-5">
             <div class="cards-wraper d-flex justify-content-center">
               <div class="product-card mx-1">
-                <div class="card-img-box">
-                  <!-- <img src="" class="card-img-top" alt=""> -->
+                <div class="card-img-box-carousel">
+                  <!-- <img src="" class="card-img-carousel" alt=""> -->
                 </div>
                 <div class="product_card-body mt-2 mx-1 text-start">
                   <p class="product-card-description mb-0 pt-0"><strong>Low heel shoes</strong></p>
@@ -204,8 +206,8 @@
                 </div>
               </div>
               <div class="product-card mx-1">
-                <div class="card-img-box">
-                  <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <div class="card-img-box-carousel">
+                  <!-- <img src="..." class="card-img-carousel" alt="..."> -->
                 </div>
                 <div class="product_card-body mt-2 mx-1 text-start">
                   <p class="product-card-description mb-0 pt-0"><strong>Low heel shoes</strong></p>
@@ -213,8 +215,8 @@
                 </div>
               </div>
               <div class="product-card mx-1">
-                <div class="card-img-box">
-                  <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <div class="card-img-box-carousel">
+                  <!-- <img src="..." class="card-img-carousel" alt="..."> -->
                 </div>
                 <div class="product_card-body mt-2 mx-1 text-start">
                   <p class="product-card-description mb-0 pt-0"><strong>Low heel shoes</strong></p>
@@ -226,11 +228,11 @@
         </div>
         <button class="carousel-control-prev d-none d-lg-block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
           <span class="indicator" aria-hidden="true">
-            << /span>
+            </span>
               <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next d-none d-lg-block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="indicator" aria-hidden="true">></span>
+          <span class="indicator" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
@@ -243,7 +245,7 @@
 <section id="subscription-products-page">
   <div class="container mt-5 mb-5">
     <div class="row">
-      <div class="subscription-container text-center">
+      <div class="subscription-product-page-container text-center">
         <h5 class=" fw-bold">Sign Up to our newsletter!</h5>
         <p class="fw-bold">Get unresistable deals</p>
         {% if product %}
