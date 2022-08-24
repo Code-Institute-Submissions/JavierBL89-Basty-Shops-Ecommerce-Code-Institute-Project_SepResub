@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="{% static 'css/products.css' %}">
 {% endblock %}
 
+
 {% block content %}
 <div class="main_wraper">
   <div class="container-fluid mt-5 mb-5 product-mngt-container" id="product-mngt-container">
@@ -37,7 +38,7 @@
               {{ product_detail_form.upper_material | as_crispy_field }}
               {{ product_detail_form.sole | as_crispy_field }}
             </div>
-            <div class="col-6">
+            <div class="col-6 ps-0 ps-md-2">
               {{ product_detail_form.technology | as_crispy_field }}
               {{ product_detail_form.lining_material | as_crispy_field }}
               {{ product_detail_form.fastening | as_crispy_field }}
@@ -60,14 +61,17 @@
             </div>
           </div>
         </div>
-        <button class="mt-4" type="button" id="add_size">add size</button>
+        <button class="btn mt-4" type="button" id="add_size">add size</button>
       </div>
       <div class="col-12 col-md-6 mt-4 mt-md-0">
         <div class="product-image-container ">
           <h6>Product images</h6>
           <div class="row">
             <div class="col-12">
-              {{ image_form | crispy }}
+              {{ image_form.image1 | as_crispy_field }}
+              {{ image_form.image2 | as_crispy_field }}
+              {{ image_form.image3 | as_crispy_field }}
+              {{ image_form.image4 | as_crispy_field }}
             </div>
           </div>
         </div>

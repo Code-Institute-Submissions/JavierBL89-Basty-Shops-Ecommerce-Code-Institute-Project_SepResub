@@ -12,6 +12,8 @@ Users can easily contact customer support.
 
 - Live store [Basty Shops](<https://bastyshops.herokuapp.com>)
 
+![Basty Shops screen size desing](<media/Captura de pantalla (462).png>)
+
 ## Table of contents
 
 ### [Planning stage](#planning-stage)
@@ -43,6 +45,10 @@ Users can easily contact customer support.
 - Confirmation email
 - Contact customer support by email
 - Activity info messages
+- Management
+  - Add product
+  - Edit product
+  - Delete product
 
 ### [Testing](#testing)
 
@@ -217,13 +223,13 @@ The site offers a wide range of different type of shoes in order to widen potent
 
 ## Features
 
-- SingUp
+- ### SingUp
 
   - Users can register in the site by filling up a form
 
 ![SingUp form](<media/Captura de pantalla (372).png>)
 
-- Social Authentication
+- ### Social Authentication
  
   - Users can singup using their social accounts in order to speed up and ease site's registration or login,
   as well as to improve their security 
@@ -231,7 +237,7 @@ The site offers a wide range of different type of shoes in order to widen potent
   ![SingUp form](<media/Captura de pantalla (372).png>)
 
 
-- Update profile information
+- ### Update profile information
 
   - Registered users can easily **update their personal information** or delete their account
 
@@ -249,31 +255,31 @@ The site offers a wide range of different type of shoes in order to widen potent
 
   ![Update delivery address](<media/Captura de pantalla (383).png>)
 
-- Search products by name or category
+- ### Search products by name or category
 
   - Users can easily search products by entering name or key words
 
     ![Products searcher](<media/Captura de pantalla (385).png>)
 
-- Sort products by price or alphabet
+- ### Sort products by price or alphabet
 
   - Users can easily sort products by entering their preference (by rating will be implemented in future)
 
     ![Products sorter](<media/Captura de pantalla (387).png>)
 
-- Show total in the bag
+- ### Show total in the bag
 
   - Users can see the total of their shopping bag on the bag page
 
     ![Total shopping bag](<media/Captura de pantalla (389).png>)
 
-- Modify product quantity on the bag page
+- ### Modify product quantity on the bag page
 
   - Users can modify the total of a specific item from their shopping bag
 
     ![Modify product quantity](<media/Captura de pantalla (393).png>)
 
-- Checkout
+- ### Checkout
 
   - Users can make their order by **filling up the checkout page**
   - Users can see their **order summary**
@@ -281,19 +287,19 @@ The site offers a wide range of different type of shoes in order to widen potent
 
     ![Checkout](<media/Captura de pantalla (395).png>)
 
-- Payment
+- ### Payment
 
   - Users can securely **make a payment** using theit credir, debit, or american express or any other type of card throught a well trusted payment platform [Stripe](<https://stripe.com/en-ie>)
 
     ![Checkout](<media/Captura de pantalla (395).png>)
 
-- Confirmation email
+- ### Confirmation email
 
   - Users will receive a **confirmation email** after making a successful purchase
 
     ![Checkout](<media/Captura de pantalla (395).png>) !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-  - Contact customer support y email
+- ### Contact customer support y email
 
   - Users can **send an email to customer support** by going into "Contact us" page
 
@@ -304,6 +310,26 @@ The site offers a wide range of different type of shoes in order to widen potent
   - Users will be informed after every acction on the site thrught automatic messages 
 
     ![Activity messages](<media/Captura de pantalla (405).png>)
+
+- ### Management
+
+  - Add product
+
+  Store admin will be able to add products from the site so much easily the from the Django admin panel
+  
+    ![Add product admin](<media/Captura de pantalla (468).png>)
+
+  - Edit product
+
+  Store admin will be able to edit products from the site so much easily the from the Django admin panel
+  
+    ![Edit product admin](<media/Captura de pantalla (iii).png>)
+
+  - Delete product
+
+  Store admin will be able to delete products easily from the site
+  
+    ![Delete product admin](<media/Captura de pantalla (474).png>)
 
 ## Future features
 
@@ -361,8 +387,8 @@ i used the "print()" method To check wheter if functions are triggered, whether 
   ![Lighthouse mobile products page results](<media/Captura de pantalla (455).png>)
 
 ### PEP8
-When validating i had to modify lots of long lines of code, however then when running the app, the app crushes and display errors as on the picture bellow.
 
+  - All .py files went through PEP8 validator, only white spaces and long lines shown in test.
 
 
   - **Home page**
@@ -421,10 +447,6 @@ When validating i had to modify lots of long lines of code, however then when ru
       - On the bag page, after adding the first item into the shopping bag, the following items seem to not have the disabel buttons functionality applied. This issue must be related the previous one 
       
       ![Products quantity input](<media/Captura de pantalla (424).png>)
-
-   <!-- * Unfixed bug
-    
-      - Adding a block extra_css tag to every page for the differents apps in order to link them to their own css folder in the app seems to not work for me. After adding this tag and link them to their css file, the styling kept being applied from the stylesheet link added into the base template -->
 
  * Unfixed bug
     
@@ -486,9 +508,6 @@ The project was deployed to Heroku using the below procedure:-
 - Clicking either "Enable Automatic Deploys" for automatic deployment when you push updates to Github.
 - Select the correct branch for deployment from the drop-down menu and click the "Deploy Branch" button for manual deployment.
 
-
-<!-- * If using [AWS](https://s3.console.aws.amazon.com) services to store static and media files -->
-
 ## Credits
 
  ### Code
@@ -497,12 +516,12 @@ The project was deployed to Heroku using the below procedure:-
 
   * #### Databases relationships
    
-  -[Entity Database Relationships](<https://www.youtube.com/watch?v=QpdhBUYk7Kk&list=PLHtuMzYFHMqz4h2gnFL44VZRt0s0HGxN4&index=1>)
+      -Video tutorial [Entity Database Relationships](<https://www.youtube.com/watch?v=QpdhBUYk7Kk&list=PLHtuMzYFHMqz4h2gnFL44VZRt0s0HGxN4&index=1>)
   
 
   * #### Social Authentication
 
-  -[Social Authentication](<https://www.youtube.com/watch?v=-TUEM2NCuVE&list=PLHtuMzYFHMqwVa6AglqPNMShrkySsfPTY&index=7&t=308s>)
+      -Video tutorial [Social Authentication](<https://www.youtube.com/watch?v=-TUEM2NCuVE&list=PLHtuMzYFHMqwVa6AglqPNMShrkySsfPTY&index=7&t=308s>)
 
   * #### Stripe
 

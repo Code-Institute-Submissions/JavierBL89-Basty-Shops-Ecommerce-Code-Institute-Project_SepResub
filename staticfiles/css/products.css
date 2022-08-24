@@ -34,7 +34,7 @@
 }
 
 .add-to-bag-button-container button{
-    width: 170%;
+    width: 65%;
     background-color: rgb(122, 13, 13);
     color: #ffffff;
     height: 40px;
@@ -47,8 +47,6 @@
     background-color: rgb(255, 255, 255);
     color: rgb(122, 13, 13);
     border-color: rgb(122, 13, 13);;
-    font-size: 0.900rem;
-    font-weight: bold;
 }
 
 .product-details-box, .product-description-box{
@@ -216,7 +214,7 @@
    }
    
    .product-badge{
-       font-size: 0.800rem;
+       font-size: 0.750rem;
    }
    
    .fa-heart{
@@ -224,7 +222,7 @@
    }
    
    .size-title{
-       font-size: 0.900rem;
+       font-size: 0.850rem;
    }
    
    .size-box{

@@ -596,7 +596,7 @@ img{
 }
 
 .carousel-inner{
-    height: 400px;
+    height: 310px;
     width: 100%;
     padding-left: 1%;
 }
@@ -605,17 +605,20 @@ img{
     margin-top: 30px;
 }
 
-.product-card .card-img-box{
-    height: 150px;
+.product-card .card-img-box {
+    height: 105px;
+    width: 90px;
     background-color: rgb(122, 13, 13);
 }
 
+
 .product-card .card-img-box img{
-    height: 80%;
+    height: 97%;
+    width: 100%;
 }
 
 .product-card-body p{
-    font-size: 0.700rem;
+    font-size: 0.650rem;
 }
 
 .carousel-indicators button[data-bs-target]{

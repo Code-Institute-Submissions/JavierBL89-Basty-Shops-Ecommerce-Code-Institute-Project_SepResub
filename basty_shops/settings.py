@@ -28,9 +28,14 @@ SECRET_KEY = os.getenv('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEVELOPMENT' in os.environ
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['bastyshops.herokuapp.com', 'localhost']
+
+# This variable is helpful with DJANGO 4 installed
+# Neccesary for persmissons as prevents others site from hijacking clicks
+# from other site
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # needed to be able to login(new in django 4)
 CSRF_TRUSTED_ORIGINS = [
@@ -253,7 +258,7 @@ DEFAULT_FROM_EMAIL = 'jjbastyshops@gmail.com'
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'bastyshops@example.com'
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
