@@ -1,40 +1,39 @@
-
 <section id="store-information">
     <div class="row text-center mb-5">
-        <div class="col-sm-12 col-md-12 col-lg-4">
-            <div class="shipping-info-box information-box rounded-1">
-                <i class="fa-solid fa-truck fa-3x "></i>
-                <div class="store-info-text mt-5">
-                  <h6>DELIVERY FROM 3 TO 5 WORKING DAYS</h6>
-                  <h6>NEXT DAY IF IN DUBLIN</h6>
-                </div>
-            </div>
+      <div class="col-sm-12 col-md-12 col-lg-4">
+        <div class="shipping-info-box information-box rounded-1">
+          <i class="fa-solid fa-truck fa-3x "></i>
+          <div class="store-info-text mt-5">
+            <h6>DELIVERY FROM 3 TO 5 WORKING DAYS</h6>
+            <h6>NEXT DAY IF IN DUBLIN</h6>
+          </div>
         </div>
-        <div class="col-sm-12 col-md-12 col-lg-4">
-            <div class="returns-info-box information-box  rounded-1">
-                <i class="fa-solid fa-box fa-3x"></i>
-                <div class="store-info-text mt-5">
-                    <h6>40 DAYS POLICY RETURN</h6>
-                    <h6>SEND AND BUY BACK</h6>
-                    <p>Must buy the new product and send back the one to be changed</p>
-              </div>
-            </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-4">
+        <div class="returns-info-box information-box  rounded-1">
+          <i class="fa-solid fa-box fa-3x"></i>
+          <div class="store-info-text mt-5">
+            <h6>40 DAYS POLICY RETURN</h6>
+            <h6>SEND AND BUY BACK</h6>
+            <p>Must buy the new product and send back the one to be changed</p>
+          </div>
         </div>
-        <div class="col-sm-12 col-md-12 col-lg-4">
-            <div class="subscription-info-section information-box rounded-1">
-                <i class="fa-solid fa-envelope-open fa-3x"></i>
-                <div class="store-info-text mt-5">
-                    <h6 class="text-center pe-1 subscribe">SUBSCRIBE</h6>
-                    <p>Enjoy only members deals and get a 10% off boucher</p>
-                    <form action="{% url 'subscribe' %}" method="POST" id="subscribe-form">
-                        {% csrf_token %}
-                        {{ subscription_form.fname | as_crispy_field }}
-                        {{ subscription_form.email | as_crispy_field }}
-                        <button type="submit" class="btn mt-3">Subscribe now!</button>
-                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                    </form>
-                </div>
-            </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-4">
+        <div class="subscription-info-section information-box rounded-1">
+          <i class="fa-solid fa-envelope-open fa-3x"></i>
+          <div class="store-info-text mt-5">
+            <h6 class="text-center pe-1 subscribe">SUBSCRIBE</h6>
+            <p>Enjoy only members deals and get a 10% off boucher</p>
+            <form action="{% url 'subscribe' %}" method="POST" id="subscribe-form">
+              {% csrf_token %}
+              {{ subscription_form.fname | as_crispy_field }}
+              {{ subscription_form.email | as_crispy_field }}
+              <button type="submit" class="btn mt-3">Subscribe now!</button>
+              <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            </form>
+          </div>
         </div>
+      </div>
     </div>
-</section>
+  </section>

@@ -1,95 +1,99 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/products.css' %}">
+{% endblock %}
+
 {% block content %}
 <div class="main_wraper">
-    <div class="container-fluid mt-5">
-        <div class="row">
-            <div class="badges-container d-flex mb-4 justify-content-center">
-                <h6><a class="badge mx-2" href="{% url 'products' %}?category=shoes">SHOES</a></h6>
-                <h6><a class="badge mx-2" href="{% url 'products' %}?category=boots">BOOTS</a></h6>
-                <h6><a class="badge mx-2" href="{% url 'products' %}?category=sneakers">SNEAKERS</a></h6>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-12 col-lg-3">
-                
-            </div>
-            <div class="col-12 col-md-12 col-lg-9 text-end mb-2">
-                <div class="row">
-                    <div class="col-6 text-start">
-                        <p class="products-number ms-4"><strong>{{ products|length }}</strong> Products found</p>
-                    </div>
-                    <div class="col-6">
-                        <div class="dropdown products-sort mb-2 mb-lg-0 me-5">
-                            <button class=" dropdown-toggle fw-bold" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Sort by
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">by price</a></li>
-                              <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">by rating</a></li>
-                              <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc">by category</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-12 col-lg-3">
-
-            </div>
-            <div class="col-12 col-md-12 col-lg-9">
-                <div class="row justify-content-center">
-                    {% if products %}
-                    {% for product in products %} 
-                    <div class="col-lg-4 col-md-6 col-6 product-card-box">
-                        <div class="card mb-3 border">
-                            <div class="card-img-container">
-                                <div class="card-img-box">
-                                {% if product.cover_image %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img src="{{ MEDIA_URL }}{{ product.cover_image }}" class="card-img-top img-fluid" alt="{{ product.name }}">
-                                </a>
-                                {% else %}
-                                <a href="">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }} noimage.png" alt="{{ product.name }}">
-                                </a>
-                                {% endif %}
-                                </div>
-                            </div>
-                            <div class="card-body" style="background-color: rgb(255, 247, 247);">
-                                <div class="row">
-                                    <h5 class="card-product-title">{{ product.title }}</h5>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6 col-md-6 col-lg-6 column-card">
-                                        <p class="card-product-name">{{ product.name }}</p>
-                                    </div>
-                                    <div class="col-6 col-md-6 col-lg-6 text-end column-card pe-1 pe-md-3 pe-lg-3">
-                                        <p class="card-product-price">{{ product.price }}€</p>
-                                    </div>
-                                </div>
-                                {% if user.is_authenticated %}
-                                    {% if user.is_superuser %}
-                                        <div class="row mt-2 d-flex text-center">
-                                            <div class="col-6">
-                                                <a href="{% url 'edit_product' product.id %}" class="text-decoration-none ">Edit</a>
-                                            </div>
-                                            <div class="col-6">
-                                                <a href="{% url 'delete_product' product.id %}" class="text-decoration-none text-danger">Delete</a>
-                                            </div>
-                                        </div>
-                                    {% endif %}
-                                {% endif%}
-                            </div>
-                          </div>
-                    </div>
-                    {% endfor %}
-                {% endif %}
-                </div>
-            </div>
-        </div>
+  <div class="container-fluid mt-5">
+    <div class="row">
+      <div class="badges-container d-flex mb-4 justify-content-center">
+        <h6><a class="badge mx-2" href="{% url 'products' %}?category=shoes">SHOES</a></h6>
+        <h6><a class="badge mx-2" href="{% url 'products' %}?category=boots">BOOTS</a></h6>
+        <h6><a class="badge mx-2" href="{% url 'products' %}?category=sneakers">SNEAKERS</a></h6>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-3">
+
+      </div>
+      <div class="col-12 col-md-12 col-lg-9 text-end mb-2">
+        <div class="row">
+          <div class="col-6 text-start">
+            <p class="products-number ms-4"><strong>{{ products|length }}</strong> Products found</p>
+          </div>
+          <div class="col-6">
+            <div class="dropdown products-sort mb-2 mb-lg-0 me-5">
+              <button class=" dropdown-toggle fw-bold" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Sort by
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">by price</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">by rating</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc">by category</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-3">
+
+      </div>
+      <div class="col-12 col-md-12 col-lg-9">
+        <div class="row justify-content-center">
+          {% if products %}
+          {% for product in products %}
+          <div class="col-lg-4 col-md-6 col-6 product-card-box">
+            <div class="card mb-3 border">
+              <div class="card-img-container">
+                <div class="card-img-box">
+                  {% if product.cover_image %}
+                  <a href="{% url 'product_detail' product.id %}">
+                    <img src="{{ MEDIA_URL }}{{ product.cover_image }}" class="card-img-top img-fluid" alt="{{ product.name }}">
+                  </a>
+                  {% else %}
+                  <a href="">
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }} noimage.png" alt="{{ product.name }}">
+                  </a>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="card-body" style="background-color: rgb(255, 247, 247);">
+                <div class="row">
+                  <h5 class="card-product-title">{{ product.title }}</h5>
+                </div>
+                <div class="row">
+                  <div class="col-6 col-md-6 col-lg-6 column-card">
+                    <p class="card-product-name">{{ product.name }}</p>
+                  </div>
+                  <div class="col-6 col-md-6 col-lg-6 text-end column-card pe-1 pe-md-3 pe-lg-3">
+                    <p class="card-product-price">{{ product.price }}€</p>
+                  </div>
+                </div>
+                {% if user.is_authenticated %}
+                {% if user.is_superuser %}
+                <div class="row mt-2 d-flex text-center">
+                  <div class="col-6">
+                    <a href="{% url 'edit_product' product.id %}" class="text-decoration-none ">Edit</a>
+                  </div>
+                  <div class="col-6">
+                    <a href="{% url 'delete_product' product.id %}" class="text-decoration-none text-danger">Delete</a>
+                  </div>
+                </div>
+                {% endif %}
+                {% endif%}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}

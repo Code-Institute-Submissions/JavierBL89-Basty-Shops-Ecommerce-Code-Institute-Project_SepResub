@@ -1,264 +1,269 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{%  block extra_css %}
-    <link rel="stylesheet" src="{% static 'css/products.css' %}">
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/products.css' %}">
 {% endblock %}
 
 {% block content %}
 <div class="product-wraper">
-    <div class="row mt-5">
-        {% if product %}
-        <div class="col-12 col-md-6 col-lg-6 text-center text-md-end text-lg-end product-detail-main-img">
-            {% if product.cover_image %}
-                <img class="" src="{{ MEDIA_URL }}{{ product.cover_image }}" alt="{{ product.title }}">
-            {% else %}
-                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.title }}">
-            {% endif %}
-            <div class="row">
-                <div class="images-list-container d-flex offset-sm-0 offset-md-3 offset-lg-3">
-                    {% if product.images_list %}
-                    {% for image in images_list %}
-                    <div class="col-2 mt-3" id="product-image-list">
-                        <img class="product-image" src="{{ MEDIA_URL }}{{ image }}" alt="{{ product.title }}-img">
+  <div class="row mt-5">
+    {% if product %}
+    <div class="col-12 col-md-6 col-lg-6 text-center text-md-end text-lg-end product-detail-main-img">
+      {% if product.cover_image %}
+      <img class="" src="{{ MEDIA_URL }}{{ product.cover_image }}" alt="{{ product.title }}">
+      {% else %}
+      <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.title }}">
+      {% endif %}
+      <div class="row">
+        <div class="images-list-container d-flex offset-sm-0 offset-md-3 offset-lg-3">
+          {% if product.images_list %}
+          {% for image in images_list %}
+          <div class="col-2 mt-3" id="product-image-list">
+            <img class="product-image" src="{{ MEDIA_URL }}{{ image }}" alt="{{ product.title }}-img">
+          </div>
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="separator d-flex justify-content-center mb-5 d-block d-md-none d-lg-none">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-6 ">
+      <div class="product-details-container">
+        <div class="row product-title">
+          <div class="col-6">
+            <h6 class="product-title">{{ product.title }}</h6>
+          </div>
+          <div class="col-6">
+            <p class="product-price">{{ product.price }}€</p>
+          </div>
+        </div>
+        <div class="row mt-sm-1 mt-lg-3 mt-md-1">
+          <div class="col-6">
+            <p class="product-name">{{ product.name}}</p>
+          </div>
+        </div>
+        <div class="row mt-sm-3 mt-md-1 mt-lg-5">
+          <div class="col-6 product-badges-box d-inline-flex">
+            <p class="product-badge upper"><a href="{% url 'products' %}">{% if product.category %}{{ product.category.friendly_name }}{% endif %}</a>/
+              <a href="{% url 'products' %}">{% if product.subcategory_id %}{{ product.subcategory_id.friendly_name }}{% endif %}</a>
+            </p>
+          </div>
+          <div class="col-6">
+            <i class="fa-regular fa-heart"></i>
+            <!-- <i class="fa-solid fa-heart fa-2xl"></i> -->
+          </div>
+          <div class="row mt-3 mt-md-1">
+            <p class="text-mute size-title text-start mt-1 mt-lg-4 mt-md-2">Sizes</p>
+            <div class="col-6">
+              <div class="sizes-container">
+                <form class="form" id="purchase-form" action="#" method="post">
+                  {% csrf_token %}
+                  {% if product.sizes %}
+                  <div class="d-flex">
+                    {% for size in size_list %}
+                    {% if size.stock == 0 %}
+                    <div class="col-5 col-md-3 mx-1">
+                      <div class="size-box text-center py-1 text-decoration-line-through" style="pointer-events: none" href="" value="{{ size.size }}"><span>{{ size.size }}</span></div>
                     </div>
-                    {% endfor %}
+                    {% else %}
+                    <div class="col-5 col-md-3 mx-1">
+                      <div class="size-box text-center py-1" name="product_size" value="{{ size.size }} {{ size.id }}"><span>{{ size.size }}</span></div>
+                      <input type="hidden" id="size_id" value="{{ size.id }}">
+                    </div>
                     {% endif %}
-                </div>
+                    {% endfor %}
+                  </div>
+                  {% endif %}
+                  <input type="hidden" id="item_id" value="{{ product.pk }}">
+                  <input type="hidden" id="quantity" value="1">
+                  <input type="hidden" id="redirect_url" name="redirect_url" value="{{ request.path }}">
+                  <div class="row">
+                    <div class="col-12 add-to-bag-button-container mt-5">
+                      <button type="submit" class="btn btn-lg">Add to bag </button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    {% if user.is_authenticated %}
+                    {% if user.is_superuser %}
+                    <div class="row mt-4 text-start" id="admin-container">
+                      <div class="col-12 col-md-6">
+                        <a href="{% url 'edit_product' product.id %}" class="fw-bold">Edit</a>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <a href="{% url 'delete_product' product.id %}" class="fw-bold text-danger">Delete</a>
+                      </div>
+                    </div>
+                    {% endif %}
+                    {% endif%}
+                  </div>
+                </form>
+              </div>
             </div>
+          </div>
         </div>
-        <div class="separator d-flex justify-content-center mb-5 d-block d-md-none d-lg-none">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-6 ">
-            <div class="product-details-container">
-                <div class="row product-title">
-                    <div class="col-6"><h6 class="product-title">{{ product.title }}</h6></div>
-                    <div class="col-6"><p class="product-price">{{ product.price }}€</p></div>
-                </div>
-                <div class="row mt-sm-1 mt-lg-3 mt-md-1">
-                    <div class="col-6"><p class="product-name">{{ product.name}}</p></div>
-                </div>
-                <div class="row mt-sm-3 mt-md-1 mt-lg-5">
-                    <div class="col-6 product-badges-box d-inline-flex">
-                        <p class="product-badge upper"><a href="{% url 'products' %}">{% if product.category %}{{ product.category.friendly_name }}{% endif %}</a>/
-                            <a href="{% url 'products' %}">{% if product.subcategory_id %}{{ product.subcategory_id.friendly_name }}{% endif %}</a></p>                 
-                    </div>
-                    <div class="col-6">
-                            <i class="fa-regular fa-heart"></i>
-                            <!-- <i class="fa-solid fa-heart fa-2xl"></i> -->
-                    </div>
-                <div class="row mt-3 mt-md-1">
-                        <p class="text-mute size-title text-start mt-1 mt-lg-4 mt-md-2">Sizes</p>
-                    <div class="col-6">
-                        <div class="sizes-container">
-                            <form class="form" id="purchase-form" action="#" method="post">
-                                {% csrf_token %}
-                                    {% if product.sizes %}
-                                    <ul class="list list-unstyled d-flex">
-                                    {% for size in size_list %}
-                                    {% if size.stock == 0 %}
-                                    <div class="col-3 mx-1">
-                                        <li class="size-box text-center py-1 text-decoration-line-through" style="pointer-events: none" href="" value="{{ size.size }}">{{ size.size }}</li>                                        
-                                    </div>
-                                    {% else %}
-                                    <div class="col-3 mx-1">
-                                        <li class="size-box text-center py-1"  name="product_size" value="{{ size.size }} {{ size.id }}">{{ size.size }}</li>
-                                        <input type="hidden" id="size_id" value="{{ size.id }}">
-                                    </div>
-                                    {% endif %}
-                                    {% endfor %}
-                                    </ul>
-                                    {% endif %}
-                                    <input type="hidden" id="item_id" value="{{ product.pk }}">
-                                    <input type="hidden" id="quantity" value="1">
-                                    <input type="hidden" id="redirect_url" name="redirect_url" value="{{ request.path }}">
-                                    <div class="row">
-                                            <div class="col-12 add-to-bag-button-container mt-3">
-                                                <button type="submit" class="btn btn-lg">Add to bag </button>
-                                            </div>                                        
-                                    </div>
-                                    <div class="row">
-                                        {% if user.is_authenticated %}
-                                            {% if user.is_superuser %}
-                                                <div class="row mt-4 text-start" id="admin-container">
-                                                    <div class="col-12 col-md-6">
-                                                        <a href="{% url 'edit_product' product.id %}" class="fw-bold">Edit</a>
-                                                    </div>
-                                                    <div class="col-12 col-md-6">
-                                                        <a href="{% url 'delete_product' product.id %}" class="fw-bold text-danger">Delete</a>
-                                                    </div>
-                                                </div>
-                                            {% endif %}
-                                        {% endif%}
-                                    </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>   
-                </div>
-            </div>   
-        </div>  
+      </div>
     </div>
-    <div class="row ps-0 pe-0 ps-md-5 pe-md-5" id="product-info-container">
-        <div class="product-info-container mt-5 d-flex-column px-5 d-lg-flex">
-            <div class="col-12 col-md-12 col-lg-4 text-start ms-1">
-                <div class="product-description-box px-2 py-2">
-                    <h6 class="text-start text-b fs-6">Description</h6>
-                    <p class="mt-4">{{ product.description }}</p>
-                </div>
-            </div>
-            <div class="col-12 col-md-12 col-lg-4 ms-1">
-                <div class="product-details-box text-start px-2 py-2">
-                    <div class="row">
-                        <h6 class="text-bold fs-6 ms-0 ms-md-3 ms-md-3">Details</h6>
-                        <div class="col-6 mt-3">
-                            <ul class="list">
-                                {% for detailKey in details_key %}
-                                <li class="list"> {{ detailKey }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        <div class="col-6 mt-3 puta">
-                            {% for detailValue in details_value %}
-                            <p class="my-0 mx-0"> {{ detailValue }}</p>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 col-lg-4 ms-1 ps-0 ps-md-2 py-4 info-box-parent">
-                <div class="info-box mt-4">
-                    <p class="info-text"><i class="fa-solid fa-truck"></i>  ENJOY FREE DELIVERY WITH ORDERS OVER €60</p>
-                    <p class="info-text"><i class="fa-solid fa-arrow-right-arrow-left"></i>  40 DAYS POLICY RETURNS</p>
-                    <p class="info-text"><i class="fa-solid fa-file-invoice-dollar"></i>  EASY CHECKOUT WITH DIFERENT PAYMENT OPTIONS</p>
-                </div>
-            </div>
+  </div>
+  <div class="row ps-0 pe-0 ps-md-5 pe-md-5" id="product-info-container">
+    <div class="product-info-container mt-5 d-flex-column px-5 d-lg-flex">
+      <div class="col-12 col-md-12 col-lg-4 text-start ms-1">
+        <div class="product-description-box px-2 py-2">
+          <h6 class="text-start text-b fs-6">Description</h6>
+          <p class="mt-4">{{ product.description }}</p>
         </div>
+      </div>
+      <div class="col-12 col-md-12 col-lg-4 ms-1">
+        <div class="product-details-box text-start px-2 py-2">
+          <div class="row">
+            <h6 class="text-bold fs-6 ms-0 ms-md-3 ms-md-3">Details</h6>
+            <div class="col-6 mt-3">
+              <ul class="list">
+                {% for detailKey in details_key %}
+                <li class="list"> {{ detailKey }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="col-6 mt-3 puta">
+              {% for detailValue in details_value %}
+              <p class="my-0 mx-0"> {{ detailValue }}</p>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 col-lg-4 ms-1 ps-0 ps-md-2 py-4 info-box-parent">
+        <div class="info-box mt-4">
+          <p class="info-text"><i class="fa-solid fa-truck"></i> ENJOY FREE DELIVERY WITH ORDERS OVER €60</p>
+          <p class="info-text"><i class="fa-solid fa-arrow-right-arrow-left"></i> 40 DAYS POLICY RETURNS</p>
+          <p class="info-text"><i class="fa-solid fa-file-invoice-dollar"></i> EASY CHECKOUT WITH DIFERENT PAYMENT OPTIONS</p>
+        </div>
+      </div>
     </div>
-    {% endif %}
+  </div>
+  {% endif %}
 </div>
 
 <!---------------------------- DEALS SECTION ----------->
 <section id="deals">
-    <div class="container-fluid deals-container">
-        <div class="row">
-            <h6 class="text-center text-muted">Related product deals</h6>
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-                <div class="carousel-indicators mt-4">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active indicator " aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="indicator" aria-label="Slide 2"></button>
-                  </div>
-              <div class="carousel-inner ">
-                    <div class="carousel-item active mt-5">
-                        <div class="cards-wraper d-flex justify-content-center">
-                            <div class="product-card mx-1">
-                                <div class="card-img-box">
-                                    <a href="https://bastyshops.herokuapp.com/products/3"><img src="{{ MEDIA_URL }}CLAUDIA-SUEDE-ANKLE-BOOTS-ALL-BLACK_EF4-090_1_ijmyf8k.jpg" class="card-img-top" alt="SUEDE-ANKLE-BOOTS"></a>
-                                </div>
-                                <div class="product_card-body mt-2 mx-1 text-start">
-                                  <p class="product-card-description  mb-0 pt-0"><strong>Suede Ankle Boots</strong></p>
-                                  <p class="product-card-price mt-0">35'90€</p>
-                                </div>
-                            </div>
-                            <div class="product-card mx-1">
-                                    <div class="card-img-box">
-                                        <a href="https://bastyshops.herokuapp.com/products/2"><img src="{{ MEDIA_URL }}PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894_1.jpg" class="card-img-top" alt="LEATHER-ANKLE-BOOTS"></a>
-                                    </div>
-                                    <div class="product_card-body mt-2 mx-1 text-start">
-                                        <p class="product-card-description mb-0 pt-0"><strong>Leather Ankle Boots</strong></p>
-                                        <p class="product-card-price mt-0">53.99€</p>
-                                      </div>
-                            </div>
-                            <div class="product-card mx-1">
-                                    <div class="card-img-box">
-                                        <a href="https://bastyshops.herokuapp.com/products/6"><img src="{{ MEDIA_URL }}TREND-0089501020017509_Model.jpg" class="card-img-top" alt="Knee High Boots"></a>
-                                    </div>
-                                    <div class="product_card-body mt-2 mx-1 text-start">
-                                        <p class="product-card-description mb-0 pt-0"><strong>Knee High Boots</strong></p>
-                                        <p class="product-card-price mt-0 ">42'99€</p>
-                                      </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="carousel-item mt-5">
-                        <div class="cards-wraper d-flex justify-content-center">
-                            <div class="product-card mx-1">
-                          <div class="card-img-box">
-                              <!-- <img src="" class="card-img-top" alt=""> -->
-                          </div>
-                          <div class="product_card-body mt-2 mx-1 text-start">
-                            <p class="product-card-description mb-0 pt-0"><strong>Low heel shoes</strong></p>
-                            <p class="product-card-price mt-0">30'90</p>
-                          </div>
-                            </div> 
-                            <div class="product-card mx-1">
-                              <div class="card-img-box">
-                                  <!-- <img src="..." class="card-img-top" alt="..."> -->
-                              </div>
-                              <div class="product_card-body mt-2 mx-1 text-start">
-                                <p class="product-card-description mb-0 pt-0"><strong>Low heel shoes</strong></p>
-                                <p class="product-card-price mt-0">30'90</p>
-                              </div>
-                            </div>
-                            <div class="product-card mx-1">
-                            <div class="card-img-box">
-                                <!-- <img src="..." class="card-img-top" alt="..."> -->
-                            </div>
-                            <div class="product_card-body mt-2 mx-1 text-start">
-                                <p class="product-card-description mb-0 pt-0"><strong>Low heel shoes</strong></p>
-                                <p class="product-card-price mt-0">30'90</p>
-                              </div>
-                            </div>
-                        </div>
-                    </div>                         
-              </div>
-              <button class="carousel-control-prev d-none d-lg-block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="indicator" aria-hidden="true"><</span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next d-none d-lg-block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="indicator" aria-hidden="true">></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
+  <div class="container-fluid deals-container">
+    <div class="row">
+      <h6 class="text-center text-muted">Related product deals</h6>
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators mt-4">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active indicator " aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="indicator" aria-label="Slide 2"></button>
         </div>
+        <div class="carousel-inner ">
+          <div class="carousel-item active mt-5">
+            <div class="cards-wraper d-flex justify-content-center">
+              <div class="product-card mx-1">
+                <div class="card-img-box">
+                  <a href="https://bastyshops.herokuapp.com/products/3"><img src="{{ MEDIA_URL }}CLAUDIA-SUEDE-ANKLE-BOOTS-ALL-BLACK_EF4-090_1_ijmyf8k.jpg" class="card-img-top" alt="SUEDE-ANKLE-BOOTS"></a>
+                </div>
+                <div class="product_card-body mt-2 mx-1 text-start">
+                  <p class="product-card-description  mb-0 pt-0"><strong>Suede Ankle Boots</strong></p>
+                  <p class="product-card-price mt-0">35'90€</p>
+                </div>
+              </div>
+              <div class="product-card mx-1">
+                <div class="card-img-box">
+                  <a href="https://bastyshops.herokuapp.com/products/2"><img src="{{ MEDIA_URL }}PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894_1.jpg" class="card-img-top" alt="LEATHER-ANKLE-BOOTS"></a>
+                </div>
+                <div class="product_card-body mt-2 mx-1 text-start">
+                  <p class="product-card-description mb-0 pt-0"><strong>Leather Ankle Boots</strong></p>
+                  <p class="product-card-price mt-0">53.99€</p>
+                </div>
+              </div>
+              <div class="product-card mx-1">
+                <div class="card-img-box">
+                  <a href="https://bastyshops.herokuapp.com/products/6"><img src="{{ MEDIA_URL }}TREND-0089501020017509_Model.jpg" class="card-img-top" alt="Knee High Boots"></a>
+                </div>
+                <div class="product_card-body mt-2 mx-1 text-start">
+                  <p class="product-card-description mb-0 pt-0"><strong>Knee High Boots</strong></p>
+                  <p class="product-card-price mt-0 ">42'99€</p>
+                </div>
+              </div>
 
+            </div>
+          </div>
+          <div class="carousel-item mt-5">
+            <div class="cards-wraper d-flex justify-content-center">
+              <div class="product-card mx-1">
+                <div class="card-img-box">
+                  <!-- <img src="" class="card-img-top" alt=""> -->
+                </div>
+                <div class="product_card-body mt-2 mx-1 text-start">
+                  <p class="product-card-description mb-0 pt-0"><strong>Low heel shoes</strong></p>
+                  <p class="product-card-price mt-0">30'90</p>
+                </div>
+              </div>
+              <div class="product-card mx-1">
+                <div class="card-img-box">
+                  <!-- <img src="..." class="card-img-top" alt="..."> -->
+                </div>
+                <div class="product_card-body mt-2 mx-1 text-start">
+                  <p class="product-card-description mb-0 pt-0"><strong>Low heel shoes</strong></p>
+                  <p class="product-card-price mt-0">30'90</p>
+                </div>
+              </div>
+              <div class="product-card mx-1">
+                <div class="card-img-box">
+                  <!-- <img src="..." class="card-img-top" alt="..."> -->
+                </div>
+                <div class="product_card-body mt-2 mx-1 text-start">
+                  <p class="product-card-description mb-0 pt-0"><strong>Low heel shoes</strong></p>
+                  <p class="product-card-price mt-0">30'90</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev d-none d-lg-block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="indicator" aria-hidden="true">
+            << /span>
+              <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next d-none d-lg-block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="indicator" aria-hidden="true">></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
+
+  </div>
 </section>
 
 <!---------------------------- SUBSCRIPTION SECTION ----------->
 <section id="subscription-products-page">
-    <div class="container mt-5 mb-5">
-        <div class="row">
-            <div class="subscription-container text-center">
-                <h5 class=" fw-bold">Sign Up to our newsletter!</h5>
-                <p class="fw-bold">Get unresistable deals</p>
-                {% if product %}
-                <form action="{% url 'subscribe' product.pk %}" method="POST" id="subscribe-form">
-                    {% csrf_token %} 
-                    {{ subscription_form.fname | as_crispy_field }}
-                    {{ subscription_form.email | as_crispy_field }}
-                    <button type="submit" class="btn btn-small fw-bold">Subscribe!</button>
-                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                </form>
-                {% endif %}
-            </div>
-            
-        </div>
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="subscription-container text-center">
+        <h5 class=" fw-bold">Sign Up to our newsletter!</h5>
+        <p class="fw-bold">Get unresistable deals</p>
+        {% if product %}
+        <form action="{% url 'subscribe' product.pk %}" method="POST" id="subscribe-form">
+          {% csrf_token %}
+          {{ subscription_form.fname | as_crispy_field }}
+          {{ subscription_form.email | as_crispy_field }}
+          <button type="submit" class="btn btn-small fw-bold">Subscribe!</button>
+          <input type="hidden" name="redirect_url" value="{{ request.path }}">
+        </form>
+        {% endif %}
+      </div>
+
     </div>
+  </div>
 </section>
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    <script src="{% static 'js/productDetailImage.js' %}"></script>
-    <script src="{% static 'js/product_purchase.js' %}"></script>
+{{ block.super }}
+<script src="{% static 'js/productDetailImage.js' %}"></script>
+<script src="{% static 'js/product_purchase.js' %}"></script>
 {% endblock %}
-
-
-

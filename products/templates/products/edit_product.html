@@ -7,91 +7,90 @@
 
 {% block content %}
 <div class="main_wraper">
-    <div class="container-fluid mt-5 mb-5 product-mngt-container" id="product-mngt-container">
-        <div class="row">
-            <div class="div">
-                <h1>Management</h1>
-                <h6 class="text-muted">Edit product</h6>
-            </div>
-            <div class="row">
-                <form class="form" action="{% url 'edit_product' product.id %}" method="POST" id="product-form" enctype="multipart/form-data">
-                    <div class="row product-detail-container">
-                        <div class="col-12 col-md-6">
-                            {% csrf_token %}
-                            {{ product_form.category | as_crispy_field }}
-                            {{ product_form.subcategory_id | as_crispy_field }}
-                            {{ product_form.name | as_crispy_field }}
-                            {{ product_form.title | as_crispy_field }}
-                        </div>
-                        <div class="col-12 col-md-6">
-                            {{ product_form.price | as_crispy_field }}
-                            {{ product_form.cover_image | as_crispy_field }}
-                            {{ product_form.description | as_crispy_field }}
-                        </div>
-                    </div>
-            </div>
-        </div>
-        <div class="row d-flex mt-2 mt-md-5">
-            <div class="col-12 col-md-8 col-lg-6">
-                <div class="product-detail-container">
-                    <div class="row">
-                        <h6>Product Details</h6>
-                            <div class="col-6">
-                                {{ product_detail_form.heels_mesurement | as_crispy_field }}
-                                {{ product_detail_form.upper_material | as_crispy_field }}
-                                {{ product_detail_form.sole | as_crispy_field }}
-                            </div>
-                            <div class="col-6">
-                                {{ product_detail_form.technology | as_crispy_field }}
-                                {{ product_detail_form.lining_material | as_crispy_field }}
-                                {{ product_detail_form.fastening | as_crispy_field }}
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row d-flex mt-2 mt-md-5">
+  <div class="container-fluid mt-5 mb-5 product-mngt-container" id="product-mngt-container">
+    <form class="form" action="{% url 'edit_product' product.id %}" method="POST" id="product-form" enctype="multipart/form-data">
+
+    <div class="row">
+      <div class="div">
+        <h1>Management</h1>
+        <h6 class="text-muted">Edit product</h6>
+      </div>
+      <div class="row">
+          <div class="row product-detail-container">
             <div class="col-12 col-md-6">
-                <div class="product-size-container">
-                    <div class="row stock-container">
-                        <h6>Product Sizes</h6>
-                        {% for size in product_sizes %}
-                        <div class="size-stock-box mb-2">
-                            <div class="col-8 d-flex" name="size_stock">
-                                <p class="mt-1" name="" value="{{ size.size }}" id="id_technology">{{ size.size }}: </p>
-                                <input type="number" name="stock_size_{{ size.size }}" value="{{ size.stock }}" maxlength="254" class="textinput textInput form-control ms-3 w-50" id="id_technology">
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
+              {% csrf_token %}
+              {{ product_form.category | as_crispy_field }}
+              {{ product_form.subcategory_id | as_crispy_field }}
+              {{ product_form.name | as_crispy_field }}
+              {{ product_form.title | as_crispy_field }}
             </div>
-            <div class="col-12 col-md-6 mt-4 mt-md-0">
-                <div class="product-image-container ">
-                    <h6>Product images</h6>
-                    <div class="row">
-                        <div class="col-10 images-col">
-                            {{ image_form.image1 | as_crispy_field }}
-                            {{ image_form.image2 | as_crispy_field }}
-                            {{ image_form.image3 | as_crispy_field }}
-                            {{ image_form.image4 | as_crispy_field }}
-                        </div>
-                    </div>
-                </div>
-                <div class="buttons-container d-flex mt-3 mt-md-5 mb-2">
-                    <a type="submit" class="me-3 fw-bold">Cancel</a>
-                    <button type="submit" class="fw-bold" id="submit-form">Edit product</button>
-                </div>
-            </form>
+            <div class="col-12 col-md-6">
+              {{ product_form.price | as_crispy_field }}
+              {{ product_form.cover_image | as_crispy_field }}
+              {{ product_form.description | as_crispy_field }}
             </div>
-        </div>       
-   
+          </div>
+      </div>
     </div>
+    <div class="row d-flex mt-2 mt-md-5">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="product-detail-container">
+          <div class="row">
+            <h6>Product Details</h6>
+            <div class="col-6">
+              {{ product_detail_form.heels_mesurement | as_crispy_field }}
+              {{ product_detail_form.upper_material | as_crispy_field }}
+              {{ product_detail_form.sole | as_crispy_field }}
+            </div>
+            <div class="col-6">
+              {{ product_detail_form.technology | as_crispy_field }}
+              {{ product_detail_form.lining_material | as_crispy_field }}
+              {{ product_detail_form.fastening | as_crispy_field }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex mt-2 mt-md-5">
+      <div class="col-12 col-md-6">
+        <div class="product-size-container">
+          <div class="row stock-container">
+            <h6>Product Sizes</h6>
+            {% for size in product_sizes %}
+            <div class="size-stock-box mb-2">
+              <div class="col-8 d-flex" id="size_stock">
+                <p class="mt-1" name="size" value="{{ size.size }}" id="id_technology">{{ size.size }}: </p>
+                <input type="number" name="stock_size_{{ size.size }}" value="{{ size.stock }}" class="textinput textInput form-control ms-3 w-50" id="id_technology">
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 mt-4 mt-md-0">
+        <div class="product-image-container ">
+          <h6>Product images</h6>
+          <div class="row">
+            <div class="col-10 images-col">
+              {{ image_form.image1 | as_crispy_field }}
+              {{ image_form.image2 | as_crispy_field }}
+              {{ image_form.image3 | as_crispy_field }}
+              {{ image_form.image4 | as_crispy_field }}
+            </div>
+          </div>
+        </div>
+        <div class="buttons-container d-flex mt-3 mt-md-5 mb-2">
+          <a href="{% url 'products' %}" class="me-3 fw-bold">Cancel</a>
+          <button type="submit" class="fw-bold" id="submit-form">Edit product</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  </div>
 </div>
 {% endblock %}
 
 {% block postloadjs %}
- {{ block.super }}
+{{ block.super }}
 
 {% endblock %}
-

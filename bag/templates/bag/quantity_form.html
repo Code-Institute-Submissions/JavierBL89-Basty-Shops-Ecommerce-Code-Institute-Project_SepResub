@@ -1,40 +1,33 @@
-<form class="form update-form"  method="POST" action="#">
+<form class="form update-form" method="POST" action="#">
     {% csrf_token %}
     <div class="form-group">
-        <div class="input-group">
-            <div class="input-group-prepend">
-                <button class="decrement-qty update-link btn btn-sm btn-black rounded-0"
-                    data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
-                    <span>
-                        <i class="fas fa-minus"></i>
-                    </span>
-                </button>
-            </div>
-            <input class="form-control qty_input quantity" type="number"
-                name="quantity" value="{{ item.quantity }}" min="1" max="3"
-                data-item_id="{{ item.item_id }}"
-                id="id_qty_{{ item.item_id }}">
-            <div class="input-group-append">
-                <button class="increment-qty update-link btn btn-sm btn-black rounded-0"
-                    data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
-                    <span >
-                        <i class="fas fa-plus"></i>
-                    </span>
-                </button>
-            </div>
-            {% if item.product.sizes %}
-            <input type="hidden" id="product_size" name="product_size" value="{{ item.size }}">
-            {% endif %}
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <button class="decrement-qty update-link btn btn-sm btn-black rounded-0" data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+            <span>
+              <i class="fas fa-minus"></i>
+            </span>
+          </button>
         </div>
+        <input class="form-control qty_input quantity" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="3" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+        <div class="input-group-append">
+          <button class="increment-qty update-link btn btn-sm btn-black rounded-0" data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+            <span>
+              <i class="fas fa-plus"></i>
+            </span>
+          </button>
+        </div>
+        {% if item.product.sizes %}
+        <input type="hidden" id="product_size" name="product_size" value="{{ item.size }}">
+        {% endif %}
+      </div>
     </div>
-</form>
-<a class="remove-item text-danger float-right" style="cursor: pointer;" id="remove_{{ item.item_id }}"
-data-product_size="{{ item.size }}"><small>Remove</small></a>
-
-
-{% block postloadjs %}
-
-{% include 'bag/includes/quantity_input_script.html' %}
-
-{% endblock %} 
-
+  </form>
+  <a class="remove-item text-danger float-right" style="cursor: pointer;" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
+  
+  
+  {% block postloadjs %}
+  
+  {% include 'bag/includes/quantity_input_script.html' %}
+  
+  {% endblock %}
