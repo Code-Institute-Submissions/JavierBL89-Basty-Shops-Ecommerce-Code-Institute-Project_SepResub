@@ -2,33 +2,30 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
 {% endblock %}
 
 {% block content %}
 
 <div class="update-details-container mt-4 mb-5">
-    <div class="row d-flex">
-        <h1 class="mb-4 mt-3">Update details</h1>
-         
-           {% if update_form %}
-           <div class="col-12 col-md-6">
-            <form class="update-form" method="POST" action="{% url 'update_details' %}" id="profile-update-form">
-            {% csrf_token %}
-                {{ update_form.name | as_crispy_field }}
-                {{ update_form.surname | as_crispy_field }}
-           </div>
-           <div class="col-12 col-md-6">
-                {{ update_form.username | as_crispy_field }}
-                {{ update_form.email | as_crispy_field }}
-           </div>
-            <button type="submit" class="text-uppercase mt-4 pb-2">Update</button>
-        </form>
+  <div class="row d-flex">
+    <h1 class="mb-4 mt-3">Update details</h1>
 
-        </div>
-        {% endif %}
-    </div>
+    {% if update_form %}
+    <form class="update-form" method="POST" action="{% url 'update_details' %}" id="profile-update-form">
+      <div class="col-12 col-md-6">
+        {% csrf_token %}
+        {{ update_form.name | as_crispy_field }}
+        {{ update_form.surname | as_crispy_field }}
+      </div>
+      <div class="col-12 col-md-6">
+        {{ update_form.username | as_crispy_field }}
+        {{ update_form.email | as_crispy_field }}
+      </div>
+      <button type="submit" class="text-uppercase mt-4 pb-2">Update</button>
+    </form>
+  {% endif %}
+</div>
 </div>
 
 {% endblock %}
-

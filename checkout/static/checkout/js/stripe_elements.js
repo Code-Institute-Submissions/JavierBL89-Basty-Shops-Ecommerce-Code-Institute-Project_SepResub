@@ -1,3 +1,5 @@
+//jshint esversion:6
+
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
 var stripe = Stripe(stripePublicKey);
@@ -47,7 +49,7 @@ form.addEventListener('submit', function(ev) {
     ev.preventDefault();
     // Desable card element and submit button to prevent multiple submissions
     card.update({'disable': true});
-    $('#submit-button').attr('disabled', true)
+    $('#submit-button').attr('disabled', true);
     $('#payment-form').fadeToggle(100);
     $('#loading-overlay').fadeToggle(100);
 
@@ -106,7 +108,7 @@ form.addEventListener('submit', function(ev) {
                  $('#loading-overlay').fadeToggle(100);
                  // re-enable card element and submit button if error to allow users to fix it
                  card.update({'disable': false});
-                 $('#submit-button').attr('disabled', false)
+                 $('#submit-button').attr('disabled', false);
              } else {
                  if (result.paymentIntent.status === 'succeeded') {
                      form.submit();
@@ -116,6 +118,6 @@ form.addEventListener('submit', function(ev) {
 
     }).fail(function(){
       // just reload the page, teh error will be in django messages
-      location.reload()
-    })
+      location.reload();
+    });
 });

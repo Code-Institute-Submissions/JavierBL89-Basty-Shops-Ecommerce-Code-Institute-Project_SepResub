@@ -1,3 +1,5 @@
+//jshint esversion:6
+
 const form = $('#contact-form');
 
 form.on('submit', function(ev) {
@@ -37,7 +39,7 @@ function sendEmail(){
             setTimeout(function(){
                 puta.innerHTML = successMessage;
 
-            },0.700)
+            },0.700);
         },
         function(error) {
             console.log("FAILED", error);

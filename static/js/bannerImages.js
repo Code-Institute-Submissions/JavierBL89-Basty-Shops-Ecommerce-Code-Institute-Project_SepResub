@@ -1,9 +1,12 @@
+//jshint esversion:6
+
+
 document.addEventListener("DOMContentLoaded", function(){
 
     window.omload = function(){
         bannerLoop();
-    }
-})
+    };
+});
 
 let bannerStatus = 1;
 let bannerTimer = 4000;
@@ -23,7 +26,7 @@ function bannerLoop(){
         }, 500);
         setTimeout(function(){
             $('.hero-ban2').style.opacity = "1";
-            bannerStatus = 1
+            bannerStatus = 1;
         }, 1000);
 
     }else if (bannerStatus === 2){

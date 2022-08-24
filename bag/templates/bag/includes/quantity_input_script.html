@@ -1,10 +1,12 @@
 <script>
 
-    // Update item quantity
-    function updateQuantity(){
+   //jshint esversion:6
+
+// Update item quantity
+function updateQuantity(){
             var form = $('.update-form');
             form.submit();
-    };
+    }
     
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
@@ -19,7 +21,7 @@
          .done(function() {
              location.reload();
          });
-    })
+    });
 
     // Disable +/- buttons outside 1-99 range
     function handleEnableDisable(itemId) {
@@ -28,7 +30,7 @@
         var plusDisabled = currentValue > 2;
         $(`#decrement-qty_${itemId}`).prop('disabled', minusDisabled);
         $(`#increment-qty_${itemId}`).prop('disabled', plusDisabled);
-    };
+    }
 
     // Ensure proper enabling/disabling of all inputs on page load
     var allQtyInputs = $('.qty_input');

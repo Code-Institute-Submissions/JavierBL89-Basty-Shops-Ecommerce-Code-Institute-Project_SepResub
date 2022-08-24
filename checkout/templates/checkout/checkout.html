@@ -6,6 +6,11 @@
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
+{% block extra_js %}
+<!-- Stripe -->
+<script src="https://js.stripe.com/v3/"></script>
+{% endblock %}
+
 {% block content %}
 <div class="main_wraper">
   <div class="container-fluid mt-5 mb-5 checkout-container" id="checkout-container">

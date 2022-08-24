@@ -1,155 +1,165 @@
-{% load static %}
+
 <!doctype html>
 <html lang="en">
-  <head>
-    {% block meta %}
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% endblock %}
+{% load static %}
 
-    {% block extra_meta %}
-    {% endblock %}
+<head>
 
-    <title>Basty Shops{% block extra_title%}{% endblock %}</title>
+  {% block meta %}
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Basty Shops | Shoes Store">
+  <meta name="keyword:" content="shoes boots sneakers women store">
+  {% endblock %}
 
-    {% block core_css %}
-    <!------- BOOTSTRAP ---->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <!------- STYLESHEET CSS ---->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <!------- FONTOWSOME ---->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
-    <!------- FONTOWSOME ---->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    {% endblock %}
+  {% block extra_meta %}
+  {% endblock %}
 
-    {% block extra_css%}
-    {% endblock %}
+  <title>Basty Shops{% block extra_title%}{% endblock %}</title>
+  {% block core_css %}
+  <!------- BOOTSTRAP ---->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-    {% block core_js %}
-     <!-- CDN JQUERY-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>   
-    
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
-   <!-- Stripe -->
-   <script src="https://js.stripe.com/v3/"></script>
+  <!------- STYLESHEET CSS ---->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="shortcut icon" type="image/jpg" href="">
+  <!------- FONTOWSOME ---->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!------- FONTOWSOME ---->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <!-------- FAVICONS ---------->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ MEDIA_URL}}apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ MEDIA_URL}}android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ MEDIA_URL}}android-chrome-512x512.png">
+  {% endblock %}
 
-   <!-- Google bliblioteque -->
-   <script src="https://apis.google.com/js/platform.js" async defer></script>
-    {% endblock%}
+  {% block extra_css%}
+  {% endblock %}
 
-    {% block extra_js %}
-    {% endblock %}
+  {% block core_js %}
+  <!-- CDN JQUERY-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
+
+  <!-- Google bliblioteque -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  {% endblock%}
+
+  {% block extra_js %}
+  
+  {% endblock %}
 </head>
-  <body>
-    <div class="main-wraper container-fluid pe-0 ps-0">
-        <header>
-          <div class="container-fluid sticky-top">
-            <div class="row navbar d-flex flex-row ps-3 pe-3 navbar">
-              <div class="col-2 col-md-3 d-inline-flex text-md-start mb-4 ps-0 ps-md-3 ps-lg-3">
-                <button class="burger" id="burger" href="#">
-                    <i class="fa-solid fa-bars fa-2xl sm-fa-xl"></i>
-                </button>
-                {% include 'includes/burger_menu.html' %}
-              </div>
-              <div class="col-6 col-md-5 text-start text-md-center d-sm-inline mb-4 store-name-column">
-                <a href="{% url 'home' %}" class="store-name-link"><h1>Basty shops</h1></a>
-              </div>
-              <div class="col-4 col-md-3 d-sm-inline pe-0 pe-md-3 pe-lg-3 ">
-                <ul class="list-inline list-unstyled d-flex justify-content-end mt-3">
-                  <li class="navbar-item me-lg-3 me-2 me-md-3 me-lg-3 dropdown">
-                    <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa-solid fa-user fa-xl"></i>
-                    </a>
-                    <div class="dropdown-menu border-0" id="dropdownMenuLink"aria-labelledby="user-options">
-                      {% if request.user.is_authenticated %}
-                          {% if request.user.is_superuser %}
-                              <a href="{% url 'add_product' %}" class="dropdowm-item">Management</a>
-                          {% endif %}
-                              <a href="{% url 'profile' %}" class="dropdown-item">My Account</a>
-                              <a href="{% url 'account_logout' %}" class="dropdown-item">Log out</a>
-                      {% else %}
-                              <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                              <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                      {% endif %}   
-                    </div>
-                  </li>
-                  <li class="navbar-item me-2 me-md-3 me-lg-3 ">
-                    <a class="nav-link" href="#">
-                        <i class="fa-solid fa-heart fa-xl"></i></a>
-                  </li>
-                  <li class=" text-center">
-                    <a class="nav-link {% if grand_total %} text-info fw-bold {% else %} text-black {% endif %}" href="{% url 'view_bag' %}"  aria-current="page">
-                        <i class="fa-solid fa-bag-shopping fa-xl"></i>
-                        <p class="my-0">
-                          {% if grand_total %}
-                            {{ grand_total|floatformat:2 }}
-                          {% else %}
-                          0.00
-                          {% endif %}
-                        </p>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="row search-container">
-              <div class="col-12">
-                  <!--- SEARCHER FORM---->
-                  <form method="GET" action="{% url 'products' %}" role="search">
-                    <input class="d-inline" type="text" name="q" placeholder="Search" aria-label="Search">
-                    <button class="btn search mt-1" type="submit"><i class="fa-solid fa-magnifying-glass fa-l"></i></button>
-                  </form>
-                  <!---->
-              </div>
-            </div>
-            <div class="row shipping-info mt-2" id="shipping-info">
-              <div class="col-12 col-md-6 text-center mt-2">
-                  <p><i class="fa-solid fa-truck fa-l"></i><strong> Free shipping</strong> with orders over 50€</p>
-              </div>
-              <div class="col-12 col-md-6 text-center text-lg-start mt-0 mt-md-2 pb-2 pb-md-0 pe-5 pe-md-0 ps-5 ps-md-0 wonky">
-                  <p>Order before 3pm and get it by tomorrow! (<span class="in-dublin">just in Dublin</span>)</p>
-              </div>
-          </div>
-          </div>
-        </header>
-        {% if messages %}
-        <div class="message-container" id="message-container">
-          {% for message in messages %}
-          
-            {% include 'includes/toasts/messages.html' %}
 
-        {% endfor %}
+<body>
+  <div class="main-wraper container-fluid pe-0 ps-0">
+    <header>
+      <div class="container-fluid sticky-top">
+        <div class="row navbar d-flex flex-row ps-3 pe-3 navbar">
+          <div class="col-2 col-md-3 d-inline-flex text-md-start mb-4 ps-0 ps-md-3 ps-lg-3">
+            <button class="burger" id="burger" href="#">
+              <i class="fa-solid fa-bars fa-2xl sm-fa-xl"></i>
+            </button>
+            {% include 'includes/burger_menu.html' %}
+          </div>
+          <div class="col-6 col-md-5 text-start text-md-center d-sm-inline mb-4 store-name-column">
+            <a id="store-name-home-link" href="{% url 'home' %}" class="store-name-link">
+              <h1 class="heading">Basty shops</h1>
+            </a>
+          </div>
+          <div class="col-4 col-md-3 d-sm-inline pe-0 pe-md-3 pe-lg-3 ">
+            <ul class="list-inline list-unstyled d-flex justify-content-end mt-3">
+              <li class="navbar-item me-lg-3 me-2 me-md-3 me-lg-3 dropdown">
+                <a id="profile-icon-link" class="nav-link active" aria-current="page" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-user fa-xl"></i>
+                </a>
+                <div class="dropdown-menu border-0" id="dropdownMenuLink" aria-labelledby="user-options">
+                  {% if request.user.is_authenticated %}
+                  {% if request.user.is_superuser %}
+                  <a id="management-link" href="{% url 'add_product' %}" class="dropdowm-item">Management</a>
+                  {% endif %}
+                  <a id="shoes-img-link" href="{% url 'profile' %}" class="dropdown-item">My Account</a>
+                  <a id="logout" href="{% url 'account_logout' %}" class="dropdown-item">Log out</a>
+                  {% else %}
+                  <a id="login" href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                  <a id="register" href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                  {% endif %}
+                </div>
+              </li>
+              <li class="navbar-item me-2 me-md-3 me-lg-3 ">
+                <a id="wishlist-link" class="nav-link" href="#">
+                  <i class="fa-solid fa-heart fa-xl"></i></a>
+              </li>
+              <li class=" text-center">
+                <a id="bag-link" class="nav-link {% if grand_total %} text-info fw-bold {% else %} text-black {% endif %}" href="{% url 'view_bag' %}" aria-current="page">
+                  <i class="fa-solid fa-bag-shopping fa-xl"></i>
+                  <p class="my-0">
+                    {% if grand_total %}
+                    {{ grand_total|floatformat:2 }}
+                    {% else %}
+                    0.00
+                    {% endif %}
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        {% endif %}
+        <div class="row search-container">
+          <div class="col-12">
+            <!--- SEARCHER FORM---->
+            <form method="GET" action="{% url 'products' %}" role="search">
+              <input id="search-input" class="d-inline" type="text" name="q" placeholder="Search" aria-label="Search">
+              <button class="btn search mt-1" id="search-button" type="submit"><i class="fa-solid fa-magnifying-glass fa-l"></i></button>
+            </form>
+            <!---->
+          </div>
+        </div>
+        <div class="row shipping-info mt-2" id="shipping-info">
+          <div class="col-12 col-md-6 text-center mt-2">
+            <p><i class="fa-solid fa-truck fa-l"></i><strong> Free shipping</strong> with orders over 50€</p>
+          </div>
+          <div class="col-12 col-md-6 text-center text-lg-start mt-0 mt-md-2 pb-2 pb-md-0 pe-5 pe-md-0 ps-5 ps-md-0 wonky">
+            <p>Order before 3pm and get it by tomorrow! (<span class="in-dublin">just in Dublin</span>)</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    {% if messages %}
+    <div class="message-container" id="message-container">
+      {% for message in messages %}
 
-            {% block page_header %}
-            {% endblock %}
+      {% include 'includes/toasts/messages.html' %}
 
-            {% block content %}
-            {% endblock %}
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% block page_header %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
 
     <!-------------- FOOTER ----------->
     <section id="footer">
       <div class="container-footer">
         <div class="row ">
           <div class="col-lg-3 col-md-12 container-logo column">
-              <div class="logo-footer-box text-center">
-                <a href="{% url 'home' %}"><img src="{{ MEDIA_URL }}Screenshot_20180313-160852.jpg" alt="basty-shops-logo"></a>
-              </div>
+            <div class="logo-footer-box text-center">
+              <a id="logo-footer-img" href="{% url 'home' %}"><img src="{{ MEDIA_URL }}Screenshot_20180313-160852.jpg" alt="basty-shops-logo"></a>
+            </div>
           </div>
           <div class="col-lg-3 col-md-12 col-sm-12 text-center text-lg-start footer-bg column ps-3">
-            <p class="footer-item"><a href="{% url 'faqs' %}"><strong>FAQ</strong></a></p>
-            <p class="footer-item"><a href="{% url 'terms_conditions' %}">Terms & Conditions</a></p>
+            <p class="footer-item"><a id="faqs-footer-link" href="{% url 'faqs' %}"><strong>FAQ</strong></a></p>
+            <p class="footer-item"><a id="terms&cond-footer-link" href="{% url 'terms_conditions' %}">Terms & Conditions</a></p>
           </div>
           <div class="col-lg-3 col-md-12 col-sm-12 text-center text-lg-start footer-bg column">
-            <p class="footer-item "><a href="{% url 'refounds_returns' %}">Refounds & Returns</a></p>
-            <p class="footer-item"><a href="{% url 'contact' %}">Contact Us</a></p>
+            <p class="footer-item "><a id="refounds&returns-footer-link" href="{% url 'refounds_returns' %}">Refounds & Returns</a></p>
+            <p class="footer-item"><a id="contact-footer-link" href="{% url 'contact' %}">Contact Us</a></p>
           </div>
           <div class="col-lg-3 col-md-12 col-sm-12 text-center text-lg-start footer-bg column">
             <p class="footer-item">Testimonials</p>
@@ -161,11 +171,9 @@
     {% block postloadjs %}
     <script type="text/javascript">
       $('.toast').toast('show');
-     </script>
-  <script src="{% static 'js/burgerMenu.js' %}"></script>
+    </script>
+    <script src="{% static 'js/burgerMenu.js' %}"></script>
     {% endblock %}
 
-
-    
 </body>
 </html>

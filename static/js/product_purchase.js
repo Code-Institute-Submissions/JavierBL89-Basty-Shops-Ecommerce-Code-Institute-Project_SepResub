@@ -1,3 +1,5 @@
+//jshint esversion:6
+
 // Handle product purchase form
 
 const form = $('#purchase-form');
@@ -6,7 +8,7 @@ const redirect_url = $("#redirect_url").val();
 let item_id = $("#item_id").val();
 console.log(`URL: ${redirect_url}`);
 
-for (choice of options){
+for (let choice of options){
   
     choice.addEventListener('click', function(){
         $(this).attr('id', 'active');
@@ -14,10 +16,10 @@ for (choice of options){
         $(this).css('background-color', 'rgb(122, 13, 13)');
         // Get product input value size
         let size = $('#active');
-        size = size.attr('value')
+        size = size.attr('value');
         console.log(size);
     });
-};
+}
 
 
 form.on('submit', function(ev){
@@ -30,7 +32,7 @@ form.on('submit', function(ev){
     
     let size_id_first_number = size_id.attr('value')[3];
     let size_id_second_number = size_id.attr('value')[4];
-    size_id = parseInt(size_id_first_number + size_id_second_number)
+    size_id = parseInt(size_id_first_number + size_id_second_number);
 
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
@@ -50,6 +52,5 @@ form.on('submit', function(ev){
             location.reload();
         }
         });
-  
 
 });

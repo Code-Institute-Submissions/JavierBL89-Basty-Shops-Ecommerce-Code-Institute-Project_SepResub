@@ -319,15 +319,73 @@ The site offers a wide range of different type of shoes in order to widen potent
 
  ### Manual Testing
 
+ - Front end testing:
+
+During the development proccess, i used Dev tools for css styling, and used "console.log()" method to check  whether if functions are triggered, also used it to check if code gets passed certain lines, or to check if the data passed into functions was the one i needed.
+
+- Back end testing:
+
+i used the "print()" method To check wheter if functions are triggered, whether if the data or data type passed was the right one. It Also was used to check data added into the bag session and bag proccessor.
+
+![](<media/Captura de pantalla (442).png>)
 
  ### Automated testing
 
 
  ### Light house
 
+ The site clearly needs some improvements in terms of accebility, performance and best practises
+
+  - Desktop Home page
+
+  ![Lighthouse desktop home page results](<media/Captura de pantalla (444).png>)
+
+  - Mobile Home page
+  
+  ![Lighthouse mobile home page results](<media/Captura de pantalla (447).png>)
+
+  - Products page desktop
+  
+  ![Lighthouse desktop products page results](<media/Captura de pantalla (449).png>)
+
+- Products page mobile
+  
+  ![Lighthouse mobile products page results](<media/Captura de pantalla (451).png>)
+
+  - Products detail page desktop
+  
+  ![Lighthouse desktop products page results](<media/Captura de pantalla (453).png>)
+
+  - Products detail page mobile
+  
+  ![Lighthouse mobile products page results](<media/Captura de pantalla (455).png>)
+
+### PEP8
+When validating i had to modify lots of long lines of code, however then when running the app, the app crushes and display errors as on the picture bellow.
+
+
+
+  - **Home page**
+
 
  ### Validators
+ 
+  - [W3C CSS validator](https://jigsaw.w3.org/css-validator/)
 
+      - No error reported
+      ![CSS Results](<media/Captura de pantalla (429).png>)
+
+  - [W3C HTML validator](https://validator.w3.org/nu/)
+      
+      - Showing lots of errors when using sintax {{ }} or {% blocks %}
+
+      ![HTML validator results](<media/Captura de pantalla (437).png>)
+      ![HTML validator results](<media/Captura de pantalla (438).png>)
+      ![HTML validator results](<media/Captura_de_pantalla_270_2To9SKI.png>)
+
+  - [JS Hint](https://jshint.com/)
+
+       - JSHint was used to validate js files, only a few semicolons was missing and some variables unused.
 
  ## Technology Used
 
