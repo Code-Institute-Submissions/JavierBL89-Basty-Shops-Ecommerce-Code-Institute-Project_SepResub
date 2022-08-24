@@ -460,9 +460,9 @@ i used the "print()" method To check wheter if functions are triggered, whether 
   * Fixed bug
     
       - Error "TypeError:'dic_values' object is not supscritable
-      This occurs when trying to access dic_values object at a specific index(slicing)
+      This occurs when trying to access dic_values object at a specific index(slicing).
       
-      I go this error when trying to acces to images list of every product
+      I go this error when trying to acces to images list of every product.
       
       * Fix: Convert the dict into a list  `list(my_dict.values())[2:]`
 
