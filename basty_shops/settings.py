@@ -33,7 +33,10 @@ DEBUG = True
 ALLOWED_HOSTS = ['bastyshops.herokuapp.com', 'localhost']
 
 # needed to be able to login(new in django 4)
-CSRF_TRUSTED_ORIGINS = ['https://8000-javierbl89-bastyshopsec-tyzrtnyig9z.ws-eu62.gitpod.io', 'https://bastyshops.herokuapp.com/']
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-javierbl89-bastyshopsec-tyzrtnyig9z.ws-eu62.gitpod.io',
+    'https://bastyshops.herokuapp.com/'
+    ]
 
 # Application definition
 
@@ -180,7 +183,8 @@ else:
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': """django.contrib.auth.password_validation.UserAttributeSimilarityValidator""",
+        'NAME': """django.contrib.auth.password_validation.\
+        UserAttributeSimilarityValidator""",
     },
 ]
 

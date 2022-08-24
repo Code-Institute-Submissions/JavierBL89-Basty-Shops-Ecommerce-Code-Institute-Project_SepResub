@@ -42,7 +42,7 @@ def all_products(request):
             if not categories:
                 messages.error(request, "No category found")
                 return redirect(reverse, ('products'))
-            category = Q(title__icontains=categories) 
+            category = Q(title__icontains=categories)
             products = products.filter(category)
 
         if 'q' in request.GET:
@@ -92,7 +92,7 @@ def product_detail(request, product_id):
         'details_key': details_key,
         'details_value': details_value,
         'subscription_form': subscription_form
-    }    
+    }
     return render(request, 'products/product_detail.html', context)
 
 
@@ -119,18 +119,24 @@ def add_product(request):
                         image_form.save()
 
                         product = Product.objects.all().last()
-                        product_details = ProductDetail.objects.filter(product_id=None).all()
-                        product_sizes = Size.objects.filter(product_id=None).all()
-                        product_images = Image.objects.filter(product_id=None).all()
+                        product_details = ProductDetail.\
+                            objects.filter(product_id=None).all()
+                        product_sizes = Size.objects.\
+                            filter(product_id=None).all()
+                        product_images = Image.\
+                            objects.filter(product_id=None).all()
 
-                        # Attach the product id to all the product colections sizes
+                        # Attach the product id
+                        # to all the product colections sizes
                         product_sizes.update(product_id=product)
                         product_details.update(product_id=product)
                         product_images.update(product_id=product)
                         messages.info(request, 'Product successfuly added!')
-                        return redirect((reverse('product_detail', args=[product.id])))
+                        return redirect((reverse('product_detail',
+                                         args=[product.id])))
         else:
-            messages.error(request, 'Could not add product. Please check the form is valid.')
+            messages.error(request, 'Could not add product.\
+                           Please check the form is valid.')
 
     else:
         # this empty forms won't wipe out the form errors
@@ -173,9 +179,11 @@ def edit_product(request, product_id):
                     image_form.save()
                     handle_stock_admin(request, product_id, product_sizes)
                     messages.info(request, 'Product successfuly edited!')
-                    return redirect((reverse('product_detail', args=[product.id])))
+                    return redirect((reverse('product_detail',
+                                    args=[product.id])))
         else:
-            messages.info(request, 'Could not add product. Please check the form is valid.')
+            messages.info(request, 'Could not add product.\
+                          Please check the form is valid.')
 
     sizes = Size.objects.filter(product_id=product_id).all()
     product_details = ProductDetail.objects.filter(product_id=product_id)
@@ -224,7 +232,7 @@ def delete_product(request, product_id):
 @require_POST
 def subscribe(request, product_id):
     """
-    Create a new member to newsletter from 
+    Create a new member to newsletter from
     prodeuct detail page if not exists
     and redirect user to teh same prouctt page
     """

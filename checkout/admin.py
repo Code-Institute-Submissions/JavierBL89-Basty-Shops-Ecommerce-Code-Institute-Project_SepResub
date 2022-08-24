@@ -3,6 +3,7 @@ from .models import Order, OrderLineItem
 
 # Register your models here.
 
+
 class OrderLineItemAdminInline(admin.TabularInline):
     """
     Class to show orderlineitems fields in admin panel
@@ -27,7 +28,7 @@ class OrderAdmin(admin.ModelAdmin):
               'email', 'phone_number', 'country',
               'post_code', 'town_or_city', 'street_address_1',
               'street_address_2', 'county', 'delivery_cost',
-              'order_total', 'grand_total', 'original_bag', 
+              'order_total', 'grand_total', 'original_bag',
               'stripe_pid',)
 
     list_display = ('order_number', 'user_profile', 'date', 'full_name',

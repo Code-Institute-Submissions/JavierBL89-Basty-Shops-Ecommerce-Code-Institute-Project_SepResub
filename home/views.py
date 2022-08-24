@@ -46,8 +46,6 @@ def contact(request):
     return render(request, 'home/contact.html')
 
 
-
-
 @require_POST
 def subscribe(request):
 

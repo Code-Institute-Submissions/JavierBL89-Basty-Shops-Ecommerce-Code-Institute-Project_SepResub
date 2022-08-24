@@ -23,7 +23,8 @@ def profile(request):
             form.save()
             messages.info(request, 'Profile info successfully updated')
         else:
-            messages.info(request, 'Could not update profile. Please check the form is valid')
+            messages.info(request, 'Could not update profile.\
+                          Please check the form is valid')
     else:
         # this empty from won't wipe out the form errors
         form = UserProfileForm(instance=user_profile)
@@ -38,6 +39,7 @@ def profile(request):
     }
 
     return render(request, template, context)
+
 
 @login_required
 def order_history(request, order_number):
@@ -55,13 +57,14 @@ def order_history(request, order_number):
     }
     return render(request, template, context)
 
+
 @login_required
 def update_details(request):
 
     if request.method == 'POST':
         update_form = UpdateUserForm(request.POST, instance=request.user)
         user = get_object_or_404(User, pk=request.user.id)
-        
+
         if update_form.is_valid():
             update_form.save()
             # update user object details

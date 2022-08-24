@@ -38,7 +38,7 @@ def cache_checkout_data(request):
 
 def checkout(request):
     """
-    View that renders the checkout page 
+    View that renders the checkout page
     and handles checkout  payment proccess
     """
 
