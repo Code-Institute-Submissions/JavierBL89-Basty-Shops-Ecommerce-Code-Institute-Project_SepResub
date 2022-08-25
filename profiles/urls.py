@@ -9,4 +9,7 @@ urlpatterns = [
     path('update_details/',
          views.update_details,
          name='update_details'),
+#     path('delete_account/<int:user_id>',
+#          views.delete_account,
+#          name='delete_account'),
 ]

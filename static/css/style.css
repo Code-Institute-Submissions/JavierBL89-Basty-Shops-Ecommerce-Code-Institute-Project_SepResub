@@ -59,6 +59,7 @@ input[name="q"]{
  width: 25%;
  height: 40px;
  font-size: 0.900rem;
+ z-index: 0;
 }
 
 input[name="q"]:focus{
@@ -70,6 +71,7 @@ input[name="q"]:focus{
    right:60px;
    bottom: 3px;
    border: none;
+   z-index: 0;
 }
 
 .btn.search:hover{
@@ -323,6 +325,9 @@ text-decoration: none;
 color: #ffffff;
 }
 
+.footer-item i{
+    color: #ffffff;
+}
 .container-footer .column{
     padding-top: 1%;
     border-color: rgb(122, 13, 13);
@@ -468,7 +473,7 @@ color: #ffffff;
   
 /**************** HEADER*/
 header h1{
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 header .row {
@@ -476,8 +481,8 @@ header .row {
 }
 
 header h1 {
-    font-size: 1rem;
-    margin-top: 10px;
+    font-size: 1.2rem;
+    margin-top: 17px;
     letter-spacing: 1px;
     color: rgb(122, 13, 13);
     text-transform: uppercase;
@@ -498,6 +503,7 @@ input[name="q"]{
     width: 80%;
     padding-bottom: 5px;
     padding-left: 3px;
+    margin-left: 0;
    }
 
    input[name="q"]::placeholder{
@@ -506,8 +512,8 @@ font-size: 0.800rem;
    
    .btn.search{
       position:absolute;
-      right:25px;
-      top: 38px;
+      right:40px;
+      top: 40px;
       border: none;
    }
 
@@ -693,7 +699,6 @@ font-size: 1rem;
 
 /*********** ALL-AUTH-FORMS */
 .header-container .allauth-form-inner-content{
-    /* padding-left: 25%; */
     padding: 5% 12%;
     margin: 0 auto;
     background-color: rgb(235, 227, 233);
@@ -713,7 +718,7 @@ font-size: 1rem;
 
 .allauth-form-inner-content a{
    text-decoration: none;
-    font-size: 0.700rem;
+    font-size: 0.750rem;
 }
 
 .allauth-form-inner-content button{
@@ -728,17 +733,17 @@ font-size: 1rem;
 }
 
 .allauth-form-inner-content .password_change .form-control{
-    font-size: 0.700rem;
+    font-size: 0.750rem;
     height: 40px;
     width: 95%;
  }
 
  .allauth-form-inner-content .password_change .form-control:focus{
-    font-size: 0.700rem;
+    font-size: 0.750rem;
  }
 
  .allauth-form-inner-content .password_change .form-control::placeholder{
-    font-size: 0.700rem;
+    font-size: 0.750rem;
  }
 
  .socialaccount_providers li{
@@ -794,7 +799,7 @@ font-size: 1rem;
  .allauth-form-inner-content .form-control:focus{
     border-color: #858585;
     box-shadow: 0 0 3px #858585 !important;
-    font-size: 0.700rem;
+    font-size: 0.750rem;
  }
 
 /******* login social buttons */
@@ -830,20 +835,20 @@ font-size: 1rem;
  }
 
  #faqs-container h6{
-    font-size: 0.750rem;
+    font-size: 0.800rem;
 color: rgb(122, 13, 13);
 border-bottom: solid 1px rgb(122, 13, 13);
  }
 
  #faqs-container p{
-    font-size: 0.700rem;
+    font-size: 0.750rem;
     padding-right: 5%;
     padding-left: 1%;
  }
 
  #faqs-container a{
     color: #FF6542;
-    font-size: 0.700rem;
+    font-size: 0.750rem;
 
  }
 
@@ -855,19 +860,19 @@ border-bottom: solid 1px rgb(122, 13, 13);
      #terms-conditions-container h3{
         margin-top: 50px;
         margin-bottom: 30px;
-        font-size: 0.750rem;
+        font-size: 0.800rem;
         color: rgb(122, 13, 13);
         border-bottom: solid 1px rgb(122, 13, 13);
       }
 
       #terms-conditions-container p{
-        font-size: 0.700rem;
+        font-size: 0.750rem;
         padding-right: 5%;
         padding-left: 1%;
       }
       
       #terms-conditions-container a{
-        font-size: 0.700rem;
+        font-size: 0.750rem;
         color: #FF6542;
      }
 
@@ -888,18 +893,18 @@ border-bottom: solid 1px rgb(122, 13, 13);
     border-bottom: solid 1px rgb(122, 13, 13);
   }
   #refounds-returns-container p{
-    font-size: 0.700rem;
+    font-size: 0.750rem;
     padding-right: 5%;
     padding-left: 1%;
   }
   
   #refounds-returns-container a{
     color: #FF6542;
-    font-size: 0.700rem;
+    font-size: 0.750rem;
  }
 
  #refounds-returns-container li{
-    font-size: 0.700rem;
+    font-size: 0.500rem;
  }
 
   /*************** CONTACT PAGE */
@@ -920,12 +925,12 @@ border-bottom: solid 1px rgb(122, 13, 13);
 
 #contact-container p{
     letter-spacing: 1px;
-    font-size: 0.700rem;
+    font-size: 0.750rem;
 }
 
 #contact-container a{
    text-decoration: none;
-    font-size: 0.700rem;
+    font-size: 0.750rem;
 }
 
 #contact-container button{
@@ -939,17 +944,17 @@ border-bottom: solid 1px rgb(122, 13, 13);
 #contact-container .form-control{
    margin: 5px auto;
    width: 100%;
-   font-size: 0.700rem;
+   font-size: 0.750rem;
 }
 
 
 #contact-container .form-control:focus{
-    font-size: 0.700rem;
+    font-size: 0.750rem;
  }
 
  #contact-container .form-control::placeholder{
     letter-spacing: 1px;
-    font-size: 0.700rem;
+    font-size: 0.750rem;
  }
 
  /********** contact confirmation container */
@@ -966,9 +971,42 @@ border-bottom: solid 1px rgb(122, 13, 13);
 #contact-container .back-home{
     letter-spacing: 1px;
     color: #FF6542;
-    font-size: 0.800rem;
+    font-size: 0.850rem;
 }
 
+/************** ABOUT PAGE */
+
+#about-container{
+    padding: 5% 12%;
+    margin: 80px auto;
+    background-color: rgb(235, 227, 233);
+    border-radius: 10px;
+    width: 90%;
+    text-align: left;
+}
+
+#about-container h4{
+    font-size: 0.800rem;
+    color: rgb(122, 13, 13);
+    border-bottom: solid 1px rgb(122, 13, 13);
+    ;
+}
+#about-container h6{
+    font-size: 0.800rem;
+    color: rgb(122, 13, 13);
+}
+
+#about-container p{
+    font-size: 0.750rem;
+}
+
+#about-container a{
+    letter-spacing: 1px;
+    border: none;
+    background: none;
+    color: #FF6542;
+    font-size: 0.750rem;
+}
 }
 
   /******************************************************************** TABLET SCREEN */
@@ -1128,7 +1166,7 @@ text-align: center;
 }
 
 .information-box h6{
-font-size: 0.800rem;
+font-size: 0.850rem;
 }
 
 .information-box p{
@@ -1190,7 +1228,7 @@ font-size: 1rem;
 
 .allauth-form-inner-content a{
    text-decoration: none;
-    font-size: 0.750rem;
+    font-size: 0.800rem;
 }
 
 .allauth-form-inner-content button{
@@ -1203,13 +1241,13 @@ font-size: 1rem;
 .allauth-form-inner-content .form-control{
     width: 54%;
     height: 30px;
-    font-size: 0.700rem;
+    font-size: 0.750rem;
  }
 
  .allauth-form-inner-content .form-control:focus{
     border-color: #858585;
     box-shadow: 0 0 3px #858585 !important;
-    font-size: 0.700rem;
+    font-size: 0.750rem;
  }
 
 /******* login social buttons */
@@ -1379,6 +1417,38 @@ border-bottom: solid 1px rgb(122, 13, 13);
 
 #contact-container .back-home{
     letter-spacing: 1px;
+    color: #FF6542;
+    font-size: 1rem;
+}
+
+/************** ABOUT PAGE */
+
+#about-container{
+    padding: 5% 12%;
+    margin: 50px auto;
+    background-color: rgb(235, 227, 233);
+    border-radius: 10px;
+    width: 70%;
+    text-align: left;
+}
+
+#about-container h4{
+    color: rgb(122, 13, 13);
+    border-bottom: solid 1px rgb(122, 13, 13);
+    ;
+}
+#about-container h6{
+    color: rgb(122, 13, 13);
+}
+
+#about-container p{
+    font-size: 0.900rem;
+}
+
+#about-container a{
+    letter-spacing: 1px;
+    border: none;
+    background: none;
     color: #FF6542;
     font-size: 1rem;
 }
@@ -1663,4 +1733,34 @@ border-bottom: solid 1px rgb(122, 13, 13);
     font-size: 1rem;
 }
 
+/************** ABOUT PAGE */
+#about-container{
+    padding: 5% 12%;
+    margin: 50px auto;
+    background-color: rgb(235, 227, 233);
+    border-radius: 10px;
+    width: 70%;
+    text-align: left;
+}
+
+#about-container h4{
+    color: rgb(122, 13, 13);
+    border-bottom: solid 1px rgb(122, 13, 13);
+    ;
+}
+#about-container h6{
+    color: rgb(122, 13, 13);
+}
+
+#about-container p{
+    font-size: 0.900rem;
+}
+
+#about-container a{
+    letter-spacing: 1px;
+    border: none;
+    background: none;
+    color: #FF6542;
+    font-size: 1rem;
+}
 }

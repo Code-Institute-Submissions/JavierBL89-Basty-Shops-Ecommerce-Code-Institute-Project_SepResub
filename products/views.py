@@ -66,6 +66,7 @@ def all_products(request):
 def product_detail(request, product_id):
     """ A view to individual product details """
 
+    all_products = Product.objects.all()
     product = get_object_or_404(Product, pk=product_id)
     size_list = Size.objects.filter(product_id=product_id).all()
     images_list = Image.objects.filter(product_id=product_id).all()
@@ -87,6 +88,7 @@ def product_detail(request, product_id):
     subscription_form = SubscriptionForm()
     context = {
         'product': product,
+        'all_products': all_products,
         'size_list': size_list,
         'images_list': images_list,
         'details_key': details_key,
@@ -220,7 +222,7 @@ def delete_product(request, product_id):
     """ Delete product fro store """
 
     if not request.user.is_authenticated:
-        messages.info(request, 'Request not allowed, only stpore admin.')
+        messages.info(request, 'Request not allowed, only store admin.')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)

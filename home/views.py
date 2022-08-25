@@ -40,6 +40,12 @@ def refounds_returns(request):
     return render(request, 'home/refounds&returns.html')
 
 
+def about_us(request):
+    """ View to render about us page"""
+
+    return render(request, 'home/about.html')
+
+
 def contact(request):
     """ View to render Tersm and conditions page"""
 

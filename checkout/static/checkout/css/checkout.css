@@ -61,7 +61,7 @@ select option[value=""] {
    width: 90%;
    height: 100%;
    background-color: rgb(234, 181, 181);
-   z-index: 2;
+   z-index: 99;
 }
 
 .loading-spinner{
