@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEVELOPMENT' in os.environ
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['bastyshops.herokuapp.com', 'localhost']
 
@@ -39,7 +39,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # needed to be able to login(new in django 4)
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-javierbl89-bastyshopsec-tyzrtnyig9z.ws-eu62.gitpod.io',
+    'https://8000-javierbl89-bastyshopsec-8qezz9ngw09.ws-eu62.gitpod.io',
     'https://bastyshops.herokuapp.com/'
     ]
 

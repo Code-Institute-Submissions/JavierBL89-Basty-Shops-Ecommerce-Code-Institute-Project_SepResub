@@ -17,6 +17,8 @@
   {% endblock %}
 
   <title>Basty Shops{% block extra_title%}{% endblock %}</title>
+
+
   {% block core_css %}
   <!------- BOOTSTRAP ---->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -36,18 +38,19 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ MEDIA_URL}}android-chrome-512x512.png">
   {% endblock %}
 
-  {% block extra_css%}
-  {% endblock %}
-
   {% block core_js %}
   <!-- CDN JQUERY-->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
-
   <!-- Google bliblioteque -->
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   {% endblock%}
+
+  {% block extra_css%}
+  {% endblock %}
+
+  
 
   {% block extra_js %}
   
@@ -170,7 +173,9 @@
 
     {% block postloadjs %}
     <script type="text/javascript">
-      $('.toast').toast('show');
+      $(document).ready(function(){
+            $('.toast').toast('show');
+        })
     </script>
     <script src="{% static 'js/burgerMenu.js' %}"></script>
     {% endblock %}
