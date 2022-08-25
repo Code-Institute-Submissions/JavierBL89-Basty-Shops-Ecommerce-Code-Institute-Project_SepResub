@@ -455,6 +455,16 @@ i used the "print()" method To check wheter if functions are triggered, whether 
 
       ![Code snippet](<media/Captura de pantalla (426).png>)
 
+  * Unfixed bug
+
+      - Error pages 403, 404 adn 500 are not being rendered...i didn't have time to go through it with tuttor assistance.
+
+  * Unfixed bug
+
+    - Internal error 500 when subscribing to newsletter, didn't have time to fix this either, i realisez at last minute.
+
+
+
 
  ### Fixed bugs
 
