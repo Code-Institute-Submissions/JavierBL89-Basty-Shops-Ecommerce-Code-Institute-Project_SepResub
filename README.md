@@ -450,10 +450,11 @@ i used the "print()" method To check wheter if functions are triggered, whether 
 
  * Unfixed bug
     
-      - When adding products into shopping bag, the toast showing a success message does not show, however it does when removin items from the shopping bag.
+      - When adding products into shopping bag, the toast showing a success message does not show, however it does when removing items from the shopping bag.
       The code to me looks fine, it prints the print statements i set, also i do not get any error and the the code when running goes through the next function and everything works fine...
 
       ![Code snippet](<media/Captura de pantalla (426).png>)
+
 
  ### Fixed bugs
 
