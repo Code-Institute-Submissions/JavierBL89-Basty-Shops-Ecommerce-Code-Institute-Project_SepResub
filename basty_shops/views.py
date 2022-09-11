@@ -11,6 +11,6 @@ def handler403_view(request, exception):
     return render(request, "errors/403.html", status=403)
 
 
-def handler500_view(request, exception):
+def handler500_view(request):
     """ Error Handler 500 - Internal server error """
     return render(request, "errors/500.html", status=500)

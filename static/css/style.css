@@ -316,6 +316,7 @@ margin-top: 5px;
      }
 
 /****************** FOOTER */
+
 .container-footer .row{
     margin: 0;
 }
@@ -1011,7 +1012,7 @@ border-bottom: solid 1px rgb(122, 13, 13);
 
   /******************************************************************** TABLET SCREEN */
   @media only screen and (min-width:640px) and (max-width:950px) {
-  
+
     /**************** HEADER*/
     header h1{
         font-size: 1.7rem;
@@ -1455,9 +1456,8 @@ border-bottom: solid 1px rgb(122, 13, 13);
 
 }
   /******************************************************************** DESKTOP SCREEN */
-  @media only screen and (min-width: 1000px) {
+  @media only screen and (min-width: 1200px) {
   
-
 /************** shippin info bar */
  .shipping-info{
     width: 100vw;
@@ -1763,4 +1763,5 @@ border-bottom: solid 1px rgb(122, 13, 13);
     color: #FF6542;
     font-size: 1rem;
 }
+
 }

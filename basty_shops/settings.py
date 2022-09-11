@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', '')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['bastyshops.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['bastyshops.herokuapp.com', 'localhost', 'https://8000-javierbl89-bastyshopsec-tqfcpleo4av.ws-eu64.gitpod.io']
 
 # This variable is helpful with DJANGO 4 installed
 # Neccesary for persmissons as prevents others site from hijacking clicks

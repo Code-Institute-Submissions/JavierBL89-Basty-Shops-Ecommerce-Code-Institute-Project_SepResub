@@ -59,6 +59,7 @@ input[name="q"]{
  width: 25%;
  height: 40px;
  font-size: 0.900rem;
+ z-index: 0;
 }
 
 input[name="q"]:focus{
@@ -70,6 +71,7 @@ input[name="q"]:focus{
    right:60px;
    bottom: 3px;
    border: none;
+   z-index: 0;
 }
 
 .btn.search:hover{
@@ -972,6 +974,39 @@ border-bottom: solid 1px rgb(122, 13, 13);
     font-size: 0.850rem;
 }
 
+/************** ABOUT PAGE */
+
+#about-container{
+    padding: 5% 12%;
+    margin: 80px auto;
+    background-color: rgb(235, 227, 233);
+    border-radius: 10px;
+    width: 90%;
+    text-align: left;
+}
+
+#about-container h4{
+    font-size: 0.800rem;
+    color: rgb(122, 13, 13);
+    border-bottom: solid 1px rgb(122, 13, 13);
+    ;
+}
+#about-container h6{
+    font-size: 0.800rem;
+    color: rgb(122, 13, 13);
+}
+
+#about-container p{
+    font-size: 0.750rem;
+}
+
+#about-container a{
+    letter-spacing: 1px;
+    border: none;
+    background: none;
+    color: #FF6542;
+    font-size: 0.750rem;
+}
 }
 
   /******************************************************************** TABLET SCREEN */
@@ -1386,6 +1421,38 @@ border-bottom: solid 1px rgb(122, 13, 13);
     font-size: 1rem;
 }
 
+/************** ABOUT PAGE */
+
+#about-container{
+    padding: 5% 12%;
+    margin: 50px auto;
+    background-color: rgb(235, 227, 233);
+    border-radius: 10px;
+    width: 70%;
+    text-align: left;
+}
+
+#about-container h4{
+    color: rgb(122, 13, 13);
+    border-bottom: solid 1px rgb(122, 13, 13);
+    ;
+}
+#about-container h6{
+    color: rgb(122, 13, 13);
+}
+
+#about-container p{
+    font-size: 0.900rem;
+}
+
+#about-container a{
+    letter-spacing: 1px;
+    border: none;
+    background: none;
+    color: #FF6542;
+    font-size: 1rem;
+}
+
 }
   /******************************************************************** DESKTOP SCREEN */
   @media only screen and (min-width: 1000px) {
@@ -1667,13 +1734,34 @@ border-bottom: solid 1px rgb(122, 13, 13);
 }
 
 /************** ABOUT PAGE */
-
-.about-container{
+#about-container{
     padding: 5% 12%;
     margin: 50px auto;
     background-color: rgb(235, 227, 233);
     border-radius: 10px;
     width: 70%;
-    text-align: center;
+    text-align: left;
 }
+
+#about-container h4{
+    color: rgb(122, 13, 13);
+    border-bottom: solid 1px rgb(122, 13, 13);
+    ;
+}
+#about-container h6{
+    color: rgb(122, 13, 13);
+}
+
+#about-container p{
+    font-size: 0.900rem;
+}
+
+#about-container a{
+    letter-spacing: 1px;
+    border: none;
+    background: none;
+    color: #FF6542;
+    font-size: 1rem;
+}
+
 }
