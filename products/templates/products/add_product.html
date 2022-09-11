@@ -48,21 +48,76 @@
       </div>
     </div>
 
-    <div class="row d-flex mt-5">
+    <div class="row d-flex mt-5 mb-5">
       <div class="col-12 col-md-6">
         <div class="product-size-container">
           <div class="row stock-container">
             <h6>Product Sizes</h6>
-            <div class="size-stock-box ">
-              <div class="col-8 d-flex">
-                {{ size_form.size | as_crispy_field }}
-                {{ size_form.stock | as_crispy_field }}
+            <div class="col size-stock-box">
+              <div class="row d-flex">
+                <div class="col-2">
+                  <p>Size</p>
+                </div>
+                <div id="div_id_stock" class="col-4 form-group">  
+                    <p>Stock*</p>
+                </div>
               </div>
+              <div class="row d-flex">
+                <div class="col-2"> 
+                      <p>36</p>
+                </div>
+                <div id="div_id_stock" class="col-4 form-group">  
+                  <div>
+                    <input type="number" name="stock_size_36" min="0" default="0" class="numberinput form-control" required="" id="id_stock">
+                  </div>
+                </div>
+              </div>
+              <div class="row d-flex">
+                  <div class="col-2"> 
+                        <p>37</p>
+                  </div>
+                  <div id="div_id_stock" class="col-4 form-group">  
+                    <div>
+                      <input type="number" name="stock_size_37" min="0" default="0" class="numberinput form-control" required="" id="id_stock">
+                    </div>
+                  </div>
+                </div>
+              <div class="row d-flex">
+                    <div class="col-2"> 
+                          <p>38</p>
+                    </div>
+                    <div id="div_id_stock" class="col-4 form-group">  
+                      <div>
+                        <input type="number" name="stock_size_38" min="0" default="0" class="numberinput form-control" required="" id="id_stock">
+                      </div>
+                    </div>
+                </div>
+              <div class="row d-flex">
+                      <div class="col-2"> 
+                            <p>39</p>
+                      </div>
+                      <div id="div_id_stock" class="col-4 form-group">  
+
+                        <div>
+                          <input type="number" name="stock_size_39" min="0" default="0" class="numberinput form-control" required="" id="id_stock">
+                        </div>
+                      </div>
+                </div>
+              <div class="row d-flex">
+                        <div class="col-2"> 
+                              <p>40</p>
+                        </div>
+                        <div id="div_id_stock" class="col-4 form-group">  
+                          <div>
+                            <input type="number" name="stock_size_40" min="0" default=0 class="numberinput form-control" required="" id="id_stock">
+                          </div>
+                        </div>
+                </div>
+            </div>
             </div>
           </div>
         </div>
-        <button class="btn mt-4" type="button" id="add_size">add size</button>
-      </div>
+
       <div class="col-12 col-md-6 mt-4 mt-md-0">
         <div class="product-image-container ">
           <h6>Product images</h6>
@@ -81,6 +136,7 @@
         </div>
       </div>
     </div>
+
    </form>
   </div>
 </div>

@@ -109,33 +109,45 @@ def add_product(request):
     if request.method == 'POST':
         product_form = ProductForm(request.POST, request.FILES)
         product_detail_form = ProductDetailForm(request.POST)
-        size_form = SizeForm(request.POST)
         image_form = ImageForm(request.POST, request.FILES)
+
+        if 'stock_size_36' in request.POST:
+            size_object = Size(size="36", stock=request.POST['stock_size_36'])
+            size_object.save()
+        if 'stock_size_37' in request.POST:
+            size_object = Size(size="37", stock=request.POST['stock_size_37'])
+            size_object.save()
+        if 'stock_size_38' in request.POST:
+            size_object = Size(size="38", stock=request.POST['stock_size_38'])
+            size_object.save()
+        if 'stock_size_39' in request.POST:
+            size_object = Size(size="39", stock=request.POST['stock_size_39'])
+            size_object.save()
+        if 'stock_size_40' in request.POST:
+            size_object = Size(size="40", stock=request.POST['stock_size_40'])
+            size_object.save()
+
         if product_form.is_valid():
             if product_detail_form.is_valid():
-                if size_form.is_valid():
-                    if image_form.is_valid():
-                        product_form.save()
-                        product_detail_form.save()
-                        size_form.save()
-                        image_form.save()
-
-                        product = Product.objects.all().last()
-                        product_details = ProductDetail.\
-                            objects.filter(product_id=None).all()
-                        product_sizes = Size.objects.\
-                            filter(product_id=None).all()
-                        product_images = Image.\
-                            objects.filter(product_id=None).all()
-
-                        # Attach the product id
-                        # to all the product colections sizes
-                        product_sizes.update(product_id=product)
-                        product_details.update(product_id=product)
-                        product_images.update(product_id=product)
-                        messages.info(request, 'Product successfuly added!')
-                        return redirect((reverse('product_detail',
-                                         args=[product.id])))
+                if image_form.is_valid():
+                    product_form.save()
+                    product_detail_form.save()
+                    image_form.save()
+                    product = Product.objects.all().last()
+                    product_details = ProductDetail.\
+                        objects.filter(product_id=None).all()
+                    product_sizes = Size.objects.\
+                        filter(product_id=None).all()
+                    product_images = Image.\
+                        objects.filter(product_id=None).all()
+                    # Attach the product id
+                    # to all the product colections sizes
+                    product_sizes.update(product_id=product)
+                    product_details.update(product_id=product)
+                    product_images.update(product_id=product)
+                    messages.info(request, 'Product successfuly added!')
+                    return redirect((reverse('product_detail',
+                                     args=[product.id])))
         else:
             messages.error(request, 'Could not add product.\
                            Please check the form is valid.')
@@ -162,33 +174,38 @@ def edit_product(request, product_id):
     """ Edit a product from store """
 
     if not request.user.is_authenticated:
-        messages.info(request, 'Request not allowed, only stpore admin.')
+        messages.info(request, 'Request not allowed, only store admin.')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
     product_sizes = Size.objects.filter(product_id=product).all()
     if request.method == 'POST':
-        form = ProductForm(request.POST)
-        image_form = ImageForm(request.POST, request.FILES)
-        size_form = SizeForm(request.POST)
-        product_details_form = ProductDetailForm(request.POST)
-
-        if form.is_valid():
+        form = ProductForm(request.POST, instance=product)
+        image_form = ImageForm(request.POST, request.FILES, instance=product)
+        size_form = SizeForm(request.POST, instance=product)
+        product_details_form = ProductDetailForm(request.POST,
+                                                 instance=product)                                     
+        try:
+            if form.is_valid():
+                form.save()
             if product_details_form.is_valid():
-                if product_details_form.is_valid():
-                    form.save()
-                    product_details_form.save()
-                    image_form.save()
-                    handle_stock_admin(request, product_id, product_sizes)
-                    messages.info(request, 'Product successfuly edited!')
-                    return redirect((reverse('product_detail',
-                                    args=[product.id])))
-        else:
-            messages.info(request, 'Could not add product.\
+                product_details_form.save()
+                puta = ProductDetail.objects.filter(product_id=product)
+                print(puta.values())
+            else:
+                messages.info(request, 'Puta!')
+            image_form.save()
+
+            handle_stock_admin(request, product_id, product_sizes)
+            messages.info(request, 'Product successfuly edited!')
+            return redirect((reverse('product_detail',
+                            args=[product.id])))
+        except:
+            messages.info(request, 'Could not edit product.\
                           Please check the form is valid.')
 
     sizes = Size.objects.filter(product_id=product_id).all()
-    product_details = ProductDetail.objects.filter(product_id=product_id)
+    product_details = ProductDetail.objects.filter(product_id=product_id).all()
     product_images = get_object_or_404(Image, product_id=product)
     form = ProductForm(instance=product)
 

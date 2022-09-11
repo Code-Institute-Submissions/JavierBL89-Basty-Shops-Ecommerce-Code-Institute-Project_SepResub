@@ -29,6 +29,7 @@ class SizeForm(forms.ModelForm):
         fields = '__all__'
 
 
+
 class ImageForm(forms.ModelForm):
 
     class Meta:

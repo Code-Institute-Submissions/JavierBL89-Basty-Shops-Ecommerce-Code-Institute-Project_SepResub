@@ -66,7 +66,6 @@ class Product(models.Model):
                                         on_delete=models.SET_NULL)
     price = models.DecimalField(max_digits=7, decimal_places=2)
     cover_image = models.ImageField(null=True, blank=True)
-    images_list = models.IntegerField(default=False, null=True, blank=True)
 
     def __string__(self):
         return self.name
@@ -79,7 +78,7 @@ class ProductDetail(models.Model):
     product_id = models.ForeignKey('Product',
                                    null=True,
                                    blank=True,
-                                   on_delete=models.SET_NULL)
+                                   on_delete=models.CASCADE)
     heels_mesurement = models.CharField(max_length=254, null=True, blank=True)
     upper_material = models.CharField(max_length=254, null=True, blank=True)
     sole = models.CharField(max_length=254, null=True, blank=True)
@@ -98,7 +97,7 @@ class Size(models.Model):
     product_id = models.ForeignKey('Product',
                                    null=True,
                                    blank=True,
-                                   on_delete=models.SET_NULL)
+                                   on_delete=models.CASCADE)
     size = models.CharField(max_length=2, null=True)
     stock = models.PositiveSmallIntegerField(null=True)
 
@@ -113,7 +112,7 @@ class Review(models.Model):
     product_id = models.ForeignKey('Product',
                                    null=True,
                                    blank=True,
-                                   on_delete=models.SET_NULL)
+                                   on_delete=models.CASCADE)
     quote = models.TextField(null=True, blank=True)
     rating = models.DecimalField(max_digits=6,
                                  decimal_places=2,
@@ -122,7 +121,7 @@ class Review(models.Model):
     date = models.DateField(auto_now=True)
 
     def __string__(self):
-        return f'{self.product_id} {self.ranting} {self.date}'
+        return f'{self.product_id} {self.rating} {self.date}'
 
 
 class Image(models.Model):
@@ -130,7 +129,7 @@ class Image(models.Model):
     product_id = models.ForeignKey('Product',
                                    null=True,
                                    blank=True,
-                                   on_delete=models.SET_NULL)
+                                   on_delete=models.CASCADE)
     image1 = models.ImageField(null=True, blank=True)
     image2 = models.ImageField(null=True, blank=True)
     image3 = models.ImageField(null=True, blank=True)

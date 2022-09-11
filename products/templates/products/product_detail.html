@@ -19,7 +19,7 @@
       </div>
       <div class="row">
         <div class="images-list-container d-flex offset-sm-0 offset-md-3 offset-lg-3">
-          {% if product.images_list %}
+          {% if images_list %}
           {% for image in images_list %}
           <div class="col-2 mt-3" id="product-image-list">
             <img class="product-image" src="{{ MEDIA_URL }}{{ image }}" alt="{{ product.title }}-img">
@@ -66,7 +66,7 @@
               <div class="sizes-container">
                 <form class="form" id="purchase-form" action="#" method="post">
                   {% csrf_token %}
-                  {% if product.sizes %}
+                  {% if size_list %}
                   <div class="d-flex">
                     {% for size in size_list %}
                     {% if size.stock == 0 %}
