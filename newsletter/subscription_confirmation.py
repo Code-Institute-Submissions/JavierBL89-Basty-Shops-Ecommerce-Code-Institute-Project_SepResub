@@ -5,6 +5,7 @@ from django.conf import settings
 
 def send_subs_confirm_email(new_member):
     """Send the user a confirmation email"""
+    print('puta')
     cust_email = new_member.email
     subject = render_to_string(
         'newsletter/subs_confir_email/confirmation_email_subject.txt',
