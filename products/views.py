@@ -80,7 +80,6 @@ def product_detail(request, product_id):
         # product_details = list(detail)
         details_key = list(detail)[2:]
         details_value = list(detail.values())[2:]
-        # print(product_details)
 
     subscription_form = SubscriptionForm()
     context = {
@@ -107,6 +106,7 @@ def add_product(request):
         product_form = ProductForm(request.POST, request.FILES)
         product_detail_form = ProductDetailForm(request.POST)
         image_form = ImageForm(request.POST, request.FILES)
+        # Create product sizes objects
         if 'stock_size_36' in request.POST:
             size_object = Size(size="36", stock=request.POST['stock_size_36'])
             size_object.save()
@@ -132,6 +132,8 @@ def add_product(request):
                     product = Product.objects.all().last()
                     product_details = ProductDetail.\
                         objects.filter(product_id=None).all()
+                    product_sizes = Size.objects.\
+                        filter(product_id=None).all()
                     product_images = Image.\
                         objects.filter(product_id=None).all()
                     # Attach the product id
@@ -172,37 +174,58 @@ def edit_product(request, product_id):
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
-    product_sizes = Size.objects.filter(product_id=product).all()
+
     if request.method == 'POST':
-        form = ProductForm(request.POST, instance=product)
-        image_form = ImageForm(request.POST, request.FILES, instance=product)
-        size_form = SizeForm(request.POST, instance=product)
-        product_details_form = ProductDetailForm(request.POST,
-                                                 instance=product)                                     
+        p_details = get_object_or_404(ProductDetail,
+                                      product_id=product_id)
+        p_images = get_object_or_404(Image, product_id=product)
         try:
-            if form.is_valid():
-                form.save()
-            if product_details_form.is_valid():
-                product_details_form.save()
-                puta = ProductDetail.objects.filter(product_id=product)
-                print(puta.values())
-            else:
-                messages.info(request, 'Puta!')
-            image_form.save()
+            product_form = ProductForm(request.POST,
+                                       request.FILES,
+                                       instance=product)
+            image_form = ImageForm(request.POST,
+                                   request.FILES,
+                                   instance=p_images)
+            product_details_form = ProductDetailForm(request.POST,
+                                                     instance=p_details)
+
+            if product_form.is_valid():
+                if product_details_form.is_valid():
+                    if image_form.is_valid():
+                        product_form.save()
+                        product_details_form.save()
+                        image_form.save()
+                        # The block before seems to assign back to None the product id object
+                        # of the objects attached to this product.
+                        # So to reassign it back to the product...
+                        product_details = ProductDetail.\
+                        objects.filter(product_id=None).all()
+                        product_sizes = Size.objects.\
+                            filter(product_id=product).all()
+                        product_images = Image.\
+                            objects.filter(product_id=None).all()
+                        # Attach the product id
+                        # to all the product colections sizes
+                        product_sizes.update(product_id=product)
+                        product_details.update(product_id=product)
+                        product_images.update(product_id=product)
 
             handle_stock_admin(request, product_id, product_sizes)
             messages.info(request, 'Product successfuly edited!')
             return redirect((reverse('product_detail',
                             args=[product.id])))
-        except:
+        except Exception as e:
             messages.info(request, 'Could not edit product.\
                           Please check the form is valid.')
+            print(f'Error:{e}')
 
     sizes = Size.objects.filter(product_id=product_id).all()
     product_details = ProductDetail.objects.filter(product_id=product_id).all()
     product_images = get_object_or_404(Image, product_id=product)
-    form = ProductForm(instance=product)
+    images_form = ImageForm(instance=product_images)
 
+    product_form = ProductForm(instance=product)
+    product_detail_data = None
     for detail in list(product_details.values()):
         product_detail_data = {
             'heels_mesurement': detail['heels_mesurement'],
@@ -214,15 +237,14 @@ def edit_product(request, product_id):
         }
 
     product_detail_form = ProductDetailForm(product_detail_data)
-    image_form = ImageForm(instance=product_images)
 
     template = 'products/edit_product.html'
     messages.info(request, f'You are about to edit {product.title}')
     context = {
-        'product_form': form,
+        'product_form': product_form,
         'product_sizes': sizes,
         'product_detail_form': product_detail_form,
-        'image_form': image_form,
+        'image_form': images_form,
         'product': product,
     }
     return render(request, template, context)

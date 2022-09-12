@@ -10,8 +10,8 @@
   <div class="row mt-5">
     {% if product %}
     <div class="col-12 col-md-6 col-lg-6 text-center text-md-end text-lg-end product-detail-main-img">
-      {% if product.cover_image %}
       <div class="product-detail-img-box">
+        {% if product.cover_image %}
         <img class="" src="{{ MEDIA_URL }}{{ product.cover_image }}" alt="{{ product.title }}">
         {% else %}
         <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.title }}">
@@ -133,7 +133,11 @@
             </div>
             <div class="col-6 mt-3 text-end text-md-start puta">
               {% for detailValue in details_value %}
+              {% if detailValue %}
               <p class="my-0 mx-0"> {{ detailValue }}</p>
+              {% else %}
+              <p class="my-0 mx-0 text-muted">Not specified </p>
+              {% endif %}
               {% endfor %}
             </div>
           </div>

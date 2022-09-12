@@ -29,6 +29,8 @@
               {{ product_form.cover_image | as_crispy_field }}
               {{ product_form.description | as_crispy_field }}
             </div>
+            <input type="hidden" name="sku" value="{{ product.sku }}">
+
           </div>
       </div>
     </div>
