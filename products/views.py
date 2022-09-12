@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from .models import Product, Size, Image, ProductDetail
+from .models import Product, Size, Image, ProductDetail, Category
 from .forms import ProductForm, SizeForm, ImageForm, ProductDetailForm
 from django.views.decorators.http import require_POST
 
@@ -38,12 +38,9 @@ def all_products(request):
             products = products.order_by(sortkey)
 
         if 'category' in request.GET:
-            categories = request.GET['category']
-            if not categories:
-                messages.error(request, "No category found")
-                return redirect(reverse, ('products'))
-            category = Q(title__icontains=categories)
-            products = products.filter(category)
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -110,7 +107,6 @@ def add_product(request):
         product_form = ProductForm(request.POST, request.FILES)
         product_detail_form = ProductDetailForm(request.POST)
         image_form = ImageForm(request.POST, request.FILES)
-
         if 'stock_size_36' in request.POST:
             size_object = Size(size="36", stock=request.POST['stock_size_36'])
             size_object.save()
@@ -136,8 +132,6 @@ def add_product(request):
                     product = Product.objects.all().last()
                     product_details = ProductDetail.\
                         objects.filter(product_id=None).all()
-                    product_sizes = Size.objects.\
-                        filter(product_id=None).all()
                     product_images = Image.\
                         objects.filter(product_id=None).all()
                     # Attach the product id
