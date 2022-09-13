@@ -59,7 +59,7 @@
                 <div class="col-2">
                   <p>Size</p>
                 </div>
-                <div id="div_id_stock" class="col-4 form-group">  
+                <div class="col-4 form-group">  
                     <p>Stock*</p>
                 </div>
               </div>
@@ -67,19 +67,19 @@
                 <div class="col-2"> 
                       <p>36</p>
                 </div>
-                <div id="div_id_stock" class="col-4 form-group">  
+                <div class="col-4 form-group">  
                   <div>
-                    <input type="number" name="stock_size_36" min="0" default="0" class="numberinput form-control" required="" id="id_stock">
+                    <input type="number" name="stock_size_36" min="0" class="numberinput form-control" required>
                   </div>
                 </div>
               </div>
               <div class="row d-flex">
                   <div class="col-2"> 
-                        <p name="size_37">37</p>
+                        <p>37</p>
                   </div>
-                  <div id="div_id_stock" class="col-4 form-group">  
+                  <div class="col-4 form-group">  
                     <div>
-                      <input type="number" name="stock_size_37" min="0" default="0" class="numberinput form-control" required="" id="id_stock">
+                      <input type="number" name="stock_size_37" min="0" class="numberinput form-control" required>
                     </div>
                   </div>
                 </div>
@@ -87,9 +87,9 @@
                     <div class="col-2"> 
                           <p>38</p>
                     </div>
-                    <div id="div_id_stock" class="col-4 form-group">  
+                    <div class="col-4 form-group">  
                       <div>
-                        <input type="number" name="stock_size_38" min="0" default="0" class="numberinput form-control" required="" id="id_stock">
+                        <input type="number" name="stock_size_38" min="0" class="numberinput form-control" required>
                       </div>
                     </div>
                 </div>
@@ -97,10 +97,10 @@
                       <div class="col-2"> 
                             <p>39</p>
                       </div>
-                      <div id="div_id_stock" class="col-4 form-group">  
+                      <div class="col-4 form-group">  
 
                         <div>
-                          <input type="number" name="stock_size_39" min="0" default="0" class="numberinput form-control" required="" id="id_stock">
+                          <input type="number" name="stock_size_39" min="0" class="numberinput form-control" required>
                         </div>
                       </div>
                 </div>
@@ -108,9 +108,9 @@
                         <div class="col-2"> 
                               <p>40</p>
                         </div>
-                        <div id="div_id_stock" class="col-4 form-group">  
+                        <div class="col-4 form-group">  
                           <div>
-                            <input type="number" name="stock_size_40" min="0" default=0 class="numberinput form-control" required="" id="id_stock">
+                            <input type="number" name="stock_size_40" min="0" class="numberinput form-control" required>
                           </div>
                         </div>
                 </div>
@@ -145,7 +145,7 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script>
   let html = `<div class="size-stock-box">
                     <div class="col-8 d-flex">
                         {{ size_form.size | as_crispy_field }}

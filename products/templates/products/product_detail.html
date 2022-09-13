@@ -21,7 +21,7 @@
         <div class="images-list-container d-flex offset-sm-0 offset-md-3 offset-lg-3">
           {% if images_list %}
           {% for image in images_list %}
-          <div class="col-2 mt-3" id="product-image-list">
+          <div class="col-2 mt-3 product-image-list">
             <img class="product-image" src="{{ MEDIA_URL }}{{ image }}" alt="{{ product.title }}-img">
           </div>
           {% endfor %}
@@ -71,11 +71,11 @@
                     {% for size in size_list %}
                     {% if size.stock == 0 %}
                     <div class="col-5 col-md-3 mx-1">
-                      <div class="size-box text-center py-1 text-decoration-line-through" style="pointer-events: none" href="" value="{{ size.size }}"><span>{{ size.size }}</span></div>
+                      <div class="size-box text-center py-1 text-decoration-line-through" style="pointer-events: none" data-value="{{ size.size }}"><span>{{ size.size }}</span></div>
                     </div>
                     {% else %}
                     <div class="col-5 col-md-3 mx-1">
-                      <div class="size-box text-center py-1" name="product_size" value="{{ size.size }} {{ size.id }}"><span>{{ size.size }}</span></div>
+                      <div class="size-box text-center py-1" data-name="product_size" data-value="{{ size.size }} {{ size.id }}"><span>{{ size.size }}</span></div>
                       <input type="hidden" id="size_id" value="{{ size.id }}">
                     </div>
                     {% endif %}
@@ -252,7 +252,7 @@
         </button>
       </div>
     </div>
-
+  </div>
   </div>
 </section>
 

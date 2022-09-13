@@ -4,10 +4,11 @@
 
 {% block extra_js %}
 
-<script type="text/javascript"
+<script
 src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
 </script>
-<script type="text/javascript">
+
+<script>
 (function(){
 emailjs.init("OZrs4ez3UyYpOI5wC");
 })();
@@ -25,7 +26,7 @@ emailjs.init("OZrs4ez3UyYpOI5wC");
             <form class="form" id="contact-form">
                 {% csrf_token %}
                 <input type="text" name="name" id="name" class="form-control" placeholder="Your name" required>
-                <input type="email" name="email" id="email"class="form-control" placeholder="Your email address" required>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Your email address" required>
                 <textarea rows="4" cols="50" name="message" id="message" class="form-control" placeholder="How can we help you ?" required></textarea>
             <button class="mt-4" type="submit">Submit comment</button>
             </form>

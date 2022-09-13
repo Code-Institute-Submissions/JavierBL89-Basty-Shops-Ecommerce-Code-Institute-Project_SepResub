@@ -60,9 +60,9 @@
             <h6>Product Sizes</h6>
             {% for size in product_sizes %}
             <div class="size-stock-box mb-2">
-              <div class="col-8 d-flex" id="size_stock">
-                <p class="" name="size" value="{{ size.size }}" id="id_technology">{{ size.size }}: </p>
-                <input type="number" name="stock_size_{{ size.size }}" value="{{ size.stock }}" class="textinput textInput form-control ms-3 w-50" id="id_technology">
+              <div class="col-8 d-flex size_stock">
+                <p class="" data-name="size" data-value="{{ size.size }}">{{ size.size }}: </p>
+                <input type="number" name="stock_size_{{ size.size }}" value="{{ size.stock }}" class="textinput textInput form-control ms-3 w-50">
               </div>
             </div>
             {% endfor %}

@@ -31,7 +31,7 @@
             <div class="col-12 col-md-12 col-lg-4">
                     <div class="category-box  shoes-box-category">
                         <a id="shoes-img-link" href="{% url 'products' %}?category=shoes">
-                            <img clas="category-img" src="{{ MEDIA_URL }}fzz18201.jpg" alt="shoes-category">
+                            <img class="category-img" src="{{ MEDIA_URL }}fzz18201.jpg" alt="shoes-category">
                         </a>
                         <h3 class="shoes-title category-title mt-2">SHOES</h3>
                     </div>
@@ -39,7 +39,7 @@
             <div class="col-12 col-md-12 col-lg-4">
                     <div class="category-box boots-box-category">
                         <a id="boots-img-link" href="{% url 'products' %}?category=boots">
-                            <img clas="category-img" src="{{ MEDIA_URL }}images_(1).jpg" alt="boots-category">
+                            <img class="category-img" src="{{ MEDIA_URL }}images_(1).jpg" alt="boots-category">
                         </a>
                         <h3 class="boots-title category-title mt-2">BOOTS</h3>
                     </div>
@@ -47,7 +47,7 @@
             <div class="col-12 col-md-12 col-lg-4">
                     <div class="category-box sneakers-box-category">
                         <a id="sneakers-img-link" href="{% url 'products' %}?category=sneakers">
-                            <img clas="category-img" src="{{ MEDIA_URL }}images_(5).jpg" alt="sneaker-category">
+                            <img class="category-img" src="{{ MEDIA_URL }}images_(5).jpg" alt="sneaker-category">
                         </a>
                         <h3 class="shoes-title category-title mt-2">SNEAKERS</h3>
                     </div>
@@ -73,5 +73,5 @@
 
 {% block postloadjs %}
   {{ block.super }}
-   <script src="{% static 'js/bannerImages.js' %}" type="text/js"></script>
+   <script src="{% static 'js/bannerImages.js' %}"></script>
 {% endblock%}

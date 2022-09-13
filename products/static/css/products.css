@@ -293,7 +293,7 @@
     margin-bottom: 40px;
    }
 
-   #product-image-list img{
+   .product-image-list img{
     width: 80%;
     height: 95%;
 }
@@ -647,7 +647,7 @@ input[name="cover_image"],
     height: 100%;
    }
 
-   #product-image-list img{
+   .product-image-list img{
     width: 80%;
     height: 95%;
 }
@@ -997,7 +997,7 @@ input[name="image4"],
     height: 100%;
    }
 
-   #product-image-list img{
+   .product-image-list img{
     width: 80%;
     height: 95%;
 }
