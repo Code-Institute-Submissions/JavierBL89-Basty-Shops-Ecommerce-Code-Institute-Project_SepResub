@@ -26,12 +26,12 @@ form.on('submit', function(ev){
     ev.preventDefault();
     // Get product input value size
     let size = $('#active');
-    size = parseInt(size.attr('value'));
+    size = parseInt(size.attr('data-value'));
     // Get product size id
     let size_id = $('#active');
     
-    let size_id_first_number = size_id.attr('value')[3];
-    let size_id_second_number = size_id.attr('value')[4];
+    let size_id_first_number = size_id.attr('data-value')[3];
+    let size_id_second_number = size_id.attr('data-value')[4];
     size_id = parseInt(size_id_first_number + size_id_second_number);
 
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
