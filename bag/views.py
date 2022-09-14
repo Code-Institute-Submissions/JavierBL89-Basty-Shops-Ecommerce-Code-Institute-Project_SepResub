@@ -107,6 +107,7 @@ def increment_quantity(request, item_id):
     if 'product_size' in request.POST:
         size = request.POST.get('product_size')
 
+    print(size, type(size))
     for item_size in product_sizes_list.values():
         if size in item_size['size']:
             item_size_id = item_size['id']
