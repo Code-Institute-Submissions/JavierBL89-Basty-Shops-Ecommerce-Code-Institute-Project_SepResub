@@ -8,6 +8,7 @@
   
   <body>
     {% block body %}
+    <div class="mt-5"></div>
     {% if messages %}
     <div>
       <strong>Messages:</strong>
@@ -32,7 +33,7 @@
       </ul>
     </div>
     {% block content %}
-    {% endblock %}
+    {% endblock %}    
     {% endblock %}
     {% block extra_body %}
     {% endblock %}
