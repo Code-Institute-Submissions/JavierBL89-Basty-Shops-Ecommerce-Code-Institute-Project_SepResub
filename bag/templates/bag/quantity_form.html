@@ -17,17 +17,9 @@
             </span>
           </button>
         </div>
-        {% if item.size %}
-        <input type="hidden" id="product_size" name="product_size" value="{{ item.size }}">
-        {% endif %}
+        <input type="hidden" id="{{ item.size }}" class="product_size" name="product_size" value="{{ item.size }}">
       </div>
     </div>
   </form>
   <a class="remove-item text-danger float-right" style="cursor: pointer;" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
   
-  
-  {% block postloadjs %}
-  
-  {% include 'bag/includes/quantity_input_script.html' %}
-  
-  {% endblock %}

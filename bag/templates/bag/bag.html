@@ -21,7 +21,7 @@
     </div>
     {% if bag_items %}
     {% for item in bag_items %}
-    <div class="row d-flex">
+    <div class="row g-0 d-flex">
       <div class="col-4 col-md-5 col-lg-4 product-img-bag-box text-center">
         {% include 'bag/product_img.html' %}
       </div>
@@ -48,8 +48,9 @@
         </div>
       </div>
       <hr class="mt-4">
-      {% endfor %}
     </div>
+    {% endfor %}
+
     <div class="row d-flex total-container">
       <div class="col-8 col-md-9 col-lg-9"></div>
       <div class="col-3 col-md-3 col-lg-3 d-flex">
@@ -73,3 +74,9 @@
 </div>
 
 {% endblock %}
+
+{% block postloadjs %}
+  {{ block.super }}
+
+      {% include 'bag/includes/quantity_input_script.html' %}
+  {% endblock %}

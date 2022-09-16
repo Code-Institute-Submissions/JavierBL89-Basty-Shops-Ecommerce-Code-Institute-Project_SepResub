@@ -3,10 +3,10 @@
    //jshint esversion:6
 
 // Update item quantity
-function updateQuantity(){
-            var form = $('.update-form');
-            form.submit();
-    }
+// function updateQuantity(){
+//             var form = $('.update-form');
+//             form.submit();
+//     }
     
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
@@ -44,18 +44,17 @@ function updateQuantity(){
        e.preventDefault();
        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
        var currentValue = parseInt($(closestInput).val());
+       console.log(currentValue);
        $(closestInput).val(currentValue + 1);
        var itemId = $(this).data('item_id');
-       console.log(size, "+");
-
        handleEnableDisable(itemId);
-    //    updateQuantity()
 
+    //    updateQuantity
         var csrfToken = "{{ csrf_token }}";
-        var size =  $('#product_size').val();
+        var closestDown = $(this).closest('.input-group').find('.product_size')[0];
+        var selectedProductSize = parseInt($(closestDown).val());
         var url = `/bag/increment/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
-
+        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': selectedProductSize};
         $.post(url, data)
          .done(function() {
              location.reload();
@@ -70,16 +69,17 @@ function updateQuantity(){
        $(closestInput).val(currentValue - 1);
        var itemId = $(this).data('item_id');
        handleEnableDisable(itemId);
-    //    updateQuantity()
-    var csrfToken = "{{ csrf_token }}";
-        var size =  $('#product_size').val();
-        var url = `/bag/decrement/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
-        console.log(size, "-");
-        $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
+    //    updateQuantity
+       var csrfToken = "{{ csrf_token }}";
+       var closestDown = $(this).closest('.input-group').find('.product_size')[0];
+       var selectedProductSize = parseInt($(closestDown).val());      
+       var url = `/bag/decrement/${itemId}/`;
+       var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': selectedProductSize};
+       console.log(selectedProductSize, "-");
+       $.post(url, data)
+        .done(function() {
+            location.reload();
+        });
     });
 
 </script>
