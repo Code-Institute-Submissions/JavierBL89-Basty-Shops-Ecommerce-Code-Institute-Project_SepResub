@@ -204,7 +204,7 @@
                 {% if product.id == 7 %}
                 <div class="card-img-box-carousel">
                   <a href="{% url 'product_detail' product.id %}">
-                  <img src="{{ MEDIAL_URL}} {{ product.cover_image }}" class="card-img-carousel" alt="{{ product.title }}">
+                  <img src="{{ product.cover_image }}" class="card-img-carousel" alt="{{ product.title }}">
                   </a>
                 </div>
                 <div class="product_card-body mt-2 mx-1 text-start">
@@ -212,11 +212,11 @@
                   <p class="product-card-price mt-0">{{ product.price }}€</p>
                 </div>
               </div>
-              {% elif product.id == 10%}
+              {% elif product.id == 10 %}
               <div class="product-card mx-1">
                 <div class="card-img-box-carousel">
                   <a href="{% url 'product_detail' product.id %}">
-                  <img src="{{ MEDIAL_URL }} {{ product.cover_image }}" class="card-img-carousel" alt="{{ product.title }}">
+                  <img src="{{ product.cover_image }}" class="card-img-carousel" alt="{{ product.title }}">
                   </a>
                 </div>
                 <div class="product_card-body mt-2 mx-1 text-start">
@@ -228,7 +228,7 @@
               <div class="product-card mx-1">
                  <div class="card-img-box-carousel">
                    <a href="{% url 'product_detail' product.id %}">
-                   <img src="{{ MEDIA_URL }} {{ product.cover_image }}" class="card-img-carousel" alt="{{ product.title }}">
+                   <img src="{{ product.cover_image }}" class="card-img-carousel" alt="{{ product.title }}">
                    </a>
                  </div>
                  <div class="product_card-body mt-2 mx-1 text-start">

@@ -81,7 +81,9 @@ def subscribe(request):
                                 inbox and enjoy the 10% off')
             send_subs_confirm_email(new_member)
             form = SubscriptionForm()
+            products = Product.objects.all()
             context = {
+                'products': products,
                 'subscription_form': form,
             }
             return render(request, 'home/index.html', context)

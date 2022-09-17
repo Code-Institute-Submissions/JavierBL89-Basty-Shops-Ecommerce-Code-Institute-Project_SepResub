@@ -16,7 +16,7 @@
 
 
 | Reference | Test object | Expected result | Result 
-| ----------- | ----------- | ----------- |
+| ----------- | ----------- | ----------- | ---------- |
 | ### HOME PAGE ## |  |  | 
 | 1 | Logo/Home links (header and footer) | Directs the user to home page | PASS
 | 2 | Categories link | Directs the user to selected category page | PASS
