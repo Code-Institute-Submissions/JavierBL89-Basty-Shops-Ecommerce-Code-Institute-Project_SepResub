@@ -118,4 +118,64 @@
 
 
 
+ ### Automated testing
+
+
+ ### Light house
+
+ The site clearly needs some improvements in terms of accebility, performance and best practises
+
+  - Desktop Home page
+
+  ![Lighthouse desktop home page results](<media/Captura de pantalla (444).png>)
+
+  - Mobile Home page
+  
+  ![Lighthouse mobile home page results](<media/Captura de pantalla (447).png>)
+
+  - Products page desktop
+  
+  ![Lighthouse desktop products page results](<media/Captura de pantalla (449).png>)
+
+- Products page mobile
+  
+  ![Lighthouse mobile products page results](<media/Captura de pantalla (451).png>)
+
+  - Products detail page desktop
+  
+  ![Lighthouse desktop products page results](<media/Captura de pantalla (453).png>)
+
+  - Products detail page mobile
+  
+  ![Lighthouse mobile products page results](<media/Captura de pantalla (455).png>)
+
+### PEP8
+
+  - All .py files went through PEP8 validator, only white spaces and long lines shown in test.
+
+
+  - **Home page**
+
+
+ ### Validators
+ 
+  - [W3C CSS validator](https://jigsaw.w3.org/css-validator/)
+
+      - No error reported
+      ![CSS Results](<media/Captura de pantalla (429).png>)
+
+  - [W3C HTML validator](https://validator.w3.org/nu/)
+      
+      - Showing lots of errors when using sintax {{ }} or {% blocks %}
+
+      ![HTML validator results](<media/Captura de pantalla (437).png>)
+      ![HTML validator results](<media/Captura de pantalla (438).png>)
+      ![HTML validator results](<media/Captura_de_pantalla_270_2To9SKI.png>)
+
+  - [JS Hint](https://jshint.com/)
+
+       - JSHint was used to validate js files, only a few semicolons was missing and some variables unused.
+
+
+
 

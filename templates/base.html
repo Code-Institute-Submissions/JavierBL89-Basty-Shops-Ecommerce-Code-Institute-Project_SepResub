@@ -71,31 +71,31 @@
             {% include 'includes/burger_menu.html' %}
           </div>
           <div class="col-6 col-md-5 text-start text-md-center d-sm-inline mb-4 store-name-column">
-            <a id="store-name-home-link" href="{% url 'home' %}" class="store-name-link">
+            <a aria-label="Logo" id="store-name-home-link" href="{% url 'home' %}" class="store-name-link">
               <h1 class="heading">Basty shops</h1>
             </a>
           </div>
           <div class="col-4 col-md-3 d-sm-inline pe-0 pe-md-3 pe-lg-3 ">
             <ul class="list-inline list-unstyled d-flex justify-content-end mt-3">
               <li class="navbar-item me-lg-3 me-2 me-md-3 me-lg-3 dropdown">
-                <a id="profile-icon-link" class="nav-link active" aria-current="page" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                <a aria-label="Profile" id="profile-icon-link" class="nav-link active" aria-current="page" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                   <i class="fa-solid fa-user fa-xl"></i>
                 </a>
                 <div class="dropdown-menu border-0" id="dropdownMenuLink" aria-labelledby="dropdownMenuLink">
                   {% if request.user.is_authenticated %}
                   {% if request.user.is_superuser %}
-                  <a id="management-link" href="{% url 'add_product' %}" class="dropdowm-item">Management</a>
+                  <a aria-label="link" id="management-link" href="{% url 'add_product' %}" class="dropdowm-item">Management</a>
                   {% endif %}
-                  <a id="shoes-img-link" href="{% url 'profile' %}" class="dropdown-item">My Account</a>
-                  <a id="logout" href="{% url 'account_logout' %}" class="dropdown-item">Log out</a>
+                  <a aria-label="Account" id="account-link" href="{% url 'profile' %}" class="dropdown-item">My Account</a>
+                  <a aria-label="Logout" id="logout" href="{% url 'account_logout' %}" class="dropdown-item">Log out</a>
                   {% else %}
-                  <a id="login" href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                  <a id="register" href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                  <a aria-label="Login" id="login" href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                  <a aria-label="Register" id="register" href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                   {% endif %}
                 </div>
               </li>
               <li class="navbar-item me-2 me-md-3 me-lg-3 ">
-                <a id="wishlist-link" class="nav-link" href="#">
+                <a aria-label="Wishlisy" id="wishlist-link" class="nav-link" href="#">
                   <i class="fa-solid fa-heart fa-xl"></i></a>
               </li>
               <li class=" text-center">
@@ -155,7 +155,7 @@
         <div class="row ">
           <div class="col-lg-3 col-md-12 container-logo column">
             <div class="logo-footer-box text-center">
-              <a id="logo-footer-img" href="{% url 'home' %}"><img src="{{ MEDIA_URL }}Screenshot_20180313-160852.jpg" alt="basty-shops-logo"></a>
+              <a aria-label="Logo" id="logo-footer-img" href="{% url 'home' %}"><img src="{{ MEDIA_URL }}Screenshot_20180313-160852.jpg" alt="basty-shops-logo"></a>
             </div>
           </div>
           <div class="col-lg-3 col-md-12 col-sm-12 text-center text-lg-start footer-bg column ps-3">
@@ -167,7 +167,7 @@
             <p class="footer-item"><a id="contact-footer-link" href="{% url 'contact' %}">Contact Us</a></p>
           </div>
           <div class="col-lg-3 col-md-12 col-sm-12 text-center text-lg-start footer-bg column">
-            <p class="footer-item"><a id="fb-link" href="https://www.facebook.com/bastyshops.ie/"><i class="fa-brands fa-facebook"></i></a></p>
+            <p class="footer-item"><a aria-label="Facebook" id="fb-link" href="https://www.facebook.com/bastyshops.ie/"><i class="fa-brands fa-facebook"></i></a></p>
           </div>
         </div>
       </div>
