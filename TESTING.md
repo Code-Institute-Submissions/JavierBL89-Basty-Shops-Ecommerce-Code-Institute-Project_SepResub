@@ -117,7 +117,6 @@
 | 86 | Sign Out button | Signs the user out of their account and redirects to the home page | PASS
 
 
-
  ### Automated testing
 
 

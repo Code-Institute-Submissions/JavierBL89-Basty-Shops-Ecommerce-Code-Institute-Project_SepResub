@@ -12,7 +12,7 @@ Users can easily contact customer support.
 
 - Live store [Basty Shops](<https://bastyshops.herokuapp.com>)
 
-![Basty Shops screen size desing](<media/Captura de pantalla (462).png>)
+![Basty Shops screen size desing](<media/site-screen-sizes.png>)
 
 ## Table of contents
 
@@ -89,9 +89,9 @@ The site offers a wide range of different type of shoes in order to widen potent
 
 - Can follow Iteration boards [here](https://github.com/JavierBL89/Basty-Shops-Ecommerce-Code-Institute-Project/projects?query=is%3Aclosed&type=classic#credits)
 
-![User stories](<media/Captura de pantalla (364).png>)
-![User stories](<media/Captura de pantalla (363).png>)
-![User stories](<media/Captura de pantalla (365).png>)
+![User stories](<media/Captura de pantalla (554).png>)
+![User stories](<media/Captura de pantalla (556).png>)
+![User stories](<media/Captura de pantalla (558).png>)
 
 
 ### Design goals
@@ -105,15 +105,15 @@ The site offers a wide range of different type of shoes in order to widen potent
 
   - ###### Desktop
 
-  ![Desktop design](<media/Captura de pantalla (369).png>)
+  ![Desktop design](<media/Captura de pantalla (562).png>)
 
   - ###### Tablet
   
-  ![Tablet design](<media/Captura de pantalla (370).png>)
+  ![Tablet design](<media/Captura de pantalla (563).png>)
 
   - ###### Mobile
 
-  ![Mobile design](<media/Captura de pantalla (371).png>)
+  ![Mobile design](<media/Captura de pantalla (564).png>)
 
 
 ### Design choises
@@ -158,7 +158,7 @@ The site offers a wide range of different type of shoes in order to widen potent
 
 - #### Database structure
 
-![Basty Shops Db structure](<media/db-structure.png>)
+![Basty Shops Db structure](<media/Captura de pantalla (292).png>)
 
 ### Marketing Stragtegy
 
@@ -219,7 +219,7 @@ The site offers a wide range of different type of shoes in order to widen potent
 
 * [Facebook Store page](https://www.facebook.com/Basty-Shops-102175379293385)
 
-![Facebook store image](<media/Captura de pantalla (418).png>)
+![Facebook store image](<media/Captura de pantalla (566).png>)
 
 ## Features
 
@@ -227,57 +227,57 @@ The site offers a wide range of different type of shoes in order to widen potent
 
   - Users can register in the site by filling up a form
 
-![SingUp form](<media/Captura de pantalla (372).png>)
+![SingUp form](<media/Captura de pantalla (578).png>)
 
 - ### Social Authentication
  
   - Users can singup using their social accounts in order to speed up and ease site's registration or login,
   as well as to improve their security 
 
-  ![SingUp form](<media/Captura de pantalla (372).png>)
+  ![SingUp form](<media/Captura de pantalla (578).png>)
 
 
 - ### Update profile information
 
   - Registered users can easily **update their personal information** or delete their account
 
-  ![Update peronal info](<staticfiles/flags/Captura de pantalla (375).png>)
+  ![Update peronal info](<media/Captura de pantalla (579).png>)
 
-  - Registered users can easily **update their access informatio**n clicking on the link
+  - Registered users can easily **update their access information** clicking on the link
 
-  ![Update access info](<media/Captura de pantalla (377).png>)
+  ![Update access info](<media/Captura de pantalla (591).png.png>)
 
   - Registered users can easily **check their order's history**
 
-  ![Check order's history](<media/Captura de pantalla (379).png>)
+  ![Check order's history](<media/Captura de pantalla (581).png>)
 
   - Registered users can easily **update their delivery address**
 
-  ![Update delivery address](<media/Captura de pantalla (383).png>)
+  ![Update delivery address](<media/Captura de pantalla (582).png>)
 
 - ### Search products by name or category
 
   - Users can easily search products by entering name or key words
 
-    ![Products searcher](<media/Captura de pantalla (385).png>)
+    ![Products searcher](<media/Captura de pantalla (583).png>)
 
 - ### Sort products by price or alphabet
 
   - Users can easily sort products by entering their preference (by rating will be implemented in future)
 
-    ![Products sorter](<media/Captura de pantalla (387).png>)
+    ![Products sorter](<media/Captura de pantalla (584).png>)
 
 - ### Show total in the bag
 
   - Users can see the total of their shopping bag on the bag page
 
-    ![Total shopping bag](<media/Captura de pantalla (389).png>)
+    ![Total shopping bag](<media/Captura de pantalla (585).png>)
 
 - ### Modify product quantity on the bag page
 
   - Users can modify the total of a specific item from their shopping bag
 
-    ![Modify product quantity](<media/Captura de pantalla (393).png>)
+    ![Modify product quantity](<media/Captura de pantalla (586).png>)
 
 - ### Checkout
 
@@ -285,31 +285,31 @@ The site offers a wide range of different type of shoes in order to widen potent
   - Users can see their **order summary**
   - Registered users can save the **delivery information** for future purchases
 
-    ![Checkout](<media/Captura de pantalla (395).png>)
+    ![Checkout](<media/Captura de pantalla (587)-2.png>)
 
 - ### Payment
 
   - Users can securely **make a payment** using theit credir, debit, or american express or any other type of card throught a well trusted payment platform [Stripe](<https://stripe.com/en-ie>)
 
-    ![Checkout](<media/Captura de pantalla (395).png>)
+    ![Checkout](<media/Captura de pantalla (588)-2.png>)
 
 - ### Confirmation email
 
   - Users will receive a **confirmation email** after making a successful purchase
 
-    ![Checkout](<media/Captura de pantalla (395).png>) !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    ![Checkout](<media/Captura de pantalla (589)-2.png>)
 
 - ### Contact customer support y email
 
   - Users can **send an email to customer support** by going into "Contact us" page
 
-    ![Contact customer support](<media/Captura de pantalla (403).png>)
+    ![Contact customer support](<media/Captura de pantalla (593).png>)
 
   - User's activity messages
 
   - Users will be informed after every acction on the site thrught automatic messages 
 
-    ![Activity messages](<media/Captura de pantalla (405).png>)
+    ![Activity messages](<media/Captura de pantalla (602).png>)
 
 - ### Management
 
@@ -317,19 +317,19 @@ The site offers a wide range of different type of shoes in order to widen potent
 
   Store admin will be able to add products from the site so much easily the from the Django admin panel
   
-    ![Add product admin](<media/Captura de pantalla (468).png>)
+    ![Add product admin](<media/Captura de pantalla (597).png>)
 
   - Edit product
 
   Store admin will be able to edit products from the site so much easily the from the Django admin panel
   
-    ![Edit product admin](<media/Captura de pantalla (iii).png>)
+    ![Edit product admin](<media/Captura de pantalla (598).png>)
 
   - Delete product
 
   Store admin will be able to delete products easily from the site
   
-    ![Delete product admin](<media/Captura de pantalla (474).png>)
+    ![Delete product admin](<media/Captura de pantalla (599).png>)
 
 ## Future features
 
@@ -343,75 +343,6 @@ The site offers a wide range of different type of shoes in order to widen potent
 
  ## Testing
 
- ### Manual Testing
-
- - Front end testing:
-
-During the development proccess, i used Dev tools for css styling, and used "console.log()" method to check  whether if functions are triggered, also used it to check if code gets passed certain lines, or to check if the data passed into functions was the one i needed.
-
-- Back end testing:
-
-i used the "print()" method To check wheter if functions are triggered, whether if the data or data type passed was the right one. It Also was used to check data added into the bag session and bag proccessor.
-
-![](<media/Captura de pantalla (442).png>)
-
- ### Automated testing
-
-
- ### Light house
-
- The site clearly needs some improvements in terms of accebility, performance and best practises
-
-  - Desktop Home page
-
-  ![Lighthouse desktop home page results](<media/Captura de pantalla (444).png>)
-
-  - Mobile Home page
-  
-  ![Lighthouse mobile home page results](<media/Captura de pantalla (447).png>)
-
-  - Products page desktop
-  
-  ![Lighthouse desktop products page results](<media/Captura de pantalla (449).png>)
-
-- Products page mobile
-  
-  ![Lighthouse mobile products page results](<media/Captura de pantalla (451).png>)
-
-  - Products detail page desktop
-  
-  ![Lighthouse desktop products page results](<media/Captura de pantalla (453).png>)
-
-  - Products detail page mobile
-  
-  ![Lighthouse mobile products page results](<media/Captura de pantalla (455).png>)
-
-### PEP8
-
-  - All .py files went through PEP8 validator, only white spaces and long lines shown in test.
-
-
-  - **Home page**
-
-
- ### Validators
- 
-  - [W3C CSS validator](https://jigsaw.w3.org/css-validator/)
-
-      - No error reported
-      ![CSS Results](<media/Captura de pantalla (429).png>)
-
-  - [W3C HTML validator](https://validator.w3.org/nu/)
-      
-      - Showing lots of errors when using sintax {{ }} or {% blocks %}
-
-      ![HTML validator results](<media/Captura de pantalla (437).png>)
-      ![HTML validator results](<media/Captura de pantalla (438).png>)
-      ![HTML validator results](<media/Captura_de_pantalla_270_2To9SKI.png>)
-
-  - [JS Hint](https://jshint.com/)
-
-       - JSHint was used to validate js files, only a few semicolons was missing and some variables unused.
 
  ## Technology Used
 
