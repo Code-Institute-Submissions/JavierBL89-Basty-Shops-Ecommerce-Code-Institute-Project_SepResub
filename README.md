@@ -68,6 +68,14 @@ Users can easily contact customer support.
 - Unfixed bugs
 
 ### [Deployment](#deployment)
+### [Making a Local Clone](#making-a-local-clone)
+### [Forking repository](#forking-repository)
+### [Setting up your local enviroment](#setting-up-your-local-enviroment)
+### [Getting Stripe keys](#getting-stripe-keys)
+### [Getting email variables from gmail](#getting-email-variables-from-gmail)
+### [Setting AWS bucket](#setting-aws-bucket)
+
+
 
 
 ### [Credits](#credits)
@@ -350,7 +358,7 @@ The site offers a wide range of different type of shoes in order to widen potent
   
     - Languages used according to [Github](https://github.com/) reports.
 
-  ![Languages used](<media/Captura de pantalla (420).png>)
+  ![Languages used](<media/Captura de pantalla (604).png>)
 
  * ### Libraries
     
@@ -364,21 +372,10 @@ The site offers a wide range of different type of shoes in order to widen potent
     - [Django](https://www.djangoproject.com/)
     - All packages installed can be found in [requirements.txt](https://github.com/JavierBL89/Basty-Shops-Ecommerce-Code-Institute-Project/blob/main/requirements.txt)
 
+
 ## Bugs
 
-  * Unfixed bug
-    
-      - On the bag page, for every item added the layout changes by adding rows in a scalate way
-      Every new row to be pushed to the left.
-
-      ![Items bag page](<media/Captura de pantalla (422).png>)
-
-  * Unfixed bug
-    
-      - On the bag page, after adding the first item into the shopping bag, the following items seem to not have the disabel buttons functionality applied. This issue must be related the previous one 
-      
-      ![Products quantity input](<media/Captura de pantalla (424).png>)
-
+  
  * Unfixed bug
     
       - When adding products into shopping bag, the toast showing a success message does not show, however it does when removing items from the shopping bag.
@@ -387,14 +384,10 @@ The site offers a wide range of different type of shoes in order to widen potent
       ![Code snippet](<media/Captura de pantalla (426).png>)
 
   * Unfixed bug
+    
+      - In large screens css starts to overflow.
 
-      - Error pages 403, 404 adn 500 are not being rendered...i didn't have time to go through it with tuttor assistance.
-
-  * Unfixed bug
-
-    - Internal error 500 when subscribing to newsletter, didn't have time to fix this either, i realisez at last minute.
-
-
+      ![Code snippet](<media/Captura de pantalla (606).png>)
 
 
  ### Fixed bugs
@@ -408,13 +401,6 @@ The site offers a wide range of different type of shoes in order to widen potent
       
       * Fix: Convert the dict into a list  `list(my_dict.values())[2:]`
 
-  * Fixed bug:
-
-      - The increment and decrement buttons on the bag page gave me a really hard time.
-      The buttons would never triggered the js code. I used as in the walk through project the file
-      'quantity_form_scripts.html' placed into 'products/includes' folder.
-
-      * Fix: I fix this by getting rid of the above file and placeing the js script in the 'quantity_form.html' file down the file inside the postblockjs tag, then then buttons worked!!
 
   * Fixed bug:
 
@@ -423,6 +409,15 @@ The site offers a wide range of different type of shoes in order to widen potent
 
       * Fix: Create a runtime.txt in the root directory and write your Python version,
        in my case python-3.8.11. Commit and push changes.
+
+  * Fixed bug
+    
+      - On the bag page, for every item added the layout changes by adding rows in a scalate way.
+      Every new row to was pushed to the left.
+
+      ![Items bag page](<media/Captura de pantalla (422).png>)
+
+      - The problem was having the form closing tag in the wrong line
 
 
 ## Deployment
@@ -449,6 +444,238 @@ The project was deployed to Heroku using the below procedure:-
 - From the bottom of the deploy page select your preferred deployment type by follow one of the below steps:
 - Clicking either "Enable Automatic Deploys" for automatic deployment when you push updates to Github.
 - Select the correct branch for deployment from the drop-down menu and click the "Deploy Branch" button for manual deployment.
+
+## Making a Local Clone
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JavierBL89/Basty-Shops-Ecommerce-Code-Institute-Project.git)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open commandline interface on your computer
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+
+```
+$ git clone https://github.com/JavierBL89/Basty-Shops-Ecommerce-Code-Institute-Project.git
+```
+
+7. Press Enter. Your local clone will be created.
+
+## Forking Repository
+
+By forking the GitHub Repository you will be able to make a copy of the original repository on your own GitHub account allowing you to view and/or make changes without affecting the original repository by using the following steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JavierBL89/Basty-Shops-Ecommerce-Code-Institute-Project.git)
+2. At the top of the Repository (not top of page) just above the "Settings" button on the menu, locate the "Fork" button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+## Setting up your local enviroment
+
+1. Create Virtual enviroment on your computer or use gitpod built in virtual enviroment feature.
+
+2. Create env.py file. It needs to contain those 5 variables.
+
+* Database URL can be obtained from [heroku](https://dashboard.heroku.com/), add PostgreSQL as an add on when creating an app. 
+* Secret_key - is the django secret key can be generated [here](https://miniwebtool.com/django-secret-key-generator/). 
+* Cloudinary URL can be obtained from [cloudinary](https://cloudinary.com/) follow the steps on the website to register. 
+* Google API key can be obtained [here](https://cloud.google.com/gcp?authuser=1) you will have to register with google and create new app to get the API key. Follow the instructions on the website.
+
+```
+DEVELOPMENT
+SECRET_KEY
+
+STRIPE_PUBLIC_KEY
+STRIPE_SECRET_KEY 
+STRIPE_WH_SECRET
+
+```
+PostgreSQL and AWS keys are needed only on Heroku, not in local IDE
+
+3. Run command 
+```
+pip3 install -r requirements.txt
+```
+
+## Getting Stripe keys
+
+Go to developers tab. On side menu you will find API keys. Copy STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY.
+
+Go to Webhooks. Click Add Endpoint button in top right hand corner.
+Add endpoint URL (your local or deployed URL)
+Add all events 
+Than click add endpoint
+You should be redirected to this webhook's page. Reveal webhook sign in secret and copy to Settings and to heroku as STRIPE_WH_SECRET variable
+
+## Getting email variables from gmail
+
+- Log into gmail account
+- Go to Settings and than See all settings
+- Top menu go to Accounts and import
+- Find on the list Other google account settings
+- Left side menu - Security
+- Turn on two step verification: add phone number and follow instructions
+- Go back to security
+App passwords - Select Mail, Select Device - Other, Django, Copy app password.
+
+In Heroku 
+EMAIL_HOST_PASS is the password copied from above.
+EMAIL_HOST_USER is the gmail email address
+
+## Setting AWS bucket
+
+1. Go to [Amzon Web Services](https://aws.amazon.com/) page and login or register
+
+2. You should be redirected to AWS Managment Console, if not click onto AWS logo in top left corner or click Services icon and choose Console Home
+
+3. Below the header AWS Services click into All Services and find **S3** under Storage
+
+4. Create New Bucket using **Create Bucket** button in top right hand corner
+
+- **Configuration:** type in your chosen name for the bucket (preferably matching your heroku app name) and AWS Region closest to you
+
+- **Object ownership:** ACLs enabled, Bucket owner prefered
+
+- **Block Public Access settings:** Uncheck to allow public access, Acknowledge that the current settings will result that the objects within the bucket will become public
+
+- Click **Create Bucket**
+
+5. You are redirected to Amazon S3 with list of your buckets. Click into the name of the bucket you just created
+
+6. Find the tab **Properties** on the top of the page:
+**Static website hosting** at the bottom of the properties page: clik to edit, click enable, fill in index document: index.html and error.html for error
+
+7. On the **Permissions** tab:
+- Cross-origin resource sharing (**CORS**) Paste in the below code as configuration and save
+
+```
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+```
+- **Bucket Policy** within permissions tab: Edit bucket policy
+Click AWS Policy Generator (top right corner)
+
+Select type of policy: S3 Bucket policy
+Principal: * (allows all)
+Actions: Get object
+Amazon Resource Name (ARN): paste from the Edit bucket policy page in permissions
+Click Add statement Than Click Generate Policy and Copy the policy into bucket policy editor. 
+In the policy code find "Resource" key and add "/*" after the name of the bucket to enable all
+Save changes
+
+- **Access control list (ACL)** within permissions tab: click Edit
+
+find Everyone (public access) and check List box and save
+
+8. Identity and Access Management (IAM)
+Go back to the AWS Management Console and find IAM in AWS Services
+
+- side menu - User Groups and click **Create Group**
+name group "manage-your-app-name" and click Create group
+
+- side menu - Policies and click **Create Policy**
+Click import managed policy - find AmazonS3FullAccess
+Copy ARN again and paste into "Resource" add list containint two elements "[ "arn::..", ""arn::../*]" First element is for bucket itself, second element is for all files and foldrs in the bucket
+
+Click bottom right Add Tags, than Click bottom right Next: Review
+Add name of the policy and description
+
+Click bottom right Create policy
+
+9. Attach policy to the group we created:
+- go to User Groups on side menu
+- select your group from the list
+- go to permissions tab and add permissions drop down and choose **Attach policies**
+- find the policy created above and click button in bottom right Add permissions
+
+10. Create User to go in the group
+- **Users** in the side menu and click add users
+
+User name: your-app-staticfiles-user
+Check option: Access key - Programmatic access
+Click button at the bottom right for Next
+- Add user group and add user to the group you created earlier
+Click Next Tags and Next: review and Create user
+- Download .csv file
+
+
+11. Connect django to AWS S3 bucket
+- install boto3
+- install django-storages
+- freeze to requirements.txt
+- add storages to installed apps in settings.py
+
+```
+if 'USE_AWS' in os.environ:
+    # Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+
+    # Bucket Config
+    AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+    AWS_S3_REGION_NAME = 'eu-west-2'
+    AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+```
+
+12. Go to heroku to set up enviromental variables
+
+open CSV file downloaded earlier and copy each variable into heroku Settings
+
+AWS_STORAGE_BUCKET_NAME
+AWS_ACCESS_KEY_ID from csv
+AWS_SECRET_ACCESS_KEY from csv
+USE_AWS = True
+remove DISABLE_COLLECTSTATIC variable from heroku
+
+13. Create file in root directory custom_storages.py
+
+```
+from django.conf import settings
+from storages.backends.s3boto3 import S3Boto3Storage
+
+
+class StaticStorage(S3Boto3Storage):
+    location = settings.STATICFILES_LOCATION
+
+
+class MediaStorage(S3Boto3Storage):
+    location = settings.MEDIAFILES_LOCATION
+```
+
+14. Go to settings.py, add the AWS settings
+
+```
+    # Static and media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+```
+
+15. To load the media files to S3 bucket
+
+- Go to your S3 bucket page on AWS. Create new folder "media"
+- go to the media folder and click Upload
+
 
 ## Credits
 
