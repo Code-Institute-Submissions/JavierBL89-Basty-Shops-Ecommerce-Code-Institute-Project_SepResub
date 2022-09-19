@@ -168,43 +168,52 @@
         <div class="carousel-inner ">
           <div class="carousel-item active mt-5">
             <div class="cards-wraper d-flex justify-content-center">
+              {% for product in all_products %}
+                {% if product.id == 3 %}
               <div class="product-card mx-1">
                 <div class="card-img-box-carousel">
-                  <a href="https://bastyshops.herokuapp.com/products/3"><img src="{{ MEDIA_URL }}CLAUDIA-SUEDE-ANKLE-BOOTS-ALL-BLACK_EF4-090_1_ijmyf8k.jpg" class="card-img-carousel" alt="SUEDE-ANKLE-BOOTS"></a>
+                  <a href="{% url 'product_detail' product.id %}">
+                    <img src="{{ MEDIA_URL }}{{ product.cover_image }}" class="card-img-carousel" alt="SUEDE-ANKLE-BOOTS"></a>
                 </div>
                 <div class="product_card-body mt-2 mx-1 text-start">
                   <p class="product-card-description  mb-0 pt-0"><strong>Suede Ankle Boots</strong></p>
                   <p class="product-card-price mt-0">35'90€</p>
                 </div>
               </div>
+              {% elif product.id == 2 %}
               <div class="product-card mx-1">
                 <div class="card-img-box-carousel">
-                  <a href="https://bastyshops.herokuapp.com/products/2"><img src="{{ MEDIA_URL }}PILAR-LEATHER-ANKLE-BOOTS-OXBLOOD-RED_EF3-894_1.jpg" class="card-img-carousel" alt="LEATHER-ANKLE-BOOTS"></a>
+                  <a href="{% url 'product_detail' product.id %}">
+                    <img src="{{ MEDIA_URL }}{{ product.cover_image }}" class="card-img-carousel" alt="LEATHER-ANKLE-BOOTS"></a>
                 </div>
                 <div class="product_card-body mt-2 mx-1 text-start">
                   <p class="product-card-description mb-0 pt-0"><strong>Leather Ankle Boots</strong></p>
                   <p class="product-card-price mt-0">53.99€</p>
                 </div>
               </div>
+              {% elif product.id == 6 %}
               <div class="product-card mx-1">
                 <div class="card-img-box-carousel">
-                  <a href="https://bastyshops.herokuapp.com/products/6"><img src="{{ MEDIA_URL }}TREND-0089501020017509_Model.jpg" class="card-img-carousel" alt="Knee High Boots"></a>
+                  <a href="{% url 'product_detail' product.id %}">
+                    <img src="{{ MEDIA_URL }}{{ product.cover_image }}" class="card-img-carousel" alt="Knee High Boots"></a>
                 </div>
                 <div class="product_card-body mt-2 mx-1 text-start">
                   <p class="product-card-description mb-0 pt-0"><strong>Knee High Boots</strong></p>
                   <p class="product-card-price mt-0 ">42'99€</p>
                 </div>
               </div>
+              {% endif %}
+              {% endfor %}
             </div>
           </div>
           <div class="carousel-item mt-5">
             <div class="cards-wraper d-flex justify-content-center">
-              <div class="product-card mx-1">
-                {% for product in all_products %}
+              {% for product in all_products %}
                 {% if product.id == 7 %}
+              <div class="product-card mx-1">
                 <div class="card-img-box-carousel">
                   <a href="{% url 'product_detail' product.id %}">
-                  <img src="{{ product.cover_image }}" class="card-img-carousel" alt="{{ product.title }}">
+                  <img src="{{ MEDIA_URL }}{{ product.cover_image }}" class="card-img-carousel" alt="{{ product.title }}">
                   </a>
                 </div>
                 <div class="product_card-body mt-2 mx-1 text-start">
@@ -216,7 +225,7 @@
               <div class="product-card mx-1">
                 <div class="card-img-box-carousel">
                   <a href="{% url 'product_detail' product.id %}">
-                  <img src="{{ product.cover_image }}" class="card-img-carousel" alt="{{ product.title }}">
+                  <img src="{{ MEDIA_URL }}{{ product.cover_image }}" class="card-img-carousel" alt="{{ product.title }}">
                   </a>
                 </div>
                 <div class="product_card-body mt-2 mx-1 text-start">
@@ -228,7 +237,7 @@
               <div class="product-card mx-1">
                  <div class="card-img-box-carousel">
                    <a href="{% url 'product_detail' product.id %}">
-                   <img src="{{ product.cover_image }}" class="card-img-carousel" alt="{{ product.title }}">
+                   <img src="{{ MEDIA_URL }}{{ product.cover_image }}" class="card-img-carousel" alt="{{ product.title }}">
                    </a>
                  </div>
                  <div class="product_card-body mt-2 mx-1 text-start">

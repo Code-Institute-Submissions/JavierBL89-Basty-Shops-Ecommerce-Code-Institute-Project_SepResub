@@ -126,27 +126,27 @@
 
   - Desktop Home page
 
-  ![Lighthouse desktop home page results](<media/Captura de pantalla (444).png>)
+  ![Lighthouse desktop home page results](<media/Captura de pantalla (612).png>)
 
   - Mobile Home page
   
-  ![Lighthouse mobile home page results](<media/Captura de pantalla (447).png>)
+  ![Lighthouse mobile home page results](<media/Captura de pantalla (613).png>)
 
   - Products page desktop
   
-  ![Lighthouse desktop products page results](<media/Captura de pantalla (449).png>)
+  ![Lighthouse desktop products page results](<media/Captura de pantalla (617).png>)
 
 - Products page mobile
   
-  ![Lighthouse mobile products page results](<media/Captura de pantalla (451).png>)
+  ![Lighthouse mobile products page results](<media/Captura de pantalla (616).png>)
 
   - Products detail page desktop
   
-  ![Lighthouse desktop products page results](<media/Captura de pantalla (453).png>)
+  ![Lighthouse desktop products page results](<media/Captura de pantalla (620).png>)
 
   - Products detail page mobile
   
-  ![Lighthouse mobile products page results](<media/Captura de pantalla (455).png>)
+  ![Lighthouse mobile products page results](<media/Captura de pantalla (621).png>)
 
 ### PEP8
 
