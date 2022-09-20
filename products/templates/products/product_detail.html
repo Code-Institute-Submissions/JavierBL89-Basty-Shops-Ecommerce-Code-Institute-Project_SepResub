@@ -47,7 +47,7 @@
         </div>
         <div class="row mt-sm-1 mt-lg-3 mt-md-1">
           <div class="col-6">
-            <p class="product-name">{{ product.name}}</p>
+            <p class="product-name">{{ product.name }}</p>
           </div>
         </div>
         <div class="row mt-sm-3 mt-md-1 mt-lg-5">
@@ -173,10 +173,10 @@
               <div class="product-card mx-1">
                 <div class="card-img-box-carousel">
                   <a href="{% url 'product_detail' product.id %}">
-                    <img src="{{ MEDIA_URL }}{{ product.cover_image }}" class="card-img-carousel" alt="SUEDE-ANKLE-BOOTS"></a>
+                    <img src="{{ MEDIA_URL }}{{ product.cover_image }}" class="card-img-carousel" alt="{{ product.title }}"></a>
                 </div>
                 <div class="product_card-body mt-2 mx-1 text-start">
-                  <p class="product-card-description  mb-0 pt-0"><strong>Suede Ankle Boots</strong></p>
+                  <p class="product-card-description  mb-0 pt-0"><strong>{{ product.title }}</strong></p>
                   <p class="product-card-price mt-0">35'90€</p>
                 </div>
               </div>
@@ -184,10 +184,10 @@
               <div class="product-card mx-1">
                 <div class="card-img-box-carousel">
                   <a href="{% url 'product_detail' product.id %}">
-                    <img src="{{ MEDIA_URL }}{{ product.cover_image }}" class="card-img-carousel" alt="LEATHER-ANKLE-BOOTS"></a>
+                    <img src="{{ MEDIA_URL }}{{ product.cover_image }}" class="card-img-carousel" alt="{{ product.title }}"></a>
                 </div>
                 <div class="product_card-body mt-2 mx-1 text-start">
-                  <p class="product-card-description mb-0 pt-0"><strong>Leather Ankle Boots</strong></p>
+                  <p class="product-card-description mb-0 pt-0"><strong>{{ product.title }}</strong></p>
                   <p class="product-card-price mt-0">53.99€</p>
                 </div>
               </div>
@@ -195,10 +195,10 @@
               <div class="product-card mx-1">
                 <div class="card-img-box-carousel">
                   <a href="{% url 'product_detail' product.id %}">
-                    <img src="{{ MEDIA_URL }}{{ product.cover_image }}" class="card-img-carousel" alt="Knee High Boots"></a>
+                    <img src="{{ MEDIA_URL }}{{ product.cover_image }}" class="card-img-carousel" alt="{{ product.title }}"></a>
                 </div>
                 <div class="product_card-body mt-2 mx-1 text-start">
-                  <p class="product-card-description mb-0 pt-0"><strong>Knee High Boots</strong></p>
+                  <p class="product-card-description mb-0 pt-0"><strong>{{ product.title }}</strong></p>
                   <p class="product-card-price mt-0 ">42'99€</p>
                 </div>
               </div>

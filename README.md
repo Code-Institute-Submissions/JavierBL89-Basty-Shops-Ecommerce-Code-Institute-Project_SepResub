@@ -1,18 +1,26 @@
 # BASTY SHOPS
 
-This is ecommerce store that sells shoes for women.
-Allows users to check out products clasiffied into categories, select a specific size of the product and securily checkout through Stripe payment platform.
+![Basty Shops screen size desing](<media/site-screen-sizes.png>)
 
-Users can create their account, and subscribe to the store's newsletter.
-Users can make an order without being registered.
+This is a B2C ecommerce store for the final project of the Code Institute diploma in Software Development.
+
+The appication is focused on selling products to users, especifically shoes for women.
+
+It allows users to check out products clasified into categories, select a specific product and size, add it to the shopping bag and securily checkout through Stripe payment platform.
+This app does not take real payments.
+In order to complete a purchase to test it out, you must enter on the credit card field the following details:
+
+* Card number:  4242 4242 4242 4242
+* Any future expiry date, such as 04/24.
+* Any three-digit CVC.
+* Same Post code as in delivery form
+
+The site provides role based permissions for users to interact with a central dataset. It includes user authentication, email validation, newsletter subcription, and full CRUD functionality for approved users for Products.
 Users can easily update their personal information and delivery information.
 The site provides all the information needed about delivery, returns and refounds as well as a FAQs section to solve common questions.
-
-Users can easily contact customer support.
+Users can contact customer support.
 
 - Live store [Basty Shops](<https://bastyshops.herokuapp.com>)
-
-![Basty Shops screen size desing](<media/site-screen-sizes.png>)
 
 ## Table of contents
 
@@ -123,6 +131,7 @@ The site offers a wide range of different type of shoes in order to widen potent
 
   ![Mobile design](<media/Captura de pantalla (564).png>)
 
+[Back to top](#table-of-contents)
 
 ### Design choises
 
@@ -167,6 +176,8 @@ The site offers a wide range of different type of shoes in order to widen potent
 - #### Database structure
 
 ![Basty Shops Db structure](<media/Captura de pantalla (292).png>)
+
+[Back to top](#table-of-contents)
 
 ### Marketing Stragtegy
 
@@ -339,6 +350,9 @@ The site offers a wide range of different type of shoes in order to widen potent
   
     ![Delete product admin](<media/Captura de pantalla (599).png>)
 
+
+[Back to top](#table-of contents)
+
 ## Future features
 
  - Add products to wish list
@@ -348,8 +362,6 @@ The site offers a wide range of different type of shoes in order to widen potent
  - Google payments
  
  Note: Reviews is alredy added into database structure. Wish list is not, however it is implemented in html files with not functionality(due to lack of time).
-
- ## Testing
 
 
  ## Technology Used
@@ -372,10 +384,11 @@ The site offers a wide range of different type of shoes in order to widen potent
     - [Django](https://www.djangoproject.com/)
     - All packages installed can be found in [requirements.txt](https://github.com/JavierBL89/Basty-Shops-Ecommerce-Code-Institute-Project/blob/main/requirements.txt)
 
+[Back to top](#table-of-contents)
+
 
 ## Bugs
 
-  
  * Unfixed bug
     
       - When adding products into shopping bag, the toast showing a success message does not show, however it does when removing items from the shopping bag.
@@ -470,7 +483,13 @@ By forking the GitHub Repository you will be able to make a copy of the original
 
 ## Setting up your local enviroment
 
-1. Create Virtual enviroment on your computer or use gitpod built in virtual enviroment feature.
+1. Create and run a Python virtual environment in your computer's terminal .
+
+    `python3 -m venv env`
+
+    `. env/bin/activate`
+
+ Or use gitpod built in virtual enviroment feature.
 
 2. Create env.py file. It needs to contain those 5 variables.
 
@@ -676,6 +695,7 @@ class MediaStorage(S3Boto3Storage):
 - Go to your S3 bucket page on AWS. Create new folder "media"
 - go to the media folder and click Upload
 
+[Back to top](#table-of-contents)
 
 ## Credits
 
@@ -709,3 +729,4 @@ I want to thank the [Code Institute](https://codeinstitute.net/ie/) tutor assist
 I did not make use of my mentor assistance this time round. 
 
 
+[Back to top](#table-of-contents)

@@ -7,12 +7,35 @@
 
 ## Table of contents
 
+- [User Stories Testing](#user-stories-testing)
 - [Manual testing documentation](#manual-testing)
 - [Automated testing](#automated-testing)
 - [User Testing](#user-testing)
 ***
 
+## User Stories Testing
 
+
+![User story testing](<media/Captura de pantalla (638).png>)
+![User story testing](<media/Captura de pantalla (639).png>)
+![User story testing](<media/Captura de pantalla (640).png>)
+![User story testing](<media/Captura de pantalla (641).png>)
+![User story testing](<media/Captura de pantalla (642).png>)
+![User story testing](<media/Captura de pantalla (643).png>)
+![User story testing](<media/Captura de pantalla (644).png>)
+![User story testing](<media/Captura de pantalla (645).png>)
+![User story testing](<media/Captura de pantalla (646).png>)
+![User story testing](<media/Captura de pantalla (647).png>)
+![User story testing](<media/Captura de pantalla (648).png>)
+![User story testing](<media/Captura de pantalla (649).png>)
+![User story testing](<media/Captura de pantalla (650).png>)
+![User story testing](<media/Captura de pantalla (651).png>)
+![User story testing](<media/Captura de pantalla (652).png>)
+![User story testing](<media/Captura de pantalla (653).png>)
+
+* User stories testing iteration can be seen [here](https://github.com/JavierBL89/Basty-Shops-Ecommerce-Code-Institute-Project/projects/4)
+
+## Manual testing documentation
 
 | Reference | Test object | Expected result | Result 
 | ----------- | ----------- | ----------- | ---------- |
@@ -165,11 +188,7 @@
 
   - [W3C HTML validator](https://validator.w3.org/nu/)
       
-      - Showing lots of errors when using sintax {{ }} or {% blocks %}
-
-      ![HTML validator results](<media/Captura de pantalla (437).png>)
-      ![HTML validator results](<media/Captura de pantalla (438).png>)
-      ![HTML validator results](<media/Captura_de_pantalla_270_2To9SKI.png>)
+      - No HTML errors found after running HTML code taking the code from the view page source in order to not have the template tags which would cause errors when runnin HTML validator (click right on selected page)
 
   - [JS Hint](https://jshint.com/)
 
