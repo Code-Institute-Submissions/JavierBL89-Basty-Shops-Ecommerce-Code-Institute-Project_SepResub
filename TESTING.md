@@ -194,6 +194,10 @@
 
        - JSHint was used to validate js files, only a few semicolons was missing and some variables unused.
 
+## User testing
+
+Some of my friends and family tested out the application giving me feedback, and report some of css bugs. 
+
 
 
 
