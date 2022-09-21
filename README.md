@@ -60,9 +60,7 @@ Users can contact customer support.
 
 ### [Testing](#testing)
 
-- Manual testing
-- Light house
-- Validators
+- [Testing.md](https://github.com/JavierBL89/Basty-Shops-Ecommerce-Code-Institute-Project/blob/main/TESTING.md)
 
 ### [Technology Used](#technology-used)
 

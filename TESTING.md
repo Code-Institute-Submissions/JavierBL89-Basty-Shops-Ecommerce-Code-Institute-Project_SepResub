@@ -1,8 +1,8 @@
 # Testing documentation
 
-* [Main README.mf file]()
-* [Basty Shops]() live app
-* [GitHub repository]()
+* [Main README.mf file](https://github.com/JavierBL89/Basty-Shops-Ecommerce-Code-Institute-Project/blob/main/README.md)
+* [Basty Shops](https://bastyshops.herokuapp.com) live app
+* [GitHub repository](https://github.com/JavierBL89/Basty-Shops-Ecommerce-Code-Institute-Project)
 ***
 
 ## Table of contents
@@ -10,6 +10,10 @@
 - [User Stories Testing](#user-stories-testing)
 - [Manual testing documentation](#manual-testing)
 - [Automated testing](#automated-testing)
+  - Python Unittest
+  - Lighthouse
+  - Validators
+
 - [User Testing](#user-testing)
 ***
 
@@ -139,11 +143,46 @@
 | **SIGN OUT** |  |  |
 | 86 | Sign Out button | Signs the user out of their account and redirects to the home page | PASS
 
-
+[Back to top](#table-of-contents)
+***
  ### Automated testing
 
+## Python Unittest
 
- ### Light house
+- In order to test forms , views and models i used the Python standard library module [Unnittest](https://docs.djangoproject.com/en/4.1/topics/testing/overview/)
+
+
+Files run with not fails:
+
+- **Test forms**.
+
+In order to run test forms command `python manage.py test home.tests.test_forms`
+
+- Results
+
+![Test forms](<media/Captura de pantalla (657).png>)
+
+- **Test views**.
+
+In order to run test forms command `python manage.py test home.tests.test_views`
+
+- Results
+
+![Test views](<media/Captura de pantalla (658).png>)
+
+- **Test Models**.
+
+In order to run test forms command `python manage.py test home.tests.test_models`
+
+- Results
+
+![Test models](<media/Captura de pantalla (660).png>)
+
+
+- You can also run all test files `python manage.py test home.tests`
+s
+
+ ## Light house
 
  The site clearly needs some improvements in terms of accebility, performance and best practises
 
@@ -170,13 +209,7 @@
   - Products detail page mobile
   
   ![Lighthouse mobile products page results](<media/Captura de pantalla (621).png>)
-
-### PEP8
-
-  - All .py files went through PEP8 validator, only white spaces and long lines shown in test.
-
-
-  - **Home page**
+***
 
 
  ### Validators
@@ -193,6 +226,10 @@
   - [JS Hint](https://jshint.com/)
 
        - JSHint was used to validate js files, only a few semicolons was missing and some variables unused.
+
+  -[PEP8](http://pep8online.com/)
+
+  - All .py files went through PEP8 validator.
 
 ## User testing
 
