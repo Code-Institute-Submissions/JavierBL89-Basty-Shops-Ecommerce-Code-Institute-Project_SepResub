@@ -156,6 +156,9 @@
           <div class="col-lg-3 col-md-12 container-logo column">
             <div class="logo-footer-box text-center">
               <a aria-label="Logo" id="logo-footer-img" href="{% url 'home' %}"><img src="{{ MEDIA_URL }}Screenshot_20180313-160852.webp" alt="basty-shops-logo"></a>
+              <div class="current-year-container">
+                <p>Copy Right <span id="current-year"></span></p>
+            </div>
             </div>
           </div>
           <div class="col-lg-3 col-md-12 col-sm-12 text-center text-lg-start footer-bg column ps-3">
@@ -173,12 +176,22 @@
       </div>
     </section>
 </div>
+
     {% block postloadjs %}
     <script>
       $(document).ready(function(){
             $('.toast').toast('show');
         })
     </script>
+
+    <!---- CURRRENT YEAR -->
+    <script>
+      let date = new Date().getFullYear()
+      $('#current-year').text(date)
+      console.log(date);
+      $()
+    </script>
+
     <script src="{% static 'js/burgerMenu.js' %}"></script>
     {% endblock %}
 

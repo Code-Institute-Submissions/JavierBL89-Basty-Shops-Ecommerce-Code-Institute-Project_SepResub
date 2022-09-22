@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', '')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['bastyshops.herokuapp.com', 'localhost', 'https://8000-javierbl89-bastyshopsec-r637bpneop8.ws-eu64.gitpod.io']
+ALLOWED_HOSTS = ['bastyshops.herokuapp.com', 'localhost', 'https://8000-javierbl89-bastyshopsec-r637bpneop8.ws-eu67.gitpod.io']
 
 # This variable is helpful with DJANGO 4 installed
 # Neccesary for persmissons as prevents others site from hijacking clicks
@@ -39,7 +39,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # needed to be able to login(new in django 4)
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-javierbl89-bastyshopsec-r637bpneop8.ws-eu64.gitpod.io',
+    'https://8000-javierbl89-bastyshopsec-r637bpneop8.ws-eu67.gitpod.io',
     'https://bastyshops.herokuapp.com/'
     ]
 
