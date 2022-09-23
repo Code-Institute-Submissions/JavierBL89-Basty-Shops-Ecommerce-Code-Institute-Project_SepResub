@@ -11,6 +11,11 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+.current-year-container{
+    font-size: 0.500rem;
+    margin-top: 10px;
+    color: rgb(122, 13, 13);
+}
 
 /*** override input autofill background_color */
 input:-webkit-autofill, input:-webkit-autofill, input:-webkit-autofill:focus {

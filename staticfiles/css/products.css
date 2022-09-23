@@ -4,15 +4,16 @@
     border: solid 1px rgb(122, 13, 13);
 }
 
-/***** DELETE THIS LINE WHEN JQUERY USED*/
 .size-box:hover{
     background-color:  rgb(122, 13, 13);
     color: #ffffff;
+    cursor: pointer;
 }
 
-.selected-size{
-    background-color:  rgb(122, 13, 13);
-
+/*** ADD reset CLASS */
+.reset{
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .size-link{
@@ -252,15 +253,15 @@
    }
    
    .size-box{
-       height: 40px;
+       height: 38px;
        width: 40px;
        font-size: 0.900rem;
    }
 
    .size-box span{
     font-size: 0.750rem;
-
    }
+
    .product-detail-img-box{
     margin: 0 auto;
     width: 250px;
@@ -283,7 +284,6 @@
 }
 
 .add-to-bag-button-container button:hover{
-    width: 65%;
     background-color: rgb(255, 255, 255);
     color: rgb(122, 13, 13);
     border-color: rgb(122, 13, 13);;
@@ -293,7 +293,7 @@
     margin-bottom: 40px;
    }
 
-   #product-image-list img{
+   .product-image-list img{
     width: 80%;
     height: 95%;
 }
@@ -374,18 +374,28 @@ height: 100%;
     text-align: start;
 }
 
-   /******** SUBSCRIPTION SECTION */
-   .subscription-container{
-       padding-top: 20px;
-       margin: 90px auto 10px;
-       height: 250px;
-       width: 95%;
-       background-color: #5D737E;
-       color: #F3FFC6;
-       border-radius: 10px;
-       letter-spacing: 1px;
-   }
-   
+.subscription-product-page-container {
+    padding-top: 20px;
+    margin: 100px auto 10px;
+    height: 260px;
+    width: 85%;
+    background-color: #5D737E;
+    color: #F3FFC6;
+    border-radius: 10px;
+    letter-spacing: 1px;
+}
+
+.subscription-product-page-container button{
+    margin-top: 10px;
+    padding-top: 3px;
+    width: 80%;
+    background-color:  #FF6542;
+    color: #ffffff;
+    font-size: 0.750rem;
+    letter-spacing: 1px;
+    height: 35px;
+}
+
    .subscription-product-page-container p {
        font-size: 0.800rem;
    }
@@ -404,28 +414,6 @@ height: 100%;
        font-size: 0.700rem;
    }
    
-   .subscription-product-page-container {
-    padding-top: 20px;
-    margin: 100px auto 10px;
-    height: 280px;
-    width: 450px;
-    background-color: #5D737E;
-    color: #F3FFC6;
-    border-radius: 10px;
-    letter-spacing: 1px;
-}
-
-.subscription-product-page-container button{
-    margin-top: 10px;
-    padding-top: 3px;
-    width: 80%;
-    background-color:  #FF6542;
-    color: #ffffff;
-    font-size: 0.750rem;
-    letter-spacing: 1px;
-    height: 35px;
-}
-
   /*********** ADD PRODUCT PAGE */
   #product-mngt-container{
     padding: 4% 0 4% 10%;
@@ -647,7 +635,7 @@ input[name="cover_image"],
     height: 100%;
    }
 
-   #product-image-list img{
+   .product-image-list img{
     width: 80%;
     height: 95%;
 }
@@ -997,7 +985,7 @@ input[name="image4"],
     height: 100%;
    }
 
-   #product-image-list img{
+   .product-image-list img{
     width: 80%;
     height: 95%;
 }

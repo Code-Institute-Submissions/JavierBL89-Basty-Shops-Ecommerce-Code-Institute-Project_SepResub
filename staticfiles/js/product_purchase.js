@@ -11,14 +11,56 @@ console.log(`URL: ${redirect_url}`);
 for (let choice of options){
   
     choice.addEventListener('click', function(){
-        $(this).attr('id', 'active');
-        $(this).attr('class', 'size-box text-center py-1 active');
-        $(this).css('background-color', 'rgb(122, 13, 13)');
-        // Get product input value size
-        let size = $('#active');
-        size = size.attr('value');
-        console.log(size);
+      resetSizeBox(options);
+      let sizeChoise = $(this).text();
+      let element = $(this);
+      changeBackground(sizeChoise, element);
+      $(this).attr('id', 'active');
+      $(this).attr('class', 'size-box text-center py-1 active');
+      // Get product input value size
+      let size = $('#active');
+      size = size.attr('value');
     });
+}
+
+/***
+* FUNCTION TO RESET SIZE BOX OPTION CSS
+*/
+function resetSizeBox(options){
+  options.css('background-color', 'white');
+  options.css('color', 'black');
+}
+
+/***
+* FUNCTION TO SWICTH PRODUCT SIZE BACKGROUND COLOR WHEN CLICKING
+*/
+function changeBackground(sizeChoise, element){
+
+  if(sizeChoise == '36'){
+    element.css('background-color', 'rgb(122, 13, 13)');
+    element.css('color', 'rgb(255, 255, 255)');
+   }
+  else if(sizeChoise == '37'){
+    element.css('background-color', 'rgb(122, 13, 13)');
+    element.css('color', 'rgb(255, 255, 255)');
+    
+  }
+  else if(sizeChoise == '38'){
+    element.css('background-color', 'rgb(122, 13, 13)');
+    element.css('color', 'rgb(255, 255, 255)');
+  }
+  else if(sizeChoise == '39'){
+    element.css('background-color', 'rgb(122, 13, 13)');
+    element.css('color', 'rgb(255, 255, 255)');
+  }
+  else if(sizeChoise == '40'){
+    element.css('background-color', 'rgb(122, 13, 13)');
+    element.css('color', 'rgb(255, 255, 255)');
+
+  }
+  else{
+    element.css('background-color', 'white');
+  }
 }
 
 
@@ -26,12 +68,12 @@ form.on('submit', function(ev){
     ev.preventDefault();
     // Get product input value size
     let size = $('#active');
-    size = parseInt(size.attr('value'));
+    size = parseInt(size.attr('data-value'));
     // Get product size id
     let size_id = $('#active');
     
-    let size_id_first_number = size_id.attr('value')[3];
-    let size_id_second_number = size_id.attr('value')[4];
+    let size_id_first_number = size_id.attr('data-value')[3];
+    let size_id_second_number = size_id.attr('data-value')[4];
     size_id = parseInt(size_id_first_number + size_id_second_number);
 
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
