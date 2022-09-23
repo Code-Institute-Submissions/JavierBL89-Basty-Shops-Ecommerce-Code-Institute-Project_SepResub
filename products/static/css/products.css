@@ -4,10 +4,15 @@
     border: solid 1px rgb(122, 13, 13);
 }
 
+.red{
+    background-color: rgb(122, 13, 13);
+}
 /***** DELETE THIS LINE WHEN JQUERY USED*/
 .size-box:hover{
     background-color:  rgb(122, 13, 13);
     color: #ffffff;
+    cursor: pointer;
+
 }
 
 .selected-size{
@@ -259,8 +264,8 @@
 
    .size-box span{
     font-size: 0.750rem;
-
    }
+
    .product-detail-img-box{
     margin: 0 auto;
     width: 250px;

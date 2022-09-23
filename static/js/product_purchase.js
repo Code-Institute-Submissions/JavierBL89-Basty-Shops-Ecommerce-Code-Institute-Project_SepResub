@@ -9,16 +9,43 @@ let item_id = $("#item_id").val();
 console.log(`URL: ${redirect_url}`);
 
 for (let choice of options){
-  
+
     choice.addEventListener('click', function(){
-        $(this).attr('id', 'active');
-        $(this).attr('class', 'size-box text-center py-1 active');
-        $(this).css('background-color', 'rgb(122, 13, 13)');
-        // Get product input value size
-        let size = $('#active');
-        size = size.attr('value');
-        console.log(size);
+      options.css('background-color', 'white');
+      let sizeChoise = $(this).text();
+      let element = $(this);
+      changeBackground(sizeChoise, element);
+      $(this).attr('id', 'active');
+      $(this).attr('class', 'size-box text-center py-1 active');
+      // Get product input value size
+      let size = $('#active');
+      size = size.attr('value');
     });
+}
+
+/***
+* FUNCTION TO SWICTH PRODUCT SIZE BACKGROUND COLOR WHEN CLICKING
+*/
+function changeBackground(sizeChoise, element){
+
+  if(sizeChoise == '36'){
+    element.css('background-color', 'rgb(122, 13, 13)');
+   }
+  else if(sizeChoise == '37'){
+    element.css('background-color', 'rgb(122, 13, 13)');
+  }
+  else if(sizeChoise == '38'){
+    element.css('background-color', 'rgb(122, 13, 13)');
+  }
+  else if(sizeChoise == '39'){
+    element.css('background-color', 'rgb(122, 13, 13)');
+  }
+  else if(sizeChoise == '40'){
+    element.css('background-color', 'rgb(122, 13, 13)');
+  }
+  else{
+    element.css('background-color', 'white');
+  }
 }
 
 
