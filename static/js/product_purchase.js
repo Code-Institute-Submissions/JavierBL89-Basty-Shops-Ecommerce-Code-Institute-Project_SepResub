@@ -9,9 +9,9 @@ let item_id = $("#item_id").val();
 console.log(`URL: ${redirect_url}`);
 
 for (let choice of options){
-
+  
     choice.addEventListener('click', function(){
-      options.css('background-color', 'white');
+      resetSizeBox(options);
       let sizeChoise = $(this).text();
       let element = $(this);
       changeBackground(sizeChoise, element);
@@ -24,24 +24,39 @@ for (let choice of options){
 }
 
 /***
+* FUNCTION TO RESET SIZE BOX OPTION CSS
+*/
+function resetSizeBox(options){
+  options.css('background-color', 'white');
+  options.css('color', 'black');
+}
+
+/***
 * FUNCTION TO SWICTH PRODUCT SIZE BACKGROUND COLOR WHEN CLICKING
 */
 function changeBackground(sizeChoise, element){
 
   if(sizeChoise == '36'){
     element.css('background-color', 'rgb(122, 13, 13)');
+    element.css('color', 'rgb(255, 255, 255)');
    }
   else if(sizeChoise == '37'){
     element.css('background-color', 'rgb(122, 13, 13)');
+    element.css('color', 'rgb(255, 255, 255)');
+    
   }
   else if(sizeChoise == '38'){
     element.css('background-color', 'rgb(122, 13, 13)');
+    element.css('color', 'rgb(255, 255, 255)');
   }
   else if(sizeChoise == '39'){
     element.css('background-color', 'rgb(122, 13, 13)');
+    element.css('color', 'rgb(255, 255, 255)');
   }
   else if(sizeChoise == '40'){
     element.css('background-color', 'rgb(122, 13, 13)');
+    element.css('color', 'rgb(255, 255, 255)');
+
   }
   else{
     element.css('background-color', 'white');
